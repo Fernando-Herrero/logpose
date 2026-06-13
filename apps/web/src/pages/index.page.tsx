@@ -1,7 +1,12 @@
+import type { GetServerSideProps } from 'next';
+
+import { HomePageContent } from '@/features/auth/ui/home-page-content';
+import { getDefaultI18nProps } from '@/integrations/i18n/server';
+
 export default function HomePage() {
-  return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-2xl font-bold">One Piece LogPose v3</h1>
-    </main>
-  );
+  return <HomePageContent />;
 }
+
+export const getServerSideProps: GetServerSideProps = async context => ({
+  props: await getDefaultI18nProps(context),
+});

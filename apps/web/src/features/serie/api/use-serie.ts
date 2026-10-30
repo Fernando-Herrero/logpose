@@ -10,6 +10,14 @@ export function useSuspenseSerieSagas() {
   return useSuspenseQuery(allQueriesOptions.serie.sagas());
 }
 
+export function useSerieTotalExperience() {
+  const { data } = useSuspenseQuery({
+    ...allQueriesOptions.serie.sagas(),
+    select: sagas => sagas.totalExperience,
+  });
+  return data;
+}
+
 export function useSerieSagas(options?: SerieQueryOptions) {
   return useQuery({
     ...allQueriesOptions.serie.sagas(),

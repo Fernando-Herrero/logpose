@@ -6,6 +6,7 @@ import {
   getArcsBySagaSlug,
   getEpisodeByNumber,
   getEpisodesByArcSlug,
+  getEpisodesData,
   getSagaBySlug,
   getSagasData,
 } from './serie-data.js';
@@ -14,7 +15,11 @@ import {
 export class SerieService {
   listSagas() {
     const sagas = getSagasData();
-    return { sagas, total: sagas.length };
+    const totalExperience = getEpisodesData().reduce(
+      (sum, episode) => sum + episode.experience,
+      0,
+    );
+    return { sagas, total: sagas.length, totalExperience };
   }
 
   listArcsBySaga(sagaSlug: string) {

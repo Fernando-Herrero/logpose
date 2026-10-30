@@ -25,6 +25,7 @@ export const episodeSchema = z.object({
 export const sagaListOutputSchema = z.object({
   sagas: z.array(sagaSchema),
   total: z.number().int().nonnegative(),
+  totalExperience: z.number().int().nonnegative(),
 });
 
 export const arcListOutputSchema = z.object({

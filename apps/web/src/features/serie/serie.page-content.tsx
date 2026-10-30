@@ -5,6 +5,7 @@ import {
   Flex,
   Heading,
   Progress,
+  Skeleton,
   Spinner,
   Text,
 } from '@radix-ui/themes';
@@ -16,8 +17,10 @@ import { ErrorBoundary } from 'react-error-boundary';
 
 import { QueryErrorFallback } from '@/components/error-boundary/query-error-fallback';
 import { useAuthSession } from '@/features/auth/api/use-auth';
-import { useSuspenseSerieSagas } from '@/features/serie/api/use-serie';
-import { SERIE_TOTAL_XP } from '@/features/serie/serie.constants';
+import {
+  useSerieTotalExperience,
+  useSuspenseSerieSagas,
+} from '@/features/serie/api/use-serie';
 import { getSerieXpPercent } from '@/features/serie/serie.selectors';
 import { SerieSagaBlock } from '@/features/serie/ui/serie-saga-block.component';
 import { useGsapMotion } from '@/integrations/gsap/motion';
@@ -69,6 +72,29 @@ function SerieSagaListSkeleton() {
   );
 }
 
+function SerieXpProgress({ experience }: { experience: number }) {
+  const { t } = useTranslation();
+  const totalExperience = useSerieTotalExperience();
+
+  return (
+    <>
+      <Flex align="center" justify="between" gap="3" mb="2">
+        <Text as="p" size="1" className="text-foreground/70">
+          {t('serie.progress_label')}
+        </Text>
+        <Text as="p" size="1" weight="medium" className="text-highlight">
+          {experience.toLocaleString()} / {totalExperience.toLocaleString()} XP
+        </Text>
+      </Flex>
+      <Progress
+        value={getSerieXpPercent(experience, totalExperience)}
+        size="2"
+        className="profile-xp-progress h-2"
+      />
+    </>
+  );
+}
+
 export default function SeriePageContent() {
   const { t } = useTranslation();
   const { user } = useAuthSession();
@@ -79,8 +105,6 @@ export default function SeriePageContent() {
   const [openArcSlugs, setOpenArcSlugs] = useState<Record<string, boolean>>({});
 
   const lastWatchedEpisode = user?.lastWatchedEpisode ?? 0;
-  const experience = user?.experience ?? 0;
-  const xpPercent = getSerieXpPercent(experience);
 
   useGsapMotion(() => {
     gsap.fromTo(
@@ -150,20 +174,11 @@ export default function SeriePageContent() {
           </Text>
 
           <Box className="mt-8 max-w-md">
-            <Flex align="center" justify="between" gap="3" mb="2">
-              <Text as="p" size="1" className="text-foreground/70">
-                {t('serie.progress_label')}
-              </Text>
-              <Text as="p" size="1" weight="medium" className="text-highlight">
-                {experience.toLocaleString()} /{' '}
-                {SERIE_TOTAL_XP.toLocaleString()} XP
-              </Text>
-            </Flex>
-            <Progress
-              value={xpPercent}
-              size="2"
-              className="profile-xp-progress h-2"
-            />
+            <ErrorBoundary FallbackComponent={QueryErrorFallback}>
+              <Suspense fallback={<Skeleton height="32px" />}>
+                <SerieXpProgress experience={user?.experience ?? 0} />
+              </Suspense>
+            </ErrorBoundary>
           </Box>
 
           <Callout.Root

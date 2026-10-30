@@ -1,9 +1,19 @@
-import { Card, Flex, Heading, Progress, Text } from '@radix-ui/themes';
+import {
+  Card,
+  Flex,
+  Heading,
+  Progress,
+  Skeleton,
+  Text,
+} from '@radix-ui/themes';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next/pages';
+import { Suspense } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 
+import { QueryErrorFallback } from '@/components/error-boundary/query-error-fallback';
 import type { ProfileUser } from '@/features/profile/profile.types';
-import { SERIE_TOTAL_XP } from '@/features/serie/serie.constants';
+import { useSerieTotalExperience } from '@/features/serie/api/use-serie';
 import { getSerieXpPercent } from '@/features/serie/serie.selectors';
 
 type ProfileProgressCardProps = {
@@ -11,12 +21,40 @@ type ProfileProgressCardProps = {
   isOwner?: boolean;
 };
 
+function ProfileXpProgress({ experience }: { experience: number }) {
+  const { t } = useTranslation();
+  const totalExperience = useSerieTotalExperience();
+
+  return (
+    <Flex direction="column" gap="2">
+      <Flex align="center" justify="between" gap="3">
+        <Text as="span" size="2" className="text-foreground/85">
+          {t('profile.progress_xp_label')}
+        </Text>
+        <Text as="span" size="2" weight="bold" className="text-highlight">
+          {t('profile.experience', { value: experience })}
+        </Text>
+      </Flex>
+      <Progress
+        value={getSerieXpPercent(experience, totalExperience)}
+        size="2"
+        className="profile-xp-progress"
+      />
+      <Text as="p" size="1" color="gray" align="right">
+        {t('profile.progress_xp_of_total', {
+          current: experience,
+          total: totalExperience,
+        })}
+      </Text>
+    </Flex>
+  );
+}
+
 export function ProfileProgressCard({
   user,
   isOwner = true,
 }: ProfileProgressCardProps) {
   const { t } = useTranslation();
-  const xpPercent = getSerieXpPercent(user.experience);
 
   return (
     <Card className="card p-4">
@@ -50,27 +88,11 @@ export function ProfileProgressCard({
             </Text>
           </Flex>
 
-          <Flex direction="column" gap="2">
-            <Flex align="center" justify="between" gap="3">
-              <Text as="span" size="2" className="text-foreground/85">
-                {t('profile.progress_xp_label')}
-              </Text>
-              <Text as="span" size="2" weight="bold" className="text-highlight">
-                {t('profile.experience', { value: user.experience })}
-              </Text>
-            </Flex>
-            <Progress
-              value={xpPercent}
-              size="2"
-              className="profile-xp-progress"
-            />
-            <Text as="p" size="1" color="gray" align="right">
-              {t('profile.progress_xp_of_total', {
-                current: user.experience,
-                total: SERIE_TOTAL_XP,
-              })}
-            </Text>
-          </Flex>
+          <ErrorBoundary FallbackComponent={QueryErrorFallback}>
+            <Suspense fallback={<Skeleton height="64px" />}>
+              <ProfileXpProgress experience={user.experience} />
+            </Suspense>
+          </ErrorBoundary>
         </Flex>
       ) : (
         <Text as="p" size="2" className="text-foreground/50 italic">

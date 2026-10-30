@@ -10,4 +10,10 @@ describe('SerieService.listSagas', () => {
     expect(total).toBe(sagas.length);
     expect(sagas[0]).toMatchObject({ slug: 'east-blue' });
   });
+
+  it('suma la experiencia de todos los episodios: 54 arcos de 500 XP al final y 1126 episodios de 100 XP', () => {
+    const { totalExperience } = new SerieService().listSagas();
+
+    expect(totalExperience).toBe(139_600);
+  });
 });

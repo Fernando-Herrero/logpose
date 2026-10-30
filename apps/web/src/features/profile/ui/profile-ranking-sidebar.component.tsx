@@ -20,6 +20,7 @@ import {
 } from '@/features/avatar/avatar.constants';
 import { useProfileRanking } from '@/features/profile/api/use-profile';
 import { getUserDisplayName } from '@/features/profile/profile.constants';
+import { useSerieTotalExperience } from '@/features/serie/api/use-serie';
 import { getSerieXpPercent } from '@/features/serie/serie.selectors';
 
 type ProfileRankingEntry = z.infer<typeof userRankingEntrySchema>;
@@ -42,7 +43,8 @@ function ProfileRankingRow({
   const resolvedAvatar = resolveAvatarSrc(entry.avatar);
   const avatarSrc = avatarLoadError ? DEFAULT_AVATAR_SRC : resolvedAvatar;
   const name = getUserDisplayName(entry);
-  const xpPercent = getSerieXpPercent(entry.experience);
+  const totalExperience = useSerieTotalExperience();
+  const xpPercent = getSerieXpPercent(entry.experience, totalExperience);
 
   return (
     <Link

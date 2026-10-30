@@ -6,19 +6,14 @@ import {
   getArcsBySagaSlug,
   getEpisodeByNumber,
   getEpisodesByArcSlug,
-  getEpisodesData,
   getSagaBySlug,
-  getSagasData,
+  sagas,
+  totalExperience,
 } from './serie-data.js';
 
 @Injectable()
 export class SerieService {
   listSagas() {
-    const sagas = getSagasData();
-    const totalExperience = getEpisodesData().reduce(
-      (sum, episode) => sum + episode.experience,
-      0,
-    );
     return { sagas, total: sagas.length, totalExperience };
   }
 

@@ -8,11 +8,9 @@ import {
 } from '../../common/post.schemas.js';
 import {
   postIdParamsSchema,
-  shareTokenParamsSchema,
   toggleBookmarkOutputSchema,
   toggleLikeOutputSchema,
   toggleRetweetOutputSchema,
-  updatePostInputSchema,
 } from './schemas.js';
 
 export const postsErrors = {
@@ -36,28 +34,6 @@ export const postsContract = oc
       .errors(postsErrors)
       .output(postPageSchema),
 
-    getByShareToken: oc
-      .route({
-        method: 'GET',
-        path: '/share/{shareToken}',
-        inputStructure: 'detailed',
-        description: 'Get a post by share token',
-      })
-      .input(shareTokenParamsSchema)
-      .errors(postsErrors)
-      .output(postPublicSchema),
-
-    getById: oc
-      .route({
-        method: 'GET',
-        path: '/{id}',
-        inputStructure: 'detailed',
-        description: 'Get a post by id',
-      })
-      .input(postIdParamsSchema)
-      .errors(postsErrors)
-      .output(postPublicSchema),
-
     create: oc
       .route({
         method: 'POST',
@@ -65,17 +41,6 @@ export const postsContract = oc
         description: 'Create a new post',
       })
       .input(createPostSchema)
-      .errors(postsErrors)
-      .output(postPublicSchema),
-
-    update: oc
-      .route({
-        method: 'PATCH',
-        path: '/{id}',
-        inputStructure: 'detailed',
-        description: 'Update own post',
-      })
-      .input(updatePostInputSchema)
       .errors(postsErrors)
       .output(postPublicSchema),
 

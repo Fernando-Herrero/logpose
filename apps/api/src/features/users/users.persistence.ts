@@ -61,20 +61,16 @@ export class UsersPersistence implements OnModuleInit {
 
   async insert(doc: Omit<UserDocument, '_id'>): Promise<WithId<UserDocument>> {
     const now = new Date();
-    const result = await this.users.insertOne({
+    const document: UserDocument = {
       ...doc,
+      _id: new ObjectId(),
       email: doc.email.toLowerCase(),
       createdAt: now,
       updatedAt: now,
-    } as UserDocument);
+    };
 
-    const inserted = await this.users.findOne({ _id: result.insertedId });
-
-    if (!inserted) {
-      throw new Error('Failed to read inserted user');
-    }
-
-    return inserted;
+    await this.users.insertOne(document);
+    return document;
   }
 
   /** Una clave a `null` se quita del documento: un campo vacío no se guarda como `null`. */
@@ -111,10 +107,6 @@ export class UsersPersistence implements OnModuleInit {
 
   async findRanking(limit: number): Promise<WithId<UserDocument>[]> {
     return this.users.find().sort({ experience: -1 }).limit(limit).toArray();
-  }
-
-  async findAll(): Promise<WithId<UserDocument>[]> {
-    return this.users.find().toArray();
   }
 
   async addFollow(viewerId: string, targetId: string): Promise<void> {

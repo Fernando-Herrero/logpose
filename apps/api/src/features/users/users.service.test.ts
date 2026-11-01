@@ -623,12 +623,11 @@ describe('UsersService.follow y unfollow', () => {
   const notificationsOf = (to: ObjectId, from: ObjectId) =>
     db.collection('notifications').find({ type: 'follow', to, from }).toArray();
 
-  it('follow: A sigue a B y devuelve contadores y mensaje', async () => {
+  it('follow: A sigue a B y devuelve contadores', async () => {
     const a = await create('fol_a1');
     const b = await create('fol_b1');
 
     await expect(service.follow(a.toString(), b.toString())).resolves.toEqual({
-      message: 'Ahora sigues a @fol_b1',
       following: true,
       followersCount: 1,
       followingCount: 1,
@@ -666,14 +665,13 @@ describe('UsersService.follow y unfollow', () => {
     ).rejects.toMatchObject({ code: 'ALREADY_FOLLOWING' });
   });
 
-  it('unfollow: A deja de seguir a B y devuelve contadores a 0 y mensaje', async () => {
+  it('unfollow: A deja de seguir a B y devuelve contadores a 0', async () => {
     const a = await create('fol_a5');
     const b = await create('fol_b5');
     await service.follow(a.toString(), b.toString());
 
     await expect(service.unfollow(a.toString(), b.toString())).resolves.toEqual(
       {
-        message: 'Ya no sigues a @fol_b5',
         following: false,
         followersCount: 0,
         followingCount: 0,

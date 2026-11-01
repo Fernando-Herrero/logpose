@@ -31,13 +31,6 @@ export function getPostTextMaxLength(verified: boolean) {
   return verified ? POST_TEXT_MAX_LENGTH_VERIFIED : POST_TEXT_MAX_LENGTH;
 }
 
-export const updatePostSchema = postFieldsSchema
-  .partial()
-  .strict()
-  .refine(data => Object.keys(data).length > 0, {
-    message: 'At least one field is required',
-  });
-
 export const postPublicSchema = z.object({
   _id: z.string(),
   text: z.string(),

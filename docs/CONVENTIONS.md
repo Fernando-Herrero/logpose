@@ -142,7 +142,7 @@ Cada colección se registra una sola vez, en el `*-persistence.module.ts` de su 
 | Errores negocio                  | `.errors()` en contrato + `new ORPCError('CODIGO')` en servicio (ADR 0005)                     |
 | Errores inesperados              | `AllExceptionsFilter` global (`APP_FILTER`) y `onError(logOrpcError)` en `ORPCModule`          |
 | Auth oRPC                        | `SessionGuard` global deja `request.viewer`; ver abajo — sin Guards ni middlewares por handler |
-| Rutas estáticas antes de `/{id}` | En controller: `list`, `ranking` **antes** de `getById` (evita que `/ranking` matchee como id) |
+| Rutas estáticas antes de `/{id}` | En controller: `ranking` **antes** de `getById` (evita que `/ranking` matchee como id)         |
 | Mongo                            | `@jperezmart/nest-mongodb` — **sin Mongoose**; consultas solo en `*Persistence`                |
 | Índices                          | `onModuleInit()` en `*Persistence`, no en el constructor                                       |
 | Serializers                      | Funciones puras en `*.mappers.ts` — no en persistence                                          |

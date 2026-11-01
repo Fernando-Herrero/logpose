@@ -50,15 +50,6 @@ export const usersContract = oc
   .tag('Users')
   .prefix('/users')
   .router({
-    list: oc
-      .route({
-        method: 'GET',
-        path: '/',
-        description: 'List all users',
-      })
-      .errors(usersErrors)
-      .output(z.array(userSummarySchema)),
-
     ranking: oc
       .route({
         method: 'GET',

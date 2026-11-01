@@ -1,8 +1,9 @@
 import { randomUUID } from 'node:crypto';
 
-import type {
-  createPostSchema,
-  PostPageQuery,
+import {
+  type createPostSchema,
+  getPostTextMaxLength,
+  type PostPageQuery,
 } from '@logpose/contracts/common/post.schemas';
 import { Injectable } from '@nestjs/common';
 import { ORPCError } from '@orpc/server';
@@ -17,11 +18,7 @@ import {
 } from '../auth/access.js';
 import { NotificationsPersistence } from '../notifications/notifications.persistence.js';
 import { UsersPersistence } from '../users/users.persistence.js';
-import {
-  assertTextLength,
-  serializePost,
-  serializePostsForViewer,
-} from './posts.mappers.js';
+import { serializePost, serializePostsForViewer } from './posts.mappers.js';
 import { PostsPersistence } from './posts.persistence.js';
 
 type CreatePostBody = z.infer<typeof createPostSchema>;
@@ -54,8 +51,7 @@ export class PostsService {
       throw new ORPCError('UNAUTHORIZED');
     }
 
-    const textError = assertTextLength(body.text, user.verified);
-    if (textError) {
+    if (body.text.length > getPostTextMaxLength(user.verified)) {
       throw new ORPCError('FORBIDDEN');
     }
 

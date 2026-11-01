@@ -241,7 +241,7 @@ export class UsersService {
       throw new ORPCError('CANNOT_FOLLOW_SELF');
     }
 
-    const target = await this.requireUser(targetUserId);
+    await this.requireUser(targetUserId);
     const viewer = await this.usersPersistence.findById(viewerId);
 
     if (!viewer) {
@@ -269,9 +269,6 @@ export class UsersService {
     const updatedTarget = await this.usersPersistence.findById(targetUserId);
 
     return {
-      message: following
-        ? `Ahora sigues a @${target.username}`
-        : `Ya no sigues a @${target.username}`,
       following,
       followersCount: updatedTarget?.followers.length ?? 0,
       followingCount: updatedViewer?.following.length ?? 0,
@@ -307,16 +304,6 @@ export class UsersService {
     }
 
     return serializeSessionUser(updatedUser);
-  }
-
-  /** Listado de todos los usuarios (solo admin). */
-  async list(viewer: UserViewer) {
-    if (viewer.role !== 'admin') {
-      throw new ORPCError('FORBIDDEN');
-    }
-
-    const users = await this.usersPersistence.findAll();
-    return users.map(serializeUserSummary);
   }
 
   /**
@@ -378,7 +365,6 @@ export class UsersService {
     if (accessTo(viewer, targetUserId) !== 'full') {
       throw new ORPCError('FORBIDDEN');
     }
-    await this.requireUser(targetUserId);
 
     const updated = await this.usersPersistence.updateById(targetUserId, {
       verified,

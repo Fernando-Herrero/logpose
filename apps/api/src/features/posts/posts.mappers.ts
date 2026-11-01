@@ -1,7 +1,4 @@
-import {
-  getPostTextMaxLength,
-  type postVisibilitySchema,
-} from '@logpose/contracts/common/post.schemas';
+import type { postVisibilitySchema } from '@logpose/contracts/common/post.schemas';
 import { ORPCError } from '@orpc/server';
 import { type Filter, ObjectId, type WithId } from 'mongodb';
 import type * as z from 'zod/v4';
@@ -42,19 +39,6 @@ export type PostDocument = {
   createdAt?: Date;
   updatedAt?: Date;
 };
-
-/**
- * Valida longitud del texto antes de crear/actualizar un post.
- * Devuelve el mensaje de error o `null` si es válido.
- * La API Nest usará esto en `create`/`update` (fases posteriores).
- */
-export function assertTextLength(text: string, verified: boolean) {
-  const max = getPostTextMaxLength(verified);
-  if (text.length > max) {
-    return `Text cannot exceed ${max} characters`;
-  }
-  return null;
-}
 
 /**
  * Contadores del post y, si el viewer tiene sesión, si le ha dado like, lo ha

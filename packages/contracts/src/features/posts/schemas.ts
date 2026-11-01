@@ -1,22 +1,9 @@
 import * as z from 'zod/v4';
 
 import { mongoIdParamsSchema } from '../../common/id.schemas.js';
-import {
-  postPublicSchema,
-  updatePostSchema,
-} from '../../common/post.schemas.js';
+import { postPublicSchema } from '../../common/post.schemas.js';
 
 export const postIdParamsSchema = mongoIdParamsSchema();
-
-export const shareTokenParamsSchema = z.object({
-  params: z.object({
-    shareToken: z.uuid(),
-  }),
-});
-
-export const updatePostInputSchema = postIdParamsSchema.extend({
-  body: updatePostSchema,
-});
 
 export const toggleLikeOutputSchema = z.object({
   liked: z.boolean(),

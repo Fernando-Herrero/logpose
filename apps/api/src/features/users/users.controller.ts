@@ -11,13 +11,6 @@ export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   /** Rutas estáticas antes de `/{id}` — si no, `/ranking` matchea como id. */
-  @Implement(contract.users.list)
-  list() {
-    return implement(contract.users.list).handler(({ context }) =>
-      this.usersService.list(requireViewer(context.request)),
-    );
-  }
-
   @Implement(contract.users.ranking)
   ranking() {
     return implement(contract.users.ranking).handler(() =>

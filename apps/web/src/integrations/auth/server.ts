@@ -15,7 +15,10 @@ import {
   getDefaultI18nProps,
 } from '@/integrations/i18n/server';
 
-/** Llama a `/api/auth/me` reenviando las cookies del request; devuelve null si no hay sesión válida. */
+/**
+ * Llama a `/api/auth/me` reenviando las cookies del request. Devuelve null solo sin sesión (401);
+ * cualquier otro fallo lanza, para no confundir «API caída» con «no hay sesión».
+ */
 async function fetchSessionUser(
   context: GetServerSidePropsContext,
 ): Promise<SessionUser | null> {
@@ -25,21 +28,19 @@ async function fetchSessionUser(
     return null;
   }
 
-  try {
-    const response = await fetch(`${env.API_INTERNAL_URL}/api/auth/me`, {
-      headers: { cookie },
-    });
+  const response = await fetch(`${env.API_INTERNAL_URL}/api/auth/me`, {
+    headers: { cookie },
+  });
 
-    if (!response.ok) {
-      return null;
-    }
-
-    const parsed = sessionUserSchema.safeParse(await response.json());
-
-    return parsed.success ? parsed.data : null;
-  } catch {
+  if (response.status === 401) {
     return null;
   }
+
+  if (!response.ok) {
+    throw new Error(`GET /api/auth/me responded ${response.status}`);
+  }
+
+  return sessionUserSchema.parse(await response.json());
 }
 
 /** Precarga `authKeys.me()` en el QueryClient y serializa el estado para hidratar el cliente. */
@@ -96,7 +97,8 @@ export async function getDashboardPageProps(
 export async function getGuestAuthPageProps(
   context: GetServerSidePropsContext,
 ): Promise<GetServerSidePropsResult<Record<string, unknown>>> {
-  const user = await fetchSessionUser(context);
+  // Sin API el formulario se pinta igual: el envío ya enseña el error de red.
+  const user = await fetchSessionUser(context).catch(() => null);
 
   if (user) {
     return {

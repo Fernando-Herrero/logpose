@@ -286,6 +286,20 @@ describe('prependPostToFeed', () => {
       'optimistic-1',
     ]);
   });
+
+  it('añade al principio del feed los posts no públicos', () => {
+    const queryClient = setup(makePost('p1'));
+
+    prependPostToFeed(
+      queryClient,
+      makePost('optimistic-1', { visibility: 'private' }),
+    );
+
+    expect(postsAt(queryClient, feedKey).map(post => post._id)).toEqual([
+      'optimistic-1',
+      'p1',
+    ]);
+  });
 });
 
 describe('replacePostInCaches', () => {

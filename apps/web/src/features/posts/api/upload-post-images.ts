@@ -1,8 +1,10 @@
 import { POST_MAX_IMAGES } from '@logpose/contracts/common/post.schemas';
+import * as z from 'zod/v4';
 
-type UploadPostImagesResponse = {
-  imageUrls: string[];
-};
+// La subida es REST (multipart), fuera del contrato oRPC: la respuesta se valida aquí.
+const uploadPostImagesResponseSchema = z.object({
+  imageUrls: z.array(z.url()),
+});
 
 export async function uploadPostImages(files: File[]): Promise<string[]> {
   if (files.length === 0) {
@@ -28,6 +30,8 @@ export async function uploadPostImages(files: File[]): Promise<string[]> {
     throw new Error(message);
   }
 
-  const data = (await response.json()) as UploadPostImagesResponse;
-  return data.imageUrls.slice(0, POST_MAX_IMAGES);
+  const { imageUrls } = uploadPostImagesResponseSchema.parse(
+    await response.json(),
+  );
+  return imageUrls.slice(0, POST_MAX_IMAGES);
 }

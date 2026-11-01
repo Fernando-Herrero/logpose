@@ -91,10 +91,6 @@ export function togglePostInCaches(
 }
 
 export function prependPostToFeed(queryClient: QueryClient, post: PostPublic) {
-  if (post.visibility !== 'public' || post.isDeleted) {
-    return;
-  }
-
   queryClient.setQueryData<PostsFeedInfiniteData>(postsKeys.feed(), old => {
     const [firstPage, ...restPages] = old?.pages ?? [];
 

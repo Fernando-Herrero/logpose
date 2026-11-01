@@ -371,3 +371,107 @@ describe('Sesiones opacas en Mongo por HTTP', () => {
     await expect(login('jimbe', newPassword)).resolves.toBeDefined();
   });
 });
+
+describe('Sesión de una cuenta inactiva y ALREADY_AUTHENTICATED', () => {
+  const deactivate = (userId: string) =>
+    db
+      .collection('users')
+      .updateOne({ _id: new ObjectId(userId) }, { $set: { isActive: false } });
+
+  /** Todas las cookies de sesión de la última respuesta, ya caducadas y vacías. */
+  function expectOnlyExpiredSessionCookies() {
+    const cookies = lastSetCookies
+      .filter(cookie => cookie.startsWith(`${SESSION_COOKIE_NAME}=`))
+      .map(cookie => cookie.split(';').map(part => part.trim()));
+
+    expect(cookies, 'la respuesta debía caducar la cookie').not.toHaveLength(0);
+    for (const [pair, ...attributes] of cookies) {
+      expect(pair).toBe(`${SESSION_COOKIE_NAME}=`);
+      const attr = (name: string) =>
+        attributes
+          .find(a => a.toLowerCase().startsWith(`${name}=`))
+          ?.slice(name.length + 1);
+      const maxAge = attr('max-age');
+      const expires = attr('expires');
+      if (maxAge !== undefined) {
+        expect(Number(maxAge)).toBeLessThanOrEqual(0);
+      } else {
+        expect(
+          expires,
+          'la cookie debía llevar Max-Age o Expires',
+        ).toBeDefined();
+        expect(new Date(expires!).getTime()).toBeLessThan(Date.now());
+      }
+    }
+  }
+
+  it('una cuenta desactivada recibe UNAUTHORIZED, se borra su sesión y se limpia la cookie', async () => {
+    const { userId, token } = await register('smoker');
+    await deactivate(userId);
+
+    await expectUnauthorized(clientWith(token).auth.me());
+
+    expect(await sessions().findOne({ _id: hashOf(token) })).toBeNull();
+    expectOnlyExpiredSessionCookies();
+  });
+
+  it('con la sesión pendiente de renovar, la cuenta desactivada no la renueva: se borra y solo se envía la cookie caducada', async () => {
+    const { userId, token } = await register('tashigi');
+    // Sesión vista hace 2 días: tocaría renovarla.
+    await sessions().updateOne(
+      { _id: hashOf(token) },
+      {
+        $set: {
+          lastSeenAt: new Date(Date.now() - 2 * DAY_MS),
+          expiresAt: new Date(Date.now() + 28 * DAY_MS),
+        },
+      },
+    );
+    await deactivate(userId);
+
+    await expectUnauthorized(clientWith(token).auth.me());
+
+    expect(await sessions().findOne({ _id: hashOf(token) })).toBeNull();
+    expectOnlyExpiredSessionCookies();
+  });
+
+  it('con una sesión válida, auth.login falla con ALREADY_AUTHENTICATED', async () => {
+    const { token } = await register('law');
+
+    const error = await clientWith(token)
+      .auth.login({ email: 'law@logpose.test', password: PASSWORD })
+      .then(
+        () => undefined,
+        (e: unknown) => e,
+      );
+
+    expect(isDefinedError(error)).toBe(true);
+    expect(error).toMatchObject({ code: 'ALREADY_AUTHENTICATED', status: 403 });
+    expect(sessionCookie()).toBeUndefined();
+  });
+
+  it('con una sesión válida, auth.register falla con ALREADY_AUTHENTICATED', async () => {
+    const { token } = await register('kidd');
+
+    const error = await clientWith(token)
+      .auth.register({
+        username: 'killer',
+        firstName: 'Killer',
+        lastName: 'K.',
+        email: 'killer@logpose.test',
+        password: PASSWORD,
+        avatar: '/avatars/luffy/luffy-happy-400.webp',
+      })
+      .then(
+        () => undefined,
+        (e: unknown) => e,
+      );
+
+    expect(isDefinedError(error)).toBe(true);
+    expect(error).toMatchObject({ code: 'ALREADY_AUTHENTICATED', status: 403 });
+    expect(sessionCookie()).toBeUndefined();
+    expect(
+      await db.collection('users').findOne({ username: 'killer' }),
+    ).toBeNull();
+  });
+});

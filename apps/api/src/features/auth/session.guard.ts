@@ -4,7 +4,6 @@ import { Reflector } from '@nestjs/core';
 import { ORPCError } from '@orpc/server';
 import type { Request, Response } from 'express';
 
-import { UsersPersistence } from '../users/users.persistence.js';
 import type { Viewer } from './access.js';
 import { AuthSessionService } from './auth-session.service.js';
 import { IS_PUBLIC_KEY } from './public.decorator.js';
@@ -14,7 +13,6 @@ export class SessionGuard implements CanActivate {
   constructor(
     private readonly reflector: Reflector,
     private readonly authSession: AuthSessionService,
-    private readonly usersPersistence: UsersPersistence,
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
@@ -26,10 +24,11 @@ export class SessionGuard implements CanActivate {
     const http = context.switchToHttp();
     const request = http.getRequest<Request & { viewer: Viewer }>();
 
-    request.viewer = await this.resolveViewer(
+    const user = await this.authSession.resolve(
       request,
       http.getResponse<Response>(),
     );
+    request.viewer = user ? { kind: 'user', ...user } : { kind: 'anonymous' };
 
     if (isPublic || request.viewer.kind === 'user') {
       return true;
@@ -40,18 +39,5 @@ export class SessionGuard implements CanActivate {
       defined: true,
       ...commonErrors.UNAUTHORIZED,
     });
-  }
-
-  /** Rol y estado leídos de Mongo en cada petición (ADR 0004); sin sesión o con la cuenta desactivada o borrada, anónimo. */
-  private async resolveViewer(
-    request: Request,
-    response: Response,
-  ): Promise<Viewer> {
-    const id = await this.authSession.resolve(request, response);
-    const access = id ? await this.usersPersistence.findAccessById(id) : null;
-
-    return id && access?.isActive
-      ? { kind: 'user', id, role: access.role }
-      : { kind: 'anonymous' };
   }
 }

@@ -21,34 +21,24 @@ export class AuthController {
   @Public()
   @Implement(contract.auth.register)
   register() {
-    return implement(contract.auth.register).handler(
-      ({ input, context, errors }) => {
-        if (context.request.viewer.kind === 'user') {
-          throw errors.ALREADY_AUTHENTICATED();
-        }
-
-        return this.authService.register(
-          input,
-          this.response(context.request.res),
-        );
-      },
+    return implement(contract.auth.register).handler(({ input, context }) =>
+      this.authService.register(
+        input,
+        context.request.viewer,
+        this.response(context.request.res),
+      ),
     );
   }
 
   @Public()
   @Implement(contract.auth.login)
   login() {
-    return implement(contract.auth.login).handler(
-      ({ input, context, errors }) => {
-        if (context.request.viewer.kind === 'user') {
-          throw errors.ALREADY_AUTHENTICATED();
-        }
-
-        return this.authService.login(
-          input,
-          this.response(context.request.res),
-        );
-      },
+    return implement(contract.auth.login).handler(({ input, context }) =>
+      this.authService.login(
+        input,
+        context.request.viewer,
+        this.response(context.request.res),
+      ),
     );
   }
 

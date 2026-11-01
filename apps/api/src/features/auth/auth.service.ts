@@ -12,7 +12,14 @@ import type * as z from 'zod/v4';
 import { isDuplicateKeyError } from '../../integrations/mongodb/duplicate-key-error.js';
 import { serializeSessionUser } from '../users/user.mappers.js';
 import { UsersPersistence } from '../users/users.persistence.js';
+import type { Viewer } from './access.js';
 import { AuthSessionService } from './auth-session.service.js';
+
+function assertAnonymous(viewer: Viewer) {
+  if (viewer.kind === 'user') {
+    throw new ORPCError('ALREADY_AUTHENTICATED');
+  }
+}
 
 @Injectable()
 export class AuthService {
@@ -21,7 +28,12 @@ export class AuthService {
     private readonly usersPersistence: UsersPersistence,
   ) {}
 
-  async register(input: z.infer<typeof createUserSchema>, res: Response) {
+  async register(
+    input: z.infer<typeof createUserSchema>,
+    viewer: Viewer,
+    res: Response,
+  ) {
+    assertAnonymous(viewer);
     const hashedPassword = await bcrypt.hash(input.password, 10);
 
     const newUser = await this.usersPersistence
@@ -66,7 +78,12 @@ export class AuthService {
     return { user: serializeSessionUser(newUser) };
   }
 
-  async login(input: { email: string; password: string }, res: Response) {
+  async login(
+    input: { email: string; password: string },
+    viewer: Viewer,
+    res: Response,
+  ) {
+    assertAnonymous(viewer);
     const user = await this.usersPersistence.findByEmail(input.email, true);
     const valid = user
       ? await bcrypt.compare(input.password, user.password)

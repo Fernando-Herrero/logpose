@@ -18,13 +18,6 @@ export function useSerieTotalExperience() {
   return data;
 }
 
-export function useSerieSagas(options?: SerieQueryOptions) {
-  return useQuery({
-    ...allQueriesOptions.serie.sagas(),
-    enabled: options?.enabled,
-  });
-}
-
 export function useSerieArcs(sagaSlug: string, options?: SerieQueryOptions) {
   return useQuery({
     ...allQueriesOptions.serie.arcsBySaga(sagaSlug),

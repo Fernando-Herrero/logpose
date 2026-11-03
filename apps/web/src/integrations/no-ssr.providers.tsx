@@ -14,10 +14,6 @@ export default function NoSSRProviders({ children }: PropsWithChildren) {
 
   /** Limpieza legacy v2: auth v3 usa cookies HTTP-only, no `localStorage.token`. */
   useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-
     localStorage.removeItem('token');
   }, []);
 

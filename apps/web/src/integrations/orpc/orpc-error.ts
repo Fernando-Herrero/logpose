@@ -11,6 +11,7 @@ type OrpcClientError = InferClientErrorUnion<typeof client>;
 
 /** Devuelve el `code` del error oRPC si es un defined error; si no, `undefined`. */
 export function getOrpcErrorCode(error: unknown) {
+  // `isDefinedError` estrecha por `Extract<T, …>`: con `unknown` daría `never` y se perdería el `code`.
   const typedError = error as OrpcClientError;
 
   if (!isDefinedError(typedError)) {

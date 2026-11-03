@@ -7,10 +7,6 @@ const uploadPostImagesResponseSchema = z.object({
 });
 
 export async function uploadPostImages(files: File[]): Promise<string[]> {
-  if (files.length === 0) {
-    return [];
-  }
-
   const formData = new FormData();
   for (const file of files) {
     formData.append('images', file);

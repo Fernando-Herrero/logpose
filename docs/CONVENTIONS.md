@@ -178,7 +178,7 @@ Todos los `@orpc/*` van en el catálogo con la **misma versión exacta**: `@orpc
 - Mantener identidad visual del legacy One Piece al migrar
 - Mobile first
 - **Landing motion:** efectos GSAP/Lenis solo desktop; móvil estático
-- **Preferencias de accesibilidad:** el único canal entre React y CSS son tres data-attributes en `<html>` — `data-font-scale` (`sm|md|lg`), `data-high-contrast` y `data-reduce-motion` (`'true'|'false'`). Los escribe `useApplyAccessibilityPreferences()` desde el layout del dashboard; las reglas cuelgan de ellos en `globals.css`. No añadir clases ni estado React para esto
+- **Preferencias de accesibilidad:** el único canal entre React y CSS son tres data-attributes en `<html>` — `data-font-scale` (`sm|md|lg`), `data-high-contrast` y `data-reduce-motion` (`'true'|'false'`). Los escribe `useApplyAccessibilityPreferences()` desde `NoSSRProviders`, con una copia local que el script de `_document` aplica antes del primer pintado (ADR 0019); las reglas cuelgan de ellos en `globals.css`. No añadir clases ni estado React para esto
 
 ---
 

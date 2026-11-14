@@ -5,7 +5,7 @@ Aplicación web para fans de **One Piece**: seguir la serie episodio a episodio,
 ## Qué funciona hoy
 
 - Registro e inicio de sesión con cookie.
-- Serie por sagas, arcos y episodios (los episodios, por ahora, solo de East Blue).
+- Serie completa por sagas, arcos y episodios: 11 sagas, 54 arcos y 1180 episodios.
 - Comunidad: posts con imágenes, likes, guardados y retweets, con visibilidad pública, para seguidores o privada.
 - Perfiles con seguimiento y ajustes de privacidad, accesibilidad y premium (pago simulado).
 

@@ -9,7 +9,7 @@ export function LandingFooterComponent() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative z-10 border-t border-[#a64242]/30 bg-[#080d18] px-6 py-8">
+    <footer className="border-trim/30 bg-deep relative z-10 border-t px-6 py-8">
       <Flex
         direction="column"
         align="center"

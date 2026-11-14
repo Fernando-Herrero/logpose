@@ -76,7 +76,7 @@ export function LandingCtaComponent() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_70%_at_50%_30%,rgba(220,150,70,0.16)_0%,transparent_60%)]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_70%_at_50%_30%,--alpha(var(--color-highlight)/16%)_0%,transparent_60%)]"
       />
       <div className="landing-grain -z-10" aria-hidden="true" />
 
@@ -86,7 +86,7 @@ export function LandingCtaComponent() {
         size="8"
         align="center"
         mb="6"
-        className="font-one-piece text-highlight tracking-wide [text-shadow:0_0_36px_rgba(220,150,70,0.3)]"
+        className="font-one-piece text-highlight title-glow tracking-wide"
       >
         {t('landing.cta_title')}
       </Heading>
@@ -101,7 +101,7 @@ export function LandingCtaComponent() {
           size="3"
           color="orange"
           asChild
-          className="shadow-[0_0_36px_rgba(220,150,70,0.4)] transition-shadow duration-300 hover:shadow-[0_0_56px_rgba(220,150,70,0.6)]"
+          className="shadow-[0_0_36px_--alpha(var(--color-highlight)/40%)] transition-shadow duration-300 hover:shadow-[0_0_56px_--alpha(var(--color-highlight)/60%)]"
         >
           <Link
             href="/register"

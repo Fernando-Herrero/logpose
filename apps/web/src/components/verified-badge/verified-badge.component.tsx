@@ -15,7 +15,7 @@ export function VerifiedBadge({ verified }: VerifiedBadgeProps) {
     <Tooltip content={label}>
       <span
         className={`inline-flex shrink-0 ${
-          verified ? 'text-[#4d9dff]' : 'text-foreground/30'
+          verified ? 'text-(--blue-9)' : 'text-foreground/30'
         }`}
       >
         <Icon.Badge

@@ -76,7 +76,7 @@ export function ContactForm({
   return (
     <Card
       size="3"
-      className="border-foreground/10 to-page/65 w-full max-w-md border bg-linear-to-br from-[#1b2742]/55"
+      className="border-foreground/10 to-page/65 from-raised/55 w-full max-w-md border bg-linear-to-br"
     >
       <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
         <Heading

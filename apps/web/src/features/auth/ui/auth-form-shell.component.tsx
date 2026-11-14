@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 const authFormCardClassName =
-  'relative flex w-full flex-col gap-4 overflow-hidden rounded-xl border border-highlight/30 bg-linear-to-br from-[#1b2742]/85 via-[#101a30]/95 to-page p-7 shadow-[0_0_48px_--alpha(var(--color-highlight)/10%),0_28px_64px_rgba(0,0,0,0.55)] backdrop-blur-md before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-linear-to-r before:from-transparent before:via-highlight/70 before:to-transparent';
+  'relative flex w-full flex-col gap-4 overflow-hidden rounded-xl border border-highlight/30 bg-linear-to-br from-raised/85 to-page p-7 shadow-[0_0_48px_--alpha(var(--color-highlight)/10%),0_28px_64px_rgba(0,0,0,0.55)] backdrop-blur-md before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-linear-to-r before:from-transparent before:via-highlight/70 before:to-transparent';
 
 type AuthFormShellProps = {
   title: string;

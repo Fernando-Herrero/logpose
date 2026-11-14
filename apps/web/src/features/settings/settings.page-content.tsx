@@ -127,7 +127,7 @@ export default function SettingsPageContent() {
         {SETTINGS_MENU.map(item => {
           const isActive = 'href' in item;
           const cardClassName =
-            'settings-hub-card flex h-full min-h-32 flex-col gap-3 border border-highlight/12 bg-linear-to-br from-[#1b2742]/50 to-page/70 p-4 backdrop-blur-sm transition-[border-color,box-shadow] duration-300';
+            'settings-hub-card flex h-full min-h-32 flex-col gap-3 border border-highlight/12 bg-linear-to-br from-raised/50 to-page/70 p-4 backdrop-blur-sm transition-[border-color,box-shadow] duration-300';
 
           const content = (
             <>

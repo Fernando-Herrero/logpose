@@ -100,7 +100,7 @@ export default function SettingsResourcesPageContent() {
             <Card
               key={resource.id}
               asChild
-              className="border-highlight/12 hover:border-highlight/35 border bg-[#1b2742]/30 p-3 transition-colors"
+              className="border-highlight/12 hover:border-highlight/35 bg-raised/30 border p-3 transition-colors"
             >
               {resource.external ? (
                 <a

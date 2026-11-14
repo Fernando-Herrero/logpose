@@ -122,8 +122,11 @@
   /* Colores por rol: un tema claro solo redefine estas variables. */
   --color-deep: #05070d;
   --color-page: #0b1120;
+  --color-raised: #1b2742;
   --color-foreground: #f4ede1;
   --color-highlight: #f2d9a8;
+  --color-trim: #a64242;
+  --color-shade: #3d2010;
 }
 
 @utility card {
@@ -132,6 +135,12 @@
 
 @utility tile {
   @apply border-highlight/10 bg-deep/40 rounded-md border px-3 py-2;
+}
+
+@utility title-glow {
+  text-shadow:
+    0 2px 0 var(--color-shade),
+    0 0 36px --alpha(var(--color-highlight) / 30%);
 }
 
 @font-face {
@@ -186,14 +195,12 @@ html {
 .landing-bg {
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(
-      120% 80% at 50% 18%,
-      #1b2742 0%,
-      var(--color-page) 45%,
-      var(--color-deep) 100%
-    ),
-    linear-gradient(180deg, #060912 0%, #0a0f1c 60%, var(--color-deep) 100%);
+  background: radial-gradient(
+    120% 80% at 50% 18%,
+    var(--color-raised) 0%,
+    var(--color-page) 45%,
+    var(--color-deep) 100%
+  );
 }
 
 .landing-mask {
@@ -288,9 +295,9 @@ html {
   color: var(--color-highlight);
   opacity: 0;
   text-shadow:
-    0 2px 0 #2a1c12,
+    0 2px 0 var(--color-shade),
     0 0 24px --alpha(var(--color-highlight) / 45%),
-    0 0 60px rgba(220, 150, 70, 0.35);
+    0 0 60px --alpha(var(--color-highlight) / 35%);
 }
 
 .landing-tagline {

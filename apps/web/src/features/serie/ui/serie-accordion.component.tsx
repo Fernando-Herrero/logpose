@@ -28,8 +28,8 @@ export function SerieAccordion({
     <Card
       className={
         isSaga
-          ? 'faq-item border-highlight/20 rounded-2xl border bg-[linear-gradient(135deg,--alpha(var(--color-highlight)/14%)_0%,rgba(8,12,22,0.92)_45%,--alpha(var(--color-deep)/98%)_100%)] p-4 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_rgba(0,0,0,0.45)] data-open:shadow-[0_24px_60px_rgba(0,0,0,0.5)]'
-          : 'faq-item rounded-xl border border-white/15 bg-[#0a0f1c]/85 p-3 shadow-md'
+          ? 'faq-item border-highlight/20 rounded-2xl border bg-[linear-gradient(135deg,--alpha(var(--color-highlight)/14%)_0%,--alpha(var(--color-page)/92%)_45%,--alpha(var(--color-deep)/98%)_100%)] p-4 shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_20px_50px_rgba(0,0,0,0.45)] data-open:shadow-[0_24px_60px_rgba(0,0,0,0.5)]'
+          : 'faq-item bg-page/85 rounded-xl border border-white/15 p-3 shadow-md'
       }
       data-open={isOpen || undefined}
     >

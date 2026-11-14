@@ -73,7 +73,7 @@ export function LandingMobileMenuPanel({
         open
           ? 'visible translate-x-0 opacity-100'
           : 'pointer-events-none invisible translate-x-full opacity-0'
-      } from-deep via-page bg-linear-to-br to-[#1b2742]/90 backdrop-blur-md`}
+      } from-deep via-page to-raised/90 bg-linear-to-br backdrop-blur-md`}
       aria-hidden={!open}
     >
       <Flex

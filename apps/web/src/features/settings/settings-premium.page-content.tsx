@@ -110,7 +110,7 @@ export default function SettingsPremiumPageContent() {
             key={perk.id}
             gap="3"
             align="start"
-            className="border-highlight/12 rounded-lg border bg-[#1b2742]/30 p-3"
+            className="border-highlight/12 bg-raised/30 rounded-lg border p-3"
           >
             <span className="text-highlight mt-0.5">{perk.icon}</span>
             <Flex direction="column" gap="1">

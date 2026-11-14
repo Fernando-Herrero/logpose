@@ -91,7 +91,7 @@ export default function HistoryPageContent() {
 
   return (
     <LandingPublicLayout title={t('history.meta_title')}>
-      <Card className="bg-page/40 rounded-xl border border-dashed border-[#a64242]/50 p-6 shadow-lg">
+      <Card className="bg-page/40 border-trim/50 rounded-xl border border-dashed p-6 shadow-lg">
         <Reveal>
           <Heading
             as="h1"

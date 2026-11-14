@@ -35,7 +35,7 @@ export function ProfileCover({
   return (
     <Box
       position="relative"
-      className="group to-page h-36 w-full overflow-hidden bg-linear-to-r from-[#1a0f05] via-[#3d2010] sm:h-40 lg:h-44"
+      className="group to-page from-shade/40 via-shade h-36 w-full overflow-hidden bg-linear-to-r sm:h-40 lg:h-44"
     >
       {isEditing ? (
         <Flex
@@ -93,7 +93,7 @@ export function ProfileCover({
                 onError={() => setLoadError(true)}
               />
               <Box
-                className="from-page/70 pointer-events-none absolute inset-0 bg-linear-to-t via-[#3d2010]/20 to-[#1a0f05]/30"
+                className="from-page/70 via-shade/20 to-shade/30 pointer-events-none absolute inset-0 bg-linear-to-t"
                 aria-hidden
               />
             </>

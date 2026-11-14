@@ -90,7 +90,7 @@ export function CinematicShowcaseComponent() {
         </Text>
         <Heading
           as="h2"
-          className="font-one-piece text-highlight text-[clamp(2.4rem,7vw,5.5rem)] leading-[0.95] tracking-wide [text-shadow:0_2px_0_#2a1c12,0_0_40px_rgba(220,150,70,0.3)]"
+          className="font-one-piece text-highlight title-glow text-[clamp(2.4rem,7vw,5.5rem)] leading-[0.95] tracking-wide"
         >
           {t('landing.showcase.title')}
         </Heading>

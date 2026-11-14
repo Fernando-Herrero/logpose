@@ -62,7 +62,7 @@ export function AvatarPickerComponent({
             >
               <Box
                 className={`group relative size-[60px] overflow-hidden rounded-full shadow-md transition-transform duration-300 hover:-translate-y-1 hover:scale-110 ${
-                  selected ? 'scale-110 ring-4 ring-[#f97316]' : 'ring-0'
+                  selected ? 'scale-110 ring-4 ring-(--orange-9)' : 'ring-0'
                 }`}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}

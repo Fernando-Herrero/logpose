@@ -161,7 +161,7 @@ export function LandingHeaderComponent() {
               color="orange"
               size="2"
               radius="full"
-              className="m-0! shrink-0 shadow-[0_0_24px_rgba(220,150,70,0.35)] transition-shadow duration-300 hover:shadow-[0_0_40px_rgba(220,150,70,0.55)]"
+              className="m-0! shrink-0 shadow-[0_0_24px_--alpha(var(--color-highlight)/35%)] transition-shadow duration-300 hover:shadow-[0_0_40px_--alpha(var(--color-highlight)/55%)]"
               asChild
             >
               <Link href="/register">{t('landing.nav.sign_up')}</Link>

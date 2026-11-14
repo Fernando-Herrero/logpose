@@ -68,7 +68,7 @@ export function FeatureCardsComponent() {
     <section
       id="features"
       ref={sectionRef}
-      className="from-deep to-deep relative z-10 bg-linear-to-b via-[#080d18] px-6 py-[clamp(5rem,12vh,10rem)] pb-[clamp(7rem,16vh,12rem)]"
+      className="from-deep to-deep via-page relative z-10 bg-linear-to-b px-6 py-[clamp(5rem,12vh,10rem)] pb-[clamp(7rem,16vh,12rem)]"
     >
       <Flex
         ref={headRef}
@@ -109,7 +109,7 @@ export function FeatureCardsComponent() {
             size="3"
             onMouseMove={tilt.onMouseMove}
             onMouseLeave={tilt.onMouseLeave}
-            className="landing-card landing-card-shine border-foreground/10 to-page/65 hover:border-highlight/35 max-w-68 flex-[1_1_16rem] border bg-linear-to-br from-[#1b2742]/55 backdrop-blur-sm transition-[border-color,box-shadow] duration-300 hover:shadow-[0_24px_60px_rgba(0,0,0,0.45)]"
+            className="landing-card landing-card-shine border-foreground/10 to-page/65 hover:border-highlight/35 from-raised/55 max-w-68 flex-[1_1_16rem] border bg-linear-to-br backdrop-blur-sm transition-[border-color,box-shadow] duration-300 hover:shadow-[0_24px_60px_rgba(0,0,0,0.45)]"
           >
             <Flex direction="column" gap="3">
               <Text size="6">{emoji}</Text>

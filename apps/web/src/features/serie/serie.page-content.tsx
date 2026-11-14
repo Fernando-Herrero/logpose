@@ -161,7 +161,7 @@ export default function SeriePageContent() {
           </Text>
           <Heading
             as="h1"
-            className="font-one-piece text-highlight text-[clamp(2rem,6vw,3.5rem)] leading-[0.95] tracking-wide [text-shadow:0_2px_0_#2a1c12,0_0_36px_rgba(220,150,70,0.28)]"
+            className="font-one-piece text-highlight title-glow text-[clamp(2rem,6vw,3.5rem)] leading-[0.95] tracking-wide"
           >
             {t('serie.title')}
           </Heading>

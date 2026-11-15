@@ -6,7 +6,7 @@
   "scripts": {
     "build": "nest build",
     "dev": "nest start --watch",
-    "dev:worker": "node --watch-path=dist dist/worker.js",
+    "dev:worker": "until [ -f dist/worker.js ]; do sleep 1; done; node --watch-path=dist dist/worker.js",
     "format": "prettier --write \"**/*.{ts,tsx,md,json,html}\"",
     "format-check": "prettier --check \"**/*.{ts,tsx,md,json,html}\"",
     "lint": "eslint . --max-warnings 0",

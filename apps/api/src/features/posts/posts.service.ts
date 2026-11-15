@@ -93,7 +93,7 @@ export class PostsService {
     };
   }
 
-  /** Like y guardado: el mismo toggle atómico y la misma notificación al añadir. */
+  /** Like y guardado: el mismo toggle transaccional y la misma notificación al añadir. */
   private async toggleField(
     postId: string,
     viewer: UserViewer,

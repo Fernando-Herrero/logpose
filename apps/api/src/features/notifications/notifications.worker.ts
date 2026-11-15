@@ -52,6 +52,7 @@ export class NotificationsWorker
         await this.events.complete(event._id);
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
+        this.logger.warn(`event ${event._id.toString()}: ${message}`);
         await this.events.fail(event, message, clock());
       }
     }

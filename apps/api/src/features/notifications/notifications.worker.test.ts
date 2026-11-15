@@ -8,7 +8,10 @@ import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 import { mongoClientOptions } from '../../integrations/mongodb/mongodb.config.js';
 import type { UserDocument } from '../users/user.mappers.js';
 import { UsersPersistence } from '../users/users.persistence.js';
-import { NotificationEventsPersistence } from './notification-events.persistence.js';
+import {
+  type NotificationEventDocument,
+  NotificationEventsPersistence,
+} from './notification-events.persistence.js';
 import { NotificationsPersistence } from './notifications.persistence.js';
 import { NotificationsService } from './notifications.service.js';
 import { NotificationsWorker } from './notifications.worker.js';
@@ -52,6 +55,7 @@ let session: ClientSession;
 let usersPersistence: UsersPersistence;
 let notificationsService: NotificationsService;
 let worker: NotificationsWorker;
+let eventsPersistence: NotificationEventsPersistence;
 
 beforeAll(async () => {
   mongod = await MongoMemoryServer.create();
@@ -65,7 +69,7 @@ beforeAll(async () => {
     db.collection('notifications'),
   );
   await notificationsPersistence.onModuleInit();
-  const eventsPersistence = new NotificationEventsPersistence(
+  eventsPersistence = new NotificationEventsPersistence(
     db.collection('notification_events'),
   );
   await eventsPersistence.onModuleInit();
@@ -244,6 +248,42 @@ describe('NotificationsWorker.processPending', () => {
     await worker.processPending(() => secondsFromNow(31));
     expect(await eventsFor(to)).toHaveLength(0);
     expect(await notificationsTo(to)).toHaveLength(1);
+  });
+
+  it('un evento cuyo remitente ya no existe se descarta sin notificación', async () => {
+    const from = new ObjectId().toString();
+    const to = await create('wk_ghost_sender_to');
+    await notificationsService.notify({ type: 'follow', to, from }, session);
+
+    await worker.processPending();
+
+    expect(await eventsFor(to)).toHaveLength(0);
+    expect(await notificationsTo(to)).toHaveLength(0);
+  });
+
+  it('un worker cuyo bloqueo cogió otro no completa ni falla el evento', async () => {
+    const event: NotificationEventDocument = {
+      _id: new ObjectId(),
+      notification: {
+        type: 'follow',
+        to: new ObjectId().toString(),
+        from: new ObjectId().toString(),
+      },
+      status: 'pending',
+      attempts: 0,
+      availableAt: secondsFromNow(30),
+      lockedBy: 'otro-host:1',
+      createdAt: new Date(),
+    };
+    const events = db.collection<NotificationEventDocument>(
+      'notification_events',
+    );
+    await events.insertOne(event);
+
+    await eventsPersistence.fail(event, 'este-host:2', 'boom', new Date());
+    await eventsPersistence.complete(event._id, 'este-host:2');
+
+    await expect(events.findOne({ _id: event._id })).resolves.toEqual(event);
   });
 
   it('un evento cuyo destinatario no existe se descarta sin notificación ni failed', async () => {

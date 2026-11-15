@@ -42,9 +42,13 @@ export class NotificationsService {
   async deliver(notification: NewNotification) {
     if (notification.to === notification.from) return;
 
-    const recipient = await this.usersPersistence.findById(notification.to);
-    // Cuenta borrada entre medias: no hay a quién avisar.
-    if (!recipient) return;
+    const [recipient, sender] = await Promise.all([
+      this.usersPersistence.findById(notification.to),
+      this.usersPersistence.findById(notification.from),
+    ]);
+    // Cuenta borrada entre medias: no hay a quién avisar ni de parte de quién.
+    // Queda una ventana entre esta lectura y el insert; quien lea las notificaciones tolera un remitente ausente.
+    if (!recipient || !sender) return;
 
     const { notifications } = withPreferenceDefaults(recipient.preferences);
     if (notifications[PREFERENCE_BY_TYPE[notification.type]]) {

@@ -49,11 +49,11 @@ export class NotificationsWorker
 
       try {
         await this.notifications.deliver(event.notification);
-        await this.events.complete(event._id);
+        await this.events.complete(event._id, this.lockedBy);
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
         this.logger.warn(`event ${event._id.toString()}: ${message}`);
-        await this.events.fail(event, message, clock());
+        await this.events.fail(event, this.lockedBy, message, clock());
       }
     }
   }

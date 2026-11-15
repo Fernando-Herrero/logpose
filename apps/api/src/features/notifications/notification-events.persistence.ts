@@ -56,15 +56,22 @@ export class NotificationEventsPersistence implements OnModuleInit {
     );
   }
 
-  async complete(id: ObjectId) {
-    await this.events.deleteOne({ _id: id });
+  // `complete` y `fail` solo tocan el evento si `lockedBy` aún lo tiene: si su bloqueo venció
+  // y lo cogió otro worker, el resultado es de ese otro.
+  async complete(id: ObjectId, lockedBy: string) {
+    await this.events.deleteOne({ _id: id, lockedBy });
   }
 
   /** Vuelve a la cola tras 2^intentos s, o queda `failed` si ya no quedan reintentos. */
-  async fail(event: NotificationEventDocument, message: string, now: Date) {
+  async fail(
+    event: NotificationEventDocument,
+    lockedBy: string,
+    message: string,
+    now: Date,
+  ) {
     const attempts = event.attempts + 1;
     await this.events.updateOne(
-      { _id: event._id },
+      { _id: event._id, lockedBy },
       {
         $set: {
           attempts,

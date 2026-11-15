@@ -38,10 +38,13 @@ export class NotificationsWorker
     await this.pass;
   }
 
-  /** Entrega todo lo que toca a la hora `now`; lo que falla vuelve a la cola con su espera. */
-  async processPending(now: Date) {
+  /**
+   * Entrega todo lo que toca según `clock`; lo que falla vuelve a la cola con su espera.
+   * La hora se lee en cada evento: en una pasada larga, bloqueo y espera cuentan desde ese momento.
+   */
+  async processPending(clock = () => new Date()) {
     while (!this.stopped) {
-      const event = await this.events.claimNext(now, this.lockedBy);
+      const event = await this.events.claimNext(clock(), this.lockedBy);
       if (!event) return;
 
       try {
@@ -49,7 +52,7 @@ export class NotificationsWorker
         await this.events.complete(event._id);
       } catch (error) {
         const message = error instanceof Error ? error.message : String(error);
-        await this.events.fail(event, message, now);
+        await this.events.fail(event, message, clock());
       }
     }
   }
@@ -57,7 +60,7 @@ export class NotificationsWorker
   /** La pasada siguiente se programa al acabar la anterior: nunca hay dos a la vez. */
   private schedule() {
     this.timer = setTimeout(() => {
-      this.pass = this.processPending(new Date())
+      this.pass = this.processPending()
         .catch((error: unknown) => this.logger.error(error))
         .then(() => {
           if (!this.stopped) this.schedule();

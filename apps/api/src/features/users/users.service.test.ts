@@ -651,7 +651,7 @@ describe('UsersService.follow y unfollow', () => {
   const create = async (username: string) =>
     (await usersPersistence.insert(newUser(username)))._id;
   const notificationsOf = async (to: ObjectId, from: ObjectId) => {
-    await worker.processPending(new Date());
+    await worker.processPending();
     return db
       .collection('notifications')
       .find({ type: 'follow', to, from })
@@ -705,7 +705,7 @@ describe('UsersService.follow y unfollow', () => {
     const a = await create('fol_dedupe_a2');
     const b = await create('fol_dedupe_b2');
     await service.follow(a.toString(), b.toString());
-    await worker.processPending(new Date());
+    await worker.processPending();
     await db
       .collection('notifications')
       .updateMany({ type: 'follow', to: b, from: a }, { $set: { read: true } });

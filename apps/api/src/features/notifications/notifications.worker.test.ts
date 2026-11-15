@@ -3,7 +3,7 @@ import 'reflect-metadata';
 import { DEFAULT_USER_PREFERENCES } from '@logpose/contracts/common/user.schemas';
 import { type ClientSession, type Db, MongoClient, ObjectId } from 'mongodb';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import { afterAll, beforeAll, describe, expect, it } from 'vitest';
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest';
 
 import { mongoClientOptions } from '../../integrations/mongodb/mongodb.config.js';
 import type { UserDocument } from '../users/user.mappers.js';
@@ -124,7 +124,7 @@ describe('NotificationsWorker.processPending', () => {
       { type: 'like', to, from, postId },
       session,
     );
-    await worker.processPending(new Date());
+    await worker.processPending();
 
     expect(await notificationsTo(to)).toHaveLength(1);
     expect(await eventsFor(to)).toHaveLength(0);
@@ -137,19 +137,19 @@ describe('NotificationsWorker.processPending', () => {
 
     await failNotifications();
     try {
-      await worker.processPending(new Date());
+      await worker.processPending();
       const [failed] = await eventsFor(to);
       expect(failed).toMatchObject({ status: 'pending', attempts: 1 });
       expect(failed!.lastError.message).toBeTruthy();
 
       // Aún no toca: sigue en attempts 1.
-      await worker.processPending(secondsFromNow(1));
+      await worker.processPending(() => secondsFromNow(1));
       expect((await eventsFor(to))[0]).toMatchObject({ attempts: 1 });
     } finally {
       await restoreNotifications();
     }
 
-    await worker.processPending(secondsFromNow(2));
+    await worker.processPending(() => secondsFromNow(2));
 
     expect(await notificationsTo(to)).toHaveLength(1);
     expect(await eventsFor(to)).toHaveLength(0);
@@ -169,10 +169,10 @@ describe('NotificationsWorker.processPending', () => {
         clock += wait;
         if (index > 0) {
           // Un segundo antes de que venza la espera, no se toca.
-          await worker.processPending(secondsFromNow(clock - 1));
+          await worker.processPending(() => secondsFromNow(clock - 1));
           expect((await eventsFor(to))[0]).toMatchObject({ attempts: index });
         }
-        await worker.processPending(secondsFromNow(clock));
+        await worker.processPending(() => secondsFromNow(clock));
         expect((await eventsFor(to))[0]).toMatchObject({ attempts: index + 1 });
       }
 
@@ -180,13 +180,13 @@ describe('NotificationsWorker.processPending', () => {
       expect(event).toMatchObject({ status: 'failed', attempts: 6 });
       expect(event!.lastError.message).toBeTruthy();
 
-      await worker.processPending(secondsFromNow(1_000));
+      await worker.processPending(() => secondsFromNow(1_000));
       expect((await eventsFor(to))[0]).toMatchObject({ attempts: 6 });
     } finally {
       await restoreNotifications();
     }
 
-    await worker.processPending(secondsFromNow(1_000));
+    await worker.processPending(() => secondsFromNow(1_000));
     expect(await notificationsTo(to)).toHaveLength(0);
   });
 
@@ -215,11 +215,12 @@ describe('NotificationsWorker.processPending', () => {
     );
     await notificationsService.notify({ type: 'follow', to, from }, session);
 
-    await Promise.all([
-      worker.processPending(new Date()),
-      worker.processPending(new Date()),
-    ]);
+    // El índice único taparía una doble entrega: se cuentan las entregas, no las notificaciones.
+    const deliver = vi.spyOn(notificationsService, 'deliver');
+    await Promise.all([worker.processPending(), worker.processPending()]);
 
+    expect(deliver).toHaveBeenCalledTimes(3);
+    deliver.mockRestore();
     expect(await notificationsTo(to)).toHaveLength(3);
     expect(await eventsFor(to)).toHaveLength(0);
   });
@@ -236,11 +237,11 @@ describe('NotificationsWorker.processPending', () => {
       createdAt: new Date(),
     });
 
-    await worker.processPending(secondsFromNow(29));
+    await worker.processPending(() => secondsFromNow(29));
     expect(await eventsFor(to)).toHaveLength(1);
     expect(await notificationsTo(to)).toHaveLength(0);
 
-    await worker.processPending(secondsFromNow(31));
+    await worker.processPending(() => secondsFromNow(31));
     expect(await eventsFor(to)).toHaveLength(0);
     expect(await notificationsTo(to)).toHaveLength(1);
   });
@@ -250,7 +251,7 @@ describe('NotificationsWorker.processPending', () => {
     const to = new ObjectId().toString();
     await notificationsService.notify({ type: 'follow', to, from }, session);
 
-    await worker.processPending(new Date());
+    await worker.processPending();
 
     expect(await eventsFor(to)).toHaveLength(0);
     expect(await notificationsTo(to)).toHaveLength(0);

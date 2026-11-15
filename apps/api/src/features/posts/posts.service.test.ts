@@ -547,7 +547,7 @@ describe('PostsService.toggleRetweet, respuesta', () => {
 
 describe('PostsService, notificaciones de like y bookmark', () => {
   const notificationsOf = async (postId: string) => {
-    await worker.processPending(new Date());
+    await worker.processPending();
     return db
       .collection('notifications')
       .find({ postId: new ObjectId(postId) })
@@ -565,11 +565,11 @@ describe('PostsService, notificaciones de like y bookmark', () => {
       await expect(
         service.toggleLike(seed.publicId, userViewer(seed.otherId)),
       ).resolves.toMatchObject({ liked: true });
-      await worker.processPending(new Date());
+      await worker.processPending();
     } finally {
       await db.command({ collMod: 'notifications', validator: {} });
     }
-    await worker.processPending(new Date(Date.now() + 2_000));
+    await worker.processPending(() => new Date(Date.now() + 2_000));
 
     const notifications = await notificationsOf(seed.publicId);
     expect(notifications).toHaveLength(1);
@@ -732,7 +732,7 @@ describe('PostsService, notificaciones de like y bookmark', () => {
     const seed = await seedOwnerWithPosts('notifdedupekeep');
     const viewer = userViewer(seed.otherId);
     await service.toggleLike(seed.publicId, viewer);
-    await worker.processPending(new Date());
+    await worker.processPending();
     await db
       .collection('notifications')
       .updateMany(
@@ -755,7 +755,7 @@ describe('PostsService, notificaciones de like y bookmark', () => {
 describe('PostsService, notificaciones de retweet', () => {
   // Por destinatario y no por post: así también se ve una notificación que apunte al retweet.
   const notificationsFor = async (userId: string) => {
-    await worker.processPending(new Date());
+    await worker.processPending();
     return db
       .collection('notifications')
       .find({ to: new ObjectId(userId) })
@@ -847,7 +847,7 @@ describe('PostsService, like y guardado de un retweet van al original', () => {
     db.collection('posts').findOne({ _id: new ObjectId(id) });
 
   const notificationsOfType = async (userId: string, type: string) => {
-    await worker.processPending(new Date());
+    await worker.processPending();
     return db
       .collection('notifications')
       .find({ to: new ObjectId(userId), type })

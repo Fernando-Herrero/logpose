@@ -8,6 +8,7 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 import { mongoClientOptions } from '../../integrations/mongodb/mongodb.config.js';
 import type { UserViewer, Viewer } from '../auth/access.js';
 import { NotificationsPersistence } from '../notifications/notifications.persistence.js';
+import { NotificationsService } from '../notifications/notifications.service.js';
 import type { UserDocument } from '../users/user.mappers.js';
 import { UsersPersistence } from '../users/users.persistence.js';
 import type { PostDocument } from './posts.mappers.js';
@@ -76,7 +77,10 @@ beforeAll(async () => {
   service = new PostsService(
     postsPersistence,
     usersPersistence,
-    new NotificationsPersistence(db.collection('notifications')),
+    new NotificationsService(
+      usersPersistence,
+      new NotificationsPersistence(db.collection('notifications')),
+    ),
   );
 });
 
@@ -546,5 +550,63 @@ describe('PostsService, notificaciones de like y bookmark', () => {
     await service.toggleBookmark(seed.publicId, userViewer(seed.ownerId));
 
     await expect(notificationsOf(seed.publicId)).resolves.toHaveLength(0);
+  });
+
+  const setOwnerPreferences = (
+    ownerId: string,
+    update: Record<string, unknown>,
+  ) => db.collection('users').updateOne({ _id: new ObjectId(ownerId) }, update);
+
+  it('con likes apagado en los ajustes del dueño, el like no crea notificación', async () => {
+    const seed = await seedOwnerWithPosts('notiflikeoff');
+    await setOwnerPreferences(seed.ownerId, {
+      $set: { 'preferences.notifications.likes': false },
+    });
+
+    await service.toggleLike(seed.publicId, userViewer(seed.otherId));
+
+    await expect(notificationsOf(seed.publicId)).resolves.toHaveLength(0);
+  });
+
+  it('si el dueño no tiene ajustes guardados, el like crea notificación', async () => {
+    const seed = await seedOwnerWithPosts('notiflikenoprefs');
+    await setOwnerPreferences(seed.ownerId, { $unset: { preferences: '' } });
+
+    await service.toggleLike(seed.publicId, userViewer(seed.otherId));
+
+    await expect(notificationsOf(seed.publicId)).resolves.toHaveLength(1);
+  });
+
+  it('con bookmarks apagado en los ajustes del dueño, el bookmark no crea notificación', async () => {
+    const seed = await seedOwnerWithPosts('notifbookoff');
+    await setOwnerPreferences(seed.ownerId, {
+      $set: { 'preferences.notifications.bookmarks': false },
+    });
+
+    await service.toggleBookmark(seed.publicId, userViewer(seed.otherId));
+
+    await expect(notificationsOf(seed.publicId)).resolves.toHaveLength(0);
+  });
+
+  it('si el dueño no tiene ajustes guardados, el bookmark crea notificación', async () => {
+    const seed = await seedOwnerWithPosts('notifbooknoprefs');
+    await setOwnerPreferences(seed.ownerId, { $unset: { preferences: '' } });
+
+    await service.toggleBookmark(seed.publicId, userViewer(seed.otherId));
+
+    await expect(notificationsOf(seed.publicId)).resolves.toHaveLength(1);
+  });
+
+  it('apagar likes no afecta al bookmark: sigue creando notificación', async () => {
+    const seed = await seedOwnerWithPosts('notifindep');
+    await setOwnerPreferences(seed.ownerId, {
+      $set: { 'preferences.notifications.likes': false },
+    });
+
+    await service.toggleBookmark(seed.publicId, userViewer(seed.otherId));
+
+    const notifications = await notificationsOf(seed.publicId);
+    expect(notifications).toHaveLength(1);
+    expect(notifications[0]).toMatchObject({ type: 'bookmark' });
   });
 });

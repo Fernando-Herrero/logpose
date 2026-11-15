@@ -10,7 +10,7 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 
 import { mongoClientOptions } from '../../integrations/mongodb/mongodb.config.js';
 import type { Viewer } from '../auth/access.js';
-import { NotificationsPersistenceModule } from '../notifications/notifications-persistence.module.js';
+import { NotificationsModule } from '../notifications/notifications.module.js';
 import type { UserDocument } from '../users/user.mappers.js';
 import { UsersPersistence } from '../users/users.persistence.js';
 import { UsersPersistenceModule } from '../users/users-persistence.module.js';
@@ -72,7 +72,7 @@ beforeAll(async () => {
       }),
       PostsPersistenceModule,
       UsersPersistenceModule,
-      NotificationsPersistenceModule,
+      NotificationsModule,
     ],
     providers: [PostsService],
   }).compile();

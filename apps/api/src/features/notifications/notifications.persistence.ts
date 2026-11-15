@@ -16,7 +16,7 @@ type NotificationDocument = {
   updatedAt?: Date;
 };
 
-type NewNotification =
+export type NewNotification =
   | { type: 'follow'; to: string; from: string }
   | { type: 'like' | 'bookmark'; to: string; from: string; postId: string };
 

@@ -16,7 +16,7 @@ import {
   type Viewer,
   visiblePostsFilter,
 } from '../auth/access.js';
-import { NotificationsPersistence } from '../notifications/notifications.persistence.js';
+import { NotificationsService } from '../notifications/notifications.service.js';
 import { UsersPersistence } from '../users/users.persistence.js';
 import { serializePost, serializePostsForViewer } from './posts.mappers.js';
 import { PostsPersistence } from './posts.persistence.js';
@@ -28,7 +28,7 @@ export class PostsService {
   constructor(
     private readonly postsPersistence: PostsPersistence,
     private readonly usersPersistence: UsersPersistence,
-    private readonly notificationsPersistence: NotificationsPersistence,
+    private readonly notificationsService: NotificationsService,
   ) {}
 
   async list(query: PostPageQuery, viewer: Viewer) {
@@ -111,7 +111,7 @@ export class PostsService {
     const active = !result.alreadyHad;
 
     if (active) {
-      await this.notificationsPersistence.create({
+      await this.notificationsService.notify({
         type: field === 'likes' ? 'like' : 'bookmark',
         to: result.post.userId.toString(),
         from: viewer.id,

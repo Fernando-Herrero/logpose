@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 
-import { NotificationsPersistenceModule } from '../notifications/notifications-persistence.module.js';
+import { NotificationsModule } from '../notifications/notifications.module.js';
 import { UsersPersistenceModule } from '../users/users-persistence.module.js';
 import { PostsController } from './posts.controller.js';
 import { PostsService } from './posts.service.js';
@@ -10,7 +10,7 @@ import { PostsPersistenceModule } from './posts-persistence.module.js';
   imports: [
     PostsPersistenceModule,
     UsersPersistenceModule,
-    NotificationsPersistenceModule,
+    NotificationsModule,
   ],
   controllers: [PostsController],
   providers: [PostsService],

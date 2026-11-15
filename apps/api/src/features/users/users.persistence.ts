@@ -134,7 +134,11 @@ export class UsersPersistence implements OnModuleInit {
     );
   }
 
-  async removeFollow(viewerId: string, targetId: string): Promise<void> {
+  async removeFollow(
+    viewerId: string,
+    targetId: string,
+    session: ClientSession,
+  ): Promise<void> {
     const now = new Date();
 
     await this.users.updateOne(
@@ -143,6 +147,7 @@ export class UsersPersistence implements OnModuleInit {
         $pull: { following: new ObjectId(targetId) },
         $set: { updatedAt: now },
       },
+      { session },
     );
     await this.users.updateOne(
       { _id: new ObjectId(targetId) },
@@ -150,6 +155,7 @@ export class UsersPersistence implements OnModuleInit {
         $pull: { followers: new ObjectId(viewerId) },
         $set: { updatedAt: now },
       },
+      { session },
     );
   }
 

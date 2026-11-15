@@ -254,17 +254,23 @@ export class UsersService {
       throw new ORPCError(following ? 'ALREADY_FOLLOWING' : 'NOT_FOLLOWING');
     }
 
-    if (following) {
-      await this.transactions.withTransaction(async session => {
-        await this.usersPersistence.addFollow(viewerId, targetUserId, session);
-        await this.notificationsService.notify(
-          { type: 'follow', to: targetUserId, from: viewerId },
+    // Las dos caras del follow (y su aviso) se guardan juntas o no se guarda nada.
+    await this.transactions.withTransaction(async session => {
+      if (!following) {
+        await this.usersPersistence.removeFollow(
+          viewerId,
+          targetUserId,
           session,
         );
-      });
-    } else {
-      await this.usersPersistence.removeFollow(viewerId, targetUserId);
-    }
+        return;
+      }
+
+      await this.usersPersistence.addFollow(viewerId, targetUserId, session);
+      await this.notificationsService.notify(
+        { type: 'follow', to: targetUserId, from: viewerId },
+        session,
+      );
+    });
 
     const updatedViewer = await this.usersPersistence.findById(viewerId);
     const updatedTarget = await this.usersPersistence.findById(targetUserId);

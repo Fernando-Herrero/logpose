@@ -34,12 +34,8 @@ export class NotificationsPersistence implements OnModuleInit {
     ]);
   }
 
-  /** Nadie se notifica a sí mismo: si `to` y `from` coinciden, no se crea. */
+  /** Guarda la notificación tal cual; quién la recibe lo decide `NotificationsService.notify`. */
   async create(notification: NewNotification) {
-    if (notification.to === notification.from) {
-      return;
-    }
-
     const now = new Date();
     await this.notifications.insertOne({
       _id: new ObjectId(),

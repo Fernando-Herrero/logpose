@@ -14,6 +14,7 @@ import {
   CommentsPersistence,
 } from '../comments/comments.persistence.js';
 import { NotificationsPersistence } from '../notifications/notifications.persistence.js';
+import { NotificationsService } from '../notifications/notifications.service.js';
 import type { PostDocument } from '../posts/posts.mappers.js';
 import { PostsPersistence } from '../posts/posts.persistence.js';
 import type { UserDocument } from './user.mappers.js';
@@ -64,11 +65,15 @@ beforeAll(async () => {
 
   usersPersistence = new UsersPersistence(db.collection('users'));
   await usersPersistence.onModuleInit();
+  const notificationsPersistence = new NotificationsPersistence(
+    db.collection('notifications'),
+  );
   service = new UsersService(
     usersPersistence,
     new PostsPersistence(db.collection('posts')),
     new CommentsPersistence(db.collection('comments')),
-    new NotificationsPersistence(db.collection('notifications')),
+    notificationsPersistence,
+    new NotificationsService(usersPersistence, notificationsPersistence),
     new SessionsPersistence(db.collection('sessions')),
     new MongoTransactionService(client),
   );
@@ -649,6 +654,50 @@ describe('UsersService.follow y unfollow', () => {
   it('follow: crea una notificación de follow para B desde A', async () => {
     const a = await create('fol_a3');
     const b = await create('fol_b3');
+
+    await service.follow(a.toString(), b.toString());
+
+    await expect(notificationsOf(b, a)).resolves.toHaveLength(1);
+  });
+
+  it('follow: con follows apagado en B no crea notificación pero sí el follow', async () => {
+    const a = await create('fol_a3b');
+    const b = await create('fol_b3b');
+    await db
+      .collection('users')
+      .updateOne(
+        { _id: b },
+        { $set: { 'preferences.notifications.follows': false } },
+      );
+
+    await service.follow(a.toString(), b.toString());
+
+    await expect(notificationsOf(b, a)).resolves.toHaveLength(0);
+    const storedB = await usersPersistence.findById(b.toString());
+    expect(storedB?.followers).toEqual([a]);
+  });
+
+  it('follow: si B no tiene preferences en Mongo, crea la notificación', async () => {
+    const a = await create('fol_a3c');
+    const b = await create('fol_b3c');
+    await db
+      .collection('users')
+      .updateOne({ _id: b }, { $unset: { preferences: '' } });
+
+    await service.follow(a.toString(), b.toString());
+
+    await expect(notificationsOf(b, a)).resolves.toHaveLength(1);
+  });
+
+  it('follow: con likes apagado en B, la notificación de follow se crea', async () => {
+    const a = await create('fol_a3d');
+    const b = await create('fol_b3d');
+    await db
+      .collection('users')
+      .updateOne(
+        { _id: b },
+        { $set: { 'preferences.notifications.likes': false } },
+      );
 
     await service.follow(a.toString(), b.toString());
 

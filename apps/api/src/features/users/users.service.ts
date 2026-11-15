@@ -20,6 +20,7 @@ import {
 import { SessionsPersistence } from '../auth/sessions.persistence.js';
 import { CommentsPersistence } from '../comments/comments.persistence.js';
 import { NotificationsPersistence } from '../notifications/notifications.persistence.js';
+import { NotificationsService } from '../notifications/notifications.service.js';
 import {
   type PostDocument,
   serializePostsForViewer,
@@ -51,6 +52,7 @@ export class UsersService {
     private readonly postsPersistence: PostsPersistence,
     private readonly commentsPersistence: CommentsPersistence,
     private readonly notificationsPersistence: NotificationsPersistence,
+    private readonly notificationsService: NotificationsService,
     private readonly sessionsPersistence: SessionsPersistence,
     private readonly transactions: MongoTransactionService,
   ) {}
@@ -256,7 +258,7 @@ export class UsersService {
 
     if (following) {
       await this.usersPersistence.addFollow(viewerId, targetUserId);
-      await this.notificationsPersistence.create({
+      await this.notificationsService.notify({
         type: 'follow',
         to: targetUserId,
         from: viewerId,

@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 
 import { SessionsPersistenceModule } from '../auth/sessions-persistence.module.js';
 import { CommentsPersistenceModule } from '../comments/comments-persistence.module.js';
+import { NotificationsModule } from '../notifications/notifications.module.js';
 import { NotificationsPersistenceModule } from '../notifications/notifications-persistence.module.js';
 import { PostsPersistenceModule } from '../posts/posts-persistence.module.js';
 import { UsersController } from './users.controller.js';
@@ -14,6 +15,7 @@ import { UsersPersistenceModule } from './users-persistence.module.js';
     PostsPersistenceModule,
     CommentsPersistenceModule,
     NotificationsPersistenceModule,
+    NotificationsModule,
     SessionsPersistenceModule,
   ],
   controllers: [UsersController],

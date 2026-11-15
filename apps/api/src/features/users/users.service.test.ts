@@ -2,8 +2,8 @@ import 'reflect-metadata';
 
 import { MongoTransactionService } from '@jperezmart/nest-mongodb';
 import { DEFAULT_USER_PREFERENCES } from '@logpose/contracts/common/user.schemas';
-import { type Db, MongoClient, ObjectId } from 'mongodb';
-import { MongoMemoryServer } from 'mongodb-memory-server';
+import { type ClientSession, type Db, MongoClient, ObjectId } from 'mongodb';
+import { MongoMemoryReplSet } from 'mongodb-memory-server';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { mongoClientOptions } from '../../integrations/mongodb/mongodb.config.js';
@@ -54,17 +54,21 @@ const newUser = (username: string): Omit<UserDocument, '_id'> => ({
   following: [],
 });
 
-let mongod: MongoMemoryServer;
+let replSet: MongoMemoryReplSet;
 let client: MongoClient;
 let db: Db;
+/** Sesión sin transacción para sembrar con métodos que la exigen. */
+let session: ClientSession;
 let usersPersistence: UsersPersistence;
 let service: UsersService;
 let worker: NotificationsWorker;
 
 beforeAll(async () => {
-  mongod = await MongoMemoryServer.create();
-  client = await MongoClient.connect(mongod.getUri(), mongoClientOptions);
+  // Las transacciones exigen replica set.
+  replSet = await MongoMemoryReplSet.create({ replSet: { count: 1 } });
+  client = await MongoClient.connect(replSet.getUri(), mongoClientOptions);
   db = client.db('test');
+  session = client.startSession();
 
   usersPersistence = new UsersPersistence(db.collection('users'));
   await usersPersistence.onModuleInit();
@@ -93,11 +97,12 @@ beforeAll(async () => {
     new SessionsPersistence(db.collection('sessions')),
     new MongoTransactionService(client),
   );
-});
+}, 120_000);
 
 afterAll(async () => {
+  await session.endSession();
   await client.close();
-  await mongod.stop();
+  await replSet.stop();
 });
 
 // Mongo real en memoria: el fallo nace del índice único, que un mock no tiene.
@@ -406,6 +411,7 @@ async function seedProfileActivity(
   await usersPersistence.addFollow(
     follower._id.toString(),
     owner._id.toString(),
+    session,
   );
 
   const post = async (visibility: PostDocument['visibility']) =>
@@ -451,6 +457,7 @@ async function seedProfileActivity(
         profile._id.toString(),
         'likes',
         {},
+        session,
       ),
     bookmark: (postId: string) =>
       postsPersistence.toggleUserField(
@@ -458,6 +465,7 @@ async function seedProfileActivity(
         profile._id.toString(),
         'bookmarks',
         {},
+        session,
       ),
   };
 }
@@ -604,9 +612,10 @@ describe('UsersService.getPosts, retweets', () => {
         liker._id.toString(),
         'likes',
         {},
+        session,
       );
     }
-    await postsPersistence.toggleRetweet(originalId, retweeterId);
+    await postsPersistence.toggleRetweet(originalId, retweeterId, session);
   });
 
   it('el envoltorio sale con el autor original y los contadores del original', async () => {
@@ -756,6 +765,29 @@ describe('UsersService.follow y unfollow', () => {
     await expect(notificationsOf(b, a)).resolves.toHaveLength(1);
   });
 
+  it('follow: si guardar el evento falla, el follow falla y no queda guardado', async () => {
+    const a = await create('fol_tx_a');
+    const b = await create('fol_tx_b');
+    // Ningún evento cumple el validador: la inserción en `notification_events` falla.
+    await db.command({
+      collMod: 'notification_events',
+      validator: { never: { $exists: true } },
+    });
+
+    try {
+      await expect(
+        service.follow(a.toString(), b.toString()),
+      ).rejects.toThrow();
+    } finally {
+      await db.command({ collMod: 'notification_events', validator: {} });
+    }
+
+    const storedA = await usersPersistence.findById(a.toString());
+    const storedB = await usersPersistence.findById(b.toString());
+    expect(storedA?.following).toEqual([]);
+    expect(storedB?.followers).toEqual([]);
+  });
+
   it('follow: seguir a quien ya sigues lanza ALREADY_FOLLOWING', async () => {
     const a = await create('fol_a4');
     const b = await create('fol_b4');
@@ -870,12 +902,14 @@ describe('UsersService, paginación por cursor de las pestañas del perfil', () 
         profileId,
         'likes',
         {},
+        session,
       );
       await postsPersistence.toggleUserField(
         post._id.toString(),
         profileId,
         'bookmarks',
         {},
+        session,
       );
       await comments.insertOne({
         _id: new ObjectId(),

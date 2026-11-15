@@ -32,16 +32,19 @@ export class NotificationEventsPersistence implements OnModuleInit {
     await this.events.createIndexes([{ key: { status: 1, availableAt: 1 } }]);
   }
 
-  async enqueue(notification: NewNotification) {
+  async enqueue(notification: NewNotification, session: ClientSession) {
     const now = new Date();
-    await this.events.insertOne({
-      _id: new ObjectId(),
-      notification,
-      status: 'pending',
-      attempts: 0,
-      availableAt: now,
-      createdAt: now,
-    });
+    await this.events.insertOne(
+      {
+        _id: new ObjectId(),
+        notification,
+        status: 'pending',
+        attempts: 0,
+        availableAt: now,
+        createdAt: now,
+      },
+      { session },
+    );
   }
 
   /** Coge el siguiente evento que toca y lo bloquea en la misma operación: dos workers nunca reciben el mismo. */

@@ -1,5 +1,6 @@
 import { randomUUID } from 'node:crypto';
 
+import { MongoTransactionService } from '@jperezmart/nest-mongodb';
 import {
   type createPostSchema,
   getPostTextMaxLength,
@@ -29,6 +30,7 @@ export class PostsService {
     private readonly postsPersistence: PostsPersistence,
     private readonly usersPersistence: UsersPersistence,
     private readonly notificationsService: NotificationsService,
+    private readonly transactions: MongoTransactionService,
   ) {}
 
   async list(query: PostPageQuery, viewer: Viewer) {
@@ -101,29 +103,37 @@ export class PostsService {
     // Un retweet enseña las interacciones de su original (ADR 0011): van a él.
     const post = await this.postsPersistence.findVisibleById(postId, visible);
     const targetId = post?.retweetOf?.toString() ?? postId;
-    const result = await this.postsPersistence.toggleUserField(
-      targetId,
-      viewer.id,
-      field,
-      visible,
-    );
 
-    if (!result) {
-      throw new ORPCError('POST_NOT_FOUND');
-    }
+    // La acción y su evento de notificación se guardan juntos o no se guarda nada.
+    return this.transactions.withTransaction(async session => {
+      const result = await this.postsPersistence.toggleUserField(
+        targetId,
+        viewer.id,
+        field,
+        visible,
+        session,
+      );
 
-    const active = !result.alreadyHad;
+      if (!result) {
+        throw new ORPCError('POST_NOT_FOUND');
+      }
 
-    if (active) {
-      await this.notificationsService.notify({
-        type: field === 'likes' ? 'like' : 'bookmark',
-        to: result.post.userId.toString(),
-        from: viewer.id,
-        postId: targetId,
-      });
-    }
+      const active = !result.alreadyHad;
 
-    return { active, post: result.post };
+      if (active) {
+        await this.notificationsService.notify(
+          {
+            type: field === 'likes' ? 'like' : 'bookmark',
+            to: result.post.userId.toString(),
+            from: viewer.id,
+            postId: targetId,
+          },
+          session,
+        );
+      }
+
+      return { active, post: result.post };
+    });
   }
 
   async toggleRetweet(postId: string, viewer: UserViewer) {
@@ -142,20 +152,33 @@ export class PostsService {
       throw new ORPCError('FORBIDDEN');
     }
 
-    const result = await this.postsPersistence.toggleRetweet(postId, viewer.id);
+    const result = await this.transactions.withTransaction(async session => {
+      const toggled = await this.postsPersistence.toggleRetweet(
+        postId,
+        viewer.id,
+        session,
+      );
 
-    if (!result) {
-      throw new ORPCError('POST_NOT_FOUND');
-    }
+      if (!toggled) {
+        throw new ORPCError('POST_NOT_FOUND');
+      }
+
+      if (toggled.retweeted) {
+        await this.notificationsService.notify(
+          {
+            type: 'retweet',
+            to: original.userId.toString(),
+            from: viewer.id,
+            postId,
+          },
+          session,
+        );
+      }
+
+      return toggled;
+    });
 
     if (result.retweeted) {
-      await this.notificationsService.notify({
-        type: 'retweet',
-        to: original.userId.toString(),
-        from: viewer.id,
-        postId,
-      });
-
       const [retweetPost] = await serializePostsForViewer(
         [result.retweetPost],
         viewer,

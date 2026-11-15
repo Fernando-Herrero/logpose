@@ -109,7 +109,11 @@ export class UsersPersistence implements OnModuleInit {
     return this.users.find().sort({ experience: -1 }).limit(limit).toArray();
   }
 
-  async addFollow(viewerId: string, targetId: string): Promise<void> {
+  async addFollow(
+    viewerId: string,
+    targetId: string,
+    session: ClientSession,
+  ): Promise<void> {
     const now = new Date();
 
     await this.users.updateOne(
@@ -118,6 +122,7 @@ export class UsersPersistence implements OnModuleInit {
         $addToSet: { following: new ObjectId(targetId) },
         $set: { updatedAt: now },
       },
+      { session },
     );
     await this.users.updateOne(
       { _id: new ObjectId(targetId) },
@@ -125,6 +130,7 @@ export class UsersPersistence implements OnModuleInit {
         $addToSet: { followers: new ObjectId(viewerId) },
         $set: { updatedAt: now },
       },
+      { session },
     );
   }
 

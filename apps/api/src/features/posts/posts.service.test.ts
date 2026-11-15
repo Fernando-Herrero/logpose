@@ -1,8 +1,9 @@
 import 'reflect-metadata';
 
+import { MongoTransactionService } from '@jperezmart/nest-mongodb';
 import { DEFAULT_USER_PREFERENCES } from '@logpose/contracts/common/user.schemas';
-import { type Db, MongoClient, ObjectId } from 'mongodb';
-import { MongoMemoryServer } from 'mongodb-memory-server';
+import { type ClientSession, type Db, MongoClient, ObjectId } from 'mongodb';
+import { MongoMemoryReplSet } from 'mongodb-memory-server';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { mongoClientOptions } from '../../integrations/mongodb/mongodb.config.js';
@@ -61,18 +62,22 @@ const adminViewer = (): Viewer => ({
   role: 'admin',
 });
 
-let mongod: MongoMemoryServer;
+let replSet: MongoMemoryReplSet;
 let client: MongoClient;
 let db: Db;
+/** Sesión sin transacción para sembrar con métodos que la exigen. */
+let session: ClientSession;
 let usersPersistence: UsersPersistence;
 let postsPersistence: PostsPersistence;
 let service: PostsService;
 let worker: NotificationsWorker;
 
 beforeAll(async () => {
-  mongod = await MongoMemoryServer.create();
-  client = await MongoClient.connect(mongod.getUri(), mongoClientOptions);
+  // Las transacciones exigen replica set.
+  replSet = await MongoMemoryReplSet.create({ replSet: { count: 1 } });
+  client = await MongoClient.connect(replSet.getUri(), mongoClientOptions);
   db = client.db('test');
+  session = client.startSession();
 
   usersPersistence = new UsersPersistence(db.collection('users'));
   await usersPersistence.onModuleInit();
@@ -98,12 +103,14 @@ beforeAll(async () => {
     postsPersistence,
     usersPersistence,
     notificationsService,
+    new MongoTransactionService(client),
   );
-});
+}, 120_000);
 
 afterAll(async () => {
+  await session.endSession();
   await client.close();
-  await mongod.stop();
+  await replSet.stop();
 });
 
 /** Siembra un dueño con un post de cada visibilidad, un seguidor y un ajeno. */
@@ -113,7 +120,7 @@ async function seedOwnerWithPosts(prefix: string) {
   const other = await usersPersistence.insert(newUser(`${prefix}_other`));
   const ownerId = owner._id.toString();
   const followerId = follower._id.toString();
-  await usersPersistence.addFollow(followerId, ownerId);
+  await usersPersistence.addFollow(followerId, ownerId, session);
 
   const post = (visibility: PostDocument['visibility']) =>
     postsPersistence.insert({
@@ -139,6 +146,22 @@ const feed = (viewer: Viewer) => service.list({ limit: 50 }, viewer);
 const feedIds = async (viewer: Viewer) =>
   (await feed(viewer)).posts.map(post => post._id);
 
+const postById = (id: string) =>
+  db.collection<PostDocument>('posts').findOne({ _id: new ObjectId(id) });
+
+/** Ningún evento cumple el validador: toda inserción en `notification_events` falla mientras corre `run`. */
+async function withEventInsertsFailing(run: () => Promise<unknown>) {
+  await db.command({
+    collMod: 'notification_events',
+    validator: { never: { $exists: true } },
+  });
+  try {
+    await run();
+  } finally {
+    await db.command({ collMod: 'notification_events', validator: {} });
+  }
+}
+
 describe('PostsService.list', () => {
   let seed: Awaited<ReturnType<typeof seedOwnerWithPosts>>;
   let orphanRetweetId: string;
@@ -147,7 +170,7 @@ describe('PostsService.list', () => {
     seed = await seedOwnerWithPosts('feed');
 
     // Retweet público de un post público: debe salir y serializarse sin arrays.
-    await postsPersistence.toggleRetweet(seed.publicId, seed.otherId);
+    await postsPersistence.toggleRetweet(seed.publicId, seed.otherId, session);
 
     // Retweet antiguo de un post que hoy es privado: el wrapper es público.
     const now = new Date();
@@ -553,6 +576,34 @@ describe('PostsService, notificaciones de like y bookmark', () => {
     expect(notifications[0]).toMatchObject({ type: 'like', read: false });
   });
 
+  it('si guardar el evento falla, el like falla y no queda guardado', async () => {
+    const seed = await seedOwnerWithPosts('txlike');
+
+    await withEventInsertsFailing(() =>
+      expect(
+        service.toggleLike(seed.publicId, userViewer(seed.otherId)),
+      ).rejects.toThrow(),
+    );
+
+    const post = await postById(seed.publicId);
+    expect(post!.likes).toEqual([]);
+    expect(post!.likesCount).toBe(0);
+  });
+
+  it('si guardar el evento falla, el guardado falla y no queda guardado', async () => {
+    const seed = await seedOwnerWithPosts('txbook');
+
+    await withEventInsertsFailing(() =>
+      expect(
+        service.toggleBookmark(seed.publicId, userViewer(seed.otherId)),
+      ).rejects.toThrow(),
+    );
+
+    const post = await postById(seed.publicId);
+    expect(post!.bookmarks).toEqual([]);
+    expect(post!.bookmarksCount).toBe(0);
+  });
+
   it('el like de otro usuario crea una notificación para el dueño', async () => {
     const seed = await seedOwnerWithPosts('notiflike');
 
@@ -710,6 +761,25 @@ describe('PostsService, notificaciones de retweet', () => {
       .find({ to: new ObjectId(userId) })
       .toArray();
   };
+
+  it('si guardar el evento falla, el retweet falla y ni se crea ni cambia el original', async () => {
+    const seed = await seedOwnerWithPosts('txrt');
+
+    await withEventInsertsFailing(() =>
+      expect(
+        service.toggleRetweet(seed.publicId, userViewer(seed.otherId)),
+      ).rejects.toThrow(),
+    );
+
+    const retweets = await db
+      .collection('posts')
+      .find({ retweetOf: new ObjectId(seed.publicId) })
+      .toArray();
+    expect(retweets).toEqual([]);
+    const original = await postById(seed.publicId);
+    expect(original!.retweets).toEqual([]);
+    expect(original!.retweetsCount).toBe(0);
+  });
 
   it('el retweet de otro usuario crea una notificación para el autor del original', async () => {
     const seed = await seedOwnerWithPosts('notifrt');

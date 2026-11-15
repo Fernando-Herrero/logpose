@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-import { MongoModule } from '@jperezmart/nest-mongodb';
+import { MongoModule, MongoTransactionService } from '@jperezmart/nest-mongodb';
 import { DEFAULT_USER_PREFERENCES } from '@logpose/contracts/common/user.schemas';
 import type { TestingModule } from '@nestjs/testing';
 import { Test } from '@nestjs/testing';
@@ -478,21 +478,18 @@ describe('UsersService.delete: eventos de notificación pendientes', () => {
   it('los eventos donde la cuenta es destinataria o remitente desaparecen', async () => {
     const notificationsService = moduleRef.get(NotificationsService);
     // Sin procesar: los dos eventos quedan pendientes.
-    await notificationsService.notify({
-      type: 'follow',
-      to: ids.luffy.toString(),
-      from: ids.buggy.toString(),
-    });
-    await notificationsService.notify({
-      type: 'follow',
-      to: ids.buggy.toString(),
-      from: ids.zoro.toString(),
-    });
-    await notificationsService.notify({
-      type: 'follow',
-      to: ids.zoro.toString(),
-      from: ids.luffy.toString(),
-    });
+    await moduleRef
+      .get(MongoTransactionService)
+      .withTransaction(async session => {
+        const follow = (to: ObjectId, from: ObjectId) =>
+          notificationsService.notify(
+            { type: 'follow', to: to.toString(), from: from.toString() },
+            session,
+          );
+        await follow(ids.luffy, ids.buggy);
+        await follow(ids.buggy, ids.zoro);
+        await follow(ids.zoro, ids.luffy);
+      });
 
     await deleteBuggy();
 

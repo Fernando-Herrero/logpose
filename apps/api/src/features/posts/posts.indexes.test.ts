@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-import { MongoModule } from '@jperezmart/nest-mongodb';
+import { MongoModule, MongoTransactionService } from '@jperezmart/nest-mongodb';
 import { DEFAULT_USER_PREFERENCES } from '@logpose/contracts/common/user.schemas';
 import type { TestingModule } from '@nestjs/testing';
 import { Test } from '@nestjs/testing';
@@ -86,7 +86,9 @@ beforeAll(async () => {
   const owner = await users.insert(newUser('idx_owner'));
   const follower = await users.insert(newUser('idx_follower'));
   followerId = follower._id.toString();
-  await users.addFollow(followerId, owner._id.toString());
+  const session = moduleRef.get(MongoTransactionService).startSession();
+  await users.addFollow(followerId, owner._id.toString(), session);
+  await session.endSession();
 
   const visibilities: PostDocument['visibility'][] = [
     'public',

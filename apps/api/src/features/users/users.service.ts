@@ -255,11 +255,12 @@ export class UsersService {
     }
 
     if (following) {
-      await this.usersPersistence.addFollow(viewerId, targetUserId);
-      await this.notificationsService.notify({
-        type: 'follow',
-        to: targetUserId,
-        from: viewerId,
+      await this.transactions.withTransaction(async session => {
+        await this.usersPersistence.addFollow(viewerId, targetUserId, session);
+        await this.notificationsService.notify(
+          { type: 'follow', to: targetUserId, from: viewerId },
+          session,
+        );
       });
     } else {
       await this.usersPersistence.removeFollow(viewerId, targetUserId);

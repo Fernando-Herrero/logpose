@@ -33,9 +33,9 @@ export class NotificationsService {
     private readonly eventsPersistence: NotificationEventsPersistence,
   ) {}
 
-  /** Deja el aviso en la cola; el worker lo entrega con `deliver`. */
-  async notify(notification: NewNotification) {
-    await this.eventsPersistence.enqueue(notification);
+  /** Deja el aviso en la cola, en la transacción de la acción que lo origina; el worker lo entrega con `deliver`. */
+  async notify(notification: NewNotification, session: ClientSession) {
+    await this.eventsPersistence.enqueue(notification, session);
   }
 
   /** Crea la notificación salvo que sea para uno mismo o el destinatario tenga su tipo apagado. */

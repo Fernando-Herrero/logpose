@@ -51,7 +51,7 @@ export class NotificationsPersistence implements OnModuleInit {
     ]);
   }
 
-  /** Guarda la notificación si no existe ya; quién la recibe lo decide `NotificationsService.notify`. */
+  /** Guarda la notificación si no existe ya; quién la recibe lo decide `NotificationsService.deliver`. */
   async create(notification: NewNotification) {
     const now = new Date();
     await this.notifications

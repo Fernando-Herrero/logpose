@@ -177,11 +177,11 @@ export class PostsPersistence implements OnModuleInit {
     };
   }
 
-  findActiveById(id: string) {
-    return this.posts.findOne({
-      _id: new ObjectId(id),
-      isDeleted: false,
-    });
+  findActiveById(id: string, session?: ClientSession) {
+    return this.posts.findOne(
+      { _id: new ObjectId(id), isDeleted: false },
+      { session },
+    );
   }
 
   findVisibleById(id: string, visible: Filter<PostDocument>) {
@@ -206,6 +206,7 @@ export class PostsPersistence implements OnModuleInit {
     userId: string,
     field: 'likes' | 'bookmarks',
     visible: Filter<PostDocument>,
+    session: ClientSession,
   ) {
     const user = new ObjectId(userId);
     const countField = field === 'likes' ? 'likesCount' : 'bookmarksCount';
@@ -214,7 +215,7 @@ export class PostsPersistence implements OnModuleInit {
       this.posts.findOneAndUpdate(
         { ...post, [field]: { $ne: user } },
         { $addToSet: { [field]: user }, $inc: { [countField]: 1 } },
-        { returnDocument: 'after' },
+        { returnDocument: 'after', session },
       );
 
     const added = await add();
@@ -226,7 +227,7 @@ export class PostsPersistence implements OnModuleInit {
     const removed = await this.posts.findOneAndUpdate(
       { ...post, [field]: user },
       { $pull: { [field]: user }, $inc: { [countField]: -1 } },
-      { returnDocument: 'after' },
+      { returnDocument: 'after', session },
     );
 
     if (removed) {
@@ -241,22 +242,23 @@ export class PostsPersistence implements OnModuleInit {
   /**
    * Un retweet es un eco de un original: si el original desaparece, sus
    * copias también. Se cascada aquí (no solo en `posts.service.delete`)
-   * porque los otros dos llamantes (deshacer retweet propio, rollback de
-   * `toggleRetweet`) siempre operan sobre wrappers, que nunca tienen hijos
-   * — el `updateMany` no encuentra nada y es un no-op barato.
+   * porque el otro llamante (deshacer un retweet en `toggleRetweet`) siempre
+   * opera sobre un wrapper, que nunca tiene hijos — el `updateMany` no
+   * encuentra nada y es un no-op barato.
    */
-  async softDeleteById(id: string) {
+  async softDeleteById(id: string, session?: ClientSession) {
     const objectId = new ObjectId(id);
     const deleted = await this.posts.findOneAndUpdate(
       { _id: objectId, isDeleted: false },
       { $set: { isDeleted: true, updatedAt: new Date() } },
-      { returnDocument: 'after' },
+      { returnDocument: 'after', session },
     );
 
     if (deleted && !deleted.isRetweet) {
       await this.posts.updateMany(
         { retweetOf: objectId, isDeleted: false },
         { $set: { isDeleted: true, updatedAt: new Date() } },
+        { session },
       );
     }
 
@@ -285,26 +287,34 @@ export class PostsPersistence implements OnModuleInit {
     return new Set(rows.map(row => row.retweetOf!.toString()));
   }
 
-  findUserRetweet(userId: string, originalId: string) {
-    return this.posts.findOne({
-      userId: new ObjectId(userId),
-      retweetOf: new ObjectId(originalId),
-      isRetweet: true,
-      isDeleted: false,
-    });
+  findUserRetweet(userId: string, originalId: string, session?: ClientSession) {
+    return this.posts.findOne(
+      {
+        userId: new ObjectId(userId),
+        retweetOf: new ObjectId(originalId),
+        isRetweet: true,
+        isDeleted: false,
+      },
+      { session },
+    );
   }
 
-  async toggleRetweet(originalId: string, userId: string) {
-    const original = await this.findActiveById(originalId);
+  /** Sin rollback propio: si devuelve `null` a mitad, quien llama lanza y la transacción de `session` deshace lo escrito. */
+  async toggleRetweet(
+    originalId: string,
+    userId: string,
+    session: ClientSession,
+  ) {
+    const original = await this.findActiveById(originalId, session);
 
     if (!original || original.isRetweet) {
       return null;
     }
 
-    const existing = await this.findUserRetweet(userId, originalId);
+    const existing = await this.findUserRetweet(userId, originalId, session);
 
     if (existing) {
-      await this.softDeleteById(existing._id.toString());
+      await this.softDeleteById(existing._id.toString(), session);
 
       const updated = await this.posts.findOneAndUpdate(
         { _id: new ObjectId(originalId), isDeleted: false },
@@ -313,7 +323,7 @@ export class PostsPersistence implements OnModuleInit {
           $inc: { retweetsCount: -1 },
           $set: { updatedAt: new Date() },
         },
-        { returnDocument: 'after' },
+        { returnDocument: 'after', session },
       );
 
       if (!updated) {
@@ -327,14 +337,17 @@ export class PostsPersistence implements OnModuleInit {
       };
     }
 
-    const retweetPost = await this.insert({
-      text: original.text,
-      userId: new ObjectId(userId),
-      images: original.images,
-      visibility: 'public',
-      language: original.language,
-      retweetOf: original._id,
-    });
+    const retweetPost = await this.insert(
+      {
+        text: original.text,
+        userId: new ObjectId(userId),
+        images: original.images,
+        visibility: 'public',
+        language: original.language,
+        retweetOf: original._id,
+      },
+      session,
+    );
 
     const updated = await this.posts.findOneAndUpdate(
       { _id: new ObjectId(originalId), isDeleted: false },
@@ -343,19 +356,16 @@ export class PostsPersistence implements OnModuleInit {
         $inc: { retweetsCount: 1 },
         $set: { updatedAt: new Date() },
       },
-      { returnDocument: 'after' },
+      { returnDocument: 'after', session },
     );
 
-    if (!updated) {
-      await this.softDeleteById(retweetPost._id.toString());
-      return null;
-    }
-
-    return { original: updated, retweeted: true as const, retweetPost };
+    return updated
+      ? { original: updated, retweeted: true as const, retweetPost }
+      : null;
   }
 
   /** Único constructor de posts: el resto de campos empieza vacío. */
-  async insert(data: NewPost) {
+  async insert(data: NewPost, session?: ClientSession) {
     const now = new Date();
     const document: PostDocument = {
       ...data,
@@ -377,7 +387,7 @@ export class PostsPersistence implements OnModuleInit {
       updatedAt: now,
     };
 
-    await this.posts.insertOne(document);
+    await this.posts.insertOne(document, { session });
     return document;
   }
 }

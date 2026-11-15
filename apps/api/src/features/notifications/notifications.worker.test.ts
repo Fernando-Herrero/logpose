@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 
 import { DEFAULT_USER_PREFERENCES } from '@logpose/contracts/common/user.schemas';
-import { type Db, MongoClient, ObjectId } from 'mongodb';
+import { type ClientSession, type Db, MongoClient, ObjectId } from 'mongodb';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
@@ -47,6 +47,8 @@ const newUser = (username: string): Omit<UserDocument, '_id'> => ({
 let mongod: MongoMemoryServer;
 let client: MongoClient;
 let db: Db;
+/** `notify` va siempre en la sesión de una acción; aquí basta una sin transacción. */
+let session: ClientSession;
 let usersPersistence: UsersPersistence;
 let notificationsService: NotificationsService;
 let worker: NotificationsWorker;
@@ -55,6 +57,7 @@ beforeAll(async () => {
   mongod = await MongoMemoryServer.create();
   client = await MongoClient.connect(mongod.getUri(), mongoClientOptions);
   db = client.db('test');
+  session = client.startSession();
 
   usersPersistence = new UsersPersistence(db.collection('users'));
   await usersPersistence.onModuleInit();
@@ -75,6 +78,7 @@ beforeAll(async () => {
 });
 
 afterAll(async () => {
+  await session.endSession();
   await client.close();
   await mongod.stop();
 });
@@ -112,8 +116,14 @@ describe('NotificationsWorker.processPending', () => {
     const to = await create('wk_dup_to');
     const postId = new ObjectId().toString();
 
-    await notificationsService.notify({ type: 'like', to, from, postId });
-    await notificationsService.notify({ type: 'like', to, from, postId });
+    await notificationsService.notify(
+      { type: 'like', to, from, postId },
+      session,
+    );
+    await notificationsService.notify(
+      { type: 'like', to, from, postId },
+      session,
+    );
     await worker.processPending(new Date());
 
     expect(await notificationsTo(to)).toHaveLength(1);
@@ -123,7 +133,7 @@ describe('NotificationsWorker.processPending', () => {
   it('si crear la notificación falla, el evento sigue pending con attempts 1 y no se reintenta hasta 2 s después', async () => {
     const from = await create('wk_retry_from');
     const to = await create('wk_retry_to');
-    await notificationsService.notify({ type: 'follow', to, from });
+    await notificationsService.notify({ type: 'follow', to, from }, session);
 
     await failNotifications();
     try {
@@ -148,7 +158,7 @@ describe('NotificationsWorker.processPending', () => {
   it('las esperas entre intentos son 2, 4, 8, 16 y 32 s, y el sexto fallo deja el evento failed', async () => {
     const from = await create('wk_backoff_from');
     const to = await create('wk_backoff_to');
-    await notificationsService.notify({ type: 'follow', to, from });
+    await notificationsService.notify({ type: 'follow', to, from }, session);
 
     await failNotifications();
     try {
@@ -185,19 +195,25 @@ describe('NotificationsWorker.processPending', () => {
     const to = await create('wk_conc_to');
     const post1 = new ObjectId().toString();
     const post2 = new ObjectId().toString();
-    await notificationsService.notify({
-      type: 'like',
-      to,
-      from,
-      postId: post1,
-    });
-    await notificationsService.notify({
-      type: 'like',
-      to,
-      from,
-      postId: post2,
-    });
-    await notificationsService.notify({ type: 'follow', to, from });
+    await notificationsService.notify(
+      {
+        type: 'like',
+        to,
+        from,
+        postId: post1,
+      },
+      session,
+    );
+    await notificationsService.notify(
+      {
+        type: 'like',
+        to,
+        from,
+        postId: post2,
+      },
+      session,
+    );
+    await notificationsService.notify({ type: 'follow', to, from }, session);
 
     await Promise.all([
       worker.processPending(new Date()),
@@ -232,7 +248,7 @@ describe('NotificationsWorker.processPending', () => {
   it('un evento cuyo destinatario no existe se descarta sin notificación ni failed', async () => {
     const from = await create('wk_ghost_from');
     const to = new ObjectId().toString();
-    await notificationsService.notify({ type: 'follow', to, from });
+    await notificationsService.notify({ type: 'follow', to, from }, session);
 
     await worker.processPending(new Date());
 

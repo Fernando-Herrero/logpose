@@ -97,11 +97,15 @@ export class PostsService {
     viewer: UserViewer,
     field: 'likes' | 'bookmarks',
   ) {
+    const visible = await visiblePostsFilter(viewer, this.usersPersistence);
+    // Un retweet enseña las interacciones de su original (ADR 0011): van a él.
+    const post = await this.postsPersistence.findVisibleById(postId, visible);
+    const targetId = post?.retweetOf?.toString() ?? postId;
     const result = await this.postsPersistence.toggleUserField(
-      postId,
+      targetId,
       viewer.id,
       field,
-      await visiblePostsFilter(viewer, this.usersPersistence),
+      visible,
     );
 
     if (!result) {
@@ -115,7 +119,7 @@ export class PostsService {
         type: field === 'likes' ? 'like' : 'bookmark',
         to: result.post.userId.toString(),
         from: viewer.id,
-        postId,
+        postId: targetId,
       });
     }
 

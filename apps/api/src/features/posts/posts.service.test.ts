@@ -716,3 +716,80 @@ describe('PostsService, notificaciones de retweet', () => {
     await expect(notificationsFor(seed.ownerId)).resolves.toHaveLength(0);
   });
 });
+
+describe('PostsService, like y guardado de un retweet van al original', () => {
+  // B (owner) publica, C (other) retuitea y A (follower) actúa sobre el id del envoltorio.
+  async function seedRetweet(prefix: string) {
+    const seed = await seedOwnerWithPosts(prefix);
+    const done = await service.toggleRetweet(
+      seed.publicId,
+      userViewer(seed.otherId),
+    );
+    const wrapperId = (done as { retweetPost: { _id: string } }).retweetPost
+      ._id;
+    return { ...seed, wrapperId };
+  }
+
+  const postOf = (id: string) =>
+    db.collection('posts').findOne({ _id: new ObjectId(id) });
+
+  const notificationsOfType = (userId: string, type: string) =>
+    db
+      .collection('notifications')
+      .find({ to: new ObjectId(userId), type })
+      .toArray();
+
+  it('el like al envoltorio se guarda en el original y no en el envoltorio', async () => {
+    const seed = await seedRetweet('rtlike');
+
+    await service.toggleLike(seed.wrapperId, userViewer(seed.followerId));
+
+    const original = await postOf(seed.publicId);
+    expect(original!.likes.map(String)).toEqual([seed.followerId]);
+    expect(original!.likesCount).toBe(1);
+    const wrapper = await postOf(seed.wrapperId);
+    expect(wrapper!.likes ?? []).toEqual([]);
+    expect(wrapper!.likesCount).toBe(0);
+  });
+
+  it('el like al envoltorio avisa al autor del original y no a quien retuiteó', async () => {
+    const seed = await seedRetweet('rtlikenoti');
+
+    await service.toggleLike(seed.wrapperId, userViewer(seed.followerId));
+
+    const forAuthor = await notificationsOfType(seed.ownerId, 'like');
+    expect(forAuthor).toHaveLength(1);
+    expect(String(forAuthor[0]!.from)).toBe(seed.followerId);
+    expect(String(forAuthor[0]!.postId)).toBe(seed.publicId);
+    await expect(
+      notificationsOfType(seed.otherId, 'like'),
+    ).resolves.toHaveLength(0);
+  });
+
+  it('guardar el envoltorio se guarda en el original y no en el envoltorio', async () => {
+    const seed = await seedRetweet('rtbook');
+
+    await service.toggleBookmark(seed.wrapperId, userViewer(seed.followerId));
+
+    const original = await postOf(seed.publicId);
+    expect(original!.bookmarks.map(String)).toEqual([seed.followerId]);
+    expect(original!.bookmarksCount).toBe(1);
+    const wrapper = await postOf(seed.wrapperId);
+    expect(wrapper!.bookmarks ?? []).toEqual([]);
+    expect(wrapper!.bookmarksCount).toBe(0);
+  });
+
+  it('guardar el envoltorio avisa al autor del original y no a quien retuiteó', async () => {
+    const seed = await seedRetweet('rtbooknoti');
+
+    await service.toggleBookmark(seed.wrapperId, userViewer(seed.followerId));
+
+    const forAuthor = await notificationsOfType(seed.ownerId, 'bookmark');
+    expect(forAuthor).toHaveLength(1);
+    expect(String(forAuthor[0]!.from)).toBe(seed.followerId);
+    expect(String(forAuthor[0]!.postId)).toBe(seed.publicId);
+    await expect(
+      notificationsOfType(seed.otherId, 'bookmark'),
+    ).resolves.toHaveLength(0);
+  });
+});

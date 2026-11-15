@@ -145,6 +145,13 @@ export class PostsService {
     }
 
     if (result.retweeted) {
+      await this.notificationsService.notify({
+        type: 'retweet',
+        to: original.userId.toString(),
+        from: viewer.id,
+        postId,
+      });
+
       const [retweetPost] = await serializePostsForViewer(
         [result.retweetPost],
         viewer,

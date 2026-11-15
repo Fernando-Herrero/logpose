@@ -2,7 +2,12 @@ import { InjectCollection } from '@jperezmart/nest-mongodb';
 import { Injectable, type OnModuleInit } from '@nestjs/common';
 import { type ClientSession, type Collection, ObjectId } from 'mongodb';
 
-export type NotificationType = 'like' | 'bookmark' | 'comment' | 'follow';
+export type NotificationType =
+  | 'like'
+  | 'bookmark'
+  | 'comment'
+  | 'follow'
+  | 'retweet';
 
 type NotificationDocument = {
   _id: ObjectId;
@@ -18,7 +23,12 @@ type NotificationDocument = {
 
 export type NewNotification =
   | { type: 'follow'; to: string; from: string }
-  | { type: 'like' | 'bookmark'; to: string; from: string; postId: string };
+  | {
+      type: 'like' | 'bookmark' | 'retweet';
+      to: string;
+      from: string;
+      postId: string;
+    };
 
 @Injectable()
 export class NotificationsPersistence implements OnModuleInit {

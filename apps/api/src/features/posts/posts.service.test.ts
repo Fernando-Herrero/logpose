@@ -610,3 +610,60 @@ describe('PostsService, notificaciones de like y bookmark', () => {
     expect(notifications[0]).toMatchObject({ type: 'bookmark' });
   });
 });
+
+describe('PostsService, notificaciones de retweet', () => {
+  // Por destinatario y no por post: así también se ve una notificación que apunte al retweet.
+  const notificationsFor = (userId: string) =>
+    db
+      .collection('notifications')
+      .find({ to: new ObjectId(userId) })
+      .toArray();
+
+  it('el retweet de otro usuario crea una notificación para el autor del original', async () => {
+    const seed = await seedOwnerWithPosts('notifrt');
+
+    await service.toggleRetweet(seed.publicId, userViewer(seed.otherId));
+
+    const notifications = await notificationsFor(seed.ownerId);
+    expect(notifications).toHaveLength(1);
+    expect(notifications[0]).toMatchObject({ type: 'retweet', read: false });
+    expect(String(notifications[0]!.from)).toBe(seed.otherId);
+    expect(String(notifications[0]!.postId)).toBe(seed.publicId);
+  });
+
+  it('con retweets apagado en los ajustes del autor, el retweet se hace pero no avisa', async () => {
+    const seed = await seedOwnerWithPosts('notifrtoff');
+    await db
+      .collection('users')
+      .updateOne(
+        { _id: new ObjectId(seed.ownerId) },
+        { $set: { 'preferences.notifications.retweets': false } },
+      );
+
+    const result = await service.toggleRetweet(
+      seed.publicId,
+      userViewer(seed.otherId),
+    );
+
+    expect(result).toMatchObject({ retweeted: true });
+    await expect(notificationsFor(seed.ownerId)).resolves.toHaveLength(0);
+  });
+
+  it('quitar el retweet no crea otra notificación ni borra la existente', async () => {
+    const seed = await seedOwnerWithPosts('notifrtundo');
+    const viewer = userViewer(seed.otherId);
+
+    await service.toggleRetweet(seed.publicId, viewer);
+    await service.toggleRetweet(seed.publicId, viewer);
+
+    await expect(notificationsFor(seed.ownerId)).resolves.toHaveLength(1);
+  });
+
+  it('el retweet del autor a su propio post no crea notificación', async () => {
+    const seed = await seedOwnerWithPosts('notifrtown');
+
+    await service.toggleRetweet(seed.publicId, userViewer(seed.ownerId));
+
+    await expect(notificationsFor(seed.ownerId)).resolves.toHaveLength(0);
+  });
+});

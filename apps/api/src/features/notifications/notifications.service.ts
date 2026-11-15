@@ -20,6 +20,7 @@ const PREFERENCE_BY_TYPE: Record<
   bookmark: 'bookmarks',
   comment: 'comments',
   follow: 'follows',
+  retweet: 'retweets',
 };
 
 @Injectable()

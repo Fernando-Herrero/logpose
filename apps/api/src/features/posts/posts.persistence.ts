@@ -195,10 +195,10 @@ export class PostsPersistence implements OnModuleInit {
   /**
    * Añade o quita `userId` del array `likes` o `bookmarks` y ajusta el contador
    * denormalizado. Sin leer antes: el primer `findOneAndUpdate` solo casa si el
-   * usuario no está y lo añade; si no casa, el segundo lo quita. Cada uno es
-   * atómico, así que dos toggles a la vez no dejan el contador descuadrado.
-   * Si tampoco casa el segundo, otro toggle lo quitó entre medias y se vuelve
-   * a añadir una vez; si aún no casa, el post no existe o no se ve.
+   * usuario no está y lo añade; si no casa, el segundo lo quita; si tampoco,
+   * el post no existe o no se ve. Va en la transacción de `session`: un toggle
+   * a la vez sobre el mismo post da conflicto de escritura y el driver repite
+   * la transacción entera, así que el contador no se descuadra.
    * Devuelve el post actualizado y si el usuario ya tenía el flag antes.
    */
   async toggleUserField(
@@ -211,14 +211,11 @@ export class PostsPersistence implements OnModuleInit {
     const user = new ObjectId(userId);
     const countField = field === 'likes' ? 'likesCount' : 'bookmarksCount';
     const post = { ...visible, _id: new ObjectId(postId), isDeleted: false };
-    const add = () =>
-      this.posts.findOneAndUpdate(
-        { ...post, [field]: { $ne: user } },
-        { $addToSet: { [field]: user }, $inc: { [countField]: 1 } },
-        { returnDocument: 'after', session },
-      );
-
-    const added = await add();
+    const added = await this.posts.findOneAndUpdate(
+      { ...post, [field]: { $ne: user } },
+      { $addToSet: { [field]: user }, $inc: { [countField]: 1 } },
+      { returnDocument: 'after', session },
+    );
 
     if (added) {
       return { post: added, alreadyHad: false };
@@ -230,13 +227,7 @@ export class PostsPersistence implements OnModuleInit {
       { returnDocument: 'after', session },
     );
 
-    if (removed) {
-      return { post: removed, alreadyHad: true };
-    }
-
-    const readded = await add();
-
-    return readded ? { post: readded, alreadyHad: false } : null;
+    return removed ? { post: removed, alreadyHad: true } : null;
   }
 
   /**

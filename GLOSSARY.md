@@ -67,6 +67,9 @@ Post que el usuario marca para leer después; sale en la pestaña de guardados d
 **Borrado lógico** (`isDeleted`):
 Un post borrado se marca, no se elimina, y arrastra a sus retweets. Un retweet cuyo original no aparece no se sirve.
 
+**Evento de notificación** (`notification_events`):
+Aviso pendiente que deja un like, guardado, follow o retweet. El worker lo convierte en notificación según los ajustes del destinatario y, si falla, lo reintenta ([ADR 0020](docs/adr/0020-notificaciones-por-cola-en-mongo.md)).
+
 **Verificado** (`verified`):
 Usuario premium: insignia junto al nombre y posts más largos. El pago es simulado.
 

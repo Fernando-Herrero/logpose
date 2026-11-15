@@ -13,8 +13,10 @@ import {
   type CommentDocument,
   CommentsPersistence,
 } from '../comments/comments.persistence.js';
+import { NotificationEventsPersistence } from '../notifications/notification-events.persistence.js';
 import { NotificationsPersistence } from '../notifications/notifications.persistence.js';
 import { NotificationsService } from '../notifications/notifications.service.js';
+import { NotificationsWorker } from '../notifications/notifications.worker.js';
 import type { PostDocument } from '../posts/posts.mappers.js';
 import { PostsPersistence } from '../posts/posts.persistence.js';
 import type { UserDocument } from './user.mappers.js';
@@ -57,6 +59,7 @@ let client: MongoClient;
 let db: Db;
 let usersPersistence: UsersPersistence;
 let service: UsersService;
+let worker: NotificationsWorker;
 
 beforeAll(async () => {
   mongod = await MongoMemoryServer.create();
@@ -69,12 +72,24 @@ beforeAll(async () => {
     db.collection('notifications'),
   );
   await notificationsPersistence.onModuleInit();
+  const notificationEventsPersistence = new NotificationEventsPersistence(
+    db.collection('notification_events'),
+  );
+  await notificationEventsPersistence.onModuleInit();
+  const notificationsService = new NotificationsService(
+    usersPersistence,
+    notificationsPersistence,
+    notificationEventsPersistence,
+  );
+  worker = new NotificationsWorker(
+    notificationEventsPersistence,
+    notificationsService,
+  );
   service = new UsersService(
     usersPersistence,
     new PostsPersistence(db.collection('posts')),
     new CommentsPersistence(db.collection('comments')),
-    notificationsPersistence,
-    new NotificationsService(usersPersistence, notificationsPersistence),
+    notificationsService,
     new SessionsPersistence(db.collection('sessions')),
     new MongoTransactionService(client),
   );
@@ -626,8 +641,13 @@ describe('UsersService.getPosts, retweets', () => {
 describe('UsersService.follow y unfollow', () => {
   const create = async (username: string) =>
     (await usersPersistence.insert(newUser(username)))._id;
-  const notificationsOf = (to: ObjectId, from: ObjectId) =>
-    db.collection('notifications').find({ type: 'follow', to, from }).toArray();
+  const notificationsOf = async (to: ObjectId, from: ObjectId) => {
+    await worker.processPending(new Date());
+    return db
+      .collection('notifications')
+      .find({ type: 'follow', to, from })
+      .toArray();
+  };
 
   it('follow: A sigue a B y devuelve contadores', async () => {
     const a = await create('fol_a1');
@@ -676,6 +696,7 @@ describe('UsersService.follow y unfollow', () => {
     const a = await create('fol_dedupe_a2');
     const b = await create('fol_dedupe_b2');
     await service.follow(a.toString(), b.toString());
+    await worker.processPending(new Date());
     await db
       .collection('notifications')
       .updateMany({ type: 'follow', to: b, from: a }, { $set: { read: true } });

@@ -34,6 +34,7 @@ pnpm dev
 
 - Web: http://localhost:3000
 - API: http://localhost:4000/api/health/ y Swagger en http://localhost:4000/api/orpc
+- Worker de notificaciones: proceso aparte, sin puerto, que entrega los avisos pendientes (`apps/api/src/worker.ts`). En producción se arranca con `pnpm --filter @logpose/api run start:worker`, junto a la API.
 
 Las imágenes de los posts necesitan las claves de Cloudinary en `apps/api/.env`. Otros scripts: `pnpm build`, `pnpm test`, `pnpm lint`, `pnpm type-check` y `pnpm format`.
 

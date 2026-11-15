@@ -19,7 +19,6 @@ import {
 } from '../auth/access.js';
 import { SessionsPersistence } from '../auth/sessions.persistence.js';
 import { CommentsPersistence } from '../comments/comments.persistence.js';
-import { NotificationsPersistence } from '../notifications/notifications.persistence.js';
 import { NotificationsService } from '../notifications/notifications.service.js';
 import {
   type PostDocument,
@@ -51,7 +50,6 @@ export class UsersService {
     private readonly usersPersistence: UsersPersistence,
     private readonly postsPersistence: PostsPersistence,
     private readonly commentsPersistence: CommentsPersistence,
-    private readonly notificationsPersistence: NotificationsPersistence,
     private readonly notificationsService: NotificationsService,
     private readonly sessionsPersistence: SessionsPersistence,
     private readonly transactions: MongoTransactionService,
@@ -334,7 +332,7 @@ export class UsersService {
         session,
       );
       await this.postsPersistence.syncCommentsCount(commentCounts, session);
-      await this.notificationsPersistence.deleteByUser(targetUserId, session);
+      await this.notificationsService.deleteByUser(targetUserId, session);
       await this.sessionsPersistence.deleteByUser(targetUserId, session);
       await this.usersPersistence.deleteWithFollows(targetUserId, session);
     });

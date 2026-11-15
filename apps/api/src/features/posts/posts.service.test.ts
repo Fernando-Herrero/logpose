@@ -7,8 +7,10 @@ import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { mongoClientOptions } from '../../integrations/mongodb/mongodb.config.js';
 import type { UserViewer, Viewer } from '../auth/access.js';
+import { NotificationEventsPersistence } from '../notifications/notification-events.persistence.js';
 import { NotificationsPersistence } from '../notifications/notifications.persistence.js';
 import { NotificationsService } from '../notifications/notifications.service.js';
+import { NotificationsWorker } from '../notifications/notifications.worker.js';
 import type { UserDocument } from '../users/user.mappers.js';
 import { UsersPersistence } from '../users/users.persistence.js';
 import type { PostDocument } from './posts.mappers.js';
@@ -65,6 +67,7 @@ let db: Db;
 let usersPersistence: UsersPersistence;
 let postsPersistence: PostsPersistence;
 let service: PostsService;
+let worker: NotificationsWorker;
 
 beforeAll(async () => {
   mongod = await MongoMemoryServer.create();
@@ -77,11 +80,24 @@ beforeAll(async () => {
     db.collection('notifications'),
   );
   await notificationsPersistence.onModuleInit();
+  const notificationEventsPersistence = new NotificationEventsPersistence(
+    db.collection('notification_events'),
+  );
+  await notificationEventsPersistence.onModuleInit();
+  const notificationsService = new NotificationsService(
+    usersPersistence,
+    notificationsPersistence,
+    notificationEventsPersistence,
+  );
+  worker = new NotificationsWorker(
+    notificationEventsPersistence,
+    notificationsService,
+  );
   postsPersistence = new PostsPersistence(db.collection('posts'));
   service = new PostsService(
     postsPersistence,
     usersPersistence,
-    new NotificationsService(usersPersistence, notificationsPersistence),
+    notificationsService,
   );
 });
 
@@ -507,11 +523,35 @@ describe('PostsService.toggleRetweet, respuesta', () => {
 });
 
 describe('PostsService, notificaciones de like y bookmark', () => {
-  const notificationsOf = (postId: string) =>
-    db
+  const notificationsOf = async (postId: string) => {
+    await worker.processPending(new Date());
+    return db
       .collection('notifications')
       .find({ postId: new ObjectId(postId) })
       .toArray();
+  };
+
+  it('si crear la notificación falla, el like responde bien y la notificación llega al reintentar', async () => {
+    const seed = await seedOwnerWithPosts('notiflikeretry');
+    await db.command({
+      collMod: 'notifications',
+      validator: { never: { $exists: true } },
+    });
+
+    try {
+      await expect(
+        service.toggleLike(seed.publicId, userViewer(seed.otherId)),
+      ).resolves.toMatchObject({ liked: true });
+      await worker.processPending(new Date());
+    } finally {
+      await db.command({ collMod: 'notifications', validator: {} });
+    }
+    await worker.processPending(new Date(Date.now() + 2_000));
+
+    const notifications = await notificationsOf(seed.publicId);
+    expect(notifications).toHaveLength(1);
+    expect(notifications[0]).toMatchObject({ type: 'like', read: false });
+  });
 
   it('el like de otro usuario crea una notificación para el dueño', async () => {
     const seed = await seedOwnerWithPosts('notiflike');
@@ -641,6 +681,7 @@ describe('PostsService, notificaciones de like y bookmark', () => {
     const seed = await seedOwnerWithPosts('notifdedupekeep');
     const viewer = userViewer(seed.otherId);
     await service.toggleLike(seed.publicId, viewer);
+    await worker.processPending(new Date());
     await db
       .collection('notifications')
       .updateMany(
@@ -662,11 +703,13 @@ describe('PostsService, notificaciones de like y bookmark', () => {
 
 describe('PostsService, notificaciones de retweet', () => {
   // Por destinatario y no por post: así también se ve una notificación que apunte al retweet.
-  const notificationsFor = (userId: string) =>
-    db
+  const notificationsFor = async (userId: string) => {
+    await worker.processPending(new Date());
+    return db
       .collection('notifications')
       .find({ to: new ObjectId(userId) })
       .toArray();
+  };
 
   it('el retweet de otro usuario crea una notificación para el autor del original', async () => {
     const seed = await seedOwnerWithPosts('notifrt');
@@ -733,11 +776,13 @@ describe('PostsService, like y guardado de un retweet van al original', () => {
   const postOf = (id: string) =>
     db.collection('posts').findOne({ _id: new ObjectId(id) });
 
-  const notificationsOfType = (userId: string, type: string) =>
-    db
+  const notificationsOfType = async (userId: string, type: string) => {
+    await worker.processPending(new Date());
+    return db
       .collection('notifications')
       .find({ to: new ObjectId(userId), type })
       .toArray();
+  };
 
   it('el like al envoltorio se guarda en el original y no en el envoltorio', async () => {
     const seed = await seedRetweet('rtlike');

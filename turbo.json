@@ -30,6 +30,16 @@
       "dependsOn": ["^build"],
       "persistent": true,
       "with": ["@logpose/api#dev"]
+    },
+    "dev:worker": {
+      "cache": false,
+      "persistent": true
+    },
+    "@logpose/api#dev": {
+      "cache": false,
+      "dependsOn": ["^build"],
+      "persistent": true,
+      "with": ["@logpose/api#dev:worker"]
     }
   },
   "ui": "tui"

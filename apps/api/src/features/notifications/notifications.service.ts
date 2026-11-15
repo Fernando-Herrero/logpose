@@ -1,10 +1,12 @@
 import { Injectable } from '@nestjs/common';
+import type { ClientSession } from 'mongodb';
 
 import {
   type UserPreferences,
   withPreferenceDefaults,
 } from '../users/user.mappers.js';
 import { UsersPersistence } from '../users/users.persistence.js';
+import { NotificationEventsPersistence } from './notification-events.persistence.js';
 import {
   type NewNotification,
   NotificationsPersistence,
@@ -28,10 +30,16 @@ export class NotificationsService {
   constructor(
     private readonly usersPersistence: UsersPersistence,
     private readonly notificationsPersistence: NotificationsPersistence,
+    private readonly eventsPersistence: NotificationEventsPersistence,
   ) {}
 
-  /** Crea la notificación salvo que sea para uno mismo o el destinatario tenga su tipo apagado. */
+  /** Deja el aviso en la cola; el worker lo entrega con `deliver`. */
   async notify(notification: NewNotification) {
+    await this.eventsPersistence.enqueue(notification);
+  }
+
+  /** Crea la notificación salvo que sea para uno mismo o el destinatario tenga su tipo apagado. */
+  async deliver(notification: NewNotification) {
     if (notification.to === notification.from) return;
 
     const recipient = await this.usersPersistence.findById(notification.to);
@@ -42,5 +50,11 @@ export class NotificationsService {
     if (notifications[PREFERENCE_BY_TYPE[notification.type]]) {
       await this.notificationsPersistence.create(notification);
     }
+  }
+
+  /** Notificaciones y eventos pendientes de la cuenta, dentro de la transacción de su borrado. */
+  async deleteByUser(userId: string, session: ClientSession) {
+    await this.notificationsPersistence.deleteByUser(userId, session);
+    await this.eventsPersistence.deleteByUser(userId, session);
   }
 }

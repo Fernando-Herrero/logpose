@@ -19,6 +19,7 @@ import {
 import { mongoClientOptions } from '../../integrations/mongodb/mongodb.config.js';
 import type { UserViewer } from '../auth/access.js';
 import type { CommentDocument } from '../comments/comments.persistence.js';
+import { NotificationsService } from '../notifications/notifications.service.js';
 import type { PostDocument } from '../posts/posts.mappers.js';
 import { PostsModule } from '../posts/posts.module.js';
 import { PostsService } from '../posts/posts.service.js';
@@ -39,6 +40,7 @@ const COLLECTIONS = [
   'posts',
   'comments',
   'notifications',
+  'notification_events',
   'sessions',
 ] as const;
 
@@ -469,6 +471,45 @@ describe('UsersService.delete: borrado físico', () => {
         .map(String)
         .sort(),
     );
+  });
+});
+
+describe('UsersService.delete: eventos de notificación pendientes', () => {
+  it('los eventos donde la cuenta es destinataria o remitente desaparecen', async () => {
+    const notificationsService = moduleRef.get(NotificationsService);
+    // Sin procesar: los dos eventos quedan pendientes.
+    await notificationsService.notify({
+      type: 'follow',
+      to: ids.luffy.toString(),
+      from: ids.buggy.toString(),
+    });
+    await notificationsService.notify({
+      type: 'follow',
+      to: ids.buggy.toString(),
+      from: ids.zoro.toString(),
+    });
+    await notificationsService.notify({
+      type: 'follow',
+      to: ids.zoro.toString(),
+      from: ids.luffy.toString(),
+    });
+
+    await deleteBuggy();
+
+    const events = await db
+      .collection<{
+        notification: { to: string; from: string };
+      }>('notification_events')
+      .find()
+      .toArray();
+    expect(
+      events.filter(({ notification }) =>
+        [notification.to, notification.from]
+          .map(String)
+          .includes(ids.buggy.toString()),
+      ),
+    ).toHaveLength(0);
+    expect(events).toHaveLength(1);
   });
 });
 

@@ -73,14 +73,15 @@ beforeAll(async () => {
 
   usersPersistence = new UsersPersistence(db.collection('users'));
   await usersPersistence.onModuleInit();
+  const notificationsPersistence = new NotificationsPersistence(
+    db.collection('notifications'),
+  );
+  await notificationsPersistence.onModuleInit();
   postsPersistence = new PostsPersistence(db.collection('posts'));
   service = new PostsService(
     postsPersistence,
     usersPersistence,
-    new NotificationsService(
-      usersPersistence,
-      new NotificationsPersistence(db.collection('notifications')),
-    ),
+    new NotificationsService(usersPersistence, notificationsPersistence),
   );
 });
 
@@ -608,6 +609,54 @@ describe('PostsService, notificaciones de like y bookmark', () => {
     const notifications = await notificationsOf(seed.publicId);
     expect(notifications).toHaveLength(1);
     expect(notifications[0]).toMatchObject({ type: 'bookmark' });
+  });
+
+  it('like, quitar el like y like otra vez dejan una sola notificación', async () => {
+    const seed = await seedOwnerWithPosts('notifdedupelike');
+    const viewer = userViewer(seed.otherId);
+
+    await service.toggleLike(seed.publicId, viewer);
+    await service.toggleLike(seed.publicId, viewer);
+    await service.toggleLike(seed.publicId, viewer);
+
+    const notifications = await notificationsOf(seed.publicId);
+    expect(notifications).toHaveLength(1);
+    expect(notifications[0]).toMatchObject({ type: 'like' });
+  });
+
+  it('guardar, quitar y guardar otra vez dejan una sola notificación', async () => {
+    const seed = await seedOwnerWithPosts('notifdedupebook');
+    const viewer = userViewer(seed.otherId);
+
+    await service.toggleBookmark(seed.publicId, viewer);
+    await service.toggleBookmark(seed.publicId, viewer);
+    await service.toggleBookmark(seed.publicId, viewer);
+
+    const notifications = await notificationsOf(seed.publicId);
+    expect(notifications).toHaveLength(1);
+    expect(notifications[0]).toMatchObject({ type: 'bookmark' });
+  });
+
+  it('repetir el like no cambia la notificación leída: mismo _id, createdAt y read', async () => {
+    const seed = await seedOwnerWithPosts('notifdedupekeep');
+    const viewer = userViewer(seed.otherId);
+    await service.toggleLike(seed.publicId, viewer);
+    await db
+      .collection('notifications')
+      .updateMany(
+        { postId: new ObjectId(seed.publicId) },
+        { $set: { read: true } },
+      );
+    const [before] = await notificationsOf(seed.publicId);
+
+    await service.toggleLike(seed.publicId, viewer);
+    await service.toggleLike(seed.publicId, viewer);
+
+    const after = await notificationsOf(seed.publicId);
+    expect(after).toHaveLength(1);
+    expect(after[0]!.read).toBe(true);
+    expect(String(after[0]!._id)).toBe(String(before!._id));
+    expect(after[0]!.createdAt).toEqual(before!.createdAt);
   });
 });
 

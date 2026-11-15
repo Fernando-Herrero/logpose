@@ -2,6 +2,8 @@ import { InjectCollection } from '@jperezmart/nest-mongodb';
 import { Injectable, type OnModuleInit } from '@nestjs/common';
 import { type ClientSession, type Collection, ObjectId } from 'mongodb';
 
+import { isDuplicateKeyError } from '../../integrations/mongodb/duplicate-key-error.js';
+
 export type NotificationType =
   | 'like'
   | 'bookmark'
@@ -41,24 +43,33 @@ export class NotificationsPersistence implements OnModuleInit {
     await this.notifications.createIndexes([
       { key: { to: 1, createdAt: -1 } },
       { key: { from: 1 } },
+      // Una por remitente, tipo y post; cada comentario trae su commentId y no choca.
+      {
+        key: { type: 1, to: 1, from: 1, postId: 1, commentId: 1 },
+        unique: true,
+      },
     ]);
   }
 
-  /** Guarda la notificación tal cual; quién la recibe lo decide `NotificationsService.notify`. */
+  /** Guarda la notificación si no existe ya; quién la recibe lo decide `NotificationsService.notify`. */
   async create(notification: NewNotification) {
     const now = new Date();
-    await this.notifications.insertOne({
-      _id: new ObjectId(),
-      type: notification.type,
-      to: new ObjectId(notification.to),
-      from: new ObjectId(notification.from),
-      ...(notification.type === 'follow'
-        ? {}
-        : { postId: new ObjectId(notification.postId) }),
-      read: false,
-      createdAt: now,
-      updatedAt: now,
-    });
+    await this.notifications
+      .insertOne({
+        _id: new ObjectId(),
+        type: notification.type,
+        to: new ObjectId(notification.to),
+        from: new ObjectId(notification.from),
+        ...(notification.type === 'follow'
+          ? {}
+          : { postId: new ObjectId(notification.postId) }),
+        read: false,
+        createdAt: now,
+        updatedAt: now,
+      })
+      .catch((error: unknown) => {
+        if (!isDuplicateKeyError(error)) throw error;
+      });
   }
 
   async deleteByUser(userId: string, session: ClientSession) {

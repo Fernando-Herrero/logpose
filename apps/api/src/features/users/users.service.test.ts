@@ -68,6 +68,7 @@ beforeAll(async () => {
   const notificationsPersistence = new NotificationsPersistence(
     db.collection('notifications'),
   );
+  await notificationsPersistence.onModuleInit();
   service = new UsersService(
     usersPersistence,
     new PostsPersistence(db.collection('posts')),
@@ -658,6 +659,36 @@ describe('UsersService.follow y unfollow', () => {
     await service.follow(a.toString(), b.toString());
 
     await expect(notificationsOf(b, a)).resolves.toHaveLength(1);
+  });
+
+  it('follow, unfollow y follow otra vez dejan una sola notificación', async () => {
+    const a = await create('fol_dedupe_a1');
+    const b = await create('fol_dedupe_b1');
+
+    await service.follow(a.toString(), b.toString());
+    await service.unfollow(a.toString(), b.toString());
+    await service.follow(a.toString(), b.toString());
+
+    await expect(notificationsOf(b, a)).resolves.toHaveLength(1);
+  });
+
+  it('repetir el follow no cambia la notificación leída: mismo _id, createdAt y read', async () => {
+    const a = await create('fol_dedupe_a2');
+    const b = await create('fol_dedupe_b2');
+    await service.follow(a.toString(), b.toString());
+    await db
+      .collection('notifications')
+      .updateMany({ type: 'follow', to: b, from: a }, { $set: { read: true } });
+    const [before] = await notificationsOf(b, a);
+
+    await service.unfollow(a.toString(), b.toString());
+    await service.follow(a.toString(), b.toString());
+
+    const after = await notificationsOf(b, a);
+    expect(after).toHaveLength(1);
+    expect(after[0]!.read).toBe(true);
+    expect(String(after[0]!._id)).toBe(String(before!._id));
+    expect(after[0]!.createdAt).toEqual(before!.createdAt);
   });
 
   it('follow: con follows apagado en B no crea notificación pero sí el follow', async () => {

@@ -130,7 +130,9 @@ features/<name>/
 └── <name>-persistence.module.ts    # MongoModule.forFeature(['<colección>']) + exporta el *Persistence
 ```
 
-Cada colección se registra una sola vez, en el `*-persistence.module.ts` de su feature. Otra feature que la necesite importa ese módulo (`PostsModule` importa `UsersPersistenceModule`), no vuelve a declararla.
+Cada colección se registra una sola vez, en el `*-persistence.module.ts` de su feature. Otra feature que la necesite importa ese módulo (`PostsModule` importa `UsersPersistenceModule`), no vuelve a declararla. Por eso van separados: un `*-persistence.module.ts` no importa otras features, así que `PostsModule` usa `users` y `UsersModule` usa `posts` sin importarse entre sí, que sería un ciclo y pediría `forwardRef`.
+
+Un proceso sin HTTP tiene su módulo raíz junto a la feature que lo usa (`notifications-worker.module.ts`, arrancado por `src/worker.ts`) e importa `CoreModule` (entorno y Mongo), no `AppModule`.
 
 ### Reglas (referencia)
 

@@ -1,0 +1,19 @@
+services:
+  mongo:
+    image: mongo:8
+    # Replica set: borrar una cuenta usa una transacción.
+    command: ['--replSet', 'rs0', '--bind_ip_all']
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+    # Inicia la réplica la primera vez; `localhost` para que la API la encuentre desde fuera del contenedor.
+    healthcheck:
+      test: >-
+        mongosh --quiet --eval "try { rs.status() } catch {
+        rs.initiate({ _id: 'rs0', members: [{ _id: 0, host: 'localhost:27017' }] }) }"
+      interval: 5s
+      start_period: 10s
+
+volumes:
+  mongo-data:

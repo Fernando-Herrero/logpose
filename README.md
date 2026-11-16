@@ -25,9 +25,10 @@ La web llama a la API con un cliente oRPC tipado desde `packages/contracts`, as�
 
 ## Arrancar en local
 
-Requisitos: Node 24.16.0 (`.node-version`), pnpm 11.6 y un MongoDB en replica set, porque borrar una cuenta usa una transacción. Atlas ya lo es; en local, `mongod --replSet rs0` y una vez `rs.initiate()` en mongosh.
+Requisitos: Node 24.16.0 (`.node-version`), pnpm 11.6 y un MongoDB en replica set, porque borrar una cuenta usa una transacción. Atlas ya lo es; en local, `docker compose up -d` levanta uno en el puerto 27017 que vale con el `MONGODB_URI` de `.env.example`.
 
 ```bash
+docker compose up -d
 cp apps/api/.env.example apps/api/.env
 cp apps/web/.env.example apps/web/.env.local
 pnpm install

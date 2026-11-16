@@ -8,6 +8,7 @@ import { CoreModule } from './core.module.js';
 import { AuthModule } from './features/auth/auth.module.js';
 import { HealthModule } from './features/health/health.module.js';
 import { PostsModule } from './features/posts/posts.module.js';
+import { ProgressModule } from './features/progress/progress.module.js';
 import { SerieModule } from './features/serie/serie.module.js';
 import { UploadModule } from './features/upload/upload.module.js';
 import { UsersModule } from './features/users/users.module.js';
@@ -23,6 +24,7 @@ import { OrpcDocsController } from './integrations/orpc/orpc-docs.controller.js'
     UsersModule,
     HealthModule,
     SerieModule,
+    ProgressModule,
     PostsModule,
     UploadModule,
   ],

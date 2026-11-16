@@ -24,10 +24,14 @@ export const sagas = readSerieFile('sagas.json', sagaSchema);
 const arcs = readSerieFile('arcs.json', arcSchema);
 const episodes = readSerieFile('episodes.json', episodeSchema);
 
-export const totalExperience = episodes.reduce(
-  (sum, episode) => sum + episode.experience,
-  0,
-);
+export const totalExperience = experienceUpTo(episodes.length);
+
+/** XP de los episodios 1 a N (ADR 0021). */
+export function experienceUpTo(lastWatchedEpisode: number) {
+  return episodes
+    .filter(episode => episode.number <= lastWatchedEpisode)
+    .reduce((sum, episode) => sum + episode.experience, 0);
+}
 
 export function getSagaBySlug(sagaSlug: string) {
   return sagas.find(saga => saga.slug === sagaSlug);

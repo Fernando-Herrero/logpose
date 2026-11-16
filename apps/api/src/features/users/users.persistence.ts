@@ -205,4 +205,16 @@ export class UsersPersistence implements OnModuleInit {
     );
     await this.users.deleteOne({ _id: user }, { session });
   }
+
+  /** Devuelve el progreso de antes del cambio; `null` si el usuario ya no existe. */
+  setProgress(id: string, lastWatchedEpisode: number, experience: number) {
+    return this.users.findOneAndUpdate(
+      { _id: new ObjectId(id) },
+      { $set: { lastWatchedEpisode, experience, updatedAt: new Date() } },
+      {
+        returnDocument: 'before',
+        projection: { lastWatchedEpisode: 1, experience: 1 },
+      },
+    );
+  }
 }

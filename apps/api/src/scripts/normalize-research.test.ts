@@ -34,6 +34,7 @@ const buildInput = () => [
         episodes: [
           { number: 80, title: { en: '80 en', ja: '80 ja' }, canon: 'canon' },
         ],
+        events: [{ episode: 80 }],
       },
       {
         slug: 'whisky-peak',
@@ -55,8 +56,9 @@ const buildInput = () => [
               en: '92 summary en',
               ja: '92 要約',
             },
+            canon: 'filler',
           },
-          { number: 91, title: { en: '91 en' } },
+          { number: 91, title: { en: '91 en' }, canon: 'filler' },
         ],
       },
     ],
@@ -81,15 +83,25 @@ const buildInput = () => [
         type: 'mixed',
         episodeRange: { first: 45, last: 53 },
         episodes: [
-          { number: 53, title: { es: '53 es', en: '53 en', ja: '53 ja' } },
+          {
+            number: 53,
+            title: { es: '53 es', en: '53 en', ja: '53 ja' },
+            canon: 'mixed',
+          },
           {
             number: 45,
             title: { es: '¡Recompensa!', en: 'Bounty!', ja: '賞金首！' },
             summary: { es: 'Resumen 45 es', en: 'Summary 45 en', ja: '要約45' },
             adaptsChapters: [96, 97],
+            canon: 'canon',
           },
-          { number: 48, title: { en: 'Episode 48 en', ja: '第48話' } },
+          {
+            number: 48,
+            title: { en: 'Episode 48 en', ja: '第48話' },
+            canon: 'filler',
+          },
         ],
+        events: [{ episode: 45 }, { episode: 45 }, { episode: null }],
       },
       {
         slug: 'buggy-side-story',
@@ -108,8 +120,9 @@ const buildInput = () => [
               en: '47 summary en',
               ja: '47 要約',
             },
+            canon: 'recap',
           },
-          { number: 46, title: { en: '46 en', ja: '46 ja' } },
+          { number: 46, title: { en: '46 en', ja: '46 ja' }, canon: 'mixed' },
         ],
       },
     ],
@@ -188,7 +201,7 @@ describe('normalizeResearch', () => {
     });
   });
 
-  it('da 500 de experiencia al último episodio de cada arco y 100 al resto', () => {
+  it('da a cada episodio la XP de su tipo, sus eventos y los cierres de arco y saga', () => {
     const experience = Object.fromEntries(
       normalizeResearch(buildInput()).episodes.map(e => [
         e.number,
@@ -197,14 +210,14 @@ describe('normalizeResearch', () => {
     );
 
     expect(experience).toStrictEqual({
-      45: 100,
-      46: 100,
-      47: 500,
-      48: 100,
-      53: 500,
-      80: 500,
-      91: 100,
-      92: 500,
+      45: 150, // canon 100 + 2 eventos
+      46: 75, // mixto
+      47: 290, // resumen 40 + cierra arco
+      48: 40, // relleno
+      53: 1325, // mixto 75 + cierra arco + cierra saga
+      80: 375, // canon 100 + 1 evento + cierra arco
+      91: 40, // relleno
+      92: 1290, // relleno 40 + cierra arco + cierra saga
     });
   });
 
@@ -322,7 +335,7 @@ describe('normalizeResearch', () => {
       order,
       title: { en: slug },
       type: 'canon',
-      episodes: [{ number: 46, title: { en: 'Episode 46' } }],
+      episodes: [{ number: 46, title: { en: 'Episode 46' }, canon: 'canon' }],
     });
     const input = [
       {
@@ -341,6 +354,12 @@ describe('normalizeResearch', () => {
       'un arco con type fuera de canon/filler/mixed',
       (input: ReturnType<typeof buildInput>) => {
         (input[1]!.arcs[0]!.type as string) = 'special';
+      },
+    ],
+    [
+      'un episodio con canon fuera de canon/mixed/filler/recap',
+      (input: ReturnType<typeof buildInput>) => {
+        (input[0]!.arcs[0]!.episodes[0]!.canon as string) = 'special';
       },
     ],
     [

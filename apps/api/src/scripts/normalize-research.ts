@@ -24,6 +24,7 @@ const episodeSchema = z.object({
   number: z.number().int().positive(),
   title: titleSchema,
   summary: summarySchema.nullish(),
+  canon: z.enum(['canon', 'mixed', 'filler', 'recap']),
 });
 
 const arcSchema = z.object({
@@ -33,6 +34,9 @@ const arcSchema = z.object({
   summary: summarySchema.nullish(),
   type: z.enum(['canon', 'filler', 'mixed']),
   episodes: z.array(episodeSchema),
+  events: z
+    .array(z.object({ episode: z.number().int().positive().nullish() }))
+    .default([]),
 });
 
 const researchSchema = z.array(
@@ -55,10 +59,22 @@ const texts = (
   ...(summary && { description: summary[locale] }),
 });
 
+// XP de un episodio (ADR 0021): base por tipo, más sus eventos y los cierres de arco y saga.
+const BASE_EXPERIENCE = { canon: 100, mixed: 75, filler: 40, recap: 40 };
+const EVENT_EXPERIENCE = 25;
+const ARC_END_EXPERIENCE = 250;
+const SAGA_END_EXPERIENCE = 1000;
+
 export function normalizeResearch(input: unknown) {
   const sagas = researchSchema.parse(input).sort(byOrder);
   const arcs = sagas.flatMap(saga =>
     saga.arcs.sort(byOrder).map(arc => ({ ...arc, sagaSlug: saga.slug })),
+  );
+  const sagaEnd = new Map(
+    sagas.map(saga => [
+      saga.slug,
+      Math.max(...saga.arcs.flatMap(arc => arc.episodes.map(e => e.number))),
+    ]),
   );
   const episodes = arcs
     .flatMap(arc => {
@@ -66,7 +82,15 @@ export function normalizeResearch(input: unknown) {
       return arc.episodes.map(episode => ({
         ...episode,
         arcSlug: arc.slug,
-        experience: episode.number === last ? 500 : 100,
+        experience:
+          BASE_EXPERIENCE[episode.canon] +
+          EVENT_EXPERIENCE *
+            arc.events.filter(event => event.episode === episode.number)
+              .length +
+          (episode.number === last ? ARC_END_EXPERIENCE : 0) +
+          (episode.number === sagaEnd.get(arc.sagaSlug)
+            ? SAGA_END_EXPERIENCE
+            : 0),
       }));
     })
     .sort((a, b) => a.number - b.number);

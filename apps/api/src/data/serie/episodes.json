@@ -2,7 +2,7 @@
   {
     "number": 1,
     "arcSlug": "romance-dawn",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -26,7 +26,7 @@
   {
     "number": 3,
     "arcSlug": "romance-dawn",
-    "experience": 500,
+    "experience": 425,
     "rewards": {
       "characters": [],
       "items": [],
@@ -38,7 +38,7 @@
   {
     "number": 4,
     "arcSlug": "orange-town",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -62,7 +62,7 @@
   {
     "number": 6,
     "arcSlug": "orange-town",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -74,7 +74,7 @@
   {
     "number": 7,
     "arcSlug": "orange-town",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -86,7 +86,7 @@
   {
     "number": 8,
     "arcSlug": "orange-town",
-    "experience": 500,
+    "experience": 400,
     "rewards": {
       "characters": [],
       "items": [],
@@ -182,7 +182,7 @@
   {
     "number": 16,
     "arcSlug": "syrup-village",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -194,7 +194,7 @@
   {
     "number": 17,
     "arcSlug": "syrup-village",
-    "experience": 100,
+    "experience": 175,
     "rewards": {
       "characters": [],
       "items": [],
@@ -206,7 +206,7 @@
   {
     "number": 18,
     "arcSlug": "syrup-village",
-    "experience": 500,
+    "experience": 350,
     "rewards": {
       "characters": [],
       "items": [],
@@ -278,7 +278,7 @@
   {
     "number": 24,
     "arcSlug": "baratie",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -290,7 +290,7 @@
   {
     "number": 25,
     "arcSlug": "baratie",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -302,7 +302,7 @@
   {
     "number": 26,
     "arcSlug": "baratie",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -314,7 +314,7 @@
   {
     "number": 27,
     "arcSlug": "baratie",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -338,7 +338,7 @@
   {
     "number": 29,
     "arcSlug": "baratie",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -350,7 +350,7 @@
   {
     "number": 30,
     "arcSlug": "baratie",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -422,7 +422,7 @@
   {
     "number": 36,
     "arcSlug": "arlong-park",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -434,7 +434,7 @@
   {
     "number": 37,
     "arcSlug": "arlong-park",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -458,7 +458,7 @@
   {
     "number": 39,
     "arcSlug": "arlong-park",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -470,7 +470,7 @@
   {
     "number": 40,
     "arcSlug": "arlong-park",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -506,7 +506,7 @@
   {
     "number": 43,
     "arcSlug": "arlong-park",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -518,7 +518,7 @@
   {
     "number": 44,
     "arcSlug": "arlong-park",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -542,7 +542,7 @@
   {
     "number": 46,
     "arcSlug": "buggy-side-story",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -554,7 +554,7 @@
   {
     "number": 47,
     "arcSlug": "buggy-side-story",
-    "experience": 500,
+    "experience": 350,
     "rewards": {
       "characters": [],
       "items": [],
@@ -578,7 +578,7 @@
   {
     "number": 49,
     "arcSlug": "loguetown",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -590,7 +590,7 @@
   {
     "number": 50,
     "arcSlug": "loguetown",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -602,7 +602,7 @@
   {
     "number": 51,
     "arcSlug": "loguetown",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -614,7 +614,7 @@
   {
     "number": 52,
     "arcSlug": "loguetown",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -626,7 +626,7 @@
   {
     "number": 53,
     "arcSlug": "loguetown",
-    "experience": 500,
+    "experience": 425,
     "rewards": {
       "characters": [],
       "items": [],
@@ -638,7 +638,7 @@
   {
     "number": 54,
     "arcSlug": "warship-island",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -650,7 +650,7 @@
   {
     "number": 55,
     "arcSlug": "warship-island",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -662,7 +662,7 @@
   {
     "number": 56,
     "arcSlug": "warship-island",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -674,7 +674,7 @@
   {
     "number": 57,
     "arcSlug": "warship-island",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -686,7 +686,7 @@
   {
     "number": 58,
     "arcSlug": "warship-island",
-    "experience": 100,
+    "experience": 65,
     "rewards": {
       "characters": [],
       "items": [],
@@ -698,7 +698,7 @@
   {
     "number": 59,
     "arcSlug": "warship-island",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -710,7 +710,7 @@
   {
     "number": 60,
     "arcSlug": "warship-island",
-    "experience": 100,
+    "experience": 65,
     "rewards": {
       "characters": [],
       "items": [],
@@ -722,7 +722,7 @@
   {
     "number": 61,
     "arcSlug": "warship-island",
-    "experience": 500,
+    "experience": 1325,
     "rewards": {
       "characters": [],
       "items": [],
@@ -734,7 +734,7 @@
   {
     "number": 62,
     "arcSlug": "reverse-mountain",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -746,7 +746,7 @@
   {
     "number": 63,
     "arcSlug": "reverse-mountain",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -770,7 +770,7 @@
   {
     "number": 65,
     "arcSlug": "whisky-peak",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -782,7 +782,7 @@
   {
     "number": 66,
     "arcSlug": "whisky-peak",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -794,7 +794,7 @@
   {
     "number": 67,
     "arcSlug": "whisky-peak",
-    "experience": 500,
+    "experience": 450,
     "rewards": {
       "characters": [],
       "items": [],
@@ -806,7 +806,7 @@
   {
     "number": 68,
     "arcSlug": "koby-and-helmeppo",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -818,7 +818,7 @@
   {
     "number": 69,
     "arcSlug": "koby-and-helmeppo",
-    "experience": 500,
+    "experience": 350,
     "rewards": {
       "characters": [],
       "items": [],
@@ -842,7 +842,7 @@
   {
     "number": 71,
     "arcSlug": "little-garden",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -854,7 +854,7 @@
   {
     "number": 72,
     "arcSlug": "little-garden",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -878,7 +878,7 @@
   {
     "number": 74,
     "arcSlug": "little-garden",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -902,7 +902,7 @@
   {
     "number": 76,
     "arcSlug": "little-garden",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -914,7 +914,7 @@
   {
     "number": 77,
     "arcSlug": "little-garden",
-    "experience": 500,
+    "experience": 400,
     "rewards": {
       "characters": [],
       "items": [],
@@ -962,7 +962,7 @@
   {
     "number": 81,
     "arcSlug": "drum-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -986,7 +986,7 @@
   {
     "number": 83,
     "arcSlug": "drum-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1022,7 +1022,7 @@
   {
     "number": 86,
     "arcSlug": "drum-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1046,7 +1046,7 @@
   {
     "number": 88,
     "arcSlug": "drum-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1058,7 +1058,7 @@
   {
     "number": 89,
     "arcSlug": "drum-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1070,7 +1070,7 @@
   {
     "number": 90,
     "arcSlug": "drum-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1082,7 +1082,7 @@
   {
     "number": 91,
     "arcSlug": "drum-island",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1094,7 +1094,7 @@
   {
     "number": 92,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1106,7 +1106,7 @@
   {
     "number": 93,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1118,7 +1118,7 @@
   {
     "number": 94,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1130,7 +1130,7 @@
   {
     "number": 95,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1166,7 +1166,7 @@
   {
     "number": 98,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1178,7 +1178,7 @@
   {
     "number": 99,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1202,7 +1202,7 @@
   {
     "number": 101,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1214,7 +1214,7 @@
   {
     "number": 102,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1238,7 +1238,7 @@
   {
     "number": 104,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1262,7 +1262,7 @@
   {
     "number": 106,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1310,7 +1310,7 @@
   {
     "number": 110,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1358,7 +1358,7 @@
   {
     "number": 114,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1382,7 +1382,7 @@
   {
     "number": 116,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1394,7 +1394,7 @@
   {
     "number": 117,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1406,7 +1406,7 @@
   {
     "number": 118,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1418,7 +1418,7 @@
   {
     "number": 119,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1454,7 +1454,7 @@
   {
     "number": 122,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1490,7 +1490,7 @@
   {
     "number": 125,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1502,7 +1502,7 @@
   {
     "number": 126,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1526,7 +1526,7 @@
   {
     "number": 128,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1538,7 +1538,7 @@
   {
     "number": 129,
     "arcSlug": "arabasta",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1550,7 +1550,7 @@
   {
     "number": 130,
     "arcSlug": "arabasta",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1562,7 +1562,7 @@
   {
     "number": 131,
     "arcSlug": "post-arabasta",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1574,7 +1574,7 @@
   {
     "number": 132,
     "arcSlug": "post-arabasta",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1586,7 +1586,7 @@
   {
     "number": 133,
     "arcSlug": "post-arabasta",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1598,7 +1598,7 @@
   {
     "number": 134,
     "arcSlug": "post-arabasta",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1610,7 +1610,7 @@
   {
     "number": 135,
     "arcSlug": "post-arabasta",
-    "experience": 500,
+    "experience": 1290,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1622,7 +1622,7 @@
   {
     "number": 136,
     "arcSlug": "goat-island",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1634,7 +1634,7 @@
   {
     "number": 137,
     "arcSlug": "goat-island",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1646,7 +1646,7 @@
   {
     "number": 138,
     "arcSlug": "goat-island",
-    "experience": 500,
+    "experience": 315,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1658,7 +1658,7 @@
   {
     "number": 139,
     "arcSlug": "ruluka-island",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1670,7 +1670,7 @@
   {
     "number": 140,
     "arcSlug": "ruluka-island",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1682,7 +1682,7 @@
   {
     "number": 141,
     "arcSlug": "ruluka-island",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1694,7 +1694,7 @@
   {
     "number": 142,
     "arcSlug": "ruluka-island",
-    "experience": 100,
+    "experience": 65,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1706,7 +1706,7 @@
   {
     "number": 143,
     "arcSlug": "ruluka-island",
-    "experience": 500,
+    "experience": 315,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1730,7 +1730,7 @@
   {
     "number": 145,
     "arcSlug": "jaya",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1742,7 +1742,7 @@
   {
     "number": 146,
     "arcSlug": "jaya",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1754,7 +1754,7 @@
   {
     "number": 147,
     "arcSlug": "jaya",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1766,7 +1766,7 @@
   {
     "number": 148,
     "arcSlug": "jaya",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1802,7 +1802,7 @@
   {
     "number": 151,
     "arcSlug": "jaya",
-    "experience": 100,
+    "experience": 200,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1814,7 +1814,7 @@
   {
     "number": 152,
     "arcSlug": "jaya",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1826,7 +1826,7 @@
   {
     "number": 153,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1922,7 +1922,7 @@
   {
     "number": 161,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1934,7 +1934,7 @@
   {
     "number": 162,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -1994,7 +1994,7 @@
   {
     "number": 167,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2030,7 +2030,7 @@
   {
     "number": 170,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2042,7 +2042,7 @@
   {
     "number": 171,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2054,7 +2054,7 @@
   {
     "number": 172,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2066,7 +2066,7 @@
   {
     "number": 173,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2138,7 +2138,7 @@
   {
     "number": 179,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2150,7 +2150,7 @@
   {
     "number": 180,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2162,7 +2162,7 @@
   {
     "number": 181,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2174,7 +2174,7 @@
   {
     "number": 182,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2246,7 +2246,7 @@
   {
     "number": 188,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2282,7 +2282,7 @@
   {
     "number": 191,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2294,7 +2294,7 @@
   {
     "number": 192,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2318,7 +2318,7 @@
   {
     "number": 194,
     "arcSlug": "skypiea",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2330,7 +2330,7 @@
   {
     "number": 195,
     "arcSlug": "skypiea",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2342,7 +2342,7 @@
   {
     "number": 196,
     "arcSlug": "g-8",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2354,7 +2354,7 @@
   {
     "number": 197,
     "arcSlug": "g-8",
-    "experience": 100,
+    "experience": 65,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2366,7 +2366,7 @@
   {
     "number": 198,
     "arcSlug": "g-8",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2378,7 +2378,7 @@
   {
     "number": 199,
     "arcSlug": "g-8",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2390,7 +2390,7 @@
   {
     "number": 200,
     "arcSlug": "g-8",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2402,7 +2402,7 @@
   {
     "number": 201,
     "arcSlug": "g-8",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2414,7 +2414,7 @@
   {
     "number": 202,
     "arcSlug": "g-8",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2426,7 +2426,7 @@
   {
     "number": 203,
     "arcSlug": "g-8",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2438,7 +2438,7 @@
   {
     "number": 204,
     "arcSlug": "g-8",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2450,7 +2450,7 @@
   {
     "number": 205,
     "arcSlug": "g-8",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2462,7 +2462,7 @@
   {
     "number": 206,
     "arcSlug": "g-8",
-    "experience": 500,
+    "experience": 1315,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2486,7 +2486,7 @@
   {
     "number": 208,
     "arcSlug": "long-ring-long-land",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2510,7 +2510,7 @@
   {
     "number": 210,
     "arcSlug": "long-ring-long-land",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2546,7 +2546,7 @@
   {
     "number": 213,
     "arcSlug": "long-ring-long-land",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2558,7 +2558,7 @@
   {
     "number": 214,
     "arcSlug": "long-ring-long-land",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2570,7 +2570,7 @@
   {
     "number": 215,
     "arcSlug": "long-ring-long-land",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2582,7 +2582,7 @@
   {
     "number": 216,
     "arcSlug": "long-ring-long-land",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2618,7 +2618,7 @@
   {
     "number": 219,
     "arcSlug": "long-ring-long-land",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2630,7 +2630,7 @@
   {
     "number": 220,
     "arcSlug": "oceans-dream",
-    "experience": 100,
+    "experience": 65,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2642,7 +2642,7 @@
   {
     "number": 221,
     "arcSlug": "oceans-dream",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2654,7 +2654,7 @@
   {
     "number": 222,
     "arcSlug": "oceans-dream",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2666,7 +2666,7 @@
   {
     "number": 223,
     "arcSlug": "oceans-dream",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2678,7 +2678,7 @@
   {
     "number": 224,
     "arcSlug": "oceans-dream",
-    "experience": 500,
+    "experience": 290,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2690,7 +2690,7 @@
   {
     "number": 225,
     "arcSlug": "foxys-return",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2702,7 +2702,7 @@
   {
     "number": 226,
     "arcSlug": "foxys-return",
-    "experience": 500,
+    "experience": 325,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2726,7 +2726,7 @@
   {
     "number": 228,
     "arcSlug": "long-ring-long-land",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2786,7 +2786,7 @@
   {
     "number": 233,
     "arcSlug": "water-7",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2822,7 +2822,7 @@
   {
     "number": 236,
     "arcSlug": "water-7",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2846,7 +2846,7 @@
   {
     "number": 238,
     "arcSlug": "water-7",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2906,7 +2906,7 @@
   {
     "number": 243,
     "arcSlug": "water-7",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2942,7 +2942,7 @@
   {
     "number": 246,
     "arcSlug": "water-7",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -2990,7 +2990,7 @@
   {
     "number": 250,
     "arcSlug": "water-7",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3002,7 +3002,7 @@
   {
     "number": 251,
     "arcSlug": "water-7",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3074,7 +3074,7 @@
   {
     "number": 257,
     "arcSlug": "water-7",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3086,7 +3086,7 @@
   {
     "number": 258,
     "arcSlug": "water-7",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3098,7 +3098,7 @@
   {
     "number": 259,
     "arcSlug": "water-7",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3110,7 +3110,7 @@
   {
     "number": 260,
     "arcSlug": "water-7",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3122,7 +3122,7 @@
   {
     "number": 261,
     "arcSlug": "water-7",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3146,7 +3146,7 @@
   {
     "number": 263,
     "arcSlug": "water-7",
-    "experience": 500,
+    "experience": 350,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3266,7 +3266,7 @@
   {
     "number": 273,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3314,7 +3314,7 @@
   {
     "number": 277,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3326,7 +3326,7 @@
   {
     "number": 278,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3338,7 +3338,7 @@
   {
     "number": 279,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3350,7 +3350,7 @@
   {
     "number": 280,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3362,7 +3362,7 @@
   {
     "number": 281,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3374,7 +3374,7 @@
   {
     "number": 282,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3386,7 +3386,7 @@
   {
     "number": 283,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3446,7 +3446,7 @@
   {
     "number": 288,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3470,7 +3470,7 @@
   {
     "number": 290,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3482,7 +3482,7 @@
   {
     "number": 291,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3494,7 +3494,7 @@
   {
     "number": 292,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3542,7 +3542,7 @@
   {
     "number": 296,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3566,7 +3566,7 @@
   {
     "number": 298,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3590,7 +3590,7 @@
   {
     "number": 300,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3614,7 +3614,7 @@
   {
     "number": 302,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3626,7 +3626,7 @@
   {
     "number": 303,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3638,7 +3638,7 @@
   {
     "number": 304,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3698,7 +3698,7 @@
   {
     "number": 309,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3710,7 +3710,7 @@
   {
     "number": 310,
     "arcSlug": "enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3734,7 +3734,7 @@
   {
     "number": 312,
     "arcSlug": "enies-lobby",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3758,7 +3758,7 @@
   {
     "number": 314,
     "arcSlug": "post-enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3782,7 +3782,7 @@
   {
     "number": 316,
     "arcSlug": "post-enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3794,7 +3794,7 @@
   {
     "number": 317,
     "arcSlug": "post-enies-lobby",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3806,7 +3806,7 @@
   {
     "number": 318,
     "arcSlug": "post-enies-lobby",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3818,7 +3818,7 @@
   {
     "number": 319,
     "arcSlug": "post-enies-lobby",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3830,7 +3830,7 @@
   {
     "number": 320,
     "arcSlug": "post-enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3842,7 +3842,7 @@
   {
     "number": 321,
     "arcSlug": "post-enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3854,7 +3854,7 @@
   {
     "number": 322,
     "arcSlug": "post-enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3866,7 +3866,7 @@
   {
     "number": 323,
     "arcSlug": "post-enies-lobby",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3890,7 +3890,7 @@
   {
     "number": 325,
     "arcSlug": "post-enies-lobby",
-    "experience": 500,
+    "experience": 1375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3902,7 +3902,7 @@
   {
     "number": 326,
     "arcSlug": "ice-hunter",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3914,7 +3914,7 @@
   {
     "number": 327,
     "arcSlug": "ice-hunter",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3926,7 +3926,7 @@
   {
     "number": 328,
     "arcSlug": "ice-hunter",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3938,7 +3938,7 @@
   {
     "number": 329,
     "arcSlug": "ice-hunter",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3950,7 +3950,7 @@
   {
     "number": 330,
     "arcSlug": "ice-hunter",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3962,7 +3962,7 @@
   {
     "number": 331,
     "arcSlug": "ice-hunter",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3974,7 +3974,7 @@
   {
     "number": 332,
     "arcSlug": "ice-hunter",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3986,7 +3986,7 @@
   {
     "number": 333,
     "arcSlug": "ice-hunter",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -3998,7 +3998,7 @@
   {
     "number": 334,
     "arcSlug": "ice-hunter",
-    "experience": 100,
+    "experience": 65,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4010,7 +4010,7 @@
   {
     "number": 335,
     "arcSlug": "ice-hunter",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4022,7 +4022,7 @@
   {
     "number": 336,
     "arcSlug": "ice-hunter",
-    "experience": 500,
+    "experience": 290,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4034,7 +4034,7 @@
   {
     "number": 337,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4058,7 +4058,7 @@
   {
     "number": 339,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4106,7 +4106,7 @@
   {
     "number": 343,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4178,7 +4178,7 @@
   {
     "number": 349,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4202,7 +4202,7 @@
   {
     "number": 351,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4214,7 +4214,7 @@
   {
     "number": 352,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4286,7 +4286,7 @@
   {
     "number": 358,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4322,7 +4322,7 @@
   {
     "number": 361,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4334,7 +4334,7 @@
   {
     "number": 362,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4346,7 +4346,7 @@
   {
     "number": 363,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4382,7 +4382,7 @@
   {
     "number": 366,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4394,7 +4394,7 @@
   {
     "number": 367,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4406,7 +4406,7 @@
   {
     "number": 368,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4430,7 +4430,7 @@
   {
     "number": 370,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4454,7 +4454,7 @@
   {
     "number": 372,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4466,7 +4466,7 @@
   {
     "number": 373,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4490,7 +4490,7 @@
   {
     "number": 375,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4514,7 +4514,7 @@
   {
     "number": 377,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4526,7 +4526,7 @@
   {
     "number": 378,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4550,7 +4550,7 @@
   {
     "number": 380,
     "arcSlug": "thriller-bark",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4562,7 +4562,7 @@
   {
     "number": 381,
     "arcSlug": "thriller-bark",
-    "experience": 500,
+    "experience": 400,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4574,7 +4574,7 @@
   {
     "number": 382,
     "arcSlug": "spa-island",
-    "experience": 100,
+    "experience": 65,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4586,7 +4586,7 @@
   {
     "number": 383,
     "arcSlug": "spa-island",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4598,7 +4598,7 @@
   {
     "number": 384,
     "arcSlug": "spa-island",
-    "experience": 500,
+    "experience": 1290,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4694,7 +4694,7 @@
   {
     "number": 392,
     "arcSlug": "sabaody-archipelago",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4742,7 +4742,7 @@
   {
     "number": 396,
     "arcSlug": "sabaody-archipelago",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4754,7 +4754,7 @@
   {
     "number": 397,
     "arcSlug": "sabaody-archipelago",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4778,7 +4778,7 @@
   {
     "number": 399,
     "arcSlug": "sabaody-archipelago",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4814,7 +4814,7 @@
   {
     "number": 402,
     "arcSlug": "sabaody-archipelago",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4850,7 +4850,7 @@
   {
     "number": 405,
     "arcSlug": "sabaody-archipelago",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4862,7 +4862,7 @@
   {
     "number": 406,
     "arcSlug": "sabaody-archipelago",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4874,7 +4874,7 @@
   {
     "number": 407,
     "arcSlug": "sabaody-archipelago",
-    "experience": 500,
+    "experience": 290,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4910,7 +4910,7 @@
   {
     "number": 410,
     "arcSlug": "amazon-lily",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4946,7 +4946,7 @@
   {
     "number": 413,
     "arcSlug": "amazon-lily",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4970,7 +4970,7 @@
   {
     "number": 415,
     "arcSlug": "amazon-lily",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -4982,7 +4982,7 @@
   {
     "number": 416,
     "arcSlug": "amazon-lily",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5042,7 +5042,7 @@
   {
     "number": 421,
     "arcSlug": "amazon-lily",
-    "experience": 500,
+    "experience": 350,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5054,7 +5054,7 @@
   {
     "number": 422,
     "arcSlug": "impel-down",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5090,7 +5090,7 @@
   {
     "number": 425,
     "arcSlug": "impel-down",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5102,7 +5102,7 @@
   {
     "number": 426,
     "arcSlug": "little-east-blue",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5114,7 +5114,7 @@
   {
     "number": 427,
     "arcSlug": "little-east-blue",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5126,7 +5126,7 @@
   {
     "number": 428,
     "arcSlug": "little-east-blue",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5138,7 +5138,7 @@
   {
     "number": 429,
     "arcSlug": "little-east-blue",
-    "experience": 500,
+    "experience": 290,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5210,7 +5210,7 @@
   {
     "number": 435,
     "arcSlug": "impel-down",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5270,7 +5270,7 @@
   {
     "number": 440,
     "arcSlug": "impel-down",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5306,7 +5306,7 @@
   {
     "number": 443,
     "arcSlug": "impel-down",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5330,7 +5330,7 @@
   {
     "number": 445,
     "arcSlug": "impel-down",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5402,7 +5402,7 @@
   {
     "number": 451,
     "arcSlug": "impel-down",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5426,7 +5426,7 @@
   {
     "number": 453,
     "arcSlug": "impel-down",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5438,7 +5438,7 @@
   {
     "number": 454,
     "arcSlug": "impel-down",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5450,7 +5450,7 @@
   {
     "number": 455,
     "arcSlug": "impel-down",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5462,7 +5462,7 @@
   {
     "number": 456,
     "arcSlug": "impel-down",
-    "experience": 500,
+    "experience": 325,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5474,7 +5474,7 @@
   {
     "number": 457,
     "arcSlug": "marineford",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5486,7 +5486,7 @@
   {
     "number": 458,
     "arcSlug": "marineford",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5498,7 +5498,7 @@
   {
     "number": 459,
     "arcSlug": "marineford",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5582,7 +5582,7 @@
   {
     "number": 466,
     "arcSlug": "marineford",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5630,7 +5630,7 @@
   {
     "number": 470,
     "arcSlug": "marineford",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5654,7 +5654,7 @@
   {
     "number": 472,
     "arcSlug": "marineford",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5738,7 +5738,7 @@
   {
     "number": 479,
     "arcSlug": "marineford",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5786,7 +5786,7 @@
   {
     "number": 483,
     "arcSlug": "marineford",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5810,7 +5810,7 @@
   {
     "number": 485,
     "arcSlug": "marineford",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5822,7 +5822,7 @@
   {
     "number": 486,
     "arcSlug": "marineford",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5846,7 +5846,7 @@
   {
     "number": 488,
     "arcSlug": "marineford",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5858,7 +5858,7 @@
   {
     "number": 489,
     "arcSlug": "marineford",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5894,7 +5894,7 @@
   {
     "number": 492,
     "arcSlug": "post-war",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5942,7 +5942,7 @@
   {
     "number": 496,
     "arcSlug": "post-war",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5954,7 +5954,7 @@
   {
     "number": 497,
     "arcSlug": "post-war",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5966,7 +5966,7 @@
   {
     "number": 498,
     "arcSlug": "post-war",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -5978,7 +5978,7 @@
   {
     "number": 499,
     "arcSlug": "post-war",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6026,7 +6026,7 @@
   {
     "number": 503,
     "arcSlug": "post-war",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6050,7 +6050,7 @@
   {
     "number": 505,
     "arcSlug": "post-war",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6062,7 +6062,7 @@
   {
     "number": 506,
     "arcSlug": "post-war",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6122,7 +6122,7 @@
   {
     "number": 511,
     "arcSlug": "post-war",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6182,7 +6182,7 @@
   {
     "number": 516,
     "arcSlug": "post-war",
-    "experience": 500,
+    "experience": 1375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6194,7 +6194,7 @@
   {
     "number": 517,
     "arcSlug": "return-to-sabaody",
-    "experience": 100,
+    "experience": 225,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6206,7 +6206,7 @@
   {
     "number": 518,
     "arcSlug": "return-to-sabaody",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6218,7 +6218,7 @@
   {
     "number": 519,
     "arcSlug": "return-to-sabaody",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6242,7 +6242,7 @@
   {
     "number": 521,
     "arcSlug": "return-to-sabaody",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6254,7 +6254,7 @@
   {
     "number": 522,
     "arcSlug": "return-to-sabaody",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6290,7 +6290,7 @@
   {
     "number": 525,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6326,7 +6326,7 @@
   {
     "number": 528,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6374,7 +6374,7 @@
   {
     "number": 532,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6422,7 +6422,7 @@
   {
     "number": 536,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6458,7 +6458,7 @@
   {
     "number": 539,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6470,7 +6470,7 @@
   {
     "number": 540,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6494,7 +6494,7 @@
   {
     "number": 542,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6506,7 +6506,7 @@
   {
     "number": 543,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6518,7 +6518,7 @@
   {
     "number": 544,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6542,7 +6542,7 @@
   {
     "number": 546,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6578,7 +6578,7 @@
   {
     "number": 549,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6614,7 +6614,7 @@
   {
     "number": 552,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6638,7 +6638,7 @@
   {
     "number": 554,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6662,7 +6662,7 @@
   {
     "number": 556,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6674,7 +6674,7 @@
   {
     "number": 557,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6734,7 +6734,7 @@
   {
     "number": 562,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6770,7 +6770,7 @@
   {
     "number": 565,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6782,7 +6782,7 @@
   {
     "number": 566,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6794,7 +6794,7 @@
   {
     "number": 567,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6806,7 +6806,7 @@
   {
     "number": 568,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6818,7 +6818,7 @@
   {
     "number": 569,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6830,7 +6830,7 @@
   {
     "number": 570,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6854,7 +6854,7 @@
   {
     "number": 572,
     "arcSlug": "fish-man-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6878,7 +6878,7 @@
   {
     "number": 574,
     "arcSlug": "fish-man-island",
-    "experience": 500,
+    "experience": 1325,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6890,7 +6890,7 @@
   {
     "number": 575,
     "arcSlug": "zs-ambition",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6902,7 +6902,7 @@
   {
     "number": 576,
     "arcSlug": "zs-ambition",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6914,7 +6914,7 @@
   {
     "number": 577,
     "arcSlug": "zs-ambition",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -6926,7 +6926,7 @@
   {
     "number": 578,
     "arcSlug": "zs-ambition",
-    "experience": 500,
+    "experience": 315,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7034,7 +7034,7 @@
   {
     "number": 587,
     "arcSlug": "punk-hazard",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7070,7 +7070,7 @@
   {
     "number": 590,
     "arcSlug": "punk-hazard",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7118,7 +7118,7 @@
   {
     "number": 594,
     "arcSlug": "punk-hazard",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7178,7 +7178,7 @@
   {
     "number": 599,
     "arcSlug": "punk-hazard",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7214,7 +7214,7 @@
   {
     "number": 602,
     "arcSlug": "punk-hazard",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7346,7 +7346,7 @@
   {
     "number": 613,
     "arcSlug": "punk-hazard",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7382,7 +7382,7 @@
   {
     "number": 616,
     "arcSlug": "punk-hazard",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7394,7 +7394,7 @@
   {
     "number": 617,
     "arcSlug": "punk-hazard",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7418,7 +7418,7 @@
   {
     "number": 619,
     "arcSlug": "punk-hazard",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7478,7 +7478,7 @@
   {
     "number": 624,
     "arcSlug": "punk-hazard",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7490,7 +7490,7 @@
   {
     "number": 625,
     "arcSlug": "punk-hazard",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7502,7 +7502,7 @@
   {
     "number": 626,
     "arcSlug": "caesar-retrieval",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7514,7 +7514,7 @@
   {
     "number": 627,
     "arcSlug": "caesar-retrieval",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7526,7 +7526,7 @@
   {
     "number": 628,
     "arcSlug": "caesar-retrieval",
-    "experience": 500,
+    "experience": 350,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7538,7 +7538,7 @@
   {
     "number": 629,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7850,7 +7850,7 @@
   {
     "number": 655,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7922,7 +7922,7 @@
   {
     "number": 661,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -7946,7 +7946,7 @@
   {
     "number": 663,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8102,7 +8102,7 @@
   {
     "number": 676,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8114,7 +8114,7 @@
   {
     "number": 677,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8126,7 +8126,7 @@
   {
     "number": 678,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8150,7 +8150,7 @@
   {
     "number": 680,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8234,7 +8234,7 @@
   {
     "number": 687,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8450,7 +8450,7 @@
   {
     "number": 705,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8570,7 +8570,7 @@
   {
     "number": 715,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8594,7 +8594,7 @@
   {
     "number": 717,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8618,7 +8618,7 @@
   {
     "number": 719,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8654,7 +8654,7 @@
   {
     "number": 722,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8702,7 +8702,7 @@
   {
     "number": 726,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8714,7 +8714,7 @@
   {
     "number": 727,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8786,7 +8786,7 @@
   {
     "number": 733,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8810,7 +8810,7 @@
   {
     "number": 735,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8858,7 +8858,7 @@
   {
     "number": 739,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8906,7 +8906,7 @@
   {
     "number": 743,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8930,7 +8930,7 @@
   {
     "number": 745,
     "arcSlug": "dressrosa",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8942,7 +8942,7 @@
   {
     "number": 746,
     "arcSlug": "dressrosa",
-    "experience": 500,
+    "experience": 1600,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8954,7 +8954,7 @@
   {
     "number": 747,
     "arcSlug": "silver-mine",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8966,7 +8966,7 @@
   {
     "number": 748,
     "arcSlug": "silver-mine",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8978,7 +8978,7 @@
   {
     "number": 749,
     "arcSlug": "silver-mine",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -8990,7 +8990,7 @@
   {
     "number": 750,
     "arcSlug": "silver-mine",
-    "experience": 500,
+    "experience": 315,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9002,7 +9002,7 @@
   {
     "number": 751,
     "arcSlug": "zou",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9050,7 +9050,7 @@
   {
     "number": 755,
     "arcSlug": "zou",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9110,7 +9110,7 @@
   {
     "number": 760,
     "arcSlug": "zou",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9158,7 +9158,7 @@
   {
     "number": 764,
     "arcSlug": "zou",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9206,7 +9206,7 @@
   {
     "number": 768,
     "arcSlug": "zou",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9218,7 +9218,7 @@
   {
     "number": 769,
     "arcSlug": "zou",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9242,7 +9242,7 @@
   {
     "number": 771,
     "arcSlug": "zou",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9278,7 +9278,7 @@
   {
     "number": 774,
     "arcSlug": "zou",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9290,7 +9290,7 @@
   {
     "number": 775,
     "arcSlug": "zou",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9314,7 +9314,7 @@
   {
     "number": 777,
     "arcSlug": "zou",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9326,7 +9326,7 @@
   {
     "number": 778,
     "arcSlug": "zou",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9338,7 +9338,7 @@
   {
     "number": 779,
     "arcSlug": "zou",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9350,7 +9350,7 @@
   {
     "number": 780,
     "arcSlug": "marine-rookie",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9362,7 +9362,7 @@
   {
     "number": 781,
     "arcSlug": "marine-rookie",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9374,7 +9374,7 @@
   {
     "number": 782,
     "arcSlug": "marine-rookie",
-    "experience": 500,
+    "experience": 315,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9422,7 +9422,7 @@
   {
     "number": 786,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9458,7 +9458,7 @@
   {
     "number": 789,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9554,7 +9554,7 @@
   {
     "number": 797,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9626,7 +9626,7 @@
   {
     "number": 803,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9662,7 +9662,7 @@
   {
     "number": 806,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9770,7 +9770,7 @@
   {
     "number": 815,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9818,7 +9818,7 @@
   {
     "number": 819,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9890,7 +9890,7 @@
   {
     "number": 825,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -9986,7 +9986,7 @@
   {
     "number": 833,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10022,7 +10022,7 @@
   {
     "number": 836,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10046,7 +10046,7 @@
   {
     "number": 838,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10058,7 +10058,7 @@
   {
     "number": 839,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10178,7 +10178,7 @@
   {
     "number": 849,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10214,7 +10214,7 @@
   {
     "number": 852,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10250,7 +10250,7 @@
   {
     "number": 855,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10334,7 +10334,7 @@
   {
     "number": 862,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10418,7 +10418,7 @@
   {
     "number": 869,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10430,7 +10430,7 @@
   {
     "number": 870,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10442,7 +10442,7 @@
   {
     "number": 871,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10490,7 +10490,7 @@
   {
     "number": 875,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10502,7 +10502,7 @@
   {
     "number": 876,
     "arcSlug": "whole-cake-island",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10514,7 +10514,7 @@
   {
     "number": 877,
     "arcSlug": "whole-cake-island",
-    "experience": 500,
+    "experience": 350,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10526,7 +10526,7 @@
   {
     "number": 878,
     "arcSlug": "levely",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10538,7 +10538,7 @@
   {
     "number": 879,
     "arcSlug": "levely",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10550,7 +10550,7 @@
   {
     "number": 880,
     "arcSlug": "levely",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10562,7 +10562,7 @@
   {
     "number": 881,
     "arcSlug": "levely",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10574,7 +10574,7 @@
   {
     "number": 882,
     "arcSlug": "levely",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10586,7 +10586,7 @@
   {
     "number": 883,
     "arcSlug": "levely",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10598,7 +10598,7 @@
   {
     "number": 884,
     "arcSlug": "levely",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10634,7 +10634,7 @@
   {
     "number": 887,
     "arcSlug": "levely",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10658,7 +10658,7 @@
   {
     "number": 889,
     "arcSlug": "levely",
-    "experience": 500,
+    "experience": 1325,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10670,7 +10670,7 @@
   {
     "number": 890,
     "arcSlug": "wano-country-act-1",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10730,7 +10730,7 @@
   {
     "number": 895,
     "arcSlug": "cidre-guild",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10742,7 +10742,7 @@
   {
     "number": 896,
     "arcSlug": "cidre-guild",
-    "experience": 500,
+    "experience": 290,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10850,7 +10850,7 @@
   {
     "number": 905,
     "arcSlug": "wano-country-act-1",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10874,7 +10874,7 @@
   {
     "number": 907,
     "arcSlug": "romance-dawn-special",
-    "experience": 500,
+    "experience": 290,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10898,7 +10898,7 @@
   {
     "number": 909,
     "arcSlug": "wano-country-act-1",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10970,7 +10970,7 @@
   {
     "number": 915,
     "arcSlug": "wano-country-act-1",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -10982,7 +10982,7 @@
   {
     "number": 916,
     "arcSlug": "wano-country-act-1",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11078,7 +11078,7 @@
   {
     "number": 924,
     "arcSlug": "wano-country-act-2",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11126,7 +11126,7 @@
   {
     "number": 928,
     "arcSlug": "wano-country-act-2",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11222,7 +11222,7 @@
   {
     "number": 936,
     "arcSlug": "wano-country-act-2",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11390,7 +11390,7 @@
   {
     "number": 950,
     "arcSlug": "wano-country-act-2",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11438,7 +11438,7 @@
   {
     "number": 954,
     "arcSlug": "wano-country-act-2",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11474,7 +11474,7 @@
   {
     "number": 957,
     "arcSlug": "wano-country-act-2",
-    "experience": 500,
+    "experience": 375,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11606,7 +11606,7 @@
   {
     "number": 968,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11654,7 +11654,7 @@
   {
     "number": 972,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11678,7 +11678,7 @@
   {
     "number": 974,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11702,7 +11702,7 @@
   {
     "number": 976,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11762,7 +11762,7 @@
   {
     "number": 981,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11846,7 +11846,7 @@
   {
     "number": 988,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11858,7 +11858,7 @@
   {
     "number": 989,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 75,
     "rewards": {
       "characters": [],
       "items": [],
@@ -11954,7 +11954,7 @@
   {
     "number": 997,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12038,7 +12038,7 @@
   {
     "number": 1004,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12182,7 +12182,7 @@
   {
     "number": 1016,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12266,7 +12266,7 @@
   {
     "number": 1023,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12326,7 +12326,7 @@
   {
     "number": 1028,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12338,7 +12338,7 @@
   {
     "number": 1029,
     "arcSlug": "uta-past",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12350,7 +12350,7 @@
   {
     "number": 1030,
     "arcSlug": "uta-past",
-    "experience": 500,
+    "experience": 290,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12398,7 +12398,7 @@
   {
     "number": 1034,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12470,7 +12470,7 @@
   {
     "number": 1040,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12518,7 +12518,7 @@
   {
     "number": 1044,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12554,7 +12554,7 @@
   {
     "number": 1047,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12674,7 +12674,7 @@
   {
     "number": 1057,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12710,7 +12710,7 @@
   {
     "number": 1060,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12722,7 +12722,7 @@
   {
     "number": 1061,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12734,7 +12734,7 @@
   {
     "number": 1062,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12794,7 +12794,7 @@
   {
     "number": 1067,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12842,7 +12842,7 @@
   {
     "number": 1071,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12902,7 +12902,7 @@
   {
     "number": 1076,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12926,7 +12926,7 @@
   {
     "number": 1078,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12950,7 +12950,7 @@
   {
     "number": 1080,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12974,7 +12974,7 @@
   {
     "number": 1082,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -12998,7 +12998,7 @@
   {
     "number": 1084,
     "arcSlug": "wano-country-act-3",
-    "experience": 100,
+    "experience": 40,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13010,7 +13010,7 @@
   {
     "number": 1085,
     "arcSlug": "wano-country-act-3",
-    "experience": 500,
+    "experience": 1350,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13022,7 +13022,7 @@
   {
     "number": 1086,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13058,7 +13058,7 @@
   {
     "number": 1089,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13094,7 +13094,7 @@
   {
     "number": 1092,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13118,7 +13118,7 @@
   {
     "number": 1094,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13178,7 +13178,7 @@
   {
     "number": 1099,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13238,7 +13238,7 @@
   {
     "number": 1104,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13286,7 +13286,7 @@
   {
     "number": 1108,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13334,7 +13334,7 @@
   {
     "number": 1112,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13346,7 +13346,7 @@
   {
     "number": 1113,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13358,7 +13358,7 @@
   {
     "number": 1114,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13382,7 +13382,7 @@
   {
     "number": 1116,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13418,7 +13418,7 @@
   {
     "number": 1119,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13430,7 +13430,7 @@
   {
     "number": 1120,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13442,7 +13442,7 @@
   {
     "number": 1121,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13490,7 +13490,7 @@
   {
     "number": 1125,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13514,7 +13514,7 @@
   {
     "number": 1127,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13526,7 +13526,7 @@
   {
     "number": 1128,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13538,7 +13538,7 @@
   {
     "number": 1129,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13634,7 +13634,7 @@
   {
     "number": 1137,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13658,7 +13658,7 @@
   {
     "number": 1139,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13682,7 +13682,7 @@
   {
     "number": 1141,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13694,7 +13694,7 @@
   {
     "number": 1142,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13718,7 +13718,7 @@
   {
     "number": 1144,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13766,7 +13766,7 @@
   {
     "number": 1148,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13790,7 +13790,7 @@
   {
     "number": 1150,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13814,7 +13814,7 @@
   {
     "number": 1152,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13826,7 +13826,7 @@
   {
     "number": 1153,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13838,7 +13838,7 @@
   {
     "number": 1154,
     "arcSlug": "egghead",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13850,7 +13850,7 @@
   {
     "number": 1155,
     "arcSlug": "egghead",
-    "experience": 500,
+    "experience": 350,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13874,7 +13874,7 @@
   {
     "number": 1157,
     "arcSlug": "elbaph",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13910,7 +13910,7 @@
   {
     "number": 1160,
     "arcSlug": "elbaph",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -13946,7 +13946,7 @@
   {
     "number": 1163,
     "arcSlug": "elbaph",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -14006,7 +14006,7 @@
   {
     "number": 1168,
     "arcSlug": "elbaph",
-    "experience": 100,
+    "experience": 150,
     "rewards": {
       "characters": [],
       "items": [],
@@ -14030,7 +14030,7 @@
   {
     "number": 1170,
     "arcSlug": "elbaph",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -14042,7 +14042,7 @@
   {
     "number": 1171,
     "arcSlug": "elbaph",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -14066,7 +14066,7 @@
   {
     "number": 1173,
     "arcSlug": "elbaph",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -14138,7 +14138,7 @@
   {
     "number": 1179,
     "arcSlug": "elbaph",
-    "experience": 100,
+    "experience": 125,
     "rewards": {
       "characters": [],
       "items": [],
@@ -14150,7 +14150,7 @@
   {
     "number": 1180,
     "arcSlug": "elbaph",
-    "experience": 500,
+    "experience": 1375,
     "rewards": {
       "characters": [],
       "items": [],

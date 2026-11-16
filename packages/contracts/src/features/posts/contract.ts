@@ -2,11 +2,11 @@ import { oc } from '@orpc/contract';
 
 import {
   createPostSchema,
-  postPageQuerySchema,
   postPageSchema,
   postPublicSchema,
 } from '../../common/post.schemas.js';
 import {
+  listPostsInputSchema,
   postIdParamsSchema,
   toggleBookmarkOutputSchema,
   toggleLikeOutputSchema,
@@ -28,9 +28,10 @@ export const postsContract = oc
       .route({
         method: 'GET',
         path: '/',
-        description: 'List public posts (cursor pagination)',
+        description:
+          'List the "all" or "following" feed (cursor pagination); "following" requires a session',
       })
-      .input(postPageQuerySchema)
+      .input(listPostsInputSchema)
       .errors(postsErrors)
       .output(postPageSchema),
 

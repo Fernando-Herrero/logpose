@@ -1,9 +1,20 @@
 import * as z from 'zod/v4';
 
 import { mongoIdParamsSchema } from '../../common/id.schemas.js';
-import { postPublicSchema } from '../../common/post.schemas.js';
+import { postPageQuerySchema } from '../../common/post.schemas.js';
 
 export const postIdParamsSchema = mongoIdParamsSchema();
+
+/** «Todos»: lo que el viewer puede ver, sin retweets. «Siguiendo»: lo suyo y lo de quien sigue, con lo que retuitean. */
+export const postFeedSchema = z.enum(['all', 'following']);
+
+export type PostFeed = z.infer<typeof postFeedSchema>;
+
+export const listPostsInputSchema = postPageQuerySchema.extend({
+  feed: postFeedSchema.default('all'),
+});
+
+export type ListPostsInput = z.infer<typeof listPostsInputSchema>;
 
 export const toggleLikeOutputSchema = z.object({
   liked: z.boolean(),
@@ -21,8 +32,4 @@ export const toggleRetweetOutputSchema = z.object({
   retweeted: z.boolean(),
   retweetsCount: z.number(),
   userRetweeted: z.boolean(),
-  /** Post-retweet creado; presente cuando `retweeted` es true. */
-  retweetPost: postPublicSchema.optional(),
-  /** Id del post-retweet eliminado al deshacer; presente cuando `retweeted` es false. */
-  removedRetweetPostId: z.string().optional(),
 });

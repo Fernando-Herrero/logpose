@@ -3,10 +3,13 @@ import { randomUUID } from 'node:crypto';
 import { Logger } from '@nestjs/common';
 import type { NextFunction, Request, Response } from 'express';
 
+import type { Viewer } from '../../features/auth/access.js';
+
 const logger = new Logger('HTTP');
 
 type RequestWithMeta = Request & {
-  user?: { id: string };
+  // Lo escribe `SessionGuard` después de este middleware; se lee en `finish`.
+  viewer?: Viewer;
   requestId?: string;
 };
 
@@ -34,7 +37,7 @@ export function requestLogMiddleware(
       path: req.originalUrl,
       status,
       duration_ms: durationMs,
-      user_id: req.user?.id ?? null,
+      user_id: req.viewer?.kind === 'user' ? req.viewer.id : null,
       env: process.env.NODE_ENV ?? 'development',
     };
 

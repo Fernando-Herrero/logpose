@@ -151,30 +151,47 @@ export class PostsPersistence implements OnModuleInit {
     visible: Filter<PostDocument>,
     { limit = POST_FEED_PAGE_SIZE, cursor }: PostPageQuery,
   ) {
-    const decoded = cursor ? decodePostCursor(cursor) : null;
-    const after: Filter<PostDocument> = decoded
-      ? {
-          $or: [
-            { createdAt: { $lt: decoded.createdAt } },
-            { createdAt: decoded.createdAt, _id: { $lt: decoded.id } },
-          ],
-        }
-      : {};
-
     // `$and` y no spread: `visible` y `after` pueden traer los dos un `$or`.
     const rows = await this.posts
-      .find({ $and: [filter, visible, after], isDeleted: false })
+      .find({ $and: [filter, visible, afterCursor(cursor)], isDeleted: false })
       .sort({ createdAt: -1, _id: -1 })
       .limit(limit + 1)
       .toArray();
-    // La fila de sobra solo dice si hay otra página.
-    const posts = rows.slice(0, limit);
-    const last = posts.at(-1);
 
-    return {
-      posts,
-      nextCursor: rows.length > limit && last ? encodePostCursor(last) : null,
-    };
+    return toPage(rows, limit);
+  }
+
+  /**
+   * Como `findPage`, pero cada post sale una vez: el original y sus retweets
+   * cuentan como uno y queda su aparición más reciente.
+   * Techo: agrupa todo lo que casa con `filter` en cada página; vale hasta
+   * decenas de miles de posts. La salida es un timeline guardado por usuario.
+   */
+  async findPageOncePerPost(
+    filter: Filter<PostDocument>,
+    visible: Filter<PostDocument>,
+    { limit = POST_FEED_PAGE_SIZE, cursor }: PostPageQuery,
+  ) {
+    const rows = await this.posts
+      .aggregate<WithId<PostDocument>>([
+        { $match: { $and: [filter, visible], isDeleted: false } },
+        { $sort: { createdAt: -1, _id: -1 } },
+        {
+          $group: {
+            _id: { $ifNull: ['$retweetOf', '$_id'] },
+            post: { $first: '$$ROOT' },
+          },
+        },
+        { $replaceWith: '$post' },
+        { $sort: { createdAt: -1, _id: -1 } },
+        // El cursor va tras agrupar: antes, un post ya servido volvería en la
+        // página siguiente con una aparición más vieja.
+        { $match: afterCursor(cursor) },
+        { $limit: limit + 1 },
+      ])
+      .toArray();
+
+    return toPage(rows, limit);
   }
 
   findActiveById(id: string, session?: ClientSession) {
@@ -321,11 +338,7 @@ export class PostsPersistence implements OnModuleInit {
         return null;
       }
 
-      return {
-        original: updated,
-        retweeted: false as const,
-        removedRetweetPostId: existing._id.toString(),
-      };
+      return { original: updated, retweeted: false };
     }
 
     const retweetPost = await this.insert(
@@ -350,9 +363,7 @@ export class PostsPersistence implements OnModuleInit {
       { returnDocument: 'after', session },
     );
 
-    return updated
-      ? { original: updated, retweeted: true as const, retweetPost }
-      : null;
+    return updated ? { original: updated, retweeted: true } : null;
   }
 
   /** Único constructor de posts: el resto de campos empieza vacío. */
@@ -381,4 +392,29 @@ export class PostsPersistence implements OnModuleInit {
     await this.posts.insertOne(document, { session });
     return document;
   }
+}
+
+/** Lo que va detrás del cursor, el último post de la página anterior. */
+function afterCursor(cursor: PostPageQuery['cursor']): Filter<PostDocument> {
+  const decoded = cursor ? decodePostCursor(cursor) : null;
+
+  return decoded
+    ? {
+        $or: [
+          { createdAt: { $lt: decoded.createdAt } },
+          { createdAt: decoded.createdAt, _id: { $lt: decoded.id } },
+        ],
+      }
+    : {};
+}
+
+/** `rows` trae una fila de sobra que solo dice si hay otra página. */
+function toPage(rows: WithId<PostDocument>[], limit: number) {
+  const posts = rows.slice(0, limit);
+  const last = posts.at(-1);
+
+  return {
+    posts,
+    nextCursor: rows.length > limit && last ? encodePostCursor(last) : null,
+  };
 }

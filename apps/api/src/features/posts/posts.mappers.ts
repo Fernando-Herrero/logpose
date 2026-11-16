@@ -193,6 +193,7 @@ export async function serializePostsForViewer(
       return {
         ...serialized,
         originalAuthor: serializeAuthorEmbed(authorOf(original)),
+        createdAt: original.createdAt?.toISOString(),
         ...interactionStats(original, viewer, retweetedOriginalIds),
       };
     })

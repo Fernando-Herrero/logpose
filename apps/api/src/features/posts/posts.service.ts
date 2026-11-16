@@ -6,9 +6,10 @@ import {
   getPostTextMaxLength,
   type PostPageQuery,
 } from '@logpose/contracts/common/post.schemas';
+import type { ListPostsInput } from '@logpose/contracts/features/posts/schemas';
 import { Injectable } from '@nestjs/common';
 import { ORPCError } from '@orpc/server';
-import { type ClientSession, ObjectId } from 'mongodb';
+import { type ClientSession, type Filter, ObjectId } from 'mongodb';
 import type * as z from 'zod/v4';
 
 import {
@@ -18,8 +19,13 @@ import {
   visiblePostsFilter,
 } from '../auth/access.js';
 import { NotificationsService } from '../notifications/notifications.service.js';
+import { withPreferenceDefaults } from '../users/user.mappers.js';
 import { UsersPersistence } from '../users/users.persistence.js';
-import { serializePost, serializePostsForViewer } from './posts.mappers.js';
+import {
+  type PostDocument,
+  serializePost,
+  serializePostsForViewer,
+} from './posts.mappers.js';
 import { PostsPersistence } from './posts.persistence.js';
 
 type CreatePostBody = z.infer<typeof createPostSchema>;
@@ -33,9 +39,16 @@ export class PostsService {
     private readonly transactions: MongoTransactionService,
   ) {}
 
-  async list(query: PostPageQuery, viewer: Viewer) {
+  async list({ feed, ...query }: ListPostsInput, viewer: Viewer) {
     const visible = await visiblePostsFilter(viewer, this.usersPersistence);
-    const page = await this.postsPersistence.findPage({}, visible, query);
+    const page =
+      feed === 'all'
+        ? await this.postsPersistence.findPage(
+            { isRetweet: false },
+            visible,
+            query,
+          )
+        : await this.findFollowingPage(viewer, visible, query);
 
     return {
       ...page,
@@ -44,6 +57,33 @@ export class PostsService {
         users: this.usersPersistence,
       }),
     };
+  }
+
+  /** Lo del viewer y lo de quien sigue; los retweets, según su ajuste. */
+  private async findFollowingPage(
+    viewer: Viewer,
+    visible: Filter<PostDocument>,
+    query: PostPageQuery,
+  ) {
+    const user =
+      viewer.kind === 'user'
+        ? await this.usersPersistence.findById(viewer.id)
+        : null;
+
+    if (!user) {
+      throw new ORPCError('UNAUTHORIZED');
+    }
+
+    return this.postsPersistence.findPageOncePerPost(
+      {
+        userId: { $in: [user._id, ...user.following] },
+        ...(withPreferenceDefaults(user.preferences).timeline.showRetweets
+          ? {}
+          : { isRetweet: false }),
+      },
+      visible,
+      query,
+    );
   }
 
   /**
@@ -168,54 +208,38 @@ export class PostsService {
       throw new ORPCError('FORBIDDEN');
     }
 
-    const result = await this.transactions.withTransaction(async session => {
-      await this.lockViewer(viewer, session);
-      const toggled = await this.postsPersistence.toggleRetweet(
-        postId,
-        viewer.id,
-        session,
-      );
-
-      if (!toggled) {
-        throw new ORPCError('POST_NOT_FOUND');
-      }
-
-      if (toggled.retweeted) {
-        await this.notificationsService.notify(
-          {
-            type: 'retweet',
-            to: original.userId.toString(),
-            from: viewer.id,
-            postId,
-          },
+    const { original: updated, retweeted } =
+      await this.transactions.withTransaction(async session => {
+        await this.lockViewer(viewer, session);
+        const toggled = await this.postsPersistence.toggleRetweet(
+          postId,
+          viewer.id,
           session,
         );
-      }
 
-      return toggled;
-    });
+        if (!toggled) {
+          throw new ORPCError('POST_NOT_FOUND');
+        }
 
-    if (result.retweeted) {
-      const [retweetPost] = await serializePostsForViewer(
-        [result.retweetPost],
-        viewer,
-        visible,
-        { posts: this.postsPersistence, users: this.usersPersistence },
-      );
+        if (toggled.retweeted) {
+          await this.notificationsService.notify(
+            {
+              type: 'retweet',
+              to: original.userId.toString(),
+              from: viewer.id,
+              postId,
+            },
+            session,
+          );
+        }
 
-      return {
-        retweeted: true,
-        retweetsCount: Math.max(0, result.original.retweetsCount),
-        userRetweeted: true,
-        retweetPost,
-      };
-    }
+        return toggled;
+      });
 
     return {
-      retweeted: false,
-      retweetsCount: Math.max(0, result.original.retweetsCount),
-      userRetweeted: false,
-      removedRetweetPostId: result.removedRetweetPostId,
+      retweeted,
+      retweetsCount: Math.max(0, updated.retweetsCount),
+      userRetweeted: retweeted,
     };
   }
 

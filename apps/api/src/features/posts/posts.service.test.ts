@@ -2,6 +2,7 @@ import 'reflect-metadata';
 
 import { MongoTransactionService } from '@jperezmart/nest-mongodb';
 import { DEFAULT_USER_PREFERENCES } from '@logpose/contracts/common/user.schemas';
+import type { PostFeed } from '@logpose/contracts/features/posts/schemas';
 import { type ClientSession, type Db, MongoClient, ObjectId } from 'mongodb';
 import { MongoMemoryReplSet } from 'mongodb-memory-server';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
@@ -141,10 +142,17 @@ async function seedOwnerWithPosts(prefix: string) {
 }
 
 // El límite máximo del contrato basta: el fichero siembra menos de 50 posts.
-const feed = (viewer: Viewer) => service.list({ limit: 50 }, viewer);
+const feed = (viewer: Viewer, kind: PostFeed = 'all') =>
+  service.list({ limit: 50, feed: kind }, viewer);
 
-const feedIds = async (viewer: Viewer) =>
-  (await feed(viewer)).posts.map(post => post._id);
+const feedIds = async (viewer: Viewer, kind: PostFeed = 'all') =>
+  (await feed(viewer, kind)).posts.map(post => post._id);
+
+/** Fija la fecha de un post para ordenar el feed a voluntad. */
+const setCreatedAt = (id: string, createdAt: Date) =>
+  db
+    .collection<PostDocument>('posts')
+    .updateOne({ _id: new ObjectId(id) }, { $set: { createdAt } });
 
 const postById = (id: string) =>
   db.collection<PostDocument>('posts').findOne({ _id: new ObjectId(id) });
@@ -241,7 +249,10 @@ describe('PostsService.list', () => {
   });
 
   it('ningún post del feed lleva likes ni bookmarks, tampoco los retweets', async () => {
-    const { posts } = await feed(adminViewer());
+    const posts = [
+      ...(await feed(adminViewer())).posts,
+      ...(await feed(userViewer(seed.otherId), 'following')).posts,
+    ];
 
     expect(posts.some(post => post.isRetweet)).toBe(true);
     posts.forEach(post => {
@@ -253,12 +264,136 @@ describe('PostsService.list', () => {
   });
 
   it('un retweet cuyo original no puede ver el viewer no sale en su feed', async () => {
-    await expect(feedIds({ kind: 'anonymous' })).resolves.not.toContain(
-      orphanRetweetId,
+    // El envoltorio es suyo, pero el original es privado del dueño.
+    await expect(
+      feedIds(userViewer(seed.followerId), 'following'),
+    ).resolves.not.toContain(orphanRetweetId);
+  });
+});
+
+describe('PostsService.list, «Todos» y «Siguiendo»', () => {
+  // Yo sigo a Luffy y a Zoro, no al ajeno. Del más nuevo al más viejo:
+  // retuiteo un post del ajeno, Zoro retuitea el de Luffy, publico el mío,
+  // el ajeno publica otro, Luffy publica el suyo y antes uno para seguidores
+  // y uno privado.
+  let me: string;
+  const ids = {} as Record<
+    | 'mine'
+    | 'luffy'
+    | 'luffyFollowers'
+    | 'luffyPrivate'
+    | 'other'
+    | 'otherRetweeted'
+    | 'zoroWrapper'
+    | 'myWrapper',
+    string
+  >;
+
+  beforeAll(async () => {
+    const user = async (name: string) =>
+      (await usersPersistence.insert(newUser(`tl_${name}`)))._id.toString();
+    const post = async (
+      userId: string,
+      at: number,
+      visibility: PostDocument['visibility'] = 'public',
+    ) => {
+      const { _id } = await postsPersistence.insert({
+        text: 'tl',
+        userId: new ObjectId(userId),
+        visibility,
+        language: 'es',
+      });
+      await setCreatedAt(_id.toString(), new Date(at));
+      return _id.toString();
+    };
+    const retweet = async (userId: string, originalId: string, at: number) => {
+      await service.toggleRetweet(originalId, userViewer(userId));
+      const wrapper = await postsPersistence.findUserRetweet(
+        userId,
+        originalId,
+      );
+      await setCreatedAt(wrapper!._id.toString(), new Date(at));
+      return wrapper!._id.toString();
+    };
+
+    me = await user('me');
+    const luffy = await user('luffy');
+    const zoro = await user('zoro');
+    const other = await user('other');
+    await usersPersistence.addFollow(me, luffy, session);
+    await usersPersistence.addFollow(me, zoro, session);
+
+    const hour = 3600 * 1000;
+    const now = Date.now();
+    ids.luffyPrivate = await post(luffy, now - 7 * hour, 'private');
+    ids.luffyFollowers = await post(luffy, now - 6 * hour, 'followers');
+    ids.luffy = await post(luffy, now - 5 * hour);
+    ids.otherRetweeted = await post(other, now - 4 * hour);
+    ids.other = await post(other, now - 3 * hour);
+    ids.mine = await post(me, now - 2 * hour);
+    ids.zoroWrapper = await retweet(zoro, ids.luffy, now - hour);
+    ids.myWrapper = await retweet(me, ids.otherRetweeted, now - hour / 2);
+  });
+
+  it('«Todos» no trae retweets', async () => {
+    const { posts } = await feed(userViewer(me));
+
+    expect(posts.map(post => post._id)).toContain(ids.luffy);
+    expect(posts.some(post => post.isRetweet)).toBe(false);
+  });
+
+  it('«Siguiendo» trae lo mío y lo de quien sigo, cada post una vez y en su aparición más reciente', async () => {
+    await expect(feedIds(userViewer(me), 'following')).resolves.toEqual([
+      ids.myWrapper,
+      ids.zoroWrapper,
+      ids.mine,
+      ids.luffyFollowers,
+    ]);
+  });
+
+  it('«Siguiendo» con «Mostrar retweets» apagado no trae retweets', async () => {
+    const users = db.collection<UserDocument>('users');
+    const setShowRetweets = (showRetweets: boolean) =>
+      users.updateOne(
+        { _id: new ObjectId(me) },
+        { $set: { 'preferences.timeline.showRetweets': showRetweets } },
+      );
+
+    await setShowRetweets(false);
+    try {
+      await expect(feedIds(userViewer(me), 'following')).resolves.toEqual([
+        ids.mine,
+        ids.luffy,
+        ids.luffyFollowers,
+      ]);
+    } finally {
+      await setShowRetweets(true);
+    }
+  });
+
+  it('«Siguiendo» sin sesión lanza UNAUTHORIZED', async () => {
+    await expect(
+      feed({ kind: 'anonymous' }, 'following'),
+    ).rejects.toMatchObject({ code: 'UNAUTHORIZED' });
+  });
+
+  it('la página 2 de «Siguiendo» no repite un post de la 1 con una aparición más vieja', async () => {
+    const viewer = userViewer(me);
+    const first = await service.list({ limit: 2, feed: 'following' }, viewer);
+    const second = await service.list(
+      { limit: 2, feed: 'following', cursor: first.nextCursor! },
+      viewer,
     );
-    await expect(feedIds(userViewer(seed.otherId))).resolves.not.toContain(
-      orphanRetweetId,
-    );
+
+    expect(first.posts.map(post => post._id)).toEqual([
+      ids.myWrapper,
+      ids.zoroWrapper,
+    ]);
+    expect(second.posts.map(post => post._id)).toEqual([
+      ids.mine,
+      ids.luffyFollowers,
+    ]);
+    expect(second.nextCursor).toBeNull();
   });
 });
 
@@ -474,9 +609,9 @@ describe('PostsService.list con cursor', () => {
       ids.set(name, post._id.toString());
     }
 
-    const first = await service.list({ limit: 2 }, viewer);
+    const first = await service.list({ limit: 2, feed: 'all' }, viewer);
     const second = await service.list(
-      { limit: 2, cursor: first.nextCursor! },
+      { limit: 2, cursor: first.nextCursor!, feed: 'all' },
       viewer,
     );
     const seen = [...first.posts, ...second.posts].map(post => post._id);
@@ -502,10 +637,13 @@ describe('PostsService, retweet de un post público', () => {
     await service.toggleLike(seed.publicId, userViewer(seed.followerId));
     await service.toggleLike(seed.publicId, userViewer(seed.ownerId));
     await service.toggleRetweet(seed.publicId, userViewer(retweeterId));
+    // El envoltorio sale en «Siguiendo» de quien sigue a quien retuiteó.
+    await usersPersistence.addFollow(seed.ownerId, retweeterId, session);
+    await usersPersistence.addFollow(seed.followerId, retweeterId, session);
   });
 
   const wrapper = async (viewer: Viewer) =>
-    (await feed(viewer)).posts.find(
+    (await feed(viewer, 'following')).posts.find(
       post => post.isRetweet && post.retweetOf === seed.publicId,
     );
 
@@ -516,6 +654,14 @@ describe('PostsService, retweet de un post público', () => {
       originalAuthor: { username: 'rtcard_owner' },
       likesCount: 2,
       retweetsCount: 1,
+    });
+  });
+
+  it('enseña la fecha del original, no la del retweet', async () => {
+    const original = await postsPersistence.findActiveById(seed.publicId);
+
+    await expect(wrapper(userViewer(seed.ownerId))).resolves.toMatchObject({
+      createdAt: original!.createdAt!.toISOString(),
     });
   });
 
@@ -539,30 +685,20 @@ describe('PostsService, retweet de un post público', () => {
 });
 
 describe('PostsService.toggleRetweet, respuesta', () => {
-  it('retuitear devuelve el retweet y deshacerlo devuelve su id', async () => {
+  it('retuitear y deshacerlo devuelven el estado y el contador del original', async () => {
     const seed = await seedOwnerWithPosts('rttoggle');
     const viewer = userViewer(seed.otherId);
 
-    const done = await service.toggleRetweet(seed.publicId, viewer);
-
-    expect(done).toMatchObject({
-      retweeted: true,
-      userRetweeted: true,
-      retweetsCount: 1,
-      retweetPost: {
-        retweetOf: seed.publicId,
-        originalAuthor: { username: 'rttoggle_owner' },
+    await expect(service.toggleRetweet(seed.publicId, viewer)).resolves.toEqual(
+      { retweeted: true, userRetweeted: true, retweetsCount: 1 },
+    );
+    await expect(service.toggleRetweet(seed.publicId, viewer)).resolves.toEqual(
+      {
+        retweeted: false,
+        userRetweeted: false,
+        retweetsCount: 0,
       },
-    });
-
-    const undone = await service.toggleRetweet(seed.publicId, viewer);
-
-    expect(undone).toMatchObject({
-      retweeted: false,
-      retweetsCount: 0,
-      removedRetweetPostId: (done as { retweetPost: { _id: string } })
-        .retweetPost._id,
-    });
+    );
   });
 });
 
@@ -855,13 +991,12 @@ describe('PostsService, like y guardado de un retweet van al original', () => {
   // B (owner) publica, C (other) retuitea y A (follower) actúa sobre el id del envoltorio.
   async function seedRetweet(prefix: string) {
     const seed = await seedOwnerWithPosts(prefix);
-    const done = await service.toggleRetweet(
+    await service.toggleRetweet(seed.publicId, userViewer(seed.otherId));
+    const wrapper = await postsPersistence.findUserRetweet(
+      seed.otherId,
       seed.publicId,
-      userViewer(seed.otherId),
     );
-    const wrapperId = (done as { retweetPost: { _id: string } }).retweetPost
-      ._id;
-    return { ...seed, wrapperId };
+    return { ...seed, wrapperId: wrapper!._id.toString() };
   }
 
   const postOf = (id: string) =>

@@ -720,7 +720,10 @@ describe('lecturas de quien interactuó con la cuenta borrada', () => {
     await deleteBuggy();
 
     await expect(
-      postsService.list({ limit: 20 }, viewerOf(id)),
+      postsService.list({ limit: 20, feed: 'all' }, viewerOf(id)),
+    ).resolves.toBeDefined();
+    await expect(
+      postsService.list({ limit: 20, feed: 'following' }, viewerOf(id)),
     ).resolves.toBeDefined();
   });
 

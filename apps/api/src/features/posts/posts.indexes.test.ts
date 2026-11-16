@@ -153,7 +153,7 @@ describe('PostsService.list: índice del feed', () => {
     'el feed del %s usa el índice del feed y no ordena en memoria',
     async (_name, viewer) => {
       const entries = await profiledFeedQueries(() =>
-        service.list({ limit: 10 }, viewer()),
+        service.list({ limit: 10, feed: 'all' }, viewer()),
       );
 
       expect(entries.length).toBeGreaterThan(0);

@@ -12,6 +12,7 @@ import {
   getSessionUser,
   useSessionUserWriter,
 } from '@/features/auth/api/session-user';
+import { postsKeys } from '@/features/posts/api/posts.keys';
 import { profileKeys } from '@/features/profile/api/profile.keys';
 import type {
   ProfilePostsTab,
@@ -126,6 +127,9 @@ export function useSetFollowingMutation() {
 
     void queryClient.invalidateQueries({
       queryKey: profileKeys.followers(targetUserId),
+    });
+    void queryClient.invalidateQueries({
+      queryKey: postsKeys.feed('following'),
     });
   }
 

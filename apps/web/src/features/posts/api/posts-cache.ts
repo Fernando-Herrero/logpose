@@ -14,9 +14,9 @@ export type PostsFeedInfiniteData = InfiniteData<
   string | undefined
 >;
 
-const postPagesKeys = [postsKeys.feed(), profileKeys.postsTabs()];
+const postPagesKeys = [postsKeys.feeds(), profileKeys.postsTabs()];
 
-/** Feed y pestañas del perfil guardan lo mismo: páginas `{ posts, nextCursor }`. */
+/** Las dos vistas del feed y las pestañas del perfil guardan lo mismo: páginas `{ posts, nextCursor }`. */
 function mapPostPages(
   queryClient: QueryClient,
   mapPosts: (posts: PostPublic[]) => PostPublic[],
@@ -90,25 +90,24 @@ export function togglePostInCaches(
   return previous;
 }
 
-export function prependPostToFeed(queryClient: QueryClient, post: PostPublic) {
-  queryClient.setQueryData<PostsFeedInfiniteData>(postsKeys.feed(), old => {
-    const [firstPage, ...restPages] = old?.pages ?? [];
+/** Arriba en las vistas del feed ya cargadas; la que no lo esté lo traerá al pedirse. */
+export function prependPostToFeeds(queryClient: QueryClient, post: PostPublic) {
+  queryClient.setQueriesData<PostsFeedInfiniteData>(
+    { queryKey: postsKeys.feeds() },
+    old => {
+      const [firstPage, ...restPages] = old?.pages ?? [];
 
-    if (!old || !firstPage) {
-      return {
-        pages: [{ posts: [post], nextCursor: null }],
-        pageParams: [undefined],
-      };
-    }
-
-    return {
-      ...old,
-      pages: [
-        { ...firstPage, posts: [post, ...firstPage.posts] },
-        ...restPages,
-      ],
-    };
-  });
+      return old && firstPage
+        ? {
+            ...old,
+            pages: [
+              { ...firstPage, posts: [post, ...firstPage.posts] },
+              ...restPages,
+            ],
+          }
+        : old;
+    },
+  );
 }
 
 export function replacePostInCaches(
@@ -121,8 +120,11 @@ export function replacePostInCaches(
   );
 }
 
+/** La API borra el original con sus retweets: se van juntos. */
 export function removePostFromCaches(queryClient: QueryClient, postId: string) {
-  mapPostPages(queryClient, posts => posts.filter(post => post._id !== postId));
+  mapPostPages(queryClient, posts =>
+    posts.filter(post => post._id !== postId && post.retweetOf !== postId),
+  );
 }
 
 export function invalidateProfilePostQueries(

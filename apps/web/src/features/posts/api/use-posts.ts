@@ -1,3 +1,4 @@
+import type { PostFeed } from '@logpose/contracts/features/posts/schemas';
 import {
   useMutation,
   useQueryClient,
@@ -7,12 +8,13 @@ import { useTranslation } from 'next-i18next/pages';
 import { toast } from 'sonner';
 
 import { getSessionUser } from '@/features/auth/api/session-user';
+import { postsKeys } from '@/features/posts/api/posts.keys';
 import {
   cancelPostPages,
   createOptimisticPost,
   invalidateProfilePostQueries,
   patchPostInCaches,
-  prependPostToFeed,
+  prependPostToFeeds,
   removePostFromCaches,
   replacePostInCaches,
   revokeOptimisticImageUrls,
@@ -31,10 +33,8 @@ type CreatePostVariables = {
 
 export type { CreatePostVariables };
 
-const feedQueryKey = allQueriesOptions.posts.feedInfinite().queryKey;
-
-export function usePostsFeedInfinite() {
-  return useSuspenseInfiniteQuery(allQueriesOptions.posts.feedInfinite());
+export function usePostsFeedInfinite(feed: PostFeed) {
+  return useSuspenseInfiniteQuery(allQueriesOptions.posts.feedInfinite(feed));
 }
 
 export function useCreatePostMutation() {
@@ -47,7 +47,7 @@ export function useCreatePostMutation() {
       return client.posts.create({ text, images });
     },
     onMutate: async body => {
-      await queryClient.cancelQueries({ queryKey: feedQueryKey });
+      await queryClient.cancelQueries({ queryKey: postsKeys.feeds() });
 
       const user = getSessionUser(queryClient);
 
@@ -60,7 +60,7 @@ export function useCreatePostMutation() {
           body.text.trim(),
           optimisticImageUrls,
         );
-        prependPostToFeed(queryClient, optimisticPost);
+        prependPostToFeeds(queryClient, optimisticPost);
         return {
           optimisticId: optimisticPost._id,
           optimisticImageUrls,
@@ -87,7 +87,7 @@ export function useCreatePostMutation() {
       if (context.optimisticId) {
         replacePostInCaches(queryClient, context.optimisticId, post);
       } else {
-        prependPostToFeed(queryClient, post);
+        prependPostToFeeds(queryClient, post);
       }
 
       const userId = getSessionUser(queryClient)?._id;
@@ -141,13 +141,13 @@ function useTogglePostFieldMutation<
   boolKey,
   countKey,
   invalidateTab,
-  onToggled,
+  invalidateFeed,
 }: {
   mutationFn: (postId: string) => Promise<Result>;
   boolKey: BoolKey;
   countKey: CountKey;
   invalidateTab: ProfilePostsTab;
-  onToggled?: (result: Result) => void;
+  invalidateFeed?: PostFeed;
 }) {
   const queryClient = useQueryClient();
 
@@ -169,7 +169,12 @@ function useTogglePostFieldMutation<
         [countKey]: result[countKey],
         [boolKey]: result[boolKey],
       } as Partial<PostPublic>);
-      onToggled?.(result);
+
+      if (invalidateFeed) {
+        void queryClient.invalidateQueries({
+          queryKey: postsKeys.feed(invalidateFeed),
+        });
+      }
 
       const userId = getSessionUser(queryClient)?._id;
       if (userId) {
@@ -200,20 +205,13 @@ export function useTogglePostBookmarkMutation() {
 }
 
 export function useTogglePostRetweetMutation() {
-  const queryClient = useQueryClient();
-
   return useTogglePostFieldMutation({
     mutationFn: (postId: string) =>
       client.posts.toggleRetweet({ params: { id: postId } }),
     boolKey: 'userRetweeted',
     countKey: 'retweetsCount',
     invalidateTab: 'posts',
-    onToggled: result => {
-      if (result.retweeted && result.retweetPost) {
-        prependPostToFeed(queryClient, result.retweetPost);
-      } else if (result.removedRetweetPostId) {
-        removePostFromCaches(queryClient, result.removedRetweetPostId);
-      }
-    },
+    // Retuitear cambia dónde sale el post en «Siguiendo»: lo coloca la API.
+    invalidateFeed: 'following',
   });
 }

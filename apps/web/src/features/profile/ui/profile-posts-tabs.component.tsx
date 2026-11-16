@@ -99,7 +99,8 @@ function ProfilePostList({
             post={post}
             onDeletePost={postId => deletePost.mutate(postId)}
             isDeleting={
-              deletePost.isPending && deletePost.variables === post._id
+              deletePost.isPending &&
+              deletePost.variables === (post.retweetOf ?? post._id)
             }
           />
         </Box>

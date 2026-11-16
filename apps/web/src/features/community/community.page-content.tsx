@@ -1,10 +1,19 @@
-import { Box, Button, Flex, Heading, Text } from '@radix-ui/themes';
+import type { PostFeed } from '@logpose/contracts/features/posts/schemas';
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  SegmentedControl,
+  Text,
+} from '@radix-ui/themes';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next/pages';
 import { Suspense, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
 import { QueryErrorFallback } from '@/components/error-boundary/query-error-fallback';
-import { useAuthSession } from '@/features/auth/api/use-auth';
 import {
   useCreatePostMutation,
   useDeletePostMutation,
@@ -16,34 +25,39 @@ import { PostCard } from '@/features/posts/ui/post-card.component';
 import { PostFeedSkeleton } from '@/features/posts/ui/post-card-skeleton.component';
 
 function CommunityFeed({
+  feed,
   onDeletePost,
   deletingPostId,
 }: {
+  feed: PostFeed;
   onDeletePost: (postId: string) => void;
   deletingPostId?: string;
 }) {
   const { t } = useTranslation();
-  const { user } = useAuthSession();
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
-    usePostsFeedInfinite();
-
-  // Ajustes › cronología: ocultar retweets se filtra en cliente para no romper
-  // el cursor de paginación, que ordena por createdAt en el servidor.
-  const showRetweets = user?.preferences.timeline.showRetweets ?? true;
-  const posts = data.pages
-    .flatMap(page => page.posts)
-    .filter(post => showRetweets || !post.isRetweet);
+    usePostsFeedInfinite(feed);
+  const posts = data.pages.flatMap(page => page.posts);
 
   if (posts.length === 0) {
     return (
-      <Text
-        as="p"
-        size="2"
-        align="center"
-        className="text-foreground/50 py-12 italic"
-      >
-        {t('community.empty')}
-      </Text>
+      <Flex direction="column" align="center" gap="2" className="py-12">
+        <Text
+          as="p"
+          size="2"
+          align="center"
+          className="text-foreground/50 italic"
+        >
+          {t(feed === 'all' ? 'community.empty' : 'community.empty_following')}
+        </Text>
+        {feed === 'following' ? (
+          <Link
+            href="/dashboard/search"
+            className="text-highlight/80 hover:text-highlight text-sm underline-offset-2 hover:underline"
+          >
+            {t('community.empty_following_link')}
+          </Link>
+        ) : null}
+      </Flex>
     );
   }
 
@@ -54,7 +68,7 @@ function CommunityFeed({
           key={post._id}
           post={post}
           onDeletePost={onDeletePost}
-          isDeleting={deletingPostId === post._id}
+          isDeleting={deletingPostId === (post.retweetOf ?? post._id)}
         />
       ))}
 
@@ -81,6 +95,9 @@ function CommunityFeed({
 
 export default function CommunityPageContent() {
   const { t } = useTranslation();
+  const router = useRouter();
+  const feed: PostFeed =
+    router.query.feed === 'following' ? 'following' : 'all';
   const [createOpen, setCreateOpen] = useState(false);
   const createPost = useCreatePostMutation();
   const deletePost = useDeletePostMutation();
@@ -95,13 +112,34 @@ export default function CommunityPageContent() {
       >
         {t('community.title')}
       </Heading>
-      <Text as="p" size="2" color="gray" mb="6" className="text-foreground/75">
+      <Text as="p" size="2" color="gray" mb="4" className="text-foreground/75">
         {t('community.subtitle')}
       </Text>
 
-      <ErrorBoundary FallbackComponent={QueryErrorFallback}>
+      <SegmentedControl.Root
+        size="2"
+        value={feed}
+        onValueChange={value =>
+          void router.replace(
+            { query: value === 'following' ? { feed: value } : {} },
+            undefined,
+            { shallow: true },
+          )
+        }
+        className="border-highlight/15 mb-6 w-full border"
+      >
+        <SegmentedControl.Item value="all">
+          {t('community.feed_all')}
+        </SegmentedControl.Item>
+        <SegmentedControl.Item value="following">
+          {t('community.feed_following')}
+        </SegmentedControl.Item>
+      </SegmentedControl.Root>
+
+      <ErrorBoundary key={feed} FallbackComponent={QueryErrorFallback}>
         <Suspense fallback={<PostFeedSkeleton />}>
           <CommunityFeed
+            feed={feed}
             onDeletePost={postId => deletePost.mutate(postId)}
             deletingPostId={
               deletePost.isPending ? deletePost.variables : undefined

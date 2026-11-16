@@ -77,8 +77,12 @@
   "community": {
     "title": "コミュニティ",
     "subtitle": "クルーの公開フィード",
+    "feed_all": "すべて",
+    "feed_following": "フォロー中",
     "error": "フィードを読み込めませんでした",
     "empty": "まだ投稿がありません",
+    "empty_following": "フォローしている人の投稿とリツイートがここに表示されます。",
+    "empty_following_link": "フォローする人を探す",
     "load_more": "さらに投稿を読み込む",
     "load_more_pending": "読み込み中…"
   },
@@ -553,7 +557,7 @@
     "timeline": {
       "description": "タイムラインでの投稿の表示方法を設定します。",
       "show_retweets": "リツイートを表示",
-      "show_retweets_hint": "オフにすると、フィードにはオリジナル投稿のみが表示されます。",
+      "show_retweets_hint": "オフにすると、「フォロー中」にはオリジナル投稿のみが表示されます。",
       "compact_mode": "コンパクト表示",
       "compact_mode_hint": "余白を詰めて、より多くの投稿を表示します。",
       "blur_media": "メディアをぼかす",

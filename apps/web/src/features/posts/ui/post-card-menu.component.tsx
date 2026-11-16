@@ -27,9 +27,8 @@ export function PostCardMenu({ post, onDeletePost }: PostCardMenuProps) {
       : post.userId._id;
   const isContentAuthor = user._id === contentAuthorId;
   const isFollowing = user.following.includes(contentAuthorId);
-  // Retweet = eco: no se elimina la publicación; solo deshacer RT con el botón.
-  const canDelete =
-    !post.isRetweet && (user._id === post.userId._id || isAdmin);
+  // En un retweet se borra el original, que se lleva sus retweets (como Twitter).
+  const canDelete = isContentAuthor || isAdmin;
   const showAuthorActions = !isContentAuthor;
   const isBusy = setFollowing.isPending;
 
@@ -42,7 +41,7 @@ export function PostCardMenu({ post, onDeletePost }: PostCardMenuProps) {
       return;
     }
 
-    onDeletePost(post._id);
+    onDeletePost(post.isRetweet && post.retweetOf ? post.retweetOf : post._id);
   }
 
   return (

@@ -77,8 +77,12 @@
   "community": {
     "title": "Community",
     "subtitle": "Public feed from the crew",
+    "feed_all": "All",
+    "feed_following": "Following",
     "error": "Could not load the feed",
     "empty": "No posts yet",
+    "empty_following": "Posts and retweets from the people you follow will show up here.",
+    "empty_following_link": "Find someone to follow",
     "load_more": "Load more posts",
     "load_more_pending": "Loading…"
   },
@@ -553,7 +557,7 @@
     "timeline": {
       "description": "Control how posts are shown in your timeline.",
       "show_retweets": "Show retweets",
-      "show_retweets_hint": "When off, the feed only shows original posts.",
+      "show_retweets_hint": "When off, “Following” only shows original posts.",
       "compact_mode": "Compact mode",
       "compact_mode_hint": "Tightens spacing so more posts fit on screen.",
       "blur_media": "Blur media",

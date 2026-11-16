@@ -5,7 +5,7 @@ import { postsKeys } from '@/features/posts/api/posts.keys';
 import {
   patchPostInCaches,
   type PostsFeedInfiniteData,
-  prependPostToFeed,
+  prependPostToFeeds,
   removePostFromCaches,
   replacePostInCaches,
   togglePostInCaches,
@@ -52,12 +52,19 @@ function makeCache(...posts: PostPublic[]): PostsFeedInfiniteData {
   return { pages: [{ posts, nextCursor: null }], pageParams: [undefined] };
 }
 
-const feedKey = postsKeys.feed();
+const feedKey = postsKeys.feed('all');
+const followingKey = postsKeys.feed('following');
 const ownPostsKey = profileKeys.postsTab('user-1', 'posts');
 const otherLikedKey = profileKeys.postsTab('user-2', 'liked');
 const otherBookmarkedKey = profileKeys.postsTab('user-2', 'bookmarked');
 
-const allKeys = [feedKey, ownPostsKey, otherLikedKey, otherBookmarkedKey];
+const allKeys = [
+  feedKey,
+  followingKey,
+  ownPostsKey,
+  otherLikedKey,
+  otherBookmarkedKey,
+];
 
 function setup(...posts: PostPublic[]) {
   const queryClient = new QueryClient({
@@ -253,10 +260,20 @@ describe('removePostFromCaches', () => {
     }
   });
 
-  it('quita un post optimista añadido con prependPostToFeed', () => {
+  it('quita también los retweets del post', () => {
+    const queryClient = setup(makePost('p1'), makeRetweet('rt1', 'p1'));
+
+    removePostFromCaches(queryClient, 'p1');
+
+    for (const key of allKeys) {
+      expect(postsAt(queryClient, key)).toEqual([]);
+    }
+  });
+
+  it('quita un post optimista añadido con prependPostToFeeds', () => {
     const queryClient = setup(makePost('p1'));
 
-    prependPostToFeed(queryClient, makePost('optimistic-1'));
+    prependPostToFeeds(queryClient, makePost('optimistic-1'));
     expect(postsAt(queryClient, feedKey).map(post => post._id)).toEqual([
       'optimistic-1',
       'p1',
@@ -276,27 +293,27 @@ describe('removePostFromCaches', () => {
   });
 });
 
-describe('prependPostToFeed', () => {
-  it('crea el feed si no existe', () => {
+describe('prependPostToFeeds', () => {
+  it('no crea una vista del feed que no se había cargado', () => {
     const queryClient = new QueryClient();
 
-    prependPostToFeed(queryClient, makePost('optimistic-1'));
+    prependPostToFeeds(queryClient, makePost('optimistic-1'));
 
-    expect(postsAt(queryClient, feedKey).map(post => post._id)).toEqual([
-      'optimistic-1',
-    ]);
+    expect(queryClient.getQueryCache().getAll()).toHaveLength(0);
   });
 
-  it('añade al principio del feed los posts no públicos', () => {
+  it('añade el post arriba en «Todos» y en «Siguiendo», y no en el perfil', () => {
     const queryClient = setup(makePost('p1'));
 
-    prependPostToFeed(
-      queryClient,
-      makePost('optimistic-1', { visibility: 'private' }),
-    );
+    prependPostToFeeds(queryClient, makePost('optimistic-1'));
 
-    expect(postsAt(queryClient, feedKey).map(post => post._id)).toEqual([
-      'optimistic-1',
+    for (const key of [feedKey, followingKey]) {
+      expect(postsAt(queryClient, key).map(post => post._id)).toEqual([
+        'optimistic-1',
+        'p1',
+      ]);
+    }
+    expect(postsAt(queryClient, ownPostsKey).map(post => post._id)).toEqual([
       'p1',
     ]);
   });

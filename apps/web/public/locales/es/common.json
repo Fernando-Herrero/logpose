@@ -77,8 +77,12 @@
   "community": {
     "title": "Comunidad",
     "subtitle": "Feed público de la tripulación",
+    "feed_all": "Todos",
+    "feed_following": "Siguiendo",
     "error": "No se pudo cargar el feed",
     "empty": "Aún no hay publicaciones",
+    "empty_following": "Aquí saldrá lo que publiquen y retuiteen las personas a las que sigues.",
+    "empty_following_link": "Buscar a alguien a quien seguir",
     "load_more": "Cargar más publicaciones",
     "load_more_pending": "Cargando…"
   },
@@ -553,7 +557,7 @@
     "timeline": {
       "description": "Controla cómo se muestran las publicaciones en tu cronología.",
       "show_retweets": "Mostrar retweets",
-      "show_retweets_hint": "Si lo apagas, el feed solo muestra publicaciones originales.",
+      "show_retweets_hint": "Si lo apagas, «Siguiendo» solo muestra publicaciones originales.",
       "compact_mode": "Modo compacto",
       "compact_mode_hint": "Reduce el espaciado para ver más publicaciones de un vistazo.",
       "blur_media": "Difuminar multimedia",

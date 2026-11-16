@@ -418,6 +418,27 @@ describe('PostsService, toggles concurrentes', () => {
     const post = await storedPost();
     expect(post.bookmarksCount).toBe(post.bookmarks.length);
   });
+
+  // Los dos suman al contador del original: la segunda choca, se reintenta y deshace.
+  it('dos toggleRetweet a la vez no dejan dos envoltorios vivos y el contador cuadra', async () => {
+    const viewer = userViewer(seed.otherId);
+
+    await expect(
+      Promise.all([
+        service.toggleRetweet(seed.publicId, viewer),
+        service.toggleRetweet(seed.publicId, viewer),
+      ]),
+    ).resolves.toHaveLength(2);
+
+    const wrappers = await db.collection<PostDocument>('posts').countDocuments({
+      retweetOf: new ObjectId(seed.publicId),
+      isDeleted: false,
+    });
+    const post = await storedPost();
+    expect(wrappers).toBeLessThanOrEqual(1);
+    expect(post.retweetsCount).toBe(wrappers);
+    expect(post.retweets).toHaveLength(wrappers);
+  });
 });
 
 describe('PostsService.list con cursor', () => {

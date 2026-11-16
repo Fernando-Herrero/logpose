@@ -30,7 +30,6 @@ import {
   serializeUserProfile,
   serializeUserRankingEntry,
   serializeUserSummary,
-  withPreferenceDefaults,
 } from './user.mappers.js';
 import { UsersPersistence } from './users.persistence.js';
 
@@ -396,10 +395,6 @@ export class UsersService {
     };
   }
 
-  /**
-   * Merge parcial por grupo: el cliente envía solo el bloque que ha tocado
-   * (notifications | timeline | accessibility) y el resto se conserva.
-   */
   async updatePreferences(
     targetUserId: string,
     viewer: UserViewer,
@@ -409,16 +404,10 @@ export class UsersService {
       throw new ORPCError('FORBIDDEN');
     }
 
-    const user = await this.requireUser(targetUserId);
-    const current = withPreferenceDefaults(user.preferences);
-
-    const updated = await this.usersPersistence.updateById(targetUserId, {
-      preferences: {
-        notifications: { ...current.notifications, ...body.notifications },
-        timeline: { ...current.timeline, ...body.timeline },
-        accessibility: { ...current.accessibility, ...body.accessibility },
-      },
-    });
+    const updated = await this.usersPersistence.updatePreferences(
+      targetUserId,
+      body,
+    );
 
     if (!updated) {
       throw new ORPCError('USER_NOT_FOUND');

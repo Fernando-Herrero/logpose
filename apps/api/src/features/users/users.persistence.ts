@@ -7,7 +7,7 @@ import {
   type WithId,
 } from 'mongodb';
 
-import type { UserDocument } from './user.mappers.js';
+import type { UserDocument, UserPreferences } from './user.mappers.js';
 
 @Injectable()
 export class UsersPersistence implements OnModuleInit {
@@ -96,6 +96,25 @@ export class UsersPersistence implements OnModuleInit {
     );
 
     return this.findById(id);
+  }
+
+  /** Escribe solo los ajustes recibidos, sin leer antes el grupo: dos cambios seguidos no se pisan. */
+  updatePreferences(
+    id: string,
+    patch: { [G in keyof UserPreferences]?: Partial<UserPreferences[G]> },
+  ) {
+    const fields = Object.entries(patch).flatMap(([group, values]) =>
+      Object.entries(values).map(([key, value]) => [
+        `preferences.${group}.${key}`,
+        value,
+      ]),
+    );
+
+    return this.users.findOneAndUpdate(
+      { _id: new ObjectId(id) },
+      { $set: { ...Object.fromEntries(fields), updatedAt: new Date() } },
+      { returnDocument: 'after' },
+    );
   }
 
   async updatePassword(id: string, hashedPassword: string): Promise<void> {

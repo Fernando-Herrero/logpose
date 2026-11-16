@@ -7,7 +7,7 @@ import { MongoMemoryReplSet } from 'mongodb-memory-server';
 import { afterAll, beforeAll, describe, expect, it } from 'vitest';
 
 import { mongoClientOptions } from '../../integrations/mongodb/mongodb.config.js';
-import type { Viewer } from '../auth/access.js';
+import type { UserViewer, Viewer } from '../auth/access.js';
 import { SessionsPersistence } from '../auth/sessions.persistence.js';
 import {
   type CommentDocument,
@@ -133,6 +133,48 @@ describe('UsersService.update', () => {
     expect(updated.displayName).toBeUndefined();
     expect(stored).not.toHaveProperty('displayName');
     expect(stored).toMatchObject({ bio: 'Princesa' });
+  });
+});
+
+describe('UsersService.updatePreferences', () => {
+  it('dos ajustes del mismo grupo cambiados a la vez se guardan los dos', async () => {
+    const nami = await usersPersistence.insert(newUser('pref_nami'));
+    const namiId = nami._id.toString();
+    const viewer: UserViewer = { kind: 'user', id: namiId, role: 'user' };
+
+    await Promise.all([
+      service.updatePreferences(namiId, viewer, {
+        accessibility: { reduceMotion: true },
+      }),
+      service.updatePreferences(namiId, viewer, {
+        accessibility: { fontScale: 'lg' },
+      }),
+    ]);
+    const stored = await usersPersistence.findById(namiId);
+
+    expect(stored?.preferences?.accessibility).toEqual({
+      ...DEFAULT_USER_PREFERENCES.accessibility,
+      reduceMotion: true,
+      fontScale: 'lg',
+    });
+  });
+
+  it('a un usuario sin preferences en Mongo le guarda el ajuste y le sirve el resto por defecto', async () => {
+    const usopp = await usersPersistence.insert(newUser('pref_usopp'));
+    const usoppId = usopp._id.toString();
+    const viewer: UserViewer = { kind: 'user', id: usoppId, role: 'user' };
+    await db
+      .collection('users')
+      .updateOne({ _id: usopp._id }, { $unset: { preferences: '' } });
+
+    const updated = await service.updatePreferences(usoppId, viewer, {
+      timeline: { compactMode: true },
+    });
+
+    expect(updated.preferences).toEqual({
+      ...DEFAULT_USER_PREFERENCES,
+      timeline: { ...DEFAULT_USER_PREFERENCES.timeline, compactMode: true },
+    });
   });
 });
 

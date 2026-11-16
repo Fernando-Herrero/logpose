@@ -633,6 +633,68 @@ describe('UsersService.delete: transacción', () => {
   });
 });
 
+describe('UsersService.delete: escrituras que llegan durante el borrado', () => {
+  afterEach(async () => {
+    await db
+      .admin()
+      .command({ configureFailPoint: 'failCommand', mode: 'off' });
+  });
+
+  /** Retiene el próximo `command` sobre `collection` y luego lo deja seguir. */
+  const holdNext = (command: 'delete' | 'update', collection: string) =>
+    db.admin().command({
+      configureFailPoint: 'failCommand',
+      mode: { times: 1 },
+      data: {
+        failCommands: [command],
+        namespace: `${DB_NAME}.${collection}`,
+        blockConnection: true,
+        blockTimeMS: 1000,
+      },
+    });
+  const pause = () => new Promise(resolve => setTimeout(resolve, 300));
+
+  it.each([
+    [
+      'un like',
+      () => postsService.toggleLike(post.kaido.toString(), viewerOf(ids.buggy)),
+    ],
+    [
+      'un post',
+      () => postsService.create(viewerOf(ids.buggy), { text: 'el último' }),
+    ],
+  ])('%s de la cuenta no sobrevive a su borrado', async (_name, write) => {
+    // El borrado ya ha tomado su foto y espera justo antes de borrar el usuario.
+    await holdNext('delete', 'users');
+    const deletion = deleteBuggy();
+    await pause();
+
+    await Promise.allSettled([write()]);
+    await deletion;
+
+    expect(
+      await db
+        .collection<PostDocument>('posts')
+        .countDocuments({ $or: [{ userId: ids.buggy }, { likes: ids.buggy }] }),
+    ).toBe(0);
+  });
+
+  it('un follow a la cuenta no deja su id en quien la sigue', async () => {
+    // El follow ya ha comprobado que la cuenta existe y espera antes de escribir.
+    await holdNext('update', 'users');
+    const follow = usersService.follow(
+      ids.kaido.toString(),
+      ids.buggy.toString(),
+    );
+    await pause();
+
+    await deleteBuggy();
+
+    await expect(follow).rejects.toThrow();
+    expect((await userById(ids.kaido))?.following).toEqual([]);
+  });
+});
+
 describe('notifications: índices', () => {
   const indexKeys = async () =>
     (await db.collection('notifications').indexes()).map(index =>

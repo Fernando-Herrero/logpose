@@ -109,14 +109,11 @@ export class UsersPersistence implements OnModuleInit {
     return this.users.find().sort({ experience: -1 }).limit(limit).toArray();
   }
 
-  async addFollow(
-    viewerId: string,
-    targetId: string,
-    session: ClientSession,
-  ): Promise<void> {
+  /** `false` si alguno de los dos ya no existe: su borrado se ha cruzado. */
+  async addFollow(viewerId: string, targetId: string, session: ClientSession) {
     const now = new Date();
 
-    await this.users.updateOne(
+    const viewer = await this.users.updateOne(
       { _id: new ObjectId(viewerId) },
       {
         $addToSet: { following: new ObjectId(targetId) },
@@ -124,13 +121,28 @@ export class UsersPersistence implements OnModuleInit {
       },
       { session },
     );
-    await this.users.updateOne(
+    const target = await this.users.updateOne(
       { _id: new ObjectId(targetId) },
       {
         $addToSet: { followers: new ObjectId(viewerId) },
         $set: { updatedAt: now },
       },
       { session },
+    );
+
+    return viewer.matchedCount === 1 && target.matchedCount === 1;
+  }
+
+  /**
+   * Escribe en el usuario dentro de `session` para que el borrado de su cuenta,
+   * si corre a la vez, choque con esta transacción: Mongo no detecta el choque
+   * entre leer un documento y que otra transacción lo borre. `null` si ya no existe.
+   */
+  lockActive(id: string, session: ClientSession) {
+    return this.users.findOneAndUpdate(
+      { _id: new ObjectId(id) },
+      { $set: { updatedAt: new Date() } },
+      { returnDocument: 'after', session },
     );
   }
 

@@ -8,7 +8,7 @@ import {
 } from '@logpose/contracts/common/post.schemas';
 import { Injectable } from '@nestjs/common';
 import { ORPCError } from '@orpc/server';
-import { ObjectId } from 'mongodb';
+import { type ClientSession, ObjectId } from 'mongodb';
 import type * as z from 'zod/v4';
 
 import {
@@ -46,27 +46,42 @@ export class PostsService {
     };
   }
 
-  async create(viewer: UserViewer, body: CreatePostBody) {
-    const user = await this.usersPersistence.findById(viewer.id);
+  /**
+   * Bloquea al viewer en `session` frente al borrado de su cuenta: si se
+   * cruzan, una de las dos transacciones choca y se repite.
+   */
+  private async lockViewer(viewer: UserViewer, session: ClientSession) {
+    const user = await this.usersPersistence.lockActive(viewer.id, session);
 
     if (!user) {
       throw new ORPCError('UNAUTHORIZED');
     }
 
-    if (body.text.length > getPostTextMaxLength(user.verified)) {
-      throw new ORPCError('FORBIDDEN');
-    }
+    return user;
+  }
 
-    const post = await this.postsPersistence.insert({
-      text: body.text.trim(),
-      userId: new ObjectId(viewer.id),
-      images: body.images,
-      visibility: body.visibility ?? 'public',
-      shareToken: randomUUID(),
-      language: 'es',
+  create(viewer: UserViewer, body: CreatePostBody) {
+    return this.transactions.withTransaction(async session => {
+      const user = await this.lockViewer(viewer, session);
+
+      if (body.text.length > getPostTextMaxLength(user.verified)) {
+        throw new ORPCError('FORBIDDEN');
+      }
+
+      const post = await this.postsPersistence.insert(
+        {
+          text: body.text.trim(),
+          userId: new ObjectId(viewer.id),
+          images: body.images,
+          visibility: body.visibility ?? 'public',
+          shareToken: randomUUID(),
+          language: 'es',
+        },
+        session,
+      );
+
+      return serializePost(post, user, viewer);
     });
-
-    return serializePost(post, user, viewer);
   }
 
   async toggleLike(postId: string, viewer: UserViewer) {
@@ -106,6 +121,7 @@ export class PostsService {
 
     // La acción y su evento de notificación se guardan juntos o no se guarda nada.
     return this.transactions.withTransaction(async session => {
+      await this.lockViewer(viewer, session);
       const result = await this.postsPersistence.toggleUserField(
         targetId,
         viewer.id,
@@ -153,6 +169,7 @@ export class PostsService {
     }
 
     const result = await this.transactions.withTransaction(async session => {
+      await this.lockViewer(viewer, session);
       const toggled = await this.postsPersistence.toggleRetweet(
         postId,
         viewer.id,

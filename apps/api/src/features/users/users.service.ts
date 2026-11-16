@@ -265,7 +265,16 @@ export class UsersService {
         return;
       }
 
-      await this.usersPersistence.addFollow(viewerId, targetUserId, session);
+      if (
+        !(await this.usersPersistence.addFollow(
+          viewerId,
+          targetUserId,
+          session,
+        ))
+      ) {
+        throw new ORPCError('USER_NOT_FOUND');
+      }
+
       await this.notificationsService.notify(
         { type: 'follow', to: targetUserId, from: viewerId },
         session,

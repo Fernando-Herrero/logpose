@@ -57,21 +57,23 @@ export const AVATAR_OPTIONS: AvatarOption[] = AVATAR_CHARACTER_IDS.map(id => ({
   previewPath: avatarPreviewPath(id),
 }));
 
-/**
- * Minimum last watched episode per unlockable avatar.
- * Empty until serie progress is computed server-side.
- */
-export const AVATAR_PROGRESS_UNLOCK_RULES: Partial<
-  Record<AvatarProgressUnlockCharacterId, number>
-> = {};
+/** First episode where each unlockable character appears (from data/research). */
+export const AVATAR_PROGRESS_UNLOCK_RULES: Record<
+  AvatarProgressUnlockCharacterId,
+  number
+> = {
+  robin: 67,
+  chopper: 81,
+  brook: 337,
+  jimbe: 416,
+};
 
 export function getProgressUnlockedAvatarIds(
   lastWatchedEpisode: number,
 ): AvatarProgressUnlockCharacterId[] {
-  return AVATAR_PROGRESS_UNLOCK_CHARACTER_IDS.filter(id => {
-    const rule = AVATAR_PROGRESS_UNLOCK_RULES[id];
-    return rule !== undefined && lastWatchedEpisode >= rule;
-  });
+  return AVATAR_PROGRESS_UNLOCK_CHARACTER_IDS.filter(
+    id => lastWatchedEpisode >= AVATAR_PROGRESS_UNLOCK_RULES[id],
+  );
 }
 
 export function getSelectableAvatarIds(

@@ -214,7 +214,9 @@ export class PostsService {
       throw new ORPCError('FORBIDDEN');
     }
 
-    const deleted = await this.postsPersistence.softDeleteById(postId);
+    const deleted = await this.transactions.withTransaction(async session => {
+      return this.postsPersistence.softDeleteById(postId, session);
+    });
 
     if (!deleted) {
       throw new ORPCError('POST_NOT_FOUND');

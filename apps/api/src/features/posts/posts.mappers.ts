@@ -185,8 +185,8 @@ export async function serializePostsForViewer(
       const original = originalById.get(originalId.toString());
 
       if (!original) {
-        // Borrado, huérfano (la cascada de `softDeleteById` no llegó a
-        // completarse) o no visible: el envoltorio no sale.
+        // Solo datos del legacy o un borrado entre las dos lecturas: v3 solo
+        // retuitea lo público y borra el original con sus retweets.
         return null;
       }
 

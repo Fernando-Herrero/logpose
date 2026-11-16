@@ -1,4 +1,7 @@
-import { POST_FEED_PAGE_SIZE } from '@logpose/contracts/common/post.schemas';
+import {
+  POST_FEED_PAGE_SIZE,
+  type PostCursor,
+} from '@logpose/contracts/common/post.schemas';
 import { infiniteQueryOptions, queryOptions } from '@tanstack/react-query';
 
 import { profileKeys } from '@/features/profile/api/profile.keys';
@@ -68,7 +71,7 @@ export const getProfileQueriesOptions = (client: OrpcClient) => ({
             return client.users.getCommentedPosts(input);
         }
       },
-      initialPageParam: undefined as string | undefined,
+      initialPageParam: undefined as PostCursor | undefined,
       getNextPageParam: lastPage => lastPage.nextCursor ?? undefined,
     }),
 });

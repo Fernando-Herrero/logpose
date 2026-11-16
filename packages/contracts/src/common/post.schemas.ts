@@ -1,5 +1,7 @@
 import * as z from 'zod/v4';
 
+import { mongoIdSchema } from './id.schemas.js';
+
 export const postVisibilitySchema = z.enum(['public', 'private', 'followers']);
 
 export const postAuthorSchema = z.object({
@@ -59,14 +61,23 @@ export const postPublicSchema = z.object({
   originalAuthor: postAuthorSchema.optional(),
 });
 
+/** `createdAt ISO|postId`: el último post de la página anterior. */
+export const postCursorSchema = z.templateLiteral([
+  z.iso.datetime(),
+  '|',
+  mongoIdSchema,
+]);
+
+export type PostCursor = z.infer<typeof postCursorSchema>;
+
 export const postPageQuerySchema = z.object({
   limit: z.coerce.number().int().min(1).max(50).optional(),
-  cursor: z.string().optional(),
+  cursor: postCursorSchema.optional(),
 });
 
 export type PostPageQuery = z.infer<typeof postPageQuerySchema>;
 
 export const postPageSchema = z.object({
   posts: z.array(postPublicSchema),
-  nextCursor: z.string().nullable(),
+  nextCursor: postCursorSchema.nullable(),
 });

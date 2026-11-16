@@ -1,4 +1,7 @@
-import { POST_FEED_PAGE_SIZE } from '@logpose/contracts/common/post.schemas';
+import {
+  POST_FEED_PAGE_SIZE,
+  type PostCursor,
+} from '@logpose/contracts/common/post.schemas';
 import { infiniteQueryOptions } from '@tanstack/react-query';
 
 import { postsKeys } from '@/features/posts/api/posts.keys';
@@ -13,7 +16,7 @@ export const getPostsQueriesOptions = (client: OrpcClient) => ({
           limit: POST_FEED_PAGE_SIZE,
           cursor: pageParam,
         }),
-      initialPageParam: undefined as string | undefined,
+      initialPageParam: undefined as PostCursor | undefined,
       getNextPageParam: lastPage => lastPage.nextCursor ?? undefined,
     }),
 });

@@ -1,4 +1,7 @@
-import type { postVisibilitySchema } from '@logpose/contracts/common/post.schemas';
+import type {
+  PostCursor,
+  postVisibilitySchema,
+} from '@logpose/contracts/common/post.schemas';
 import { ORPCError } from '@orpc/server';
 import { type Filter, ObjectId, type WithId } from 'mongodb';
 import type * as z from 'zod/v4';
@@ -106,29 +109,17 @@ export function serializePost(
 }
 
 /** Cursor estable para paginación del feed: `createdAt ISO|postId`. */
-export function encodePostCursor(post: WithId<PostDocument>) {
+export function encodePostCursor(post: WithId<PostDocument>): PostCursor {
   const createdAt = post.createdAt?.toISOString() ?? '';
   return `${createdAt}|${post._id.toString()}`;
 }
 
-export function decodePostCursor(cursor: string) {
-  const separatorIndex = cursor.lastIndexOf('|');
-  if (separatorIndex <= 0) {
-    return null;
-  }
-
-  const iso = cursor.slice(0, separatorIndex);
-  const id = cursor.slice(separatorIndex + 1);
-  if (!ObjectId.isValid(id)) {
-    return null;
-  }
-
-  const createdAt = new Date(iso);
-  if (Number.isNaN(createdAt.getTime())) {
-    return null;
-  }
-
-  return { createdAt, id: new ObjectId(id) };
+export function decodePostCursor(cursor: PostCursor) {
+  const at = cursor.lastIndexOf('|');
+  return {
+    createdAt: new Date(cursor.slice(0, at)),
+    id: new ObjectId(cursor.slice(at + 1)),
+  };
 }
 
 /** El original que envuelve un retweet; `undefined` si el post no lo es. */

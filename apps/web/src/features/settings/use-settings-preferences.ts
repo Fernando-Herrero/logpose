@@ -14,8 +14,8 @@ type UserPreferences = z.infer<typeof userPreferencesSchema>;
 type PreferenceGroup = keyof UserPreferences;
 
 /**
- * Envoltorio sobre la mutación de preferencias: envía solo el grupo tocado,
- * con el resto de ese grupo intacto, y avisa por toast del resultado.
+ * Envoltorio sobre la mutación de preferencias: envía solo los ajustes que cambian
+ * y avisa por toast del resultado.
  */
 export function useSettingsPreferences() {
   const { t } = useTranslation();
@@ -34,7 +34,7 @@ export function useSettingsPreferences() {
     try {
       await updatePreferences.mutateAsync({
         userId: user._id,
-        body: { [group]: { ...user.preferences[group], ...patch } },
+        body: { [group]: patch },
       });
 
       // «Siguiendo» aplica en la API el ajuste de mostrar retweets.

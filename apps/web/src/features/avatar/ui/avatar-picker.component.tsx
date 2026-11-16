@@ -1,7 +1,7 @@
 import {
   getProfileAvatarPickerOptions,
   getRegisterAvatarPickerOptions,
-} from '@logpose/contracts/common/avatar.schemas';
+} from '@logpose/contracts/common/avatar';
 import { Box, Button, Flex, Text } from '@radix-ui/themes';
 import { useTranslation } from 'next-i18next/pages';
 

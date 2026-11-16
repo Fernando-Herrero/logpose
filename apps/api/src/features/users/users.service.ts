@@ -1,5 +1,5 @@
 import { MongoTransactionService } from '@jperezmart/nest-mongodb';
-import { isAvatarPathSelectable } from '@logpose/contracts/common/avatar.schemas';
+import { isAvatarPathSelectable } from '@logpose/contracts/common/avatar';
 import type { PostPageQuery } from '@logpose/contracts/common/post.schemas';
 import { updateUserSchema } from '@logpose/contracts/common/user.schemas';
 import type { updatePreferencesSchema } from '@logpose/contracts/features/users/schemas';

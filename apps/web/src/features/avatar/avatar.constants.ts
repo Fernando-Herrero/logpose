@@ -1,4 +1,4 @@
-import { AVATAR_OPTIONS } from '@logpose/contracts/common/avatar.schemas';
+import { AVATAR_OPTIONS } from '@logpose/contracts/common/avatar';
 
 export const DEFAULT_AVATAR_SRC =
   AVATAR_OPTIONS.find(option => option.id === 'luffy')?.path ??

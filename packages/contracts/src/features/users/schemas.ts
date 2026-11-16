@@ -49,12 +49,12 @@ export const verifyUserOutputSchema = z.object({
   user: sessionUserSchema,
 });
 
-/** Cada grupo es opcional: se hace merge parcial sobre las preferencias guardadas. */
+/** Solo los ajustes que cambian: la API escribe esos campos y deja el resto como esté guardado. */
 export const updatePreferencesSchema = z
   .object({
-    notifications: notificationPreferencesSchema.optional(),
-    timeline: timelinePreferencesSchema.optional(),
-    accessibility: accessibilityPreferencesSchema.optional(),
+    notifications: notificationPreferencesSchema.partial().optional(),
+    timeline: timelinePreferencesSchema.partial().optional(),
+    accessibility: accessibilityPreferencesSchema.partial().optional(),
   })
   .strict()
   .refine(data => Object.keys(data).length > 0, {

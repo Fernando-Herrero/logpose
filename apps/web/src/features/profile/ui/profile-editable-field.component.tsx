@@ -74,11 +74,7 @@ export function ProfileEditableField({
             onChange={event => setDraft(event.target.value)}
           />
         )}
-        <Flex
-          gap="2"
-          justify={draft === 'coverImage' ? 'end' : 'start'}
-          className="w-full"
-        >
+        <Flex gap="2" className="w-full">
           <Button
             type="button"
             size="1"

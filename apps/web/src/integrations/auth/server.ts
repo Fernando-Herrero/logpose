@@ -4,16 +4,14 @@
  */
 import { sessionUserSchema } from '@logpose/contracts/common/user.schemas';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
+import type { FlatNamespace } from 'i18next';
 import type { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 
 import { authKeys } from '@/features/auth/api/auth.keys';
 import type { SessionUser } from '@/features/auth/api/session-user';
 import { getAuthenticatedHomePath } from '@/features/auth/auth-routes';
 import { env } from '@/integrations/env/server.mjs';
-import {
-  getDashboardI18nProps,
-  getDefaultI18nProps,
-} from '@/integrations/i18n/server';
+import { getDefaultI18nProps } from '@/integrations/i18n/server';
 
 /**
  * Llama a `/api/auth/me` reenviando las cookies del request. Devuelve null solo sin sesión (401);
@@ -47,11 +45,12 @@ async function fetchSessionUser(
 async function buildAuthenticatedPageProps(
   context: GetServerSidePropsContext,
   user: SessionUser,
+  namespaces: FlatNamespace[] = [],
 ) {
   const queryClient = new QueryClient();
   queryClient.setQueryData(authKeys.me(), user);
   return {
-    ...(await getDashboardI18nProps(context)),
+    ...(await getDefaultI18nProps(context, namespaces)),
     dehydratedState: dehydrate(queryClient),
   };
 }
@@ -81,6 +80,7 @@ async function requireSessionUser(
 /** GSSP para rutas protegidas del dashboard (`/dashboard/*`). Redirige a login si no hay sesión. */
 export async function getDashboardPageProps(
   context: GetServerSidePropsContext,
+  namespaces: FlatNamespace[] = [],
 ): Promise<GetServerSidePropsResult<Record<string, unknown>>> {
   const result = await requireSessionUser(context);
 
@@ -89,7 +89,7 @@ export async function getDashboardPageProps(
   }
 
   return {
-    props: await buildAuthenticatedPageProps(context, result),
+    props: await buildAuthenticatedPageProps(context, result, namespaces),
   };
 }
 

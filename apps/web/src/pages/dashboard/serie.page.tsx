@@ -8,6 +8,7 @@ function DashboardSeriePage() {
   return <SeriePageContent />;
 }
 
-export const getServerSideProps: GetServerSideProps = getDashboardPageProps;
+export const getServerSideProps: GetServerSideProps = context =>
+  getDashboardPageProps(context, ['serie']);
 
 export default withDashboardLayout(DashboardSeriePage);

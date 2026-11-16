@@ -1,5 +1,7 @@
 # One Piece LogPose
 
+[![CI](https://github.com/Fernando-Herrero/logpose/actions/workflows/ci.yml/badge.svg)](https://github.com/Fernando-Herrero/logpose/actions/workflows/ci.yml)
+
 Aplicación web para fans de **One Piece**: seguir la serie episodio a episodio, compartir posts con otros fans y, más adelante, coleccionar cartas que se desbloquean con el progreso.
 
 ## Qué funciona hoy

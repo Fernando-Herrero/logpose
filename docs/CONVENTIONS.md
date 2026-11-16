@@ -14,7 +14,7 @@
 
 ### Verticals (código agrupado por dominio)
 
-Inspirado en [The Vertical Codebase](https://tkdodo.eu/blog/the-vertical-codebase) y en la arquitectura de referencia: **no** separar por tipo (`components/`, `hooks/`, `utils/` globales), sino por **funcionalidad** — cada vertical es un feature de primer nivel.
+Inspirado en [The Vertical Codebase](https://tkdodo.eu/blog/the-vertical-codebase): **no** separar por tipo (`components/`, `hooks/`, `utils/` globales), sino por **funcionalidad** — cada vertical es un feature de primer nivel.
 
 ```
 features/<vertical>/
@@ -30,7 +30,7 @@ features/<vertical>/
 └── <vertical>.constants.ts
 ```
 
-**Cadena de página (como en la referencia):**
+**Cadena de página:**
 
 ```
 pages/<ruta>.page.tsx              → thin: routing + getServerSideProps + getLayout
@@ -66,7 +66,7 @@ pages/<ruta>.page.tsx              → thin: routing + getServerSideProps + getL
 
 No migrar todo a `next/image` de golpe: aplicar la tabla en código nuevo y al tocar un componente existente.
 
-### Convención de páginas (igual que en la referencia)
+### Convención de páginas
 
 - Archivos en `src/pages/` con sufijo `.page.tsx`
 - `next.config.mjs`: `pageExtensions: ['page.tsx', 'page.ts']`
@@ -86,7 +86,7 @@ No migrar todo a `next/image` de golpe: aplicar la tabla en código nuevo y al t
 ### Componentes
 
 - Funcionales siempre
-- Archivos UI en `features/<vertical>/ui/` con sufijo `.component.tsx` (como en la referencia)
+- Archivos UI en `features/<vertical>/ui/` con sufijo `.component.tsx`
 - Props tipadas con `type` o `interface`
 - `'use client'` implícito en Pages Router (todo es client salvo SSR explícito)
 
@@ -134,7 +134,7 @@ Cada colección se registra una sola vez, en el `*-persistence.module.ts` de su 
 
 Un proceso sin HTTP tiene su módulo raíz junto a la feature que lo usa (`notifications-worker.module.ts`, arrancado por `src/worker.ts`) e importa `CoreModule` (entorno y Mongo), no `AppModule`.
 
-### Reglas (referencia)
+### Reglas
 
 | Tema                             | Patrón                                                                                         |
 | -------------------------------- | ---------------------------------------------------------------------------------------------- |

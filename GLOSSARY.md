@@ -58,6 +58,12 @@ Texto con hasta 4 imágenes y una visibilidad. 280 caracteres, o 600 si el autor
 **Retweet**:
 Post envoltorio (`isRetweet`, `retweetOf`) que copia el texto y las imágenes del original al crearse. Like, guardado y retweet actúan sobre el original. Solo se retuitea lo público.
 
+**Todos** (`feed: 'all'`):
+Vista de la comunidad con todo lo que el viewer puede ver, por fecha y sin retweets.
+
+**Siguiendo** (`feed: 'following'`):
+Vista de la comunidad con lo propio y lo de quien sigues, más lo que retuitean. Cada post sale una vez, en su aparición más reciente ([ADR 0022](docs/adr/0022-dos-vistas-del-feed.md)).
+
 **Guardado** (`bookmark`):
 Post que el usuario marca para leer después; sale en la pestaña de guardados de su perfil.
 

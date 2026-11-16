@@ -20,7 +20,7 @@ Si un episodio adapta el manga (`canon`), no lo adapta (`filler`), mezcla ambos 
 Fuente única de la serie: sagas, arcos y episodios con sus textos en es/en/ja. De ella salen los datos de la API y los locales de la web ([ADR 0018](docs/adr/0018-datos-de-la-serie-desde-research.md)).
 
 **Progreso de la serie** (`lastWatchedEpisode`):
-Número del último episodio visto (0 = ninguno); un episodio está visto si su número no lo supera. Saga y arco salen del episodio. Desbloqueará avatares por número de episodio (`AVATAR_PROGRESS_UNLOCK_RULES`, vacío hasta que el progreso se calcule en el servidor).
+Número del último episodio visto (0 = ninguno); un episodio está visto si su número no lo supera. Saga y arco salen del episodio. Es el único dato de progreso que se guarda: XP, nivel, cartas de episodio, avatares (`AVATAR_PROGRESS_UNLOCK_RULES`) y logros se calculan a partir de él ([ADR 0021](docs/adr/0021-progreso-derivado-de-un-numero.md)).
 
 ## Cartas y progresión
 
@@ -32,26 +32,23 @@ Coleccionable concreto anclado a un momento de la historia (Luffy Gear 5), no el
 Regla de variante: una carta = un cambio visual anclado a un episodio (una transformación, una etapa como niño o tras el salto temporal, un disfraz con nombre propio en el arco). Un hito de poder sin cambio visual no es carta.
 _Evitar_: versión (a secas), personaje.
 
-**UnlockRule**:
-Regla del servidor que dice qué otorga un episodio, arco o evento. Sin implementar.
-
-**Recompensa** (`Reward`):
-Lo que otorga una `UnlockRule`: XP, berries y cartas. Sin implementar.
-
 **XP** (`experience`):
-Experiencia del usuario; ordena el ranking. Cada episodio fija la que da (`episode.experience`).
+Experiencia del usuario: la suma de `episode.experience` de los episodios vistos, más la de las misiones. Se guarda solo para ordenar el ranking y se recalcula entera en cada cambio de progreso. La de cada episodio la calcula el script de research según su tipo, sus eventos y si cierra arco o saga.
+
+**Nivel**:
+Sale de la XP: el mayor L con `15·L·(L−1)` menor o igual que ella. No se guarda.
 
 **Berries**:
 Moneda blanda del juego. Sin implementar.
 
 **Logro** (`Achievement`):
-Reto con una condición (completar un arco, reunir N cartas) y su recompensa. Sin implementar.
+Reto con una condición (completar un arco, reunir N cartas) que se cumple o no según el progreso y la colección; no se guarda. Sin implementar.
 
-**rankingScore**:
-Puntuación materializada que ordenará el leaderboard combinando nivel, colección, rareza y logros. Sin implementar: hoy el ranking ordena por `experience`.
+**weeklyScore**:
+Puntuación de la liga semanal. Sin implementar: el ranking global ordena por `experience`.
 
 **Server-authoritative**:
-El servidor decide y aplica las recompensas; el cliente solo informa de lo que ha hecho. Decidido, sin implementar.
+El servidor calcula todo lo que da el progreso; el cliente solo dice por qué episodio va (N).
 
 ## Red social
 
@@ -102,5 +99,5 @@ _Evitar_: v2 a secas.
 **`experience` / XP**:
 Lo mismo. En el código, `experience`; en la interfaz y en los docs, XP.
 
-**`rewards` / `Reward`**:
-`episode.rewards` son solo las cartas que da un episodio, por categoría; la XP va aparte en `experience`. `Reward` (XP, berries y cartas) llega con `UnlockRule`. «Logro» queda para `Achievement`.
+**`rewards`**:
+`episode.rewards` son solo las cartas que da un episodio, por categoría; la XP va aparte en `experience`. «Logro» queda para `Achievement`.

@@ -1,0 +1,7 @@
+. .husky/step.sh
+
+# Lo ya subido se probó en su push: base = lo último en GitHub (o main si la rama es nueva).
+base=$(git rev-parse -q --verify '@{u}' || echo origin/main)
+
+step test '🧪 Corrige los tests y vuelve a hacer push.' pnpm turbo run test --filter="...[$base]"
+step build '❌ Corrige el build y vuelve a hacer push.' pnpm turbo run build --filter="...[$base]"

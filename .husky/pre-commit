@@ -1,52 +1,7 @@
-#!/usr/bin/env sh
+. .husky/step.sh
 
-# Git hooks no cargan tu shell — usar Node del proyecto (mise), no el del sistema
-export PATH="$HOME/.local/share/mise/shims:$PATH"
-
-# Comprobar que pnpm-lock.yaml está al día
-pnpm install --frozen-lockfile || (
-    echo '🧶🔒🚨 pnpm-lock.yaml desactualizado o hay un problema de dependencias. Ejecuta "pnpm install" y vuelve a intentarlo.';
-    false;
-)
-
-# Una sola versión de cada paquete: dos copias de una librería son dos clases distintas para `instanceof`
-pnpm dedupe --check || (
-    echo '👯 Hay dependencias duplicadas que se pueden unificar. Ejecuta "pnpm dedupe" y vuelve a intentarlo.';
-    false;
-)
-
-# Formato
-pnpm format-check ||
-(
-    echo '🤢 Prettier check falló. Ejecuta "pnpm format", añade los cambios y vuelve a commitear.';
-    false;
-)
-
-# Lint
-pnpm lint ||
-(
-    echo '😤 ESLint falló. Corrige lo indicado arriba y vuelve a commitear.'
-    false;
-)
-
-# Tipos
-pnpm type-check || (
-    echo '🤓 Type-check falló. TypeScript encontró errores. Corrígelos y vuelve a intentarlo.';
-    false;
-)
-
-# Tests
-pnpm test ||
-(
-    echo '🧪 Tests fallaron. Corrige lo indicado arriba y vuelve a commitear.'
-    false;
-)
-
-# Build de los apps desplegables
-pnpm build ||
-(
-    echo '❌ Build falló: revisa los errores de arriba.'
-    false;
-)
-
-echo '✅ Checks pasados — commiteando.'
+step lockfile '🧶 pnpm-lock.yaml desactualizado: ejecuta "pnpm install".' pnpm install --frozen-lockfile
+step dedupe '👯 Dependencias duplicadas: ejecuta "pnpm dedupe".' pnpm dedupe --check
+step format '🤢 Ejecuta "pnpm format" y añade los cambios.' pnpm format-check
+step lint '😤 Corrige lo indicado arriba.' pnpm lint
+step type-check '🤓 Corrige los errores de tipos.' pnpm type-check

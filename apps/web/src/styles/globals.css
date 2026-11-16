@@ -472,6 +472,20 @@ html {
   .landing-scroll-cue {
     display: none;
   }
+
+  /* Sin la animación, el hero enseña su estado final, como en móvil. */
+  .landing-veil {
+    display: none;
+  }
+
+  .landing-mask,
+  .landing-mask .landing-img {
+    transform: scale(1);
+  }
+
+  .landing-vignette {
+    opacity: 0.7;
+  }
 }
 
 /* Mobile / touch — desactivar efectos de GPU pesados: repintados infinitos,
@@ -574,7 +588,8 @@ html[data-high-contrast='true'] :where(.rt-Card, .rt-BaseCard) {
   border-color: --alpha(var(--color-highlight) / 45%);
 }
 
-/* Corta animaciones y transiciones, incluidas las de GSAP ya aplicadas. */
+/* Corta animaciones y transiciones, incluidas las de GSAP ya aplicadas; `html` lleva el scroll suave. */
+html[data-reduce-motion='true'],
 html[data-reduce-motion='true'] *,
 html[data-reduce-motion='true'] *::before,
 html[data-reduce-motion='true'] *::after {
@@ -589,8 +604,16 @@ html[data-reduce-motion='true'] :is(.landing-title, .landing-tagline) {
   opacity: 1;
 }
 
-html[data-reduce-motion='true'] .landing-scroll-cue {
+html[data-reduce-motion='true'] :is(.landing-scroll-cue, .landing-veil) {
   display: none;
+}
+
+html[data-reduce-motion='true'] :is(.landing-mask, .landing-mask .landing-img) {
+  transform: scale(1);
+}
+
+html[data-reduce-motion='true'] .landing-vignette {
+  opacity: 0.7;
 }
 
 /* Timeline › modo compacto y difuminar multimedia. */

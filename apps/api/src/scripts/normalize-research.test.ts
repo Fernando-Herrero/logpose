@@ -32,9 +32,14 @@ const buildInput = () => [
         type: 'canon',
         chapters: [],
         episodes: [
-          { number: 80, title: { en: '80 en', ja: '80 ja' }, canon: 'canon' },
+          {
+            number: 80,
+            title: { en: '80 en', ja: '80 ja' },
+            canon: 'canon',
+            adaptsChapters: [101],
+          },
         ],
-        events: [{ episode: 80 }],
+        events: [{ slug: 'crocus', episode: 80 }],
       },
       {
         slug: 'whisky-peak',
@@ -57,8 +62,14 @@ const buildInput = () => [
               ja: '92 要約',
             },
             canon: 'filler',
+            adaptsChapters: [],
           },
-          { number: 91, title: { en: '91 en' }, canon: 'filler' },
+          {
+            number: 91,
+            title: { en: '91 en' },
+            canon: 'filler',
+            adaptsChapters: [],
+          },
         ],
       },
     ],
@@ -87,6 +98,7 @@ const buildInput = () => [
             number: 53,
             title: { es: '53 es', en: '53 en', ja: '53 ja' },
             canon: 'mixed',
+            adaptsChapters: [100],
           },
           {
             number: 45,
@@ -99,9 +111,14 @@ const buildInput = () => [
             number: 48,
             title: { en: 'Episode 48 en', ja: '第48話' },
             canon: 'filler',
+            adaptsChapters: [],
           },
         ],
-        events: [{ episode: 45 }, { episode: 45 }, { episode: null }],
+        events: [
+          { slug: 'buggy-bounty', episode: 45 },
+          { slug: 'luffy-bounty', episode: 45 },
+          { slug: 'loguetown-rain', episode: null },
+        ],
       },
       {
         slug: 'buggy-side-story',
@@ -121,8 +138,14 @@ const buildInput = () => [
               ja: '47 要約',
             },
             canon: 'recap',
+            adaptsChapters: [],
           },
-          { number: 46, title: { en: '46 en', ja: '46 ja' }, canon: 'mixed' },
+          {
+            number: 46,
+            title: { en: '46 en', ja: '46 ja' },
+            canon: 'mixed',
+            adaptsChapters: [],
+          },
         ],
       },
     ],
@@ -228,12 +251,47 @@ describe('normalizeResearch', () => {
     for (const episode of episodes) {
       expect(episode.rewards).toStrictEqual(noRewards);
       expect(Object.keys(episode).sort()).toEqual([
+        'adaptsChapters',
         'arcSlug',
+        'closesArc',
+        'closesSaga',
+        'events',
         'experience',
         'number',
         'rewards',
+        'type',
       ]);
     }
+  });
+
+  it('lleva en cada episodio su tipo, sus capítulos, sus eventos y si cierra arco o saga', () => {
+    const byNumber = Object.fromEntries(
+      normalizeResearch(buildInput()).episodes.map(
+        ({ number, type, adaptsChapters, events, closesArc, closesSaga }) => [
+          number,
+          { type, adaptsChapters, events, closesArc, closesSaga },
+        ],
+      ),
+    );
+
+    expect(byNumber[45]).toStrictEqual({
+      type: 'canon',
+      adaptsChapters: [96, 97],
+      events: ['buggy-bounty', 'luffy-bounty'],
+      closesArc: false,
+      closesSaga: false,
+    });
+    expect(byNumber[47]).toMatchObject({
+      type: 'recap',
+      closesArc: true,
+      closesSaga: false,
+    });
+    expect(byNumber[53]).toMatchObject({ closesArc: true, closesSaga: true });
+    expect(byNumber[80]).toMatchObject({
+      events: ['crocus'],
+      closesArc: true,
+      closesSaga: false,
+    });
   });
 
   it('genera el locale es con fallback a title.en y description solo si hay summary', () => {
@@ -335,7 +393,14 @@ describe('normalizeResearch', () => {
       order,
       title: { en: slug },
       type: 'canon',
-      episodes: [{ number: 46, title: { en: 'Episode 46' }, canon: 'canon' }],
+      episodes: [
+        {
+          number: 46,
+          title: { en: 'Episode 46' },
+          canon: 'canon',
+          adaptsChapters: [],
+        },
+      ],
     });
     const input = [
       {

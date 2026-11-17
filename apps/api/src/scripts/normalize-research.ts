@@ -1,7 +1,13 @@
 import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
-import type * as serie from '@logpose/contracts/common/serie.schemas';
+import {
+  ARC_END_EXPERIENCE,
+  EPISODE_TYPE_EXPERIENCE,
+  EVENT_EXPERIENCE,
+  SAGA_END_EXPERIENCE,
+} from '@logpose/contracts/common/experience';
+import * as serie from '@logpose/contracts/common/serie.schemas';
 import * as z from 'zod/v4';
 
 type Locale = 'es' | 'en' | 'ja';
@@ -24,7 +30,8 @@ const episodeSchema = z.object({
   number: z.number().int().positive(),
   title: titleSchema,
   summary: summarySchema.nullish(),
-  canon: z.enum(['canon', 'mixed', 'filler', 'recap']),
+  canon: serie.episodeTypeSchema,
+  adaptsChapters: z.array(z.number().int().positive()),
 });
 
 const arcSchema = z.object({
@@ -35,7 +42,12 @@ const arcSchema = z.object({
   type: z.enum(['canon', 'filler', 'mixed']),
   episodes: z.array(episodeSchema),
   events: z
-    .array(z.object({ episode: z.number().int().positive().nullish() }))
+    .array(
+      z.object({
+        slug: z.string(),
+        episode: z.number().int().positive().nullish(),
+      }),
+    )
     .default([]),
 });
 
@@ -59,12 +71,6 @@ const texts = (
   ...(summary && { description: summary[locale] }),
 });
 
-// XP de un episodio (ADR 0021): base por tipo, más sus eventos y los cierres de arco y saga.
-const BASE_EXPERIENCE = { canon: 100, mixed: 75, filler: 40, recap: 40 };
-const EVENT_EXPERIENCE = 25;
-const ARC_END_EXPERIENCE = 250;
-const SAGA_END_EXPERIENCE = 1000;
-
 export function normalizeResearch(input: unknown) {
   const sagas = researchSchema.parse(input).sort(byOrder);
   const arcs = sagas.flatMap(saga =>
@@ -79,19 +85,25 @@ export function normalizeResearch(input: unknown) {
   const episodes = arcs
     .flatMap(arc => {
       const last = Math.max(...arc.episodes.map(episode => episode.number));
-      return arc.episodes.map(episode => ({
-        ...episode,
-        arcSlug: arc.slug,
-        experience:
-          BASE_EXPERIENCE[episode.canon] +
-          EVENT_EXPERIENCE *
-            arc.events.filter(event => event.episode === episode.number)
-              .length +
-          (episode.number === last ? ARC_END_EXPERIENCE : 0) +
-          (episode.number === sagaEnd.get(arc.sagaSlug)
-            ? SAGA_END_EXPERIENCE
-            : 0),
-      }));
+      return arc.episodes.map(episode => {
+        const events = arc.events
+          .filter(event => event.episode === episode.number)
+          .map(event => event.slug);
+        const closesArc = episode.number === last;
+        const closesSaga = episode.number === sagaEnd.get(arc.sagaSlug);
+        return {
+          ...episode,
+          arcSlug: arc.slug,
+          events,
+          closesArc,
+          closesSaga,
+          experience:
+            EPISODE_TYPE_EXPERIENCE[episode.canon] +
+            EVENT_EXPERIENCE * events.length +
+            (closesArc ? ARC_END_EXPERIENCE : 0) +
+            (closesSaga ? SAGA_END_EXPERIENCE : 0),
+        };
+      });
     })
     .sort((a, b) => a.number - b.number);
 
@@ -138,6 +150,11 @@ export function normalizeResearch(input: unknown) {
       (episode): Episode => ({
         number: episode.number,
         arcSlug: episode.arcSlug,
+        type: episode.canon,
+        adaptsChapters: episode.adaptsChapters,
+        events: episode.events,
+        closesArc: episode.closesArc,
+        closesSaga: episode.closesSaga,
         experience: episode.experience,
         rewards: {
           characters: [],

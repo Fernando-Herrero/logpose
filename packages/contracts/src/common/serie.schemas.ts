@@ -15,9 +15,16 @@ export const arcSchema = z.object({
   totalEpisodes: z.number().int().nonnegative(),
 });
 
+export const episodeTypeSchema = z.enum(['canon', 'mixed', 'filler', 'recap']);
+
 export const episodeSchema = z.object({
   number: z.number().int().positive(),
   arcSlug: z.string(),
+  type: episodeTypeSchema,
+  adaptsChapters: z.array(z.number().int().positive()),
+  events: z.array(z.string()),
+  closesArc: z.boolean(),
+  closesSaga: z.boolean(),
   experience: z.number().int().nonnegative(),
   rewards: unlockedCardsSchema,
 });

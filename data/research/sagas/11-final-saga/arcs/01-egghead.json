@@ -2214,7 +2214,9 @@
       "episode": 1086,
       "chapter": 1058,
       "description": {
-        "es": "Buggy es nombrado Emperador y Cross Guild recibe recompensas: Mihawk 3.590 M, Buggy 3.189 M, Crocodile 1.965 M."
+        "es": "Buggy es nombrado Emperador y Cross Guild recibe recompensas: Mihawk 3.590 M, Buggy 3.189 M, Crocodile 1.965 M.",
+        "en": "Buggy is named an Emperor and Cross Guild receives bounties: Mihawk 3,590M, Buggy 3,189M, Crocodile 1,965M.",
+        "ja": "バギーが四皇に認定され、クロスギルドに懸賞金がかかる：ミホーク35億9000万、バギー31億8900万、クロコダイル19億6500万。"
       },
       "cardWorthy": true
     },
@@ -2236,7 +2238,9 @@
       "episode": 1086,
       "chapter": 1058,
       "description": {
-        "es": "Nuevas recompensas tras Wano: Luffy 3.000 M, Zoro 1.111 M, Jinbe 1.100 M, Sanji 1.032 M, Robin 930 M, Usopp 500 M, Franky 394 M, Brook 383 M, Nami 366 M, Chopper 1.000."
+        "es": "Nuevas recompensas tras Wano: Luffy 3.000 M, Zoro 1.111 M, Jinbe 1.100 M, Sanji 1.032 M, Robin 930 M, Usopp 500 M, Franky 394 M, Brook 383 M, Nami 366 M, Chopper 1.000.",
+        "en": "New bounties after Wano: Luffy 3,000M, Zoro 1,111M, Jinbe 1,100M, Sanji 1,032M, Robin 930M, Usopp 500M, Franky 394M, Brook 383M, Nami 366M, Chopper 1,000.",
+        "ja": "ワノ国後の新たな懸賞金：ルフィ30億、ゾロ11億1100万、ジンベエ11億、サンジ10億3200万、ロビン9億3000万、ウソップ5億、フランキー3億9400万、ブルック3億8300万、ナミ3億6600万、チョッパー1000。"
       },
       "cardWorthy": true
     },
@@ -2260,7 +2264,9 @@
       "episode": 1089,
       "chapter": 1061,
       "description": {
-        "es": "Los Sombrero de Paja llegan a la Isla del Futuro, Egghead."
+        "es": "Los Sombrero de Paja llegan a la Isla del Futuro, Egghead.",
+        "en": "The Straw Hats arrive at Future Island Egghead.",
+        "ja": "麦わらの一味が未来島エッグヘッドに到着する。"
       },
       "cardWorthy": false
     },
@@ -2274,7 +2280,9 @@
       "episode": 1092,
       "chapter": 1063,
       "description": {
-        "es": "Barbanegra derrota a Law y a los Piratas Heart en Winner Island."
+        "es": "Barbanegra derrota a Law y a los Piratas Heart en Winner Island.",
+        "en": "Blackbeard defeats Law and the Heart Pirates on Winner Island.",
+        "ja": "黒ひげがウィナー島でローとハートの海賊団を倒す。"
       },
       "cardWorthy": true
     },
@@ -2293,7 +2301,9 @@
       "episode": 1094,
       "chapter": 1065,
       "description": {
-        "es": "Se revelan los seis satélites de Vegapunk."
+        "es": "Se revelan los seis satélites de Vegapunk.",
+        "en": "Vegapunk's six satellites are revealed.",
+        "ja": "ベガパンクの6人のサテライトが明らかになる。"
       },
       "cardWorthy": true
     },
@@ -2306,7 +2316,9 @@
       "episode": 1099,
       "chapter": 1069,
       "description": {
-        "es": "Rob Lucci muestra su fruta Neko Neko Modelo Leopardo despertada."
+        "es": "Rob Lucci muestra su fruta Neko Neko Modelo Leopardo despertada.",
+        "en": "Rob Lucci shows his awakened Neko Neko no Mi, Model: Leopard.",
+        "ja": "ロブ・ルッチが覚醒したネコネコの実 モデル“豹”を見せる。"
       },
       "cardWorthy": true
     },
@@ -2320,7 +2332,9 @@
       "episode": 1099,
       "chapter": 1069,
       "description": {
-        "es": "Luffy en Gear 5 se enfrenta a Lucci despertado."
+        "es": "Luffy en Gear 5 se enfrenta a Lucci despertado.",
+        "en": "Luffy in Gear 5 faces the awakened Lucci.",
+        "ja": "ギア5のルフィが覚醒したルッチと戦う。"
       },
       "cardWorthy": true
     },
@@ -2335,7 +2349,9 @@
       "episode": 1104,
       "chapter": 1073,
       "description": {
-        "es": "Stussy derriba a Kaku y Lucci: es espía de Vegapunk."
+        "es": "Stussy derriba a Kaku y Lucci: es espía de Vegapunk.",
+        "en": "Stussy takes down Kaku and Lucci: she is Vegapunk's spy.",
+        "ja": "ステューシーがカクとルッチを倒す。彼女はベガパンクの内通者だった。"
       },
       "cardWorthy": true
     },
@@ -2349,7 +2365,9 @@
       "episode": 1108,
       "chapter": 1077,
       "description": {
-        "es": "York resulta ser la traidora entre los satélites."
+        "es": "York resulta ser la traidora entre los satélites.",
+        "en": "York turns out to be the traitor among the satellites.",
+        "ja": "サテライトの中の裏切り者はヨークだと判明する。"
       },
       "cardWorthy": false
     },
@@ -2364,7 +2382,9 @@
       "episode": 1112,
       "chapter": 1079,
       "description": {
-        "es": "Shanks derrota a Kid de un solo golpe (Kamusari) en Elbaph."
+        "es": "Shanks derrota a Kid de un solo golpe (Kamusari) en Elbaph.",
+        "en": "Shanks defeats Kid with a single blow (Kamusari) at Elbaph.",
+        "ja": "シャンクスがエルバフでキッドを一撃（神避）で倒す。"
       },
       "cardWorthy": true
     },
@@ -2379,7 +2399,9 @@
       "episode": 1113,
       "chapter": 1080,
       "description": {
-        "es": "Garp asalta Hachinosu para rescatar a Koby."
+        "es": "Garp asalta Hachinosu para rescatar a Koby.",
+        "en": "Garp storms Hachinosu to rescue Koby.",
+        "ja": "ガープがコビー救出のためハチノスに乗り込む。"
       },
       "cardWorthy": true
     },
@@ -2393,7 +2415,9 @@
       "episode": 1114,
       "chapter": 1081,
       "description": {
-        "es": "Kuzan aparece como capitán de la décima flota de Barbanegra."
+        "es": "Kuzan aparece como capitán de la décima flota de Barbanegra.",
+        "en": "Kuzan appears as captain of Blackbeard's Tenth Ship.",
+        "ja": "クザンが黒ひげ海賊団10番船船長として姿を現す。"
       },
       "cardWorthy": true
     },
@@ -2408,7 +2432,9 @@
       "episode": 1116,
       "chapter": 1082,
       "description": {
-        "es": "Buggy declara que Cross Guild va a por el One Piece."
+        "es": "Buggy declara que Cross Guild va a por el One Piece.",
+        "en": "Buggy declares that Cross Guild is going after the One Piece.",
+        "ja": "バギーがクロスギルドでワンピースを取りに行くと宣言する。"
       },
       "cardWorthy": false
     },
@@ -2423,7 +2449,9 @@
       "episode": 1119,
       "chapter": 1085,
       "description": {
-        "es": "Imu se revela ante Cobra, que muere en Mary Geoise."
+        "es": "Imu se revela ante Cobra, que muere en Mary Geoise.",
+        "en": "Imu reveals itself to Cobra, who dies in Mary Geoise.",
+        "ja": "イムがコブラの前に姿を現し、コブラはマリージョアで命を落とす。"
       },
       "cardWorthy": true
     },
@@ -2441,7 +2469,9 @@
       "episode": 1120,
       "chapter": 1086,
       "description": {
-        "es": "Imu ordena destruir Lulusia con la Mother Flame."
+        "es": "Imu ordena destruir Lulusia con la Mother Flame.",
+        "en": "Imu orders the destruction of Lulusia with the Mother Flame.",
+        "ja": "イムがマザー・フレイムによるルルシア王国の消滅を命じる。"
       },
       "cardWorthy": true
     },
@@ -2456,7 +2486,9 @@
       "episode": 1121,
       "chapter": 1087,
       "description": {
-        "es": "Garp cae ante Kuzan para que Koby escape (última lección)."
+        "es": "Garp cae ante Kuzan para que Koby escape (última lección).",
+        "en": "Garp falls to Kuzan so that Koby can escape (his last lesson).",
+        "ja": "ガープがコビーを逃がすためクザンに敗れる（最後の教え）。"
       },
       "cardWorthy": true
     },
@@ -2470,7 +2502,9 @@
       "episode": 1125,
       "chapter": 1091,
       "description": {
-        "es": "Kizaru derrota a Sentomaru en Egghead."
+        "es": "Kizaru derrota a Sentomaru en Egghead.",
+        "en": "Kizaru defeats Sentomaru on Egghead.",
+        "ja": "黄猿がエッグヘッドで戦桃丸を倒す。"
       },
       "cardWorthy": true
     },
@@ -2484,7 +2518,9 @@
       "episode": 1127,
       "chapter": 1093,
       "description": {
-        "es": "Luffy en Gear 5 se enfrenta a Kizaru."
+        "es": "Luffy en Gear 5 se enfrenta a Kizaru.",
+        "en": "Luffy in Gear 5 faces Kizaru.",
+        "ja": "ギア5のルフィが黄猿と戦う。"
       },
       "cardWorthy": true
     },
@@ -2497,7 +2533,9 @@
       "episode": 1128,
       "chapter": 1094,
       "description": {
-        "es": "San Jaygarcia Saturn, de los Cinco Ancianos, aparece en Egghead."
+        "es": "San Jaygarcia Saturn, de los Cinco Ancianos, aparece en Egghead.",
+        "en": "Saint Jaygarcia Saturn of the Five Elders appears on Egghead.",
+        "ja": "五老星のジェイガルシア・サターン聖がエッグヘッドに現れる。"
       },
       "cardWorthy": true
     },
@@ -2511,7 +2549,9 @@
       "episode": 1128,
       "chapter": 1094,
       "description": {
-        "es": "Kizaru hiere de muerte al Vegapunk original."
+        "es": "Kizaru hiere de muerte al Vegapunk original.",
+        "en": "Kizaru fatally wounds the original Vegapunk.",
+        "ja": "黄猿がベガパンク本体に致命傷を負わせる。"
       },
       "cardWorthy": true
     },
@@ -2526,7 +2566,9 @@
       "episode": 1129,
       "chapter": 1095,
       "description": {
-        "es": "Flashback de Kuma: God Valley, Ginny y Bonney."
+        "es": "Flashback de Kuma: God Valley, Ginny y Bonney.",
+        "en": "Kuma's flashback: God Valley, Ginny and Bonney.",
+        "ja": "くまの回想：ゴッドバレー、ジニー、そしてボニー。"
       },
       "cardWorthy": true
     },
@@ -2541,7 +2583,9 @@
       "episode": 1137,
       "chapter": 1104,
       "description": {
-        "es": "Kuma golpea a Saturn para salvar a Bonney."
+        "es": "Kuma golpea a Saturn para salvar a Bonney.",
+        "en": "Kuma strikes Saturn to save Bonney.",
+        "ja": "くまがボニーを救うためサターン聖を殴り飛ばす。"
       },
       "cardWorthy": true
     },
@@ -2552,7 +2596,9 @@
       "episode": 1139,
       "chapter": 1105,
       "description": {
-        "es": "Se invoca un Buster Call sobre Egghead."
+        "es": "Se invoca un Buster Call sobre Egghead.",
+        "en": "A Buster Call is invoked on Egghead.",
+        "ja": "エッグヘッドにバスターコールが発動される。"
       },
       "cardWorthy": false
     },
@@ -2566,7 +2612,9 @@
       "episode": 1141,
       "chapter": 1107,
       "description": {
-        "es": "Dorry y Brogy llegan con los Piratas Guerreros Gigantes."
+        "es": "Dorry y Brogy llegan con los Piratas Guerreros Gigantes.",
+        "en": "Dorry and Brogy arrive with the Giant Warrior Pirates.",
+        "ja": "ドリーとブロギーが巨兵海賊団を率いて到着する。"
       },
       "cardWorthy": true
     },
@@ -2579,7 +2627,9 @@
       "episode": 1142,
       "chapter": 1108,
       "description": {
-        "es": "Empieza la emisión mundial del mensaje de Vegapunk."
+        "es": "Empieza la emisión mundial del mensaje de Vegapunk.",
+        "en": "The worldwide broadcast of Vegapunk's message begins.",
+        "ja": "ベガパンクのメッセージの全世界配信が始まる。"
       },
       "cardWorthy": true
     },
@@ -2596,7 +2646,9 @@
       "episode": 1144,
       "chapter": 1110,
       "description": {
-        "es": "Los Cinco Ancianos llegan a Egghead en sus formas de bestia."
+        "es": "Los Cinco Ancianos llegan a Egghead en sus formas de bestia.",
+        "en": "The Five Elders arrive on Egghead in their beast forms.",
+        "ja": "五老星が獣の姿でエッグヘッドに集結する。"
       },
       "cardWorthy": true
     },
@@ -2609,7 +2661,9 @@
       "episode": 1148,
       "chapter": 1115,
       "description": {
-        "es": "Vegapunk habla de Joy Boy y del Siglo Vacío."
+        "es": "Vegapunk habla de Joy Boy y del Siglo Vacío.",
+        "en": "Vegapunk speaks about Joy Boy and the Void Century.",
+        "ja": "ベガパンクがジョイボーイと空白の100年について語る。"
       },
       "cardWorthy": true
     },
@@ -2623,7 +2677,9 @@
       "episode": 1150,
       "chapter": 1117,
       "description": {
-        "es": "El gigante de hierro Emet se activa."
+        "es": "El gigante de hierro Emet se activa.",
+        "en": "The iron giant Emet activates.",
+        "ja": "鉄の巨人エメトが起動する。"
       },
       "cardWorthy": true
     },
@@ -2636,7 +2692,9 @@
       "episode": 1152,
       "chapter": 1121,
       "description": {
-        "es": "Bonney adopta su forma de Nika del futuro distorsionado."
+        "es": "Bonney adopta su forma de Nika del futuro distorsionado.",
+        "en": "Bonney takes on her Nika form from her Distorted Future.",
+        "ja": "ボニーが「歪んだ未来」でニカの姿になる。"
       },
       "cardWorthy": true
     },
@@ -2651,7 +2709,9 @@
       "episode": 1153,
       "chapter": 1122,
       "description": {
-        "es": "El Haki del Rey de Luffy, sumado al de los gigantes, noquea a la Marina."
+        "es": "El Haki del Rey de Luffy, sumado al de los gigantes, noquea a la Marina.",
+        "en": "Luffy's Conqueror's Haki, combined with the giants', knocks out the Marines.",
+        "ja": "ルフィの覇王色の覇気が巨人たちのそれと合わさり、海兵たちを気絶させる。"
       },
       "cardWorthy": true
     },
@@ -2677,7 +2737,9 @@
       "episode": 1154,
       "chapter": 1123,
       "description": {
-        "es": "Los Sombrero de Paja escapan de Egghead rumbo a Elbaph."
+        "es": "Los Sombrero de Paja escapan de Egghead rumbo a Elbaph.",
+        "en": "The Straw Hats escape Egghead, bound for Elbaph.",
+        "ja": "麦わらの一味がエッグヘッドを脱出し、エルバフへ向かう。"
       },
       "cardWorthy": false
     }

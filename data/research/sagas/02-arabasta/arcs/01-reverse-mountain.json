@@ -91,7 +91,9 @@
       "episode": 62,
       "chapter": 102,
       "description": {
-        "es": "El Going Merry sube Reverse Mountain y entra en el Grand Line."
+        "es": "El Going Merry sube Reverse Mountain y entra en el Grand Line.",
+        "en": "The Going Merry climbs Reverse Mountain and enters the Grand Line.",
+        "ja": "ゴーイング・メリー号がリヴァース・マウンテンを登り、グランドラインに入る。"
       },
       "cardWorthy": true
     },
@@ -105,7 +107,9 @@
       "episode": 63,
       "chapter": 104,
       "description": {
-        "es": "Luffy pelea contra Laboon y le promete volver a combatir; pinta la Jolly Roger en su cabeza."
+        "es": "Luffy pelea contra Laboon y le promete volver a combatir; pinta la Jolly Roger en su cabeza.",
+        "en": "Luffy fights Laboon and promises to fight him again; he paints the Jolly Roger on his head.",
+        "ja": "ルフィがラブーンと戦い、再戦を約束する。その頭には海賊旗を描く。"
       },
       "cardWorthy": true
     }

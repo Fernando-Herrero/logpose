@@ -2209,7 +2209,9 @@
       "episode": 525,
       "chapter": 605,
       "description": {
-        "es": "Luffy, Zoro y Sanji derrotan al kraken y Luffy lo doma con el nombre de Surume."
+        "es": "Luffy, Zoro y Sanji derrotan al kraken y Luffy lo doma con el nombre de Surume.",
+        "en": "Luffy, Zoro and Sanji defeat the kraken, and Luffy tames it, naming it Surume.",
+        "ja": "ルフィ、ゾロ、サンジがクラーケンを倒し、ルフィが「スルメ」と名付けて手なずける。"
       },
       "cardWorthy": true
     },
@@ -2223,7 +2225,9 @@
       "episode": 528,
       "chapter": 609,
       "description": {
-        "es": "Sanji casi muere desangrado por la nariz al ver a las sirenas."
+        "es": "Sanji casi muere desangrado por la nariz al ver a las sirenas.",
+        "en": "Sanji nearly bleeds to death from a nosebleed at the sight of the mermaids.",
+        "ja": "人魚たちを見たサンジが、鼻血の出しすぎで死にかける。"
       },
       "cardWorthy": false
     },
@@ -2237,7 +2241,9 @@
       "episode": 532,
       "chapter": 613,
       "description": {
-        "es": "Luffy conoce a la princesa Shirahoshi en la Torre de Cáscara Dura."
+        "es": "Luffy conoce a la princesa Shirahoshi en la Torre de Cáscara Dura.",
+        "en": "Luffy meets Princess Shirahoshi in the Hard Shell Tower.",
+        "ja": "ルフィが硬殻塔でしらほし姫と出会う。"
       },
       "cardWorthy": true
     },
@@ -2251,7 +2257,9 @@
       "episode": 536,
       "chapter": 617,
       "description": {
-        "es": "Zoro se enfrenta a Hody Jones en el Palacio Ryugu."
+        "es": "Zoro se enfrenta a Hody Jones en el Palacio Ryugu.",
+        "en": "Zoro faces Hody Jones at the Ryugu Palace.",
+        "ja": "ゾロが竜宮城でホーディ・ジョーンズと対決する。"
       },
       "cardWorthy": false
     },
@@ -2265,7 +2273,9 @@
       "episode": 539,
       "chapter": 619,
       "description": {
-        "es": "Jinbe se reencuentra con Luffy en el Bosque Marino."
+        "es": "Jinbe se reencuentra con Luffy en el Bosque Marino.",
+        "en": "Jinbe reunites with Luffy in the Sea Forest.",
+        "ja": "ジンベエが海の森でルフィと再会する。"
       },
       "cardWorthy": false
     },
@@ -2278,7 +2288,9 @@
       "episode": 540,
       "chapter": 622,
       "description": {
-        "es": "Fisher Tiger escala la Red Line, asalta Mary Geoise y libera a los esclavos."
+        "es": "Fisher Tiger escala la Red Line, asalta Mary Geoise y libera a los esclavos.",
+        "en": "Fisher Tiger scales the Red Line, storms Mary Geoise and frees the slaves.",
+        "ja": "フィッシャー・タイガーが赤い土の大陸を登り、マリージョアを襲撃して奴隷を解放する。"
       },
       "cardWorthy": true
     },
@@ -2293,7 +2305,9 @@
       "episode": 543,
       "chapter": 623,
       "description": {
-        "es": "Fisher Tiger muere tras rechazar la transfusión de sangre humana."
+        "es": "Fisher Tiger muere tras rechazar la transfusión de sangre humana.",
+        "en": "Fisher Tiger dies after refusing a transfusion of human blood.",
+        "ja": "フィッシャー・タイガーが人間の血の輸血を拒み、命を落とす。"
       },
       "cardWorthy": true
     },
@@ -2307,7 +2321,9 @@
       "episode": 544,
       "chapter": 623,
       "description": {
-        "es": "Los Piratas del Sol se separan y Jinbe se enfrenta a Arlong."
+        "es": "Los Piratas del Sol se separan y Jinbe se enfrenta a Arlong.",
+        "en": "The Sun Pirates split up and Jinbe confronts Arlong.",
+        "ja": "タイヨウの海賊団が分裂し、ジンベエがアーロンと対決する。"
       },
       "cardWorthy": false
     },
@@ -2323,7 +2339,9 @@
       "episode": 546,
       "chapter": 626,
       "description": {
-        "es": "La reina Otohime muere de un disparo; años después se revela que fue Hody."
+        "es": "La reina Otohime muere de un disparo; años después se revela que fue Hody.",
+        "en": "Queen Otohime is shot dead; years later it is revealed that Hody did it.",
+        "ja": "オトヒメ王妃が銃弾に倒れる。数年後、犯人がホーディだったと明かされる。"
       },
       "cardWorthy": true
     },
@@ -2337,7 +2355,9 @@
       "episode": 549,
       "chapter": 629,
       "description": {
-        "es": "Luffy y Jinbe pelean en el Bosque Marino por el plan para detener a Hody."
+        "es": "Luffy y Jinbe pelean en el Bosque Marino por el plan para detener a Hody.",
+        "en": "Luffy and Jinbe fight in the Sea Forest over the plan to stop Hody.",
+        "ja": "ルフィとジンベエが、ホーディを止める作戦をめぐって海の森で衝突する。"
       },
       "cardWorthy": false
     },
@@ -2352,7 +2372,9 @@
       "episode": 552,
       "chapter": 632,
       "description": {
-        "es": "Hody confiesa ante Gyoncorde que él mató a Otohime."
+        "es": "Hody confiesa ante Gyoncorde que él mató a Otohime.",
+        "en": "Hody confesses at Conchcorde Plaza that he killed Otohime.",
+        "ja": "ホーディがギョンコルド広場で、オトヒメを殺したのは自分だと告白する。"
       },
       "cardWorthy": false
     },
@@ -2374,7 +2396,9 @@
       "episode": 554,
       "chapter": 634,
       "description": {
-        "es": "Los diez se enfrentan a los 100.000 Nuevos Piratas Gyojin en la Plaza Gyoncorde; Luffy derriba a 50.000 con el Haki del Rey."
+        "es": "Los diez se enfrentan a los 100.000 Nuevos Piratas Gyojin en la Plaza Gyoncorde; Luffy derriba a 50.000 con el Haki del Rey.",
+        "en": "The ten face the 100,000 New Fish-Man Pirates at Conchcorde Plaza; Luffy brings down 50,000 with Conqueror's Haki.",
+        "ja": "10人がギョンコルド広場で新魚人海賊団10万人と対決し、ルフィが覇王色の覇気で5万人を倒す。"
       },
       "cardWorthy": true
     },
@@ -2387,7 +2411,9 @@
       "episode": 556,
       "chapter": 635,
       "description": {
-        "es": "Franky estrena las armas secretas del Sunny, incluido el Gaon Cannon."
+        "es": "Franky estrena las armas secretas del Sunny, incluido el Gaon Cannon.",
+        "en": "Franky unveils the Sunny's secret weapons, including the Gaon Cannon.",
+        "ja": "フランキーがガオン砲をはじめとするサニー号の秘密兵器を初披露する。"
       },
       "cardWorthy": false
     },
@@ -2400,7 +2426,9 @@
       "episode": 557,
       "chapter": 636,
       "description": {
-        "es": "Franky estrena el robot General Franky."
+        "es": "Franky estrena el robot General Franky.",
+        "en": "Franky debuts the General Franky robot.",
+        "ja": "フランキーがロボット「フランキー将軍」を初披露する。"
       },
       "cardWorthy": true
     },
@@ -2414,7 +2442,9 @@
       "episode": 562,
       "chapter": 642,
       "description": {
-        "es": "Zoro derrota a Hyouzou."
+        "es": "Zoro derrota a Hyouzou.",
+        "en": "Zoro defeats Hyouzou.",
+        "ja": "ゾロがヒョウゾウを倒す。"
       },
       "cardWorthy": false
     },
@@ -2428,7 +2458,9 @@
       "episode": 565,
       "chapter": 645,
       "description": {
-        "es": "Luffy estrena el Red Hawk, puño de fuego con Haki de Armadura."
+        "es": "Luffy estrena el Red Hawk, puño de fuego con Haki de Armadura.",
+        "en": "Luffy debuts the Red Hawk, a fiery punch with Armament Haki.",
+        "ja": "ルフィが武装色の覇気をまとった炎の拳、火拳銃（レッドホーク）を初披露する。"
       },
       "cardWorthy": true
     },
@@ -2442,7 +2474,9 @@
       "episode": 566,
       "chapter": 646,
       "description": {
-        "es": "Luffy derrota a Hody Jones."
+        "es": "Luffy derrota a Hody Jones.",
+        "en": "Luffy defeats Hody Jones.",
+        "ja": "ルフィがホーディ・ジョーンズを倒す。"
       },
       "cardWorthy": true
     },
@@ -2456,7 +2490,9 @@
       "episode": 567,
       "chapter": 647,
       "description": {
-        "es": "Luffy destroza el arca Noah con el Elephant Gatling (Gear Third con Haki)."
+        "es": "Luffy destroza el arca Noah con el Elephant Gatling (Gear Third con Haki).",
+        "en": "Luffy smashes the ark Noah with the Elephant Gatling (Gear Third with Haki).",
+        "ja": "ルフィが象銃乱打（エレファントガトリング）（ギア3と覇気）で方舟ノアを粉砕する。"
       },
       "cardWorthy": true
     },
@@ -2470,7 +2506,9 @@
       "episode": 568,
       "chapter": 648,
       "description": {
-        "es": "Jinbe dona sangre a Luffy, rompiendo la ley que separaba a humanos y gyojin."
+        "es": "Jinbe dona sangre a Luffy, rompiendo la ley que separaba a humanos y gyojin.",
+        "en": "Jinbe donates blood to Luffy, breaking the law that kept humans and fish-men apart.",
+        "ja": "ジンベエがルフィに血を分け与え、人間と魚人を隔てていた掟を破る。"
       },
       "cardWorthy": true
     },
@@ -2485,7 +2523,9 @@
       "episode": 569,
       "chapter": 649,
       "description": {
-        "es": "Se revela que Shirahoshi es Poseidón, una de las armas ancestrales."
+        "es": "Se revela que Shirahoshi es Poseidón, una de las armas ancestrales.",
+        "en": "Shirahoshi is revealed to be Poseidon, one of the Ancient Weapons.",
+        "ja": "しらほしが古代兵器のひとつ、ポセイドンであることが明かされる。"
       },
       "cardWorthy": true
     },
@@ -2498,7 +2538,9 @@
       "episode": 570,
       "chapter": 650,
       "description": {
-        "es": "Se revela que Akainu es el nuevo Almirante de Flota."
+        "es": "Se revela que Akainu es el nuevo Almirante de Flota.",
+        "en": "Akainu is revealed to be the new Fleet Admiral.",
+        "ja": "赤犬が新たな海軍元帥になったことが明かされる。"
       },
       "cardWorthy": false
     },
@@ -2512,7 +2554,9 @@
       "episode": 572,
       "chapter": 651,
       "description": {
-        "es": "Luffy declara la isla Gyojin su territorio y desafía a Big Mom."
+        "es": "Luffy declara la isla Gyojin su territorio y desafía a Big Mom.",
+        "en": "Luffy declares Fish-Man Island his territory and challenges Big Mom.",
+        "ja": "ルフィが魚人島を自分の縄張りだと宣言し、ビッグ・マムに挑戦状を叩きつける。"
       },
       "cardWorthy": true
     }

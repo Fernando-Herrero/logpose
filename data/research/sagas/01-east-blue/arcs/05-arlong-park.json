@@ -725,7 +725,9 @@
       "episode": 36,
       "chapter": 79,
       "description": {
-        "es": "Arlong asesina a Bell-mère ante Nami y Nojiko."
+        "es": "Arlong asesina a Bell-mère ante Nami y Nojiko.",
+        "en": "Arlong murders Bell-mère in front of Nami and Nojiko.",
+        "ja": "アーロンがナミとノジコの目の前でベルメールを殺す。"
       },
       "cardWorthy": true
     },
@@ -739,7 +741,9 @@
       "episode": 37,
       "chapter": 81,
       "description": {
-        "es": "Nami pide ayuda a Luffy y él le pone su sombrero de paja."
+        "es": "Nami pide ayuda a Luffy y él le pone su sombrero de paja.",
+        "en": "Nami asks Luffy for help, and he puts his straw hat on her head.",
+        "ja": "ナミがルフィに助けを求め、ルフィは彼女に麦わら帽子をかぶせる。"
       },
       "cardWorthy": true
     },
@@ -753,7 +757,9 @@
       "episode": 39,
       "chapter": 85,
       "description": {
-        "es": "Zoro vence a Hatchan."
+        "es": "Zoro vence a Hatchan.",
+        "en": "Zoro beats Hatchan.",
+        "ja": "ゾロがはっちゃんに勝つ。"
       },
       "cardWorthy": false
     },
@@ -767,7 +773,9 @@
       "episode": 40,
       "chapter": 87,
       "description": {
-        "es": "Sanji vence a Kuroobi."
+        "es": "Sanji vence a Kuroobi.",
+        "en": "Sanji beats Kuroobi.",
+        "ja": "サンジがクロオビに勝つ。"
       },
       "cardWorthy": false
     },
@@ -781,7 +789,9 @@
       "episode": 40,
       "chapter": 88,
       "description": {
-        "es": "Usopp vence a Chew."
+        "es": "Usopp vence a Chew.",
+        "en": "Usopp beats Chu.",
+        "ja": "ウソップがチュウに勝つ。"
       },
       "cardWorthy": false
     },
@@ -795,7 +805,9 @@
       "episode": 43,
       "chapter": 93,
       "description": {
-        "es": "Luffy derrota a Arlong y destruye Arlong Park."
+        "es": "Luffy derrota a Arlong y destruye Arlong Park.",
+        "en": "Luffy defeats Arlong and destroys Arlong Park.",
+        "ja": "ルフィがアーロンを倒し、アーロンパークを破壊する。"
       },
       "cardWorthy": true
     },
@@ -809,7 +821,9 @@
       "episode": 44,
       "chapter": 95,
       "description": {
-        "es": "Nami se une oficialmente a la tripulación."
+        "es": "Nami se une oficialmente a la tripulación.",
+        "en": "Nami officially joins the crew.",
+        "ja": "ナミが正式に一味に加わる。"
       },
       "cardWorthy": true
     }

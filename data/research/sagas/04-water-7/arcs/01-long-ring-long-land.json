@@ -388,7 +388,9 @@
       "episode": 208,
       "chapter": 305,
       "description": {
-        "es": "Foxy desafía a los Sombrero de Paja a un Davy Back Fight."
+        "es": "Foxy desafía a los Sombrero de Paja a un Davy Back Fight.",
+        "en": "Foxy challenges the Straw Hats to a Davy Back Fight.",
+        "ja": "フォクシーが麦わらの一味にデーヴィ・バック・ファイトを挑む。"
       },
       "cardWorthy": false
     },
@@ -402,7 +404,9 @@
       "episode": 210,
       "chapter": 308,
       "description": {
-        "es": "Foxy gana la Donut Race y se lleva a Chopper."
+        "es": "Foxy gana la Donut Race y se lleva a Chopper.",
+        "en": "Foxy wins the Donut Race and takes Chopper.",
+        "ja": "フォクシーがドーナツレースに勝ち、チョッパーを奪っていく。"
       },
       "cardWorthy": false
     },
@@ -416,7 +420,9 @@
       "episode": 219,
       "chapter": 317,
       "description": {
-        "es": "Combate final del Davy Back Fight: Luffy vence a Foxy pese al Noro Noro."
+        "es": "Combate final del Davy Back Fight: Luffy vence a Foxy pese al Noro Noro.",
+        "en": "Final combat of the Davy Back Fight: Luffy defeats Foxy despite the Noro Noro powers.",
+        "ja": "デーヴィ・バック・ファイト最終戦、ルフィがノロノロの能力をものともせずフォクシーを倒す。"
       },
       "cardWorthy": true
     },
@@ -431,7 +437,9 @@
       "episode": 228,
       "chapter": 321,
       "description": {
-        "es": "El almirante Aokiji congela a Robin y derrota a Luffy en un uno contra uno."
+        "es": "El almirante Aokiji congela a Robin y derrota a Luffy en un uno contra uno.",
+        "en": "Admiral Aokiji freezes Robin and defeats Luffy one-on-one.",
+        "ja": "大将青キジがロビンを凍らせ、一騎打ちでルフィを倒す。"
       },
       "cardWorthy": true
     }

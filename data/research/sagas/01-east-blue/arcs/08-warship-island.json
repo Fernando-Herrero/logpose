@@ -242,7 +242,9 @@
       "episode": 58,
       "chapter": null,
       "description": {
-        "es": "Zoro vence a Eric en las ruinas."
+        "es": "Zoro vence a Eric en las ruinas.",
+        "en": "Zoro beats Eric in the ruins.",
+        "ja": "ゾロが遺跡でエリックに勝つ。"
       },
       "cardWorthy": false
     },
@@ -256,7 +258,9 @@
       "episode": 60,
       "chapter": null,
       "description": {
-        "es": "Renace la leyenda del dragón milenario."
+        "es": "Renace la leyenda del dragón milenario.",
+        "en": "The legend of the millennium dragon is reborn.",
+        "ja": "千年竜の伝説が蘇る。"
       },
       "cardWorthy": false
     }

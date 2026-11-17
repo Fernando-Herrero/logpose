@@ -357,7 +357,9 @@
       "episode": 314,
       "chapter": 432,
       "description": {
-        "es": "Garp revela que es el abuelo de Luffy y que su padre es Monkey D. Dragon."
+        "es": "Garp revela que es el abuelo de Luffy y que su padre es Monkey D. Dragon.",
+        "en": "Garp reveals that he is Luffy's grandfather and that his father is Monkey D. Dragon.",
+        "ja": "ガープが自分はルフィの祖父であり、ルフィの父はモンキー・D・ドラゴンだと明かす。"
       },
       "cardWorthy": true
     },
@@ -371,7 +373,9 @@
       "episode": 316,
       "chapter": 434,
       "description": {
-        "es": "Shanks visita a Barbablanca para advertirle de Barbanegra."
+        "es": "Shanks visita a Barbablanca para advertirle de Barbanegra.",
+        "en": "Shanks visits Whitebeard to warn him about Blackbeard.",
+        "ja": "シャンクスが白ひげのもとを訪れ、黒ひげについて忠告する。"
       },
       "cardWorthy": true
     },
@@ -391,7 +395,9 @@
       "episode": 320,
       "chapter": 435,
       "description": {
-        "es": "Nuevas recompensas: Luffy 300 millones, Zoro 120, Robin 80, Sanji 77, Sogeking 30, Franky 44, Nami 16, Chopper 50 berries."
+        "es": "Nuevas recompensas: Luffy 300 millones, Zoro 120, Robin 80, Sanji 77, Sogeking 30, Franky 44, Nami 16, Chopper 50 berries.",
+        "en": "New bounties: Luffy 300 million, Zoro 120, Robin 80, Sanji 77, Sogeking 30, Franky 44, Nami 16, Chopper 50 berries.",
+        "ja": "新たな懸賞金：ルフィ3億、ゾロ1億2000万、ロビン8000万、サンジ7700万、そげキング3000万、フランキー4400万、ナミ1600万、チョッパー50ベリー。"
       },
       "cardWorthy": true
     },
@@ -405,7 +411,9 @@
       "episode": 321,
       "chapter": 436,
       "description": {
-        "es": "Franky termina el Thousand Sunny."
+        "es": "Franky termina el Thousand Sunny.",
+        "en": "Franky finishes the Thousand Sunny.",
+        "ja": "フランキーがサウザンド・サニー号を完成させる。"
       },
       "cardWorthy": true
     },
@@ -419,7 +427,9 @@
       "episode": 322,
       "chapter": 437,
       "description": {
-        "es": "Franky se une a los Sombrero de Paja como carpintero."
+        "es": "Franky se une a los Sombrero de Paja como carpintero.",
+        "en": "Franky joins the Straw Hats as shipwright.",
+        "ja": "フランキーが船大工として麦わらの一味に加わる。"
       },
       "cardWorthy": true
     },
@@ -433,7 +443,9 @@
       "episode": 323,
       "chapter": 438,
       "description": {
-        "es": "Usopp pide perdón y vuelve a la tripulación."
+        "es": "Usopp pide perdón y vuelve a la tripulación.",
+        "en": "Usopp apologizes and returns to the crew.",
+        "ja": "ウソップが謝り、一味に戻る。"
       },
       "cardWorthy": true
     },
@@ -447,7 +459,9 @@
       "episode": 325,
       "chapter": 441,
       "description": {
-        "es": "Ace se enfrenta a Barbanegra en Banaro."
+        "es": "Ace se enfrenta a Barbanegra en Banaro.",
+        "en": "Ace faces Blackbeard on Banaro.",
+        "ja": "エースがバナロ島で黒ひげと対決する。"
       },
       "cardWorthy": true
     }

@@ -140,7 +140,9 @@
       "episode": 142,
       "chapter": null,
       "description": {
-        "es": "Luffy se enfrenta a Wetton por el control de la Torre del Arcoíris."
+        "es": "Luffy se enfrenta a Wetton por el control de la Torre del Arcoíris.",
+        "en": "Luffy faces Wetton for control of the Rainbow Tower.",
+        "ja": "ルフィが虹の塔の支配をめぐってウエットンと対決する。"
       },
       "cardWorthy": false
     },
@@ -160,7 +162,9 @@
       "episode": 143,
       "chapter": null,
       "description": {
-        "es": "La tripulación escapa de la Niebla Arcoíris y Henzo cumple su leyenda."
+        "es": "La tripulación escapa de la Niebla Arcoíris y Henzo cumple su leyenda.",
+        "en": "The crew escapes the Rainbow Mist and Henzo fulfills his legend.",
+        "ja": "一味が虹色の霧から脱出し、ヘンゾが自らの伝説を果たす。"
       },
       "cardWorthy": false
     }

@@ -1446,7 +1446,9 @@
       "episode": 928,
       "chapter": 933,
       "description": {
-        "es": "Orochi \"ejecuta\" a Komurasaki, que resulta ser Kozuki Hiyori."
+        "es": "Orochi \"ejecuta\" a Komurasaki, que resulta ser Kozuki Hiyori.",
+        "en": "Orochi \"executes\" Komurasaki, who turns out to be Kozuki Hiyori.",
+        "ja": "オロチが小紫を「処刑」するが、その正体は光月日和だった。"
       },
       "cardWorthy": false
     },
@@ -1460,7 +1462,9 @@
       "episode": 936,
       "chapter": 940,
       "description": {
-        "es": "Hyogoro enseña a Luffy el Ryuo, el Haki de armadura avanzado que golpea sin tocar."
+        "es": "Hyogoro enseña a Luffy el Ryuo, el Haki de armadura avanzado que golpea sin tocar.",
+        "en": "Hyogoro teaches Luffy Ryuo, the advanced Armament Haki that strikes without touching.",
+        "ja": "ヒョウ五郎がルフィに、触れずに打撃を与える武装色の覇気の応用・流桜を教える。"
       },
       "cardWorthy": true
     },
@@ -1476,7 +1480,9 @@
       "episode": 950,
       "chapter": 950,
       "description": {
-        "es": "Luffy toma la prisión de Udon con los presos tras el choque con Big Mom."
+        "es": "Luffy toma la prisión de Udon con los presos tras el choque con Big Mom.",
+        "en": "Luffy takes over Udon prison with the inmates after the clash with Big Mom.",
+        "ja": "ビッグ・マムとの激突の後、ルフィが囚人たちと共に兎丼を制圧する。"
       },
       "cardWorthy": false
     },
@@ -1490,7 +1496,9 @@
       "episode": 954,
       "chapter": 953,
       "description": {
-        "es": "Hiyori entrega a Zoro la Enma, espada de Kozuki Oden."
+        "es": "Hiyori entrega a Zoro la Enma, espada de Kozuki Oden.",
+        "en": "Hiyori gives Zoro Enma, Kozuki Oden's sword.",
+        "ja": "日和がゾロに光月おでんの刀・閻魔を託す。"
       },
       "cardWorthy": true
     },
@@ -1501,7 +1509,9 @@
       "episode": 957,
       "chapter": 956,
       "description": {
-        "es": "Noticias del Levely: se abolen los Siete Señores de la Guerra."
+        "es": "Noticias del Levely: se abolen los Siete Señores de la Guerra.",
+        "en": "News from the Levely: the Seven Warlords of the Sea are abolished.",
+        "ja": "世界会議（レヴェリー）からの知らせ：王下七武海制度が撤廃される。"
       },
       "cardWorthy": false
     }

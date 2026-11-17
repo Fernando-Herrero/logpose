@@ -1859,7 +1859,9 @@
       "episode": 587,
       "chapter": 662,
       "description": {
-        "es": "Law derrota a Smoker e intercambia los cuerpos de Smoker y Tashigi."
+        "es": "Law derrota a Smoker e intercambia los cuerpos de Smoker y Tashigi.",
+        "en": "Law defeats Smoker and swaps Smoker's and Tashigi's bodies.",
+        "ja": "ローがスモーカーを倒し、スモーカーとたしぎの体を入れ替える。"
       },
       "cardWorthy": false
     },
@@ -1873,7 +1875,9 @@
       "episode": 594,
       "chapter": 668,
       "description": {
-        "es": "Law propone a Luffy una alianza pirata para derribar a un Emperador y Luffy acepta."
+        "es": "Law propone a Luffy una alianza pirata para derribar a un Emperador y Luffy acepta.",
+        "en": "Law proposes a pirate alliance to Luffy to bring down an Emperor, and Luffy accepts.",
+        "ja": "ローが四皇を倒すための海賊同盟をルフィに持ちかけ、ルフィが受け入れる。"
       },
       "cardWorthy": true
     },
@@ -1887,7 +1891,9 @@
       "episode": 599,
       "chapter": 673,
       "description": {
-        "es": "Se revela que el vicealmirante Vergo es un miembro infiltrado de la familia Donquixote."
+        "es": "Se revela que el vicealmirante Vergo es un miembro infiltrado de la familia Donquixote.",
+        "en": "Vice Admiral Vergo is revealed to be an undercover member of the Donquixote Family.",
+        "ja": "ヴェルゴ中将がドンキホーテファミリーの潜入者であることが明かされる。"
       },
       "cardWorthy": false
     },
@@ -1900,7 +1906,9 @@
       "episode": 602,
       "chapter": 676,
       "description": {
-        "es": "Caesar libera el gas letal Shinokuni sobre Punk Hazard."
+        "es": "Caesar libera el gas letal Shinokuni sobre Punk Hazard.",
+        "en": "Caesar unleashes the lethal gas Shinokuni over Punk Hazard.",
+        "ja": "シーザーが致死性のガス、シノクニをパンクハザードに放つ。"
       },
       "cardWorthy": false
     },
@@ -1914,7 +1922,9 @@
       "episode": 613,
       "chapter": 687,
       "description": {
-        "es": "Zoro derrota a Monet con un solo tajo, dejando que Tashigi la sujete."
+        "es": "Zoro frena a Tashigi y derrota él mismo a Monet con un solo tajo.",
+        "en": "Zoro stops Tashigi and defeats Monet himself with a single slash.",
+        "ja": "ゾロがたしぎを制し、自らの一太刀でモネを倒す。"
       },
       "cardWorthy": false
     },
@@ -1929,7 +1939,9 @@
       "episode": 616,
       "chapter": 690,
       "description": {
-        "es": "Tras vencer Vergo a Smoker, Law lo parte en dos junto con el laboratorio."
+        "es": "Tras vencer Vergo a Smoker, Law lo parte en dos junto con el laboratorio.",
+        "en": "After Vergo defeats Smoker, Law cuts him in two along with the laboratory.",
+        "ja": "ヴェルゴがスモーカーを下した後、ローが研究所ごとヴェルゴを真っ二つにする。"
       },
       "cardWorthy": true
     },
@@ -1943,7 +1955,9 @@
       "episode": 617,
       "chapter": 691,
       "description": {
-        "es": "Luffy derrota a Caesar con el Gomu Gomu no Grizzly Magnum."
+        "es": "Luffy derrota a Caesar con el Gomu Gomu no Grizzly Magnum.",
+        "en": "Luffy defeats Caesar with the Gomu Gomu no Grizzly Magnum.",
+        "ja": "ルフィがゴムゴムの灰熊銃（グリズリー・マグナム）でシーザーを倒す。"
       },
       "cardWorthy": true
     },
@@ -1956,7 +1970,9 @@
       "episode": 619,
       "chapter": 693,
       "description": {
-        "es": "Franky estrena el robot General Franky."
+        "es": "Franky estrena el robot General Franky.",
+        "en": "Franky debuts the General Franky robot.",
+        "ja": "フランキーがロボット「フランキー将軍」を初披露する。"
       },
       "cardWorthy": true
     },
@@ -1970,7 +1986,9 @@
       "episode": 624,
       "chapter": 698,
       "description": {
-        "es": "Law exige a Doflamingo que renuncie a ser Shichibukai a cambio de Caesar; Doflamingo ataca a la G-5."
+        "es": "Law exige a Doflamingo que renuncie a ser Shichibukai a cambio de Caesar; Doflamingo ataca a la G-5.",
+        "en": "Law demands that Doflamingo give up being a Warlord in exchange for Caesar; Doflamingo attacks the G-5.",
+        "ja": "ローがシーザーと引き換えにドフラミンゴに七武海の辞任を要求し、ドフラミンゴはG-5を襲う。"
       },
       "cardWorthy": false
     },
@@ -1984,7 +2002,9 @@
       "episode": 625,
       "chapter": 699,
       "description": {
-        "es": "Kuzan interviene para frenar a Doflamingo y salvar a Smoker."
+        "es": "Kuzan interviene para frenar a Doflamingo y salvar a Smoker.",
+        "en": "Kuzan steps in to stop Doflamingo and save Smoker.",
+        "ja": "クザンが割って入ってドフラミンゴを止め、スモーカーを救う。"
       },
       "cardWorthy": false
     }

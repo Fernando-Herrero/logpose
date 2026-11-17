@@ -282,7 +282,9 @@
       "episode": 4,
       "chapter": 1,
       "description": {
-        "es": "Luffy come la Gomu Gomu no Mi en el flashback de Villa Foosha."
+        "es": "Luffy come la Gomu Gomu no Mi en el flashback de Villa Foosha.",
+        "en": "Luffy eats the Gomu Gomu no Mi in the Foosha Village flashback.",
+        "ja": "フーシャ村の回想で、ルフィがゴムゴムの実を食べる。"
       },
       "cardWorthy": true
     },
@@ -296,7 +298,9 @@
       "episode": 4,
       "chapter": 1,
       "description": {
-        "es": "Shanks pierde el brazo salvando a Luffy del Rey del Mar y le confía su sombrero de paja."
+        "es": "Shanks pierde el brazo salvando a Luffy del Rey del Mar y le confía su sombrero de paja.",
+        "en": "Shanks loses his arm saving Luffy from the Sea King and entrusts him with his straw hat.",
+        "ja": "シャンクスが海王類からルフィを救って片腕を失い、麦わら帽子を託す。"
       },
       "cardWorthy": true
     },
@@ -310,7 +314,9 @@
       "episode": 6,
       "chapter": 13,
       "description": {
-        "es": "Luffy derrota a Mohji y a su león Richie."
+        "es": "Luffy derrota a Mohji y a su león Richie.",
+        "en": "Luffy defeats Mohji and his lion Richie.",
+        "ja": "ルフィがモージとライオンのリッチーを倒す。"
       },
       "cardWorthy": false
     },
@@ -324,7 +330,9 @@
       "episode": 7,
       "chapter": 18,
       "description": {
-        "es": "Zoro, herido, vence a Cabaji."
+        "es": "Zoro, herido, vence a Cabaji.",
+        "en": "Though wounded, Zoro beats Cabaji.",
+        "ja": "負傷したゾロがカバジに勝つ。"
       },
       "cardWorthy": true
     },
@@ -339,7 +347,9 @@
       "episode": 8,
       "chapter": 20,
       "description": {
-        "es": "Luffy derrota a Buggy y lo manda volando."
+        "es": "Luffy derrota a Buggy y lo manda volando.",
+        "en": "Luffy defeats Buggy and sends him flying.",
+        "ja": "ルフィがバギーを倒し、吹き飛ばす。"
       },
       "cardWorthy": true
     },
@@ -354,7 +364,9 @@
       "episode": 8,
       "chapter": 21,
       "description": {
-        "es": "Nami se alía temporalmente con Luffy y Zoro."
+        "es": "Nami se alía temporalmente con Luffy y Zoro.",
+        "en": "Nami forms a temporary alliance with Luffy and Zoro.",
+        "ja": "ナミがルフィとゾロと一時的に手を組む。"
       },
       "cardWorthy": false
     }

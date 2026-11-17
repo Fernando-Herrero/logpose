@@ -1019,7 +1019,9 @@
       "episode": 233,
       "chapter": 327,
       "description": {
-        "es": "Galley-La declara que el Going Merry no tiene arreglo."
+        "es": "Galley-La declara que el Going Merry no tiene arreglo.",
+        "en": "Galley-La declares the Going Merry beyond repair.",
+        "ja": "ガレーラカンパニーがゴーイング・メリー号は修理不能だと告げる。"
       },
       "cardWorthy": false
     },
@@ -1033,7 +1035,9 @@
       "episode": 236,
       "chapter": 332,
       "description": {
-        "es": "Duelo por el Going Merry: Luffy derrota a Usopp, que abandona la tripulación."
+        "es": "Duelo por el Going Merry: Luffy derrota a Usopp, que abandona la tripulación.",
+        "en": "Duel over the Going Merry: Luffy defeats Usopp, who leaves the crew.",
+        "ja": "ゴーイング・メリー号を賭けた決闘でルフィがウソップを破り、ウソップは一味を去る。"
       },
       "cardWorthy": true
     },
@@ -1047,7 +1051,9 @@
       "episode": 238,
       "chapter": 335,
       "description": {
-        "es": "Luffy se enfrenta a Franky, el cyborg que escupe fuego."
+        "es": "Luffy se enfrenta a Franky, el cyborg que escupe fuego.",
+        "en": "Luffy faces Franky, the fire-breathing cyborg.",
+        "ja": "ルフィが火を吹くサイボーグ、フランキーと対決する。"
       },
       "cardWorthy": true
     },
@@ -1064,7 +1070,9 @@
       "episode": 243,
       "chapter": 343,
       "description": {
-        "es": "Lucci, Kaku, Kalifa y Blueno se revelan como agentes del CP9."
+        "es": "Lucci, Kaku, Kalifa y Blueno se revelan como agentes del CP9.",
+        "en": "Lucci, Kaku, Kalifa and Blueno reveal themselves as CP9 agents.",
+        "ja": "ルッチ、カク、カリファ、ブルーノがCP9の諜報員だと正体を明かす。"
       },
       "cardWorthy": true
     },
@@ -1078,7 +1086,9 @@
       "episode": 246,
       "chapter": 346,
       "description": {
-        "es": "Lucci, en forma de leopardo, derrota a Luffy y a Zoro en Galley-La."
+        "es": "Lucci, en forma de leopardo, derrota a Luffy y a Zoro en Galley-La.",
+        "en": "Lucci, in leopard form, defeats Luffy and Zoro at Galley-La.",
+        "ja": "豹の姿になったルッチがガレーラカンパニーでルフィとゾロを倒す。"
       },
       "cardWorthy": false
     },
@@ -1094,7 +1104,9 @@
       "episode": 250,
       "chapter": 357,
       "description": {
-        "es": "Pasado de Franky: Tom carga con la culpa del ataque al tren marino y es condenado."
+        "es": "Pasado de Franky: Tom carga con la culpa del ataque al tren marino y es condenado.",
+        "en": "Franky's past: Tom takes the blame for the Sea Train attack and is sentenced.",
+        "ja": "フランキーの過去。トムが海列車襲撃の罪を被り、有罪判決を受ける。"
       },
       "cardWorthy": false
     },
@@ -1108,7 +1120,9 @@
       "episode": 251,
       "chapter": 358,
       "description": {
-        "es": "Robin se entrega al CP9 para proteger a sus compañeros del Buster Call."
+        "es": "Robin se entrega al CP9 para proteger a sus compañeros del Buster Call.",
+        "en": "Robin surrenders to CP9 to protect her crewmates from the Buster Call.",
+        "ja": "ロビンが仲間をバスターコールから守るため、CP9に身を委ねる。"
       },
       "cardWorthy": true
     },
@@ -1122,7 +1136,9 @@
       "episode": 257,
       "chapter": 365,
       "description": {
-        "es": "Luffy y Zoro parten una ola del Aqua Laguna a bordo del Rocketman."
+        "es": "Luffy y Zoro parten una ola del Aqua Laguna a bordo del Rocketman.",
+        "en": "Luffy and Zoro split an Aqua Laguna wave aboard the Rocketman.",
+        "ja": "ロケットマン号の上で、ルフィとゾロがアクア・ラグナの波を断ち割る。"
       },
       "cardWorthy": true
     },
@@ -1135,7 +1151,9 @@
       "episode": 258,
       "chapter": 366,
       "description": {
-        "es": "Usopp se presenta enmascarado como Sogeking."
+        "es": "Usopp se presenta enmascarado como Sogeking.",
+        "en": "Usopp appears in a mask as Sogeking.",
+        "ja": "ウソップが仮面をかぶり、そげキングとして登場する。"
       },
       "cardWorthy": true
     },
@@ -1149,7 +1167,9 @@
       "episode": 259,
       "chapter": 369,
       "description": {
-        "es": "Sanji derrota a Wanze en el tren marino."
+        "es": "Sanji derrota a Wanze en el tren marino.",
+        "en": "Sanji defeats Wanze on the Sea Train.",
+        "ja": "海列車でサンジがワンゼを倒す。"
       },
       "cardWorthy": false
     },
@@ -1163,7 +1183,9 @@
       "episode": 260,
       "chapter": 369,
       "description": {
-        "es": "Franky vence a Nero en el techo del tren."
+        "es": "Franky vence a Nero en el techo del tren.",
+        "en": "Franky beats Nero on the roof of the train.",
+        "ja": "列車の屋根の上でフランキーがネロを倒す。"
       },
       "cardWorthy": false
     },
@@ -1177,7 +1199,9 @@
       "episode": 261,
       "chapter": 371,
       "description": {
-        "es": "Zoro derrota al capitán T-Bone."
+        "es": "Zoro derrota al capitán T-Bone.",
+        "en": "Zoro defeats Captain T-Bone.",
+        "ja": "ゾロがTボーン大佐を倒す。"
       },
       "cardWorthy": false
     }

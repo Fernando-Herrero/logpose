@@ -174,7 +174,9 @@
       "episode": 1,
       "chapter": 2,
       "description": {
-        "es": "Luffy derrota a Alvida con su Gomu Gomu no Pistol."
+        "es": "Luffy derrota a Alvida con su Gomu Gomu no Pistol.",
+        "en": "Luffy defeats Alvida with his Gomu Gomu no Pistol.",
+        "ja": "ルフィがゴムゴムの銃(ピストル)でアルビダを倒す。"
       },
       "cardWorthy": true
     },
@@ -188,7 +190,9 @@
       "episode": 3,
       "chapter": 5,
       "description": {
-        "es": "Zoro acepta unirse a Luffy para salir del cautiverio de Morgan."
+        "es": "Zoro acepta unirse a Luffy para salir del cautiverio de Morgan.",
+        "en": "Zoro agrees to join Luffy to escape Morgan's captivity.",
+        "ja": "ゾロがモーガンの拘束から抜け出すため、ルフィの仲間になることを受け入れる。"
       },
       "cardWorthy": true
     },
@@ -204,7 +208,9 @@
       "episode": 3,
       "chapter": 6,
       "description": {
-        "es": "Luffy y Zoro derrotan al capitán Morgan en Shells Town."
+        "es": "Luffy y Zoro derrotan al capitán Morgan en Shells Town.",
+        "en": "Luffy and Zoro defeat Captain Morgan in Shell Town.",
+        "ja": "ルフィとゾロがシェルタウンでモーガン大佐を倒す。"
       },
       "cardWorthy": true
     },
@@ -218,7 +224,9 @@
       "episode": 3,
       "chapter": 7,
       "description": {
-        "es": "Koby se alista en la Marina."
+        "es": "Koby se alista en la Marina.",
+        "en": "Coby enlists in the Marines.",
+        "ja": "コビーが海軍に入隊する。"
       },
       "cardWorthy": false
     }

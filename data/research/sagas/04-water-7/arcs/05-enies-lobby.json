@@ -1434,7 +1434,9 @@
       "episode": 273,
       "chapter": 388,
       "description": {
-        "es": "Luffy derrota a Blueno en el juzgado."
+        "es": "Luffy derrota a Blueno en el juzgado.",
+        "en": "Luffy defeats Blueno at the courthouse.",
+        "ja": "ルフィが裁判所でブルーノを倒す。"
       },
       "cardWorthy": true
     },
@@ -1447,7 +1449,9 @@
       "episode": 273,
       "chapter": 387,
       "description": {
-        "es": "Luffy activa el Gear Second por primera vez."
+        "es": "Luffy activa el Gear Second por primera vez.",
+        "en": "Luffy activates Gear Second for the first time.",
+        "ja": "ルフィが初めてギア2(セカンド)を発動する。"
       },
       "cardWorthy": true
     },
@@ -1463,7 +1467,9 @@
       "episode": 277,
       "chapter": 396,
       "description": {
-        "es": "Pasado de Robin: Ohara arrasada por el Buster Call."
+        "es": "Pasado de Robin: Ohara arrasada por el Buster Call.",
+        "en": "Robin's past: Ohara is wiped out by the Buster Call.",
+        "ja": "ロビンの過去。オハラがバスターコールで焼き尽くされる。"
       },
       "cardWorthy": true
     },
@@ -1482,7 +1488,9 @@
       "episode": 278,
       "chapter": 398,
       "description": {
-        "es": "Usopp quema la bandera del Gobierno Mundial: los Sombrero de Paja le declaran la guerra."
+        "es": "Usopp quema la bandera del Gobierno Mundial: los Sombrero de Paja le declaran la guerra.",
+        "en": "Usopp burns the World Government flag: the Straw Hats declare war on it.",
+        "ja": "ウソップが世界政府の旗を燃やし、麦わらの一味が世界政府に宣戦布告する。"
       },
       "cardWorthy": true
     },
@@ -1496,7 +1504,9 @@
       "episode": 278,
       "chapter": 398,
       "description": {
-        "es": "Robin grita que quiere vivir."
+        "es": "Robin grita que quiere vivir.",
+        "en": "Robin cries out that she wants to live.",
+        "ja": "ロビンが「生きたい」と叫ぶ。"
       },
       "cardWorthy": true
     },
@@ -1509,7 +1519,9 @@
       "episode": 290,
       "chapter": 407,
       "description": {
-        "es": "Chopper toma tres Rumble Balls y se convierte en Monster Point."
+        "es": "Chopper toma tres Rumble Balls y se convierte en Monster Point.",
+        "en": "Chopper takes three Rumble Balls and turns into Monster Point.",
+        "ja": "チョッパーがランブルボールを3粒飲み、怪物強化(モンスターポイント)に変貌する。"
       },
       "cardWorthy": true
     },
@@ -1523,7 +1535,9 @@
       "episode": 288,
       "chapter": 404,
       "description": {
-        "es": "Franky derrota a Fukurou."
+        "es": "Franky derrota a Fukurou.",
+        "en": "Franky defeats Fukurou.",
+        "ja": "フランキーがフクロウを倒す。"
       },
       "cardWorthy": false
     },
@@ -1538,7 +1552,9 @@
       "episode": 290,
       "chapter": 405,
       "description": {
-        "es": "Usopp y Chopper derrotan a Kumadori."
+        "es": "Usopp y Chopper derrotan a Kumadori.",
+        "en": "Usopp and Chopper defeat Kumadori.",
+        "ja": "ウソップとチョッパーがクマドリを倒す。"
       },
       "cardWorthy": false
     },
@@ -1552,7 +1568,9 @@
       "episode": 296,
       "chapter": 411,
       "description": {
-        "es": "Nami derrota a Kalifa con el Clima Tact mejorado."
+        "es": "Nami derrota a Kalifa con el Clima Tact mejorado.",
+        "en": "Nami defeats Kalifa with the upgraded Clima-Tact.",
+        "ja": "ナミが改良した天候棒(クリマ・タクト)でカリファを倒す。"
       },
       "cardWorthy": true
     },
@@ -1566,7 +1584,9 @@
       "episode": 298,
       "chapter": 414,
       "description": {
-        "es": "Sanji estrena Diable Jambe y derrota a Jabra."
+        "es": "Sanji estrena Diable Jambe y derrota a Jabra.",
+        "en": "Sanji debuts Diable Jambe and defeats Jabra.",
+        "ja": "サンジが悪魔風脚(ディアブル・ジャンブ)を初披露し、ジャブラを倒す。"
       },
       "cardWorthy": true
     },
@@ -1579,7 +1599,9 @@
       "episode": 300,
       "chapter": 417,
       "description": {
-        "es": "Zoro usa Asura por primera vez."
+        "es": "Zoro usa Asura por primera vez.",
+        "en": "Zoro uses Asura for the first time.",
+        "ja": "ゾロが初めて阿修羅を使う。"
       },
       "cardWorthy": true
     },
@@ -1593,7 +1615,9 @@
       "episode": 300,
       "chapter": 417,
       "description": {
-        "es": "Zoro derrota a Kaku."
+        "es": "Zoro derrota a Kaku.",
+        "en": "Zoro defeats Kaku.",
+        "ja": "ゾロがカクを倒す。"
       },
       "cardWorthy": true
     },
@@ -1608,7 +1632,9 @@
       "episode": 302,
       "chapter": 420,
       "description": {
-        "es": "Sogeking y Franky liberan a Robin de las esposas de Kairoseki."
+        "es": "Sogeking y Franky liberan a Robin de las esposas de Kairoseki.",
+        "en": "Sogeking and Franky free Robin from her Seastone handcuffs.",
+        "ja": "そげキングとフランキーがロビンを海楼石の手錠から解放する。"
       },
       "cardWorthy": false
     },
@@ -1621,7 +1647,9 @@
       "episode": 304,
       "chapter": 421,
       "description": {
-        "es": "Luffy activa el Gear Third contra Lucci."
+        "es": "Luffy activa el Gear Third contra Lucci.",
+        "en": "Luffy activates Gear Third against Lucci.",
+        "ja": "ルフィがルッチ相手にギア3(サード)を発動する。"
       },
       "cardWorthy": true
     },
@@ -1635,7 +1663,9 @@
       "episode": 309,
       "chapter": 427,
       "description": {
-        "es": "Luffy derrota a Rob Lucci con el Gatling de Gear Second."
+        "es": "Luffy derrota a Rob Lucci con el Gatling de Gear Second.",
+        "en": "Luffy defeats Rob Lucci with a Gear Second Gatling.",
+        "ja": "ルフィがギア2(セカンド)のガトリングでロブ・ルッチを倒す。"
       },
       "cardWorthy": true
     },
@@ -1655,7 +1685,9 @@
       "episode": 310,
       "chapter": 428,
       "description": {
-        "es": "El Going Merry aparece solo para rescatar a la tripulación."
+        "es": "El Going Merry aparece solo para rescatar a la tripulación.",
+        "en": "The Going Merry shows up on its own to rescue the crew.",
+        "ja": "ゴーイング・メリー号がひとりでに現れ、一味を救い出す。"
       },
       "cardWorthy": true
     },
@@ -1675,7 +1707,9 @@
       "episode": 312,
       "chapter": 430,
       "description": {
-        "es": "Funeral vikingo del Going Merry."
+        "es": "Funeral vikingo del Going Merry.",
+        "en": "Viking funeral of the Going Merry.",
+        "ja": "ゴーイング・メリー号のバイキング式の葬送。"
       },
       "cardWorthy": true
     }

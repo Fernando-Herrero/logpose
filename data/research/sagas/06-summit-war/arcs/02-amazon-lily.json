@@ -437,7 +437,9 @@
       "episode": 410,
       "chapter": 516,
       "description": {
-        "es": "Luffy conoce a la Emperatriz Pirata."
+        "es": "Luffy conoce a la Emperatriz Pirata.",
+        "en": "Luffy meets the Pirate Empress.",
+        "ja": "ルフィが海賊女帝と出会う。"
       },
       "cardWorthy": false
     },
@@ -452,7 +454,9 @@
       "episode": 413,
       "chapter": 519,
       "description": {
-        "es": "Luffy pelea contra las hermanas Gorgona en la arena."
+        "es": "Luffy pelea contra las hermanas Gorgona en la arena.",
+        "en": "Luffy fights the Gorgon Sisters in the arena.",
+        "ja": "ルフィが闘技場でゴルゴン三姉妹と戦う。"
       },
       "cardWorthy": true
     },
@@ -465,7 +469,9 @@
       "episode": 413,
       "chapter": 519,
       "description": {
-        "es": "Luffy manifiesta por primera vez el Haki del Rey de forma consciente ante Hancock."
+        "es": "Luffy manifiesta por primera vez el Haki del Rey de forma consciente ante Hancock.",
+        "en": "Luffy consciously manifests Conqueror's Haki for the first time in front of Hancock.",
+        "ja": "ルフィがハンコックの前で初めて意識的に覇王色の覇気を発する。"
       },
       "cardWorthy": true
     },
@@ -480,7 +486,9 @@
       "episode": 415,
       "chapter": 521,
       "description": {
-        "es": "Hancock revela el pasado de las hermanas como esclavas de los Dragones Celestiales."
+        "es": "Hancock revela el pasado de las hermanas como esclavas de los Dragones Celestiales.",
+        "en": "Hancock reveals the sisters' past as slaves of the Celestial Dragons.",
+        "ja": "ハンコックが天竜人の奴隷だった姉妹の過去を明かす。"
       },
       "cardWorthy": false
     },
@@ -495,7 +503,9 @@
       "episode": 416,
       "chapter": 522,
       "description": {
-        "es": "Luffy se entera de que Ace va a ser ejecutado."
+        "es": "Luffy se entera de que Ace va a ser ejecutado.",
+        "en": "Luffy learns that Ace is going to be executed.",
+        "ja": "ルフィがエースの処刑を知る。"
       },
       "cardWorthy": false
     }

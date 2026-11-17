@@ -712,7 +712,9 @@
       "episode": 905,
       "chapter": 917,
       "description": {
-        "es": "Luffy derrota a Holed'em para rescatar a Tama en Bakura."
+        "es": "Luffy derrota a Holed'em para rescatar a Tama en Bakura.",
+        "en": "Luffy defeats Holed'em to rescue Tama in Bakura.",
+        "ja": "ルフィが博羅町でホールデムを倒し、お玉を救出する。"
       },
       "cardWorthy": false
     },
@@ -725,7 +727,9 @@
       "episode": 909,
       "chapter": 919,
       "description": {
-        "es": "Kaido aparece en Wano lanzándose desde las alturas."
+        "es": "Kaido aparece en Wano lanzándose desde las alturas.",
+        "en": "Kaido appears in Wano by hurling himself down from the heights.",
+        "ja": "カイドウが上空から身を投げ、ワノ国に姿を現す。"
       },
       "cardWorthy": false
     },
@@ -739,7 +743,9 @@
       "episode": 915,
       "chapter": 923,
       "description": {
-        "es": "Kaido tumba a Luffy de un solo golpe con Thunder Bagua."
+        "es": "Kaido tumba a Luffy de un solo golpe con Thunder Bagua.",
+        "en": "Kaido knocks Luffy down with a single Thunder Bagua strike.",
+        "ja": "カイドウが雷鳴八卦の一撃でルフィを倒す。"
       },
       "cardWorthy": true
     },
@@ -752,7 +758,9 @@
       "episode": 916,
       "chapter": 924,
       "description": {
-        "es": "Luffy es encarcelado en la Gran Mina de Udon."
+        "es": "Luffy es encarcelado en la Gran Mina de Udon.",
+        "en": "Luffy is imprisoned in Udon's Great Mine.",
+        "ja": "ルフィが兎丼の大採掘場に投獄される。"
       },
       "cardWorthy": false
     }

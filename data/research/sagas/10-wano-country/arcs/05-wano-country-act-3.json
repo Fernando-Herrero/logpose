@@ -4828,7 +4828,9 @@
       "episode": 968,
       "chapter": 967,
       "description": {
-        "es": "La tripulación de Roger, con Oden, llega a Laugh Tale; nace el Rey de los Piratas."
+        "es": "La tripulación de Roger, con Oden, llega a Laugh Tale; nace el Rey de los Piratas.",
+        "en": "Roger's crew, with Oden, reaches Laugh Tale; the King of the Pirates is born.",
+        "ja": "おでんを乗せたロジャーの一味がラフテルに到達し、海賊王が誕生する。"
       },
       "cardWorthy": true
     },
@@ -4842,7 +4844,9 @@
       "episode": 972,
       "chapter": 970,
       "description": {
-        "es": "Oden hiere a Kaido con Togen Totsuka antes de la traición de Higurashi."
+        "es": "Oden hiere a Kaido con Togen Totsuka antes de la traición de Higurashi.",
+        "en": "Oden wounds Kaido with Togen Totsuka before Higurashi's betrayal.",
+        "ja": "ひぐらしの裏切りの直前、おでんが桃源十拳でカイドウに傷を負わせる。"
       },
       "cardWorthy": true
     },
@@ -4857,7 +4861,9 @@
       "episode": 974,
       "chapter": 972,
       "description": {
-        "es": "Oden aguanta una hora en el aceite hirviendo y es ejecutado."
+        "es": "Oden aguanta una hora en el aceite hirviendo y es ejecutado.",
+        "en": "Oden endures an hour in the boiling oil and is executed.",
+        "ja": "おでんが煮えたぎる油の中で一時間耐え抜き、処刑される。"
       },
       "cardWorthy": true
     },
@@ -4870,7 +4876,9 @@
       "episode": 976,
       "chapter": 974,
       "description": {
-        "es": "Kanjuro se revela como espía de Orochi."
+        "es": "Kanjuro se revela como espía de Orochi.",
+        "en": "Kanjuro reveals himself as Orochi's spy.",
+        "ja": "カン十郎がオロチの内通者であることを明かす。"
       },
       "cardWorthy": false
     },
@@ -4884,7 +4892,9 @@
       "episode": 981,
       "chapter": 976,
       "description": {
-        "es": "Jinbe se une oficialmente a los Piratas de Sombrero de Paja."
+        "es": "Jinbe se une oficialmente a los Piratas de Sombrero de Paja.",
+        "en": "Jinbe officially joins the Straw Hat Pirates.",
+        "ja": "ジンベエが正式に麦わらの一味に加わる。"
       },
       "cardWorthy": true
     },
@@ -4898,7 +4908,9 @@
       "episode": 991,
       "chapter": 984,
       "description": {
-        "es": "Yamato, hijo de Kaido, se presenta como seguidor de Oden y se alía con Luffy."
+        "es": "Yamato, hijo de Kaido, se presenta como seguidor de Oden y se alía con Luffy.",
+        "en": "Yamato, Kaido's son, introduces himself as a follower of Oden and allies with Luffy.",
+        "ja": "カイドウの息子ヤマトがおでんを慕う者として名乗り、ルフィと手を組む。"
       },
       "cardWorthy": true
     },
@@ -4913,7 +4925,9 @@
       "episode": 997,
       "chapter": 987,
       "description": {
-        "es": "Los minks se transforman en Sulong bajo la luna llena."
+        "es": "Los minks se transforman en Sulong bajo la luna llena.",
+        "en": "The minks transform into Sulong under the full moon.",
+        "ja": "ミンク族が満月の下で月の獅子（スーロン）に変身する。"
       },
       "cardWorthy": true
     },
@@ -4934,7 +4948,9 @@
       "episode": 1004,
       "chapter": 992,
       "description": {
-        "es": "Los Akazaya hieren a Kaido con la técnica heredada de Oden."
+        "es": "Los Akazaya hieren a Kaido con la técnica heredada de Oden.",
+        "en": "The Akazaya wound Kaido with the technique inherited from Oden.",
+        "ja": "赤鞘九人男がおでんから受け継いだ技でカイドウに傷を負わせる。"
       },
       "cardWorthy": true
     },
@@ -4953,7 +4969,9 @@
       "episode": 1016,
       "chapter": 1001,
       "description": {
-        "es": "Luffy, Zoro, Law, Kid y Killer se enfrentan a Kaido y Big Mom en el tejado."
+        "es": "Luffy, Zoro, Law, Kid y Killer se enfrentan a Kaido y Big Mom en el tejado.",
+        "en": "Luffy, Zoro, Law, Kid and Killer face Kaido and Big Mom on the rooftop.",
+        "ja": "ルフィ、ゾロ、ロー、キッド、キラーが屋上でカイドウとビッグ・マムに挑む。"
       },
       "cardWorthy": true
     },
@@ -4967,7 +4985,9 @@
       "episode": 1023,
       "chapter": 1007,
       "description": {
-        "es": "Chopper dispersa la vacuna contra el virus Ice Oni."
+        "es": "Chopper dispersa la vacuna contra el virus Ice Oni.",
+        "en": "Chopper spreads the vaccine against the Ice Oni virus.",
+        "ja": "チョッパーが氷鬼ウイルスの抗体を散布する。"
       },
       "cardWorthy": false
     },
@@ -4981,7 +5001,9 @@
       "episode": 1028,
       "chapter": 1010,
       "description": {
-        "es": "Luffy recubre sus golpes de Haki del Rey y hiere a Kaido."
+        "es": "Luffy recubre sus golpes de Haki del Rey y hiere a Kaido.",
+        "en": "Luffy coats his punches with Conqueror's Haki and wounds Kaido.",
+        "ja": "ルフィが拳に覇王色の覇気を纏い、カイドウに傷を負わせる。"
       },
       "cardWorthy": true
     },
@@ -4995,7 +5017,9 @@
       "episode": 1034,
       "chapter": 1014,
       "description": {
-        "es": "Kaido derrota a Luffy y lo arroja al mar."
+        "es": "Kaido derrota a Luffy y lo arroja al mar.",
+        "en": "Kaido defeats Luffy and throws him into the sea.",
+        "ja": "カイドウがルフィを倒し、海へ投げ落とす。"
       },
       "cardWorthy": false
     },
@@ -5009,7 +5033,9 @@
       "episode": 1040,
       "chapter": 1018,
       "description": {
-        "es": "Jinbe derrota a Who's-Who."
+        "es": "Jinbe derrota a Who's-Who.",
+        "en": "Jinbe defeats Who's-Who.",
+        "ja": "ジンベエがフーズ・フーを倒す。"
       },
       "cardWorthy": false
     },
@@ -5023,7 +5049,9 @@
       "episode": 1044,
       "chapter": 1021,
       "description": {
-        "es": "Robin despierta Demonio Fleur y vence a Black Maria."
+        "es": "Robin despierta Demonio Fleur y vence a Black Maria.",
+        "en": "Robin awakens Demonio Fleur and defeats Black Maria.",
+        "ja": "ロビンが悪魔咲き（デモニオフルール）に目覚め、ブラックマリアを倒す。"
       },
       "cardWorthy": true
     },
@@ -5037,7 +5065,9 @@
       "episode": 1047,
       "chapter": 1023,
       "description": {
-        "es": "Shinobu envejece a Momonosuke 20 años para que sostenga Onigashima."
+        "es": "Shinobu envejece a Momonosuke 20 años para que sostenga Onigashima.",
+        "en": "Shinobu ages Momonosuke by 20 years so he can hold up Onigashima.",
+        "ja": "しのぶがモモの助を20歳成長させ、鬼ヶ島を支えられるようにする。"
       },
       "cardWorthy": true
     },
@@ -5051,7 +5081,9 @@
       "episode": 1057,
       "chapter": 1031,
       "description": {
-        "es": "Se manifiesta en Sanji el exoesqueleto Germa: su cuerpo resiste y sana."
+        "es": "Se manifiesta en Sanji el exoesqueleto Germa: su cuerpo resiste y sana.",
+        "en": "Sanji's Germa exoskeleton manifests: his body withstands blows and heals.",
+        "ja": "サンジにジェルマの外骨格が発現し、その体は攻撃に耐え傷を癒やす。"
       },
       "cardWorthy": true
     },
@@ -5065,7 +5097,9 @@
       "episode": 1060,
       "chapter": 1033,
       "description": {
-        "es": "Zoro domina a Enma y revela que posee Haki del Rey."
+        "es": "Zoro domina a Enma y revela que posee Haki del Rey.",
+        "en": "Zoro masters Enma and reveals he possesses Conqueror's Haki.",
+        "ja": "ゾロが閻魔を制し、覇王色の覇気の持ち主であることが明らかになる。"
       },
       "cardWorthy": true
     },
@@ -5079,7 +5113,9 @@
       "episode": 1061,
       "chapter": 1035,
       "description": {
-        "es": "Sanji vence a Queen con Ifrit Jambe."
+        "es": "Sanji vence a Queen con Ifrit Jambe.",
+        "en": "Sanji defeats Queen with Ifrit Jambe.",
+        "ja": "サンジが魔神風脚（イフリートジャンブ）でクイーンを倒す。"
       },
       "cardWorthy": true
     },
@@ -5093,7 +5129,9 @@
       "episode": 1062,
       "chapter": 1035,
       "description": {
-        "es": "Zoro derrota a King con Rengoku Oni Giri."
+        "es": "Zoro derrota a King con Rengoku Oni Giri.",
+        "en": "Zoro defeats King with Rengoku Oni Giri.",
+        "ja": "ゾロが煉獄鬼斬りでキングを倒す。"
       },
       "cardWorthy": true
     },
@@ -5108,7 +5146,9 @@
       "episode": 1067,
       "chapter": 1040,
       "description": {
-        "es": "Law y Kid derrotan a Big Mom con sus técnicas despertadas."
+        "es": "Law y Kid derrotan a Big Mom con sus técnicas despertadas.",
+        "en": "Law and Kid defeat Big Mom with their awakened techniques.",
+        "ja": "ローとキッドが覚醒した技でビッグ・マムを倒す。"
       },
       "cardWorthy": true
     },
@@ -5122,7 +5162,9 @@
       "episode": 1071,
       "chapter": 1044,
       "description": {
-        "es": "Luffy despierta su fruta, la Hito Hito no Mi modelo Nika: Gear 5."
+        "es": "Luffy despierta su fruta, la Hito Hito no Mi modelo Nika: Gear 5.",
+        "en": "Luffy awakens his fruit, the Hito Hito no Mi, Model: Nika: Gear 5.",
+        "ja": "ルフィが自身の実、ヒトヒトの実 幻獣種 モデル“ニカ”を覚醒させる：ギア5。"
       },
       "cardWorthy": true
     },
@@ -5136,7 +5178,9 @@
       "episode": 1076,
       "chapter": 1049,
       "description": {
-        "es": "Luffy derrota a Kaido con Gomu Gomu no Bajrang Gun."
+        "es": "Luffy derrota a Kaido con Gomu Gomu no Bajrang Gun.",
+        "en": "Luffy defeats Kaido with Gomu Gomu no Bajrang Gun.",
+        "ja": "ルフィがゴムゴムの猿神銃（バジュラングガン）でカイドウを倒す。"
       },
       "cardWorthy": true
     },
@@ -5149,7 +5193,9 @@
       "episode": 1078,
       "chapter": 1051,
       "description": {
-        "es": "Momonosuke se proclama shogun de Wano."
+        "es": "Momonosuke se proclama shogun de Wano.",
+        "en": "Momonosuke proclaims himself shogun of Wano.",
+        "ja": "モモの助がワノ国の将軍を名乗る。"
       },
       "cardWorthy": false
     },
@@ -5174,7 +5220,9 @@
       "episode": 1080,
       "chapter": 1053,
       "description": {
-        "es": "Nuevas recompensas tras Wano: Luffy, Kid y Law a 3.000 millones; Luffy y Buggy, nuevos Emperadores."
+        "es": "Nuevas recompensas tras Wano: Luffy, Kid y Law a 3.000 millones; Luffy y Buggy, nuevos Emperadores.",
+        "en": "New bounties after Wano: Luffy, Kid and Law at 3 billion; Luffy and Buggy become new Emperors.",
+        "ja": "ワノ国後の新たな懸賞金：ルフィ、キッド、ローが30億ベリーに。ルフィとバギーが新たな四皇となる。"
       },
       "cardWorthy": true
     },
@@ -5187,7 +5235,9 @@
       "episode": 1082,
       "chapter": 1055,
       "description": {
-        "es": "El Haki de Shanks frena al almirante Ryokugyu en Wano."
+        "es": "El Haki de Shanks frena al almirante Ryokugyu en Wano.",
+        "en": "Shanks's Haki stops Admiral Ryokugyu in Wano.",
+        "ja": "シャンクスの覇気がワノ国で大将・緑牛を退ける。"
       },
       "cardWorthy": false
     }

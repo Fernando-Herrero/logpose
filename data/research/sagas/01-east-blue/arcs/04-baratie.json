@@ -611,7 +611,9 @@
       "episode": 24,
       "chapter": 51,
       "description": {
-        "es": "Zoro pierde ante Mihawk y jura a Luffy que no volverá a perder."
+        "es": "Zoro pierde ante Mihawk y jura a Luffy que no volverá a perder.",
+        "en": "Zoro loses to Mihawk and swears to Luffy he will never lose again.",
+        "ja": "ゾロがミホークに敗れ、ルフィに二度と負けないと誓う。"
       },
       "cardWorthy": true
     },
@@ -625,7 +627,9 @@
       "episode": 25,
       "chapter": 55,
       "description": {
-        "es": "Sanji se enfrenta a Pearl."
+        "es": "Sanji se enfrenta a Pearl.",
+        "en": "Sanji faces Pearl.",
+        "ja": "サンジがパールと対決する。"
       },
       "cardWorthy": false
     },
@@ -639,7 +643,9 @@
       "episode": 26,
       "chapter": 57,
       "description": {
-        "es": "Flashback: Zeff sacrifica su pierna para salvar a Sanji."
+        "es": "Flashback: Zeff sacrifica su pierna para salvar a Sanji.",
+        "en": "Flashback: Zeff sacrifices his leg to save Sanji.",
+        "ja": "回想：ゼフが自らの足を犠牲にしてサンジを救う。"
       },
       "cardWorthy": false
     },
@@ -653,7 +659,9 @@
       "episode": 27,
       "chapter": 60,
       "description": {
-        "es": "Gin derrota a Sanji pero se niega a matarlo."
+        "es": "Gin derrota a Sanji pero se niega a matarlo.",
+        "en": "Gin defeats Sanji but refuses to kill him.",
+        "ja": "ギンがサンジを倒すが、とどめを刺すことを拒む。"
       },
       "cardWorthy": false
     },
@@ -667,7 +675,9 @@
       "episode": 29,
       "chapter": 66,
       "description": {
-        "es": "Luffy derrota a Don Krieg."
+        "es": "Luffy derrota a Don Krieg.",
+        "en": "Luffy defeats Don Krieg.",
+        "ja": "ルフィがドン・クリークを倒す。"
       },
       "cardWorthy": true
     },
@@ -682,7 +692,9 @@
       "episode": 30,
       "chapter": 68,
       "description": {
-        "es": "Sanji se despide de Zeff y se une a la tripulación."
+        "es": "Sanji se despide de Zeff y se une a la tripulación.",
+        "en": "Sanji bids farewell to Zeff and joins the crew.",
+        "ja": "サンジがゼフに別れを告げ、一味に加わる。"
       },
       "cardWorthy": true
     }

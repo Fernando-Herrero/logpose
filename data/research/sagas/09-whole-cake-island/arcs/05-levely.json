@@ -395,7 +395,9 @@
       "episode": 878,
       "chapter": 903,
       "description": {
-        "es": "Recompensa de Luffy: 1.500.000.000 berries; la prensa le llama el Quinto Emperador."
+        "es": "Recompensa de Luffy: 1.500.000.000 berries; la prensa le llama el Quinto Emperador.",
+        "en": "Luffy's bounty: 1,500,000,000 berries; the press calls him the Fifth Emperor.",
+        "ja": "ルフィの懸賞金：15億ベリー。新聞は彼を「第五の皇帝」と呼ぶ。"
       },
       "cardWorthy": true
     },
@@ -408,7 +410,9 @@
       "episode": 878,
       "chapter": 903,
       "description": {
-        "es": "Recompensa de Sanji: 330.000.000 berries, vivo o muerto, con apellido Vinsmoke."
+        "es": "Recompensa de Sanji: 330.000.000 berries, «solo vivo», con apellido Vinsmoke.",
+        "en": "Sanji's bounty: 330,000,000 berries, \"only alive\", under the Vinsmoke surname.",
+        "ja": "サンジの懸賞金：3億3000万ベリー。「ONLY ALIVE」で、ヴィンスモークの姓で手配される。"
       },
       "cardWorthy": true
     },
@@ -422,7 +426,9 @@
       "episode": 878,
       "chapter": 903,
       "description": {
-        "es": "Sanji descubre la raid suit Stealth Black que Niji le dejó en secreto."
+        "es": "Sanji descubre la raid suit Stealth Black que Niji le dejó en secreto.",
+        "en": "Sanji discovers the Stealth Black raid suit that Niji secretly left him.",
+        "ja": "サンジが、ニジがひそかに残していったレイドスーツ「ステルス・ブラック」を見つける。"
       },
       "cardWorthy": true
     },
@@ -437,7 +443,9 @@
       "episode": 880,
       "chapter": 904,
       "description": {
-        "es": "Aparecen los comandantes del Ejército Revolucionario."
+        "es": "Aparecen los comandantes del Ejército Revolucionario.",
+        "en": "The commanders of the Revolutionary Army appear.",
+        "ja": "革命軍の軍隊長たちが姿を現す。"
       },
       "cardWorthy": false
     },
@@ -450,7 +458,9 @@
       "episode": 885,
       "chapter": 906,
       "description": {
-        "es": "Aparece Imu ante los Gorosei, junto al sombrero de paja gigante."
+        "es": "Aparece Imu ante los Gorosei, junto al sombrero de paja gigante.",
+        "en": "Imu appears before the Gorosei, next to the giant straw hat.",
+        "ja": "巨大な麦わら帽子のそばで、イムが五老星の前に姿を現す。"
       },
       "cardWorthy": false
     },
@@ -464,7 +474,9 @@
       "episode": 888,
       "chapter": 908,
       "description": {
-        "es": "Kuma aparece como esclavo de los Dragones Celestiales."
+        "es": "Kuma aparece como esclavo de los Dragones Celestiales.",
+        "en": "Kuma appears as a slave of the Celestial Dragons.",
+        "ja": "くまが天竜人の奴隷として姿を現す。"
       },
       "cardWorthy": false
     }

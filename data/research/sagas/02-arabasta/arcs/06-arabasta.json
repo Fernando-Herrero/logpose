@@ -1267,7 +1267,9 @@
       "episode": 92,
       "chapter": 156,
       "description": {
-        "es": "El barco se encuentra con Mr. 2 Bon Clay, que se hace amigo de los Sombrero de Paja."
+        "es": "El barco se encuentra con Mr. 2 Bon Clay, que se hace amigo de los Sombrero de Paja.",
+        "en": "The ship runs into Mr. 2 Bon Clay, who befriends the Straw Hats.",
+        "ja": "船がMr.2ボン・クレーと出会い、彼は麦わらの一味と友達になる。"
       },
       "cardWorthy": false
     },
@@ -1282,7 +1284,9 @@
       "episode": 94,
       "chapter": 158,
       "description": {
-        "es": "Ace, comandante de los Piratas de Barbablanca, detiene a Smoker y se reencuentra con Luffy."
+        "es": "Ace, comandante de los Piratas de Barbablanca, detiene a Smoker y se reencuentra con Luffy.",
+        "en": "Ace, a commander of the Whitebeard Pirates, stops Smoker and reunites with Luffy.",
+        "ja": "白ひげ海賊団の隊長エースがスモーカーを食い止め、ルフィと再会する。"
       },
       "cardWorthy": true
     },
@@ -1296,7 +1300,9 @@
       "episode": 104,
       "chapter": 166,
       "description": {
-        "es": "Luffy pelea con Vivi en Yuba y la obliga a admitir que no puede salvar el país sin arriesgar a nadie."
+        "es": "Luffy pelea con Vivi en Yuba y la obliga a admitir que no puede salvar el país sin arriesgar a nadie.",
+        "en": "Luffy fights Vivi in Yuba and forces her to admit she cannot save the country without putting anyone at risk.",
+        "ja": "ルフィがユバでビビとぶつかり、誰も危険にさらさずに国は救えないと認めさせる。"
       },
       "cardWorthy": true
     },
@@ -1311,7 +1317,9 @@
       "episode": 106,
       "chapter": 170,
       "description": {
-        "es": "Crocodile atrapa a los Sombrero de Paja en Rain Dinners y desvela la Operación Utopía."
+        "es": "Crocodile atrapa a los Sombrero de Paja en Rain Dinners y desvela la Operación Utopía.",
+        "en": "Crocodile traps the Straw Hats in Rain Dinners and reveals Operation Utopia.",
+        "ja": "クロコダイルがレインディナーズで麦わらの一味を罠にかけ、ユートピア作戦を明かす。"
       },
       "cardWorthy": false
     },
@@ -1325,7 +1333,9 @@
       "episode": 110,
       "chapter": 178,
       "description": {
-        "es": "Primer combate: Crocodile seca a Luffy y lo deja medio muerto en el desierto."
+        "es": "Primer combate: Crocodile seca a Luffy y lo deja medio muerto en el desierto.",
+        "en": "First fight: Crocodile dries Luffy out and leaves him half dead in the desert.",
+        "ja": "第1戦：クロコダイルがルフィを干からびさせ、砂漠に瀕死のまま置き去りにする。"
       },
       "cardWorthy": true
     },
@@ -1341,7 +1351,9 @@
       "episode": 114,
       "chapter": 186,
       "description": {
-        "es": "Usopp y Chopper derrotan a Mr. 4 y Miss Merry Christmas."
+        "es": "Usopp y Chopper derrotan a Mr. 4 y Miss Merry Christmas.",
+        "en": "Usopp and Chopper defeat Mr. 4 and Miss Merry Christmas.",
+        "ja": "ウソップとチョッパーがMr.4とミス・メリークリスマスを倒す。"
       },
       "cardWorthy": true
     },
@@ -1355,7 +1367,9 @@
       "episode": 116,
       "chapter": 189,
       "description": {
-        "es": "Sanji vence a Mr. 2 Bon Clay y su Okama Kenpo."
+        "es": "Sanji vence a Mr. 2 Bon Clay y su Okama Kenpo.",
+        "en": "Sanji beats Mr. 2 Bon Clay and his Okama Kenpo.",
+        "ja": "サンジがMr.2ボン・クレーとそのオカマ拳法に勝つ。"
       },
       "cardWorthy": true
     },
@@ -1369,7 +1383,9 @@
       "episode": 117,
       "chapter": 191,
       "description": {
-        "es": "Nami derrota a Miss Doublefinger con el Clima-Tact."
+        "es": "Nami derrota a Miss Doublefinger con el Clima-Tact.",
+        "en": "Nami defeats Miss Doublefinger with the Clima-Tact.",
+        "ja": "ナミがクリマ・タクトでミス・ダブルフィンガーを倒す。"
       },
       "cardWorthy": true
     },
@@ -1384,7 +1400,9 @@
       "episode": 118,
       "chapter": 193,
       "description": {
-        "es": "Cobra confirma que Crocodile busca el arma ancestral Pluton."
+        "es": "Cobra confirma que Crocodile busca el arma ancestral Pluton.",
+        "en": "Cobra confirms that Crocodile is after the ancient weapon Pluton.",
+        "ja": "コブラが、クロコダイルの狙いは古代兵器プルトンだと認める。"
       },
       "cardWorthy": false
     },
@@ -1398,7 +1416,9 @@
       "episode": 119,
       "chapter": 195,
       "description": {
-        "es": "Zoro aprende a cortar el acero y vence a Mr. 1 con Shishi Sonson."
+        "es": "Zoro aprende a cortar el acero y vence a Mr. 1 con Shishi Sonson.",
+        "en": "Zoro learns to cut steel and beats Mr. 1 with Shishi Sonson.",
+        "ja": "ゾロが鉄を斬る術を会得し、獅子歌歌でMr.1に勝つ。"
       },
       "cardWorthy": true
     },
@@ -1412,7 +1432,9 @@
       "episode": 122,
       "chapter": 201,
       "description": {
-        "es": "Luffy se empapa de agua para poder golpear el cuerpo de arena de Crocodile."
+        "es": "Luffy se empapa de agua para poder golpear el cuerpo de arena de Crocodile.",
+        "en": "Luffy soaks himself in water so he can hit Crocodile's sand body.",
+        "ja": "ルフィが水を浴びて、クロコダイルの砂の体を殴れるようにする。"
       },
       "cardWorthy": true
     },
@@ -1426,7 +1448,9 @@
       "episode": 122,
       "chapter": 201,
       "description": {
-        "es": "Segundo combate: Water Luffy toca a Crocodile pero cae atravesado por su garfio."
+        "es": "Segundo combate: Water Luffy toca a Crocodile pero cae atravesado por su garfio.",
+        "en": "Second fight: Water Luffy lands hits on Crocodile but falls, pierced by his hook.",
+        "ja": "第2戦：水ルフィがクロコダイルに攻撃を当てるが、鉤爪に貫かれて倒れる。"
       },
       "cardWorthy": true
     },
@@ -1440,7 +1464,9 @@
       "episode": 125,
       "chapter": 208,
       "description": {
-        "es": "Pell se lleva la bomba de la plaza de Alubarna en vuelo y estalla en el aire."
+        "es": "Pell se lleva la bomba de la plaza de Alubarna en vuelo y estalla en el aire.",
+        "en": "Pell flies off with the bomb from Alubarna's plaza and it explodes in the sky.",
+        "ja": "ペルがアルバーナの広場から爆弾を抱えて飛び去り、爆弾は空中で炸裂する。"
       },
       "cardWorthy": true
     },
@@ -1454,7 +1480,9 @@
       "episode": 126,
       "chapter": 209,
       "description": {
-        "es": "Luffy derrota a Crocodile en el tercer combate y la lluvia vuelve a Arabasta."
+        "es": "Luffy derrota a Crocodile en el tercer combate y la lluvia vuelve a Arabasta.",
+        "en": "Luffy defeats Crocodile in the third fight and rain returns to Alabasta.",
+        "ja": "第3戦でルフィがクロコダイルを倒し、アラバスタに雨が戻る。"
       },
       "cardWorthy": true
     },
@@ -1468,7 +1496,9 @@
       "episode": 128,
       "chapter": 214,
       "description": {
-        "es": "Bon Clay se sacrifica para que los Sombrero de Paja escapen del bloqueo de la Marina."
+        "es": "Bon Clay se sacrifica para que los Sombrero de Paja escapen del bloqueo de la Marina.",
+        "en": "Bon Clay sacrifices himself so the Straw Hats can escape the Marine blockade.",
+        "ja": "ボン・クレーが身を犠牲にし、麦わらの一味を海軍の包囲から逃がす。"
       },
       "cardWorthy": true
     },
@@ -1487,7 +1517,9 @@
       "episode": 129,
       "chapter": 216,
       "description": {
-        "es": "Vivi se despide desde el muelle y la tripulación levanta el brazo con la marca X."
+        "es": "Vivi se despide desde el muelle y la tripulación levanta el brazo con la marca X.",
+        "en": "Vivi says goodbye from the dock and the crew raises their arms bearing the X mark.",
+        "ja": "ビビが港から別れを告げ、一味は×印のついた腕を掲げる。"
       },
       "cardWorthy": true
     },
@@ -1501,7 +1533,9 @@
       "episode": 130,
       "chapter": 218,
       "description": {
-        "es": "Nico Robin aparece en el Going Merry y pide unirse a la tripulación."
+        "es": "Nico Robin aparece en el Going Merry y pide unirse a la tripulación.",
+        "en": "Nico Robin appears aboard the Going Merry and asks to join the crew.",
+        "ja": "ニコ・ロビンがゴーイング・メリー号に現れ、一味への加入を申し出る。"
       },
       "cardWorthy": true
     }

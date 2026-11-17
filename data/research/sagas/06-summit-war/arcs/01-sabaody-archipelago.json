@@ -716,7 +716,9 @@
       "episode": 392,
       "chapter": 498,
       "description": {
-        "es": "Los Once Supernovas coinciden en el archipiélago Sabaody."
+        "es": "Los Once Supernovas coinciden en el archipiélago Sabaody.",
+        "en": "The Eleven Supernovas cross paths on the Sabaody Archipelago.",
+        "ja": "11人の超新星がシャボンディ諸島に集う。"
       },
       "cardWorthy": true
     },
@@ -731,7 +733,9 @@
       "episode": 396,
       "chapter": 502,
       "description": {
-        "es": "Luffy golpea a un Dragón Celestial en la casa de subastas."
+        "es": "Luffy golpea a un Dragón Celestial en la casa de subastas.",
+        "en": "Luffy punches a Celestial Dragon at the auction house.",
+        "ja": "ルフィがオークション会場で天竜人を殴り飛ばす。"
       },
       "cardWorthy": true
     },
@@ -744,7 +748,9 @@
       "episode": 397,
       "chapter": 503,
       "description": {
-        "es": "Rayleigh deja inconscientes a los presentes con el Haki del Rey."
+        "es": "Rayleigh deja inconscientes a los presentes con el Haki del Rey.",
+        "en": "Rayleigh knocks out everyone present with Conqueror's Haki.",
+        "ja": "レイリーが覇王色の覇気でその場の者たちを気絶させる。"
       },
       "cardWorthy": true
     },
@@ -758,7 +764,9 @@
       "episode": 399,
       "chapter": 506,
       "description": {
-        "es": "Rayleigh cuenta su pasado como segundo de a bordo de Gol D. Roger."
+        "es": "Rayleigh cuenta su pasado como segundo de a bordo de Gol D. Roger.",
+        "en": "Rayleigh tells of his past as Gol D. Roger's first mate.",
+        "ja": "レイリーがゴール・D・ロジャーの副船長だった過去を語る。"
       },
       "cardWorthy": true
     },
@@ -776,7 +784,9 @@
       "episode": 402,
       "chapter": 509,
       "description": {
-        "es": "Kizaru se enfrenta a cuatro capitanes supernova."
+        "es": "Kizaru se enfrenta a cuatro capitanes supernova.",
+        "en": "Kizaru takes on four Supernova captains.",
+        "ja": "黄猿が超新星の船長4人と戦う。"
       },
       "cardWorthy": false
     },
@@ -797,7 +807,9 @@
       "episode": 402,
       "chapter": 510,
       "description": {
-        "es": "La tripulación derrota a duras penas a un Pacifista."
+        "es": "La tripulación derrota a duras penas a un Pacifista.",
+        "en": "The crew barely defeats a Pacifista.",
+        "ja": "一味がやっとのことでパシフィスタを1体倒す。"
       },
       "cardWorthy": true
     },
@@ -821,7 +833,9 @@
       "episode": 405,
       "chapter": 513,
       "description": {
-        "es": "Kuma hace desaparecer uno a uno a los Sombrero de Paja."
+        "es": "Kuma hace desaparecer uno a uno a los Sombrero de Paja.",
+        "en": "Kuma makes the Straw Hats vanish one by one.",
+        "ja": "くまが麦わらの一味を一人ずつ消し去る。"
       },
       "cardWorthy": true
     }

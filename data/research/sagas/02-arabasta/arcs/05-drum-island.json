@@ -473,7 +473,9 @@
       "episode": 81,
       "chapter": 134,
       "description": {
-        "es": "Primera aparición de Tony Tony Chopper, el reno de nariz azul."
+        "es": "Primera aparición de Tony Tony Chopper, el reno de nariz azul.",
+        "en": "First appearance of Tony Tony Chopper, the blue-nosed reindeer.",
+        "ja": "青っ鼻のトナカイ、トニートニー・チョッパーが初登場する。"
       },
       "cardWorthy": true
     },
@@ -488,7 +490,9 @@
       "episode": 83,
       "chapter": 138,
       "description": {
-        "es": "Luffy escala las Drum Rockies cargando con Nami y Sanji herido."
+        "es": "Luffy escala las Drum Rockies cargando con Nami y Sanji herido.",
+        "en": "Luffy climbs the Drum Rockies carrying Nami and the injured Sanji.",
+        "ja": "ルフィがナミと負傷したサンジを背負ってドラムロッキーを登る。"
       },
       "cardWorthy": true
     },
@@ -503,7 +507,9 @@
       "episode": 86,
       "chapter": 144,
       "description": {
-        "es": "Hiriluk se suicida ante Wapol tras beber la seta que Chopper le dio por error."
+        "es": "Hiriluk se suicida ante Wapol tras beber la seta que Chopper le dio por error.",
+        "en": "Hiriluk kills himself before Wapol after drinking the mushroom Chopper gave him by mistake.",
+        "ja": "チョッパーが誤って渡したキノコを飲んだヒルルクが、ワポルの前で自ら命を絶つ。"
       },
       "cardWorthy": true
     },
@@ -518,7 +524,9 @@
       "episode": 88,
       "chapter": 148,
       "description": {
-        "es": "Chopper usa la Rumble Ball y muestra sus siete transformaciones contra Chess y Kuromarimo."
+        "es": "Chopper usa la Rumble Ball y muestra sus siete transformaciones contra Chess y Kuromarimo.",
+        "en": "Chopper uses the Rumble Ball and shows his seven transformations against Chess and Kuromarimo.",
+        "ja": "チョッパーがランブルボールを使い、チェスとクロマリモを相手に七段変形を見せる。"
       },
       "cardWorthy": true
     },
@@ -532,7 +540,9 @@
       "episode": 89,
       "chapter": 151,
       "description": {
-        "es": "Luffy manda a Wapol por los aires con Gomu Gomu no Bazooka y la bandera de Hiriluk ondea en el castillo."
+        "es": "Luffy manda a Wapol por los aires con Gomu Gomu no Bazooka y la bandera de Hiriluk ondea en el castillo.",
+        "en": "Luffy sends Wapol flying with Gomu Gomu no Bazooka, and Hiriluk's flag waves over the castle.",
+        "ja": "ルフィがゴムゴムのバズーカでワポルを吹き飛ばし、ヒルルクの旗が城に翻る。"
       },
       "cardWorthy": true
     },
@@ -547,7 +557,9 @@
       "episode": 90,
       "chapter": 153,
       "description": {
-        "es": "Kureha cumple el sueño de Hiriluk: nieve rosa sobre la isla de Drum."
+        "es": "Kureha cumple el sueño de Hiriluk: nieve rosa sobre la isla de Drum.",
+        "en": "Kureha fulfills Hiriluk's dream: pink snow over Drum Island.",
+        "ja": "くれはがヒルルクの夢を叶える。ドラム島に降る桃色の雪だ。"
       },
       "cardWorthy": true
     },
@@ -561,7 +573,9 @@
       "episode": 91,
       "chapter": 154,
       "description": {
-        "es": "Chopper se une a los Sombrero de Paja como médico del barco."
+        "es": "Chopper se une a los Sombrero de Paja como médico del barco.",
+        "en": "Chopper joins the Straw Hats as the ship's doctor.",
+        "ja": "チョッパーが船医として麦わらの一味に加わる。"
       },
       "cardWorthy": true
     }

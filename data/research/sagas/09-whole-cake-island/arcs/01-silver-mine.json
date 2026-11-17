@@ -117,7 +117,9 @@
       "episode": 750,
       "chapter": null,
       "description": {
-        "es": "Luffy y Bartolomeo derrotan a Bill, líder de la alianza de la Mina de Plata."
+        "es": "Luffy y Bartolomeo derrotan a Bill, líder de la alianza de la Mina de Plata.",
+        "en": "Luffy and Bartolomeo defeat Bill, leader of the Silver Mine alliance.",
+        "ja": "ルフィとバルトロメオが、シルバーマインの同盟のリーダー、ビルを倒す。"
       },
       "cardWorthy": false
     }

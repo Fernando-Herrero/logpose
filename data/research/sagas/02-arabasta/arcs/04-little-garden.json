@@ -278,7 +278,9 @@
       "episode": 71,
       "chapter": 116,
       "description": {
-        "es": "El duelo de cien años entre los gigantes Dorry y Brogy, guerreros de Elbaf."
+        "es": "El duelo de cien años entre los gigantes Dorry y Brogy, guerreros de Elbaf.",
+        "en": "The hundred-year duel between the giants Dorry and Brogy, warriors of Elbaph.",
+        "ja": "エルバフの戦士である巨人ドリーとブロギーの、100年に及ぶ決闘。"
       },
       "cardWorthy": true
     },
@@ -293,7 +295,9 @@
       "episode": 72,
       "chapter": 118,
       "description": {
-        "es": "Baroque Works pone una bomba en la cerveza de Dorry y ensucia el duelo sagrado."
+        "es": "Baroque Works pone una bomba en la cerveza de Dorry y ensucia el duelo sagrado.",
+        "en": "Baroque Works plants a bomb in Dorry's beer and taints the sacred duel.",
+        "ja": "バロックワークスがドリーの酒に爆弾を仕込み、神聖な決闘を汚す。"
       },
       "cardWorthy": false
     },
@@ -310,7 +314,9 @@
       "episode": 74,
       "chapter": 122,
       "description": {
-        "es": "Mr. 3 atrapa a Zoro, Nami y Vivi en su torta de cera; Zoro se plantea cortarse las piernas."
+        "es": "Mr. 3 atrapa a Zoro, Nami y Vivi en su torta de cera; Zoro se plantea cortarse las piernas.",
+        "en": "Mr. 3 traps Zoro, Nami and Vivi in his wax cake; Zoro considers cutting off his own legs.",
+        "ja": "Mr.3がゾロ、ナミ、ビビをロウのケーキに閉じ込め、ゾロは自分の足を斬ることまで考える。"
       },
       "cardWorthy": true
     },
@@ -326,7 +332,9 @@
       "episode": 76,
       "chapter": 125,
       "description": {
-        "es": "Usopp prende fuego al montaje de cera con su Kaenboshi y libera a sus compañeros; Luffy derrota a Mr. 3."
+        "es": "Usopp prende fuego al montaje de cera con su Kaenboshi y libera a sus compañeros; Luffy derrota a Mr. 3.",
+        "en": "Usopp sets the wax setup on fire with his Kaenboshi and frees his crewmates; Luffy defeats Mr. 3.",
+        "ja": "ウソップが火炎星でロウの仕掛けに火をつけて仲間を解放し、ルフィがMr.3を倒す。"
       },
       "cardWorthy": true
     },
@@ -341,7 +349,9 @@
       "episode": 77,
       "chapter": 127,
       "description": {
-        "es": "Los gigantes parten al Rey de los Mares que bloquea la ruta con la técnica Elbaf Spear."
+        "es": "Los gigantes parten al Rey de los Mares que bloquea la ruta con la técnica Elbaf Spear.",
+        "en": "The giants split the Sea King blocking the route with the Elbaph Spear technique.",
+        "ja": "巨人たちが航路をふさぐ海王類を、技「覇国」で真っ二つにする。"
       },
       "cardWorthy": true
     },
@@ -354,7 +364,9 @@
       "episode": 77,
       "chapter": 129,
       "description": {
-        "es": "Nami cae gravemente enferma, lo que obliga a buscar un médico."
+        "es": "Nami cae gravemente enferma, lo que obliga a buscar un médico.",
+        "en": "Nami falls seriously ill, forcing the crew to search for a doctor.",
+        "ja": "ナミが重い病に倒れ、医者を探さざるを得なくなる。"
       },
       "cardWorthy": false
     }

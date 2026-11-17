@@ -1401,7 +1401,9 @@
       "episode": 337,
       "chapter": 442,
       "description": {
-        "es": "Los Sombrero de Paja encuentran a Brook, un esqueleto parlante, en un barco fantasma del Triángulo Florian; Luffy le invita a unirse."
+        "es": "Los Sombrero de Paja encuentran a Brook, un esqueleto parlante, en un barco fantasma del Triángulo Florian; Luffy le invita a unirse.",
+        "en": "The Straw Hats find Brook, a talking skeleton, on a ghost ship in the Florian Triangle; Luffy invites him to join.",
+        "ja": "麦わらの一味が魔の三角地帯(フロリアン・トライアングル)の幽霊船でしゃべる骸骨ブルックと出会い、ルフィが仲間に誘う。"
       },
       "cardWorthy": true
     },
@@ -1417,7 +1419,9 @@
       "episode": 339,
       "chapter": 444,
       "description": {
-        "es": "El Thousand Sunny queda atrapado en Thriller Bark y Nami, Usopp y Chopper desembarcan en la isla."
+        "es": "El Thousand Sunny queda atrapado en Thriller Bark y Nami, Usopp y Chopper desembarcan en la isla.",
+        "en": "The Thousand Sunny gets trapped at Thriller Bark, and Nami, Usopp and Chopper go ashore on the island.",
+        "ja": "サウザンド・サニー号がスリラーバークに捕らわれ、ナミ、ウソップ、チョッパーが島に上陸する。"
       },
       "cardWorthy": false
     },
@@ -1430,7 +1434,9 @@
       "episode": 343,
       "chapter": 449,
       "description": {
-        "es": "Aparece Gecko Moria, Shichibukai y señor de Thriller Bark, con su poder de robar sombras."
+        "es": "Aparece Gecko Moria, Shichibukai y señor de Thriller Bark, con su poder de robar sombras.",
+        "en": "Gecko Moria appears, a Shichibukai and master of Thriller Bark, with his power to steal shadows.",
+        "ja": "王下七武海でありスリラーバークの主、影を奪う能力を持つゲッコー・モリアが現れる。"
       },
       "cardWorthy": true
     },
@@ -1446,7 +1452,9 @@
       "episode": 349,
       "chapter": 455,
       "description": {
-        "es": "Moria roba las sombras de Luffy, Zoro y Sanji; la de Luffy va al cuerpo de Oars."
+        "es": "Moria roba las sombras de Luffy, Zoro y Sanji; la de Luffy va al cuerpo de Oars.",
+        "en": "Moria steals the shadows of Luffy, Zoro and Sanji; Luffy's goes into Oars's body.",
+        "ja": "モリアがルフィ、ゾロ、サンジの影を奪い、ルフィの影はオーズの体に入れられる。"
       },
       "cardWorthy": true
     },
@@ -1461,7 +1469,9 @@
       "episode": 351,
       "chapter": 457,
       "description": {
-        "es": "Oars, el antiguo gigante demoníaco, despierta con la sombra de Luffy."
+        "es": "Oars, el antiguo gigante demoníaco, despierta con la sombra de Luffy.",
+        "en": "Oars, the ancient demonic giant, awakens with Luffy's shadow.",
+        "ja": "古代の\"魔人\"と呼ばれた巨人オーズが、ルフィの影で目覚める。"
       },
       "cardWorthy": true
     },
@@ -1475,7 +1485,9 @@
       "episode": 352,
       "chapter": 458,
       "description": {
-        "es": "Brook se enfrenta al zombi Ryuma, que lleva su sombra, y pierde."
+        "es": "Brook se enfrenta al zombi Ryuma, que lleva su sombra, y pierde.",
+        "en": "Brook faces the zombie Ryuma, who carries his shadow, and loses.",
+        "ja": "ブルックが自分の影を宿したゾンビのリューマと戦い、敗れる。"
       },
       "cardWorthy": false
     },
@@ -1489,7 +1501,9 @@
       "episode": 358,
       "chapter": 463,
       "description": {
-        "es": "Sanji interrumpe la boda falsa de Absalom con Nami y lucha contra él."
+        "es": "Sanji interrumpe la boda falsa de Absalom con Nami y lucha contra él.",
+        "en": "Sanji interrupts Absalom's fake wedding to Nami and fights him.",
+        "ja": "サンジがアブサロムとナミの偽りの結婚式に乱入し、アブサロムと戦う。"
       },
       "cardWorthy": true
     },
@@ -1503,7 +1517,9 @@
       "episode": 361,
       "chapter": 466,
       "description": {
-        "es": "Usopp, inmune a los Negative Hollows, derrota a Perona."
+        "es": "Usopp, inmune a los Negative Hollows, derrota a Perona.",
+        "en": "Usopp, immune to the Negative Hollows, defeats Perona.",
+        "ja": "ネガティブホロウが効かないウソップがペローナを倒す。"
       },
       "cardWorthy": true
     },
@@ -1517,7 +1533,9 @@
       "episode": 362,
       "chapter": 467,
       "description": {
-        "es": "Zoro derrota a Ryuma en el tejado y obtiene la espada Shusui."
+        "es": "Zoro derrota a Ryuma en el tejado y obtiene la espada Shusui.",
+        "en": "Zoro defeats Ryuma on the rooftop and obtains the sword Shusui.",
+        "ja": "ゾロが屋根の上でリューマを倒し、刀・秋水を手に入れる。"
       },
       "cardWorthy": true
     },
@@ -1532,7 +1550,9 @@
       "episode": 363,
       "chapter": 468,
       "description": {
-        "es": "Chopper y Robin derrotan a Hogback y Cindry."
+        "es": "Chopper y Robin derrotan a Hogback y Cindry.",
+        "en": "Chopper and Robin defeat Hogback and Cindry.",
+        "ja": "チョッパーとロビンがホグバックとシンドリーを倒す。"
       },
       "cardWorthy": true
     },
@@ -1546,7 +1566,9 @@
       "episode": 366,
       "chapter": 471,
       "description": {
-        "es": "Nami derrota a Absalom con el Thunderbolt Tempo."
+        "es": "Nami derrota a Absalom con el Thunderbolt Tempo.",
+        "en": "Nami defeats Absalom with Thunderbolt Tempo.",
+        "ja": "ナミがサンダーボルト=テンポでアブサロムを倒す。"
       },
       "cardWorthy": true
     },
@@ -1561,7 +1583,9 @@
       "episode": 367,
       "chapter": 472,
       "description": {
-        "es": "Franky, Usopp y Chopper intentan el \"Docking\" de los Sombrero de Paja contra Oars."
+        "es": "Franky, Usopp y Chopper intentan el \"Docking\" de los Sombrero de Paja contra Oars.",
+        "en": "Franky, Usopp and Chopper attempt the Straw Hat \"Docking\" against Oars.",
+        "ja": "フランキー、ウソップ、チョッパーがオーズ相手に「麦わらドッキング」を試みる。"
       },
       "cardWorthy": false
     },
@@ -1574,7 +1598,9 @@
       "episode": 368,
       "chapter": 473,
       "description": {
-        "es": "Bartholomew Kuma, Shichibukai, llega a Thriller Bark."
+        "es": "Bartholomew Kuma, Shichibukai, llega a Thriller Bark.",
+        "en": "Bartholomew Kuma, a Shichibukai, arrives at Thriller Bark.",
+        "ja": "王下七武海のバーソロミュー・くまがスリラーバークに現れる。"
       },
       "cardWorthy": true
     },
@@ -1588,7 +1614,9 @@
       "episode": 370,
       "chapter": 475,
       "description": {
-        "es": "Luffy absorbe 100 sombras robadas y se convierte en Nightmare Luffy."
+        "es": "Luffy absorbe 100 sombras robadas y se convierte en Nightmare Luffy.",
+        "en": "Luffy absorbs 100 stolen shadows and becomes Nightmare Luffy.",
+        "ja": "ルフィが奪われた影100体を取り込み、ナイトメア・ルフィとなる。"
       },
       "cardWorthy": true
     },
@@ -1605,7 +1633,9 @@
       "episode": 372,
       "chapter": 479,
       "description": {
-        "es": "Nightmare Luffy y la tripulación derrotan a Oars."
+        "es": "Nightmare Luffy y la tripulación derrotan a Oars.",
+        "en": "Nightmare Luffy and the crew defeat Oars.",
+        "ja": "ナイトメア・ルフィと一味がオーズを倒す。"
       },
       "cardWorthy": true
     },
@@ -1618,7 +1648,9 @@
       "episode": 373,
       "chapter": 481,
       "description": {
-        "es": "Moria absorbe 1000 sombras y se convierte en Shadow's Asgard."
+        "es": "Moria absorbe 1000 sombras y se convierte en Shadow's Asgard.",
+        "en": "Moria absorbs 1000 shadows and becomes Shadow's Asgard.",
+        "ja": "モリアが影1000体を取り込み、影の集合地(シャドーズ・アスガルド)となる。"
       },
       "cardWorthy": true
     },
@@ -1632,7 +1664,9 @@
       "episode": 373,
       "chapter": 481,
       "description": {
-        "es": "Luffy derrota a Gecko Moria con el Gear Second y Gear Third al amanecer."
+        "es": "Luffy derrota a Gecko Moria con el Gear Second y Gear Third al amanecer.",
+        "en": "Luffy defeats Gecko Moria with Gear Second and Gear Third at dawn.",
+        "ja": "夜明けにルフィがギア2(セカンド)とギア3(サード)でゲッコー・モリアを倒す。"
       },
       "cardWorthy": true
     },
@@ -1647,7 +1681,9 @@
       "episode": 375,
       "chapter": 483,
       "description": {
-        "es": "Kuma derrota a la tripulación agotada con el Ursus Shock."
+        "es": "Kuma derrota a la tripulación agotada con el Ursus Shock.",
+        "en": "Kuma defeats the exhausted crew with Ursus Shock.",
+        "ja": "くまが疲れ果てた一味を熊の衝撃(ウルスス・ショック)で倒す。"
       },
       "cardWorthy": true
     },
@@ -1662,7 +1698,9 @@
       "episode": 377,
       "chapter": 485,
       "description": {
-        "es": "Zoro carga con todo el dolor de Luffy para salvarle: «No ha pasado nada»."
+        "es": "Zoro carga con todo el dolor de Luffy para salvarle: «No ha pasado nada».",
+        "en": "Zoro takes on all of Luffy's pain to save him: \"Nothing happened.\"",
+        "ja": "ゾロがルフィを救うためにその痛みをすべて引き受ける。「何もなかった」。"
       },
       "cardWorthy": true
     },
@@ -1676,7 +1714,9 @@
       "episode": 378,
       "chapter": 486,
       "description": {
-        "es": "Brook cuenta su pasado con los Piratas Rumbar y la promesa a Laboon."
+        "es": "Brook cuenta su pasado con los Piratas Rumbar y la promesa a Laboon.",
+        "en": "Brook tells of his past with the Rumbar Pirates and his promise to Laboon.",
+        "ja": "ブルックがルンバー海賊団での過去とラブーンとの約束を語る。"
       },
       "cardWorthy": true
     },
@@ -1690,7 +1730,9 @@
       "episode": 380,
       "chapter": 488,
       "description": {
-        "es": "Brook toca el Binks no Sake con los Sombrero de Paja y la gente liberada de Thriller Bark."
+        "es": "Brook toca el Binks no Sake con los Sombrero de Paja y la gente liberada de Thriller Bark.",
+        "en": "Brook plays Bink's Sake with the Straw Hats and the freed people of Thriller Bark.",
+        "ja": "ブルックが麦わらの一味やスリラーバークから解放された人々と「ビンクスの酒」を奏でる。"
       },
       "cardWorthy": false
     },
@@ -1704,7 +1746,9 @@
       "episode": 381,
       "chapter": 489,
       "description": {
-        "es": "Brook se une a los Sombrero de Paja como músico."
+        "es": "Brook se une a los Sombrero de Paja como músico.",
+        "en": "Brook joins the Straw Hats as musician.",
+        "ja": "ブルックが音楽家として麦わらの一味に加わる。"
       },
       "cardWorthy": true
     },
@@ -1717,7 +1761,9 @@
       "episode": 381,
       "chapter": 489,
       "description": {
-        "es": "Se muestra el cartel de recompensa de Brook: 33.000.000 berries."
+        "es": "Se muestra el cartel de recompensa de Brook: 33.000.000 berries.",
+        "en": "Brook's wanted poster is shown: 33,000,000 berries.",
+        "ja": "ブルックの手配書が公開される。懸賞金は3300万ベリー。"
       },
       "cardWorthy": true
     }

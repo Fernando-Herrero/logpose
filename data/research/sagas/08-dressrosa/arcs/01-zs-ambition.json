@@ -131,7 +131,9 @@
       "episode": 578,
       "chapter": null,
       "description": {
-        "es": "Luffy derrota a Shuzo, miembro de los Neo Marines."
+        "es": "Luffy derrota a Shuzo, miembro de los Neo Marines.",
+        "en": "Luffy defeats Shuzo, a member of the Neo Marines.",
+        "ja": "ルフィがネオ海軍のシューゾを倒す。"
       },
       "cardWorthy": false
     }

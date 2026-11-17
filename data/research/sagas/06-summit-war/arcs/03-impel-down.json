@@ -929,7 +929,9 @@
       "episode": 422,
       "chapter": 526,
       "description": {
-        "es": "Luffy se cuela en Impel Down con ayuda de Hancock."
+        "es": "Luffy se cuela en Impel Down con ayuda de Hancock.",
+        "en": "Luffy sneaks into Impel Down with Hancock's help.",
+        "ja": "ルフィがハンコックの助けを借りてインペルダウンに潜入する。"
       },
       "cardWorthy": false
     },
@@ -944,7 +946,9 @@
       "episode": 425,
       "chapter": 528,
       "description": {
-        "es": "Luffy se alía con Buggy y Mr. 3 en la prisión."
+        "es": "Luffy se alía con Buggy y Mr. 3 en la prisión.",
+        "en": "Luffy teams up with Buggy and Mr. 3 in the prison.",
+        "ja": "ルフィが監獄でバギー、Mr.3と手を組む。"
       },
       "cardWorthy": false
     },
@@ -958,7 +962,9 @@
       "episode": 435,
       "chapter": 534,
       "description": {
-        "es": "Luffy cae envenenado frente al alcaide Magellan."
+        "es": "Luffy cae envenenado frente al alcaide Magellan.",
+        "en": "Luffy falls, poisoned, before Chief Warden Magellan.",
+        "ja": "ルフィが署長マゼランの前に毒で倒れる。"
       },
       "cardWorthy": true
     },
@@ -972,7 +978,9 @@
       "episode": 440,
       "chapter": 539,
       "description": {
-        "es": "Ivankov salva a Luffy del veneno con las hormonas de tensión."
+        "es": "Ivankov salva a Luffy del veneno con las hormonas de tensión.",
+        "en": "Ivankov saves Luffy from the poison with Tension Hormones.",
+        "ja": "イワンコフがテンションホルモンでルフィを毒から救う。"
       },
       "cardWorthy": true
     },
@@ -988,7 +996,9 @@
       "episode": 443,
       "chapter": 541,
       "description": {
-        "es": "Luffy libera a Jinbe y Crocodile en el nivel 6."
+        "es": "Luffy libera a Jinbe y Crocodile en el nivel 6.",
+        "en": "Luffy frees Jinbe and Crocodile on Level 6.",
+        "ja": "ルフィがLEVEL6でジンベエとクロコダイルを解放する。"
       },
       "cardWorthy": true
     },
@@ -1003,7 +1013,9 @@
       "episode": 445,
       "chapter": 543,
       "description": {
-        "es": "Barbanegra asalta Impel Down y recluta a Shiryu."
+        "es": "Barbanegra asalta Impel Down y recluta a Shiryu.",
+        "en": "Blackbeard storms Impel Down and recruits Shiryu.",
+        "ja": "黒ひげがインペルダウンを襲撃し、シリュウを仲間に引き入れる。"
       },
       "cardWorthy": true
     },
@@ -1017,7 +1029,9 @@
       "episode": 451,
       "chapter": 548,
       "description": {
-        "es": "Bon Clay se queda atrás para abrir las puertas de la justicia."
+        "es": "Bon Clay se queda atrás para abrir las puertas de la justicia.",
+        "en": "Bon Kurei stays behind to open the Gates of Justice.",
+        "ja": "ボン・クレーが正義の門を開けるため一人残る。"
       },
       "cardWorthy": true
     }

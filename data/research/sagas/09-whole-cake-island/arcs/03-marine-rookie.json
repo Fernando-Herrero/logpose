@@ -90,7 +90,9 @@
       "episode": 782,
       "chapter": null,
       "description": {
-        "es": "Luffy derrota al novato de la Marina Grount."
+        "es": "Luffy derrota al novato de la Marina Grount.",
+        "en": "Luffy defeats the Marine rookie Grount.",
+        "ja": "ルフィが海軍の超新星グラントを倒す。"
       },
       "cardWorthy": false
     }

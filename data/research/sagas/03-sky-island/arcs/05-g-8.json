@@ -273,7 +273,9 @@
       "episode": 197,
       "chapter": null,
       "description": {
-        "es": "Sanji se infiltra como cocinero en el comedor de la base G-8."
+        "es": "Sanji se infiltra como cocinero en el comedor de la base G-8.",
+        "en": "Sanji infiltrates the G-8 base's mess hall as a cook.",
+        "ja": "サンジがコックとしてG-8基地の食堂に潜り込む。"
       },
       "cardWorthy": false
     },
@@ -293,7 +295,9 @@
       "episode": 206,
       "chapter": null,
       "description": {
-        "es": "Los Sombrero de Paja escapan de la fortaleza Navarone del vicealmirante Jonathan."
+        "es": "Los Sombrero de Paja escapan de la fortaleza Navarone del vicealmirante Jonathan.",
+        "en": "The Straw Hats escape Vice Admiral Jonathan's Navarone fortress.",
+        "ja": "麦わらの一味がジョナサン中将のナバロン要塞から脱出する。"
       },
       "cardWorthy": false
     }

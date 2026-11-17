@@ -1163,7 +1163,9 @@
       "episode": 459,
       "chapter": 550,
       "description": {
-        "es": "Sengoku revela que Ace es hijo de Gol D. Roger."
+        "es": "Sengoku revela que Ace es hijo de Gol D. Roger.",
+        "en": "Sengoku reveals that Ace is the son of Gol D. Roger.",
+        "ja": "センゴクがエースはゴール・D・ロジャーの息子だと明かす。"
       },
       "cardWorthy": true
     },
@@ -1178,7 +1180,9 @@
       "episode": 459,
       "chapter": 551,
       "description": {
-        "es": "Barbablanca llega a Marineford con su flota."
+        "es": "Barbablanca llega a Marineford con su flota.",
+        "en": "Whitebeard arrives at Marineford with his fleet.",
+        "ja": "白ひげが艦隊を率いてマリンフォードに現れる。"
       },
       "cardWorthy": true
     },
@@ -1196,7 +1200,9 @@
       "episode": 466,
       "chapter": 557,
       "description": {
-        "es": "Luffy cae del cielo en Marineford con los fugados de Impel Down."
+        "es": "Luffy cae del cielo en Marineford con los fugados de Impel Down.",
+        "en": "Luffy falls from the sky onto Marineford with the Impel Down escapees.",
+        "ja": "ルフィがインペルダウンの脱獄囚たちとともにマリンフォードの空から降ってくる。"
       },
       "cardWorthy": true
     },
@@ -1210,7 +1216,9 @@
       "episode": 470,
       "chapter": 561,
       "description": {
-        "es": "Mihawk corta el paso a Luffy."
+        "es": "Mihawk corta el paso a Luffy.",
+        "en": "Mihawk blocks Luffy's path.",
+        "ja": "ミホークがルフィの行く手を阻む。"
       },
       "cardWorthy": false
     },
@@ -1224,7 +1232,9 @@
       "episode": 472,
       "chapter": 563,
       "description": {
-        "es": "Squard apuñala a Barbablanca engañado por la Marina."
+        "es": "Squard apuñala a Barbablanca engañado por la Marina.",
+        "en": "Squard, deceived by the Marines, stabs Whitebeard.",
+        "ja": "海軍に騙されたスクアードが白ひげを刺す。"
       },
       "cardWorthy": false
     },
@@ -1237,7 +1247,9 @@
       "episode": 479,
       "chapter": 570,
       "description": {
-        "es": "Luffy desata el Haki del Rey en plena guerra."
+        "es": "Luffy desata el Haki del Rey en plena guerra.",
+        "en": "Luffy unleashes Conqueror's Haki in the middle of the war.",
+        "ja": "ルフィが戦争のさなかに覇王色の覇気を放つ。"
       },
       "cardWorthy": true
     },
@@ -1252,7 +1264,9 @@
       "episode": 479,
       "chapter": 571,
       "description": {
-        "es": "Luffy libera a Ace en el patíbulo."
+        "es": "Luffy libera a Ace en el patíbulo.",
+        "en": "Luffy frees Ace on the execution platform.",
+        "ja": "ルフィが処刑台でエースを解放する。"
       },
       "cardWorthy": true
     },
@@ -1267,7 +1281,9 @@
       "episode": 483,
       "chapter": 574,
       "description": {
-        "es": "Akainu mata a Ace, que muere protegiendo a Luffy."
+        "es": "Akainu mata a Ace, que muere protegiendo a Luffy.",
+        "en": "Akainu kills Ace, who dies protecting Luffy.",
+        "ja": "赤犬の手により、エースがルフィをかばって死ぬ。"
       },
       "cardWorthy": true
     },
@@ -1281,7 +1297,9 @@
       "episode": 485,
       "chapter": 576,
       "description": {
-        "es": "Barbablanca muere en pie tras proclamar que el One Piece existe."
+        "es": "Barbablanca muere en pie tras proclamar que el One Piece existe.",
+        "en": "Whitebeard dies standing after proclaiming that the One Piece exists.",
+        "ja": "白ひげが「ひとつなぎの大秘宝(ワンピース)は実在する」と告げ、立ったまま息絶える。"
       },
       "cardWorthy": true
     },
@@ -1295,7 +1313,9 @@
       "episode": 486,
       "chapter": 577,
       "description": {
-        "es": "Barbanegra roba el poder de la Gura Gura no Mi."
+        "es": "Barbanegra roba el poder de la Gura Gura no Mi.",
+        "en": "Blackbeard steals the power of the Gura Gura no Mi.",
+        "ja": "黒ひげがグラグラの実の能力を奪う。"
       },
       "cardWorthy": true
     },
@@ -1309,7 +1329,9 @@
       "episode": 488,
       "chapter": 579,
       "description": {
-        "es": "Coby planta cara a Akainu para detener la guerra."
+        "es": "Coby planta cara a Akainu para detener la guerra.",
+        "en": "Koby stands up to Akainu to stop the war.",
+        "ja": "コビーが戦争を止めるため赤犬に立ちはだかる。"
       },
       "cardWorthy": false
     },
@@ -1324,7 +1346,9 @@
       "episode": 488,
       "chapter": 579,
       "description": {
-        "es": "Law saca a Luffy de Marineford en su submarino."
+        "es": "Law saca a Luffy de Marineford en su submarino.",
+        "en": "Law gets Luffy out of Marineford in his submarine.",
+        "ja": "ローが潜水艦でルフィをマリンフォードから連れ出す。"
       },
       "cardWorthy": false
     },
@@ -1339,7 +1363,9 @@
       "episode": 489,
       "chapter": 580,
       "description": {
-        "es": "Shanks llega y pone fin a la guerra."
+        "es": "Shanks llega y pone fin a la guerra.",
+        "en": "Shanks arrives and puts an end to the war.",
+        "ja": "シャンクスが現れ、戦争を終わらせる。"
       },
       "cardWorthy": true
     }

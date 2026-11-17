@@ -135,7 +135,9 @@
       "episode": 220,
       "chapter": null,
       "description": {
-        "es": "La tripulación pierde la memoria por culpa del ladrón de recuerdos."
+        "es": "La tripulación pierde la memoria por culpa del ladrón de recuerdos.",
+        "en": "The crew loses their memories because of the memory thief.",
+        "ja": "記憶泥棒のせいで一味が記憶を失う。"
       },
       "cardWorthy": false
     }

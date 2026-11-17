@@ -791,7 +791,9 @@
       "episode": 496,
       "chapter": 585,
       "description": {
-        "es": "Luffy, Ace y Sabo se juran hermanos con copas de sake."
+        "es": "Luffy, Ace y Sabo se juran hermanos con copas de sake.",
+        "en": "Luffy, Ace and Sabo swear brotherhood with cups of sake.",
+        "ja": "ルフィ、エース、サボが盃を交わし兄弟の契りを結ぶ。"
       },
       "cardWorthy": true
     },
@@ -806,7 +808,9 @@
       "episode": 503,
       "chapter": 588,
       "description": {
-        "es": "Un Dragón Celestial dispara al barco de Sabo y se le da por muerto."
+        "es": "Un Dragón Celestial dispara al barco de Sabo y se le da por muerto.",
+        "en": "A Celestial Dragon fires on Sabo's boat, and he is presumed dead.",
+        "ja": "天竜人がサボの船を砲撃し、サボは死んだものとされる。"
       },
       "cardWorthy": false
     },
@@ -820,7 +824,9 @@
       "episode": 505,
       "chapter": 590,
       "description": {
-        "es": "Jinbe hace que Luffy recuerde que aún tiene a sus compañeros."
+        "es": "Jinbe hace que Luffy recuerde que aún tiene a sus compañeros.",
+        "en": "Jinbe makes Luffy remember that he still has his crewmates.",
+        "ja": "ジンベエがルフィに、まだ仲間がいることを思い出させる。"
       },
       "cardWorthy": false
     },
@@ -835,7 +841,9 @@
       "episode": 511,
       "chapter": 594,
       "description": {
-        "es": "Luffy vuelve a Marineford y envía el mensaje 3D2Y a su tripulación."
+        "es": "Luffy vuelve a Marineford y envía el mensaje 3D2Y a su tripulación.",
+        "en": "Luffy returns to Marineford and sends the 3D2Y message to his crew.",
+        "ja": "ルフィがマリンフォードに戻り、仲間たちに「3D2Y」のメッセージを送る。"
       },
       "cardWorthy": true
     },
@@ -849,7 +857,9 @@
       "episode": 516,
       "chapter": 597,
       "description": {
-        "es": "Empieza el entrenamiento de dos años de Luffy con Rayleigh."
+        "es": "Empieza el entrenamiento de dos años de Luffy con Rayleigh.",
+        "en": "Luffy's two-year training with Rayleigh begins.",
+        "ja": "ルフィとレイリーの2年間の修行が始まる。"
       },
       "cardWorthy": true
     }

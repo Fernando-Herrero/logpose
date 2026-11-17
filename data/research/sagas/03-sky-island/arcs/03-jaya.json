@@ -273,7 +273,9 @@
       "episode": 145,
       "chapter": 221,
       "description": {
-        "es": "Robin consigue un Eternal Pose de Jaya tras el encuentro con Masira."
+        "es": "Robin consigue un Eternal Pose de Jaya tras el encuentro con Masira.",
+        "en": "Robin obtains an Eternal Pose to Jaya after the encounter with Masira.",
+        "ja": "マシラとの遭遇の後、ロビンがジャヤの永久指針(エターナルポース)を手に入れる。"
       },
       "cardWorthy": false
     },
@@ -288,7 +290,9 @@
       "episode": 146,
       "chapter": 224,
       "description": {
-        "es": "Luffy y Zoro se dejan apalear por Bellamy en Mock Town sin devolver un golpe."
+        "es": "Luffy y Zoro se dejan apalear por Bellamy en Mock Town sin devolver un golpe.",
+        "en": "Luffy and Zoro let Bellamy beat them up in Mock Town without throwing a single punch back.",
+        "ja": "ルフィとゾロがモックタウンで、一発も殴り返さずにベラミーに叩きのめされる。"
       },
       "cardWorthy": true
     },
@@ -303,7 +307,9 @@
       "episode": 147,
       "chapter": 225,
       "description": {
-        "es": "Primer encuentro de Luffy con Barbanegra, que defiende que los sueños de los piratas nunca acaban."
+        "es": "Primer encuentro de Luffy con Barbanegra, que defiende que los sueños de los piratas nunca acaban.",
+        "en": "Luffy's first encounter with Blackbeard, who insists that pirates' dreams never end.",
+        "ja": "ルフィと黒ひげの初めての出会い。黒ひげは海賊の夢は終わらないと説く。"
       },
       "cardWorthy": true
     },
@@ -317,7 +323,9 @@
       "episode": 148,
       "chapter": 227,
       "description": {
-        "es": "Cricket cuenta la historia de Noland el Mentiroso y la ciudad de oro."
+        "es": "Cricket cuenta la historia de Noland el Mentiroso y la ciudad de oro.",
+        "en": "Cricket tells the story of Noland the Liar and the city of gold.",
+        "ja": "クリケットが、うそつきノーランドと黄金郷の物語を語る。"
       },
       "cardWorthy": false
     },
@@ -331,7 +339,9 @@
       "episode": 151,
       "chapter": 233,
       "description": {
-        "es": "Luffy derrota a Bellamy de un solo puñetazo en Mock Town."
+        "es": "Luffy derrota a Bellamy de un solo puñetazo en Mock Town.",
+        "en": "Luffy defeats Bellamy with a single punch in Mock Town.",
+        "ja": "ルフィがモックタウンでベラミーを一撃で倒す。"
       },
       "cardWorthy": true
     },
@@ -344,7 +354,9 @@
       "episode": 151,
       "chapter": 234,
       "description": {
-        "es": "Llega la nueva recompensa de Luffy: 100.000.000 berries."
+        "es": "Llega la nueva recompensa de Luffy: 100.000.000 berries.",
+        "en": "Luffy's new bounty arrives: 100,000,000 berries.",
+        "ja": "ルフィの新たな懸賞金が届く。1億ベリーだ。"
       },
       "cardWorthy": true
     },
@@ -357,7 +369,9 @@
       "episode": 151,
       "chapter": 234,
       "description": {
-        "es": "Zoro recibe su primera recompensa: 60.000.000 berries."
+        "es": "Zoro recibe su primera recompensa: 60.000.000 berries.",
+        "en": "Zoro receives his first bounty: 60,000,000 berries.",
+        "ja": "ゾロに初の懸賞金がかかる。6000万ベリーだ。"
       },
       "cardWorthy": true
     },
@@ -370,7 +384,9 @@
       "episode": 151,
       "chapter": 234,
       "description": {
-        "es": "Un hombre de Barbanegra se presenta en la reunión de los Shichibukai y propone a su capitán."
+        "es": "Un hombre de Barbanegra se presenta en la reunión de los Shichibukai y propone a su capitán.",
+        "en": "One of Blackbeard's men shows up at the Shichibukai meeting and puts forward his captain.",
+        "ja": "黒ひげの部下が七武海の会議に現れ、自らの船長を推薦する。"
       },
       "cardWorthy": false
     },
@@ -389,7 +405,9 @@
       "episode": 152,
       "chapter": 236,
       "description": {
-        "es": "El Going Merry sube al cielo montado en el Knock Up Stream."
+        "es": "El Going Merry sube al cielo montado en el Knock Up Stream.",
+        "en": "The Going Merry rises into the sky riding the Knock-Up Stream.",
+        "ja": "ゴーイング・メリー号が突き上げる海流(ノックアップストリーム)に乗って空へ昇る。"
       },
       "cardWorthy": true
     }

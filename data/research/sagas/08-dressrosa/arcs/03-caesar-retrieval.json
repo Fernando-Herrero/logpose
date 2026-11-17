@@ -109,7 +109,9 @@
       "episode": 628,
       "chapter": null,
       "description": {
-        "es": "Luffy derrota a Breed y la alianza recupera a Caesar."
+        "es": "Luffy derrota a Breed y la alianza recupera a Caesar.",
+        "en": "Luffy defeats Breed and the alliance gets Caesar back.",
+        "ja": "ルフィがブリードを倒し、同盟はシーザーを取り戻す。"
       },
       "cardWorthy": false
     }

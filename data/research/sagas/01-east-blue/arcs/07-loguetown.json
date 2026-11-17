@@ -304,7 +304,9 @@
       "episode": 45,
       "chapter": 96,
       "description": {
-        "es": "Luffy recibe su primera recompensa: 30.000.000 berries."
+        "es": "Luffy recibe su primera recompensa: 30.000.000 berries.",
+        "en": "Luffy receives his first bounty: 30,000,000 berries.",
+        "ja": "ルフィに初の懸賞金がかかる。3000万ベリーだ。"
       },
       "cardWorthy": true
     },
@@ -318,7 +320,9 @@
       "episode": 49,
       "chapter": 97,
       "description": {
-        "es": "Zoro obtiene Sandai Kitetsu y Yubashiri."
+        "es": "Zoro obtiene Sandai Kitetsu y Yubashiri.",
+        "en": "Zoro obtains Sandai Kitetsu and Yubashiri.",
+        "ja": "ゾロが三代鬼徹と雪走を手に入れる。"
       },
       "cardWorthy": true
     },
@@ -333,7 +337,9 @@
       "episode": 52,
       "chapter": 99,
       "description": {
-        "es": "Luffy sonríe en el patíbulo de Roger y un rayo lo salva."
+        "es": "Luffy sonríe en el patíbulo de Roger y un rayo lo salva.",
+        "en": "Luffy smiles on Roger's execution platform and a lightning bolt saves him.",
+        "ja": "ルフィがロジャーの処刑台の上で笑い、落雷に救われる。"
       },
       "cardWorthy": true
     },
@@ -347,7 +353,9 @@
       "episode": 53,
       "chapter": 100,
       "description": {
-        "es": "Smoker atrapa a Luffy con su Logia."
+        "es": "Smoker atrapa a Luffy con su Logia.",
+        "en": "Smoker captures Luffy with his Logia power.",
+        "ja": "スモーカーが自然系(ロギア)の能力でルフィを捕らえる。"
       },
       "cardWorthy": true
     },
@@ -362,7 +370,9 @@
       "episode": 53,
       "chapter": 100,
       "description": {
-        "es": "Dragon aparece y ayuda a Luffy a huir."
+        "es": "Dragon aparece y ayuda a Luffy a huir.",
+        "en": "Dragon appears and helps Luffy escape.",
+        "ja": "ドラゴンが現れ、ルフィの逃亡を助ける。"
       },
       "cardWorthy": true
     },
@@ -379,7 +389,9 @@
       "episode": 53,
       "chapter": 100,
       "description": {
-        "es": "La tripulación brinda junto al barril antes de entrar en el Grand Line."
+        "es": "La tripulación brinda junto al barril antes de entrar en el Grand Line.",
+        "en": "The crew makes a toast around the barrel before entering the Grand Line.",
+        "ja": "グランドラインに入る前に、一味が樽を囲んで乾杯する。"
       },
       "cardWorthy": true
     }

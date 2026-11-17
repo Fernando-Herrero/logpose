@@ -1093,7 +1093,9 @@
       "episode": 755,
       "chapter": 806,
       "description": {
-        "es": "Los Sombrero de Paja se reencuentran en Zou con el grupo de Nami."
+        "es": "Los Sombrero de Paja se reencuentran en Zou con el grupo de Nami.",
+        "en": "The Straw Hats reunite on Zou with Nami's group.",
+        "ja": "麦わらの一味がゾウでナミたちと再会する。"
       },
       "cardWorthy": false
     },
@@ -1108,7 +1110,9 @@
       "episode": 760,
       "chapter": 810,
       "description": {
-        "es": "Flashback del asalto de Jack a Zou durante cinco días y cinco noches."
+        "es": "Flashback del asalto de Jack a Zou durante cinco días y cinco noches.",
+        "en": "Flashback to Jack's five-day, five-night assault on Zou.",
+        "ja": "ジャックが5日5晩にわたってゾウを襲撃した過去の回想。"
       },
       "cardWorthy": false
     },
@@ -1124,7 +1128,9 @@
       "episode": 764,
       "chapter": 813,
       "description": {
-        "es": "Sanji se marcha con Capone Bege para su boda con Charlotte Pudding y deja una carta de despedida."
+        "es": "Sanji se marcha con Capone Bege para su boda con Charlotte Pudding y deja una carta de despedida.",
+        "en": "Sanji leaves with Capone Bege for his wedding to Charlotte Pudding and leaves a farewell letter.",
+        "ja": "サンジがシャーロット・プリンとの結婚のためカポネ・ベッジと去り、別れの置き手紙を残す。"
       },
       "cardWorthy": false
     },
@@ -1139,7 +1145,9 @@
       "episode": 768,
       "chapter": 817,
       "description": {
-        "es": "Los minks revelan que protegían al ninja Raizo de Kaido."
+        "es": "Los minks revelan que protegían al ninja Raizo de Kaido.",
+        "en": "The minks reveal that they were protecting the ninja Raizo from Kaido.",
+        "ja": "ミンク族が、忍者・雷ぞうをカイドウからかくまっていたことを明かす。"
       },
       "cardWorthy": false
     },
@@ -1155,7 +1163,9 @@
       "episode": 769,
       "chapter": 818,
       "description": {
-        "es": "Robin descubre el Road Poneglyph rojo de Zou, guía hacia Raftel."
+        "es": "Robin descubre el Road Poneglyph rojo de Zou, guía hacia Raftel.",
+        "en": "Robin discovers Zou's red Road Poneglyph, a guide to Raftel.",
+        "ja": "ロビンが、ラフテルへの道標となるゾウの赤いロード歴史の本文を発見する。"
       },
       "cardWorthy": true
     },
@@ -1172,7 +1182,9 @@
       "episode": 771,
       "chapter": 819,
       "description": {
-        "es": "Luffy y Momonosuke sellan la alianza ninja-pirata-mink-samurái contra Kaido."
+        "es": "Luffy y Momonosuke sellan la alianza ninja-pirata-mink-samurái contra Kaido.",
+        "en": "Luffy and Momonosuke seal the ninja-pirate-mink-samurai alliance against Kaido.",
+        "ja": "ルフィとモモの助が、カイドウに対抗する忍者海賊ミンク侍同盟を結ぶ。"
       },
       "cardWorthy": true
     },
@@ -1187,7 +1199,9 @@
       "episode": 774,
       "chapter": 821,
       "description": {
-        "es": "Momonosuke ordena a Zunesha atacar y la flota de Jack queda destrozada."
+        "es": "Momonosuke ordena a Zunesha atacar y la flota de Jack queda destrozada.",
+        "en": "Momonosuke orders Zunisha to attack and Jack's fleet is wrecked.",
+        "ja": "モモの助がズニーシャに攻撃を命じ、ジャックの艦隊が壊滅する。"
       },
       "cardWorthy": false
     },
@@ -1200,7 +1214,9 @@
       "episode": 779,
       "chapter": 824,
       "description": {
-        "es": "Presentación de Kaido, que se lanza desde Punk Hazard al vacío sin morir."
+        "es": "Presentación de Kaido, que se lanza desde Punk Hazard al vacío sin morir.",
+        "en": "Introduction of Kaido, who throws himself from Punk Hazard into the void without dying.",
+        "ja": "カイドウ登場。パンクハザードから身を投げるが、死ぬことはない。"
       },
       "cardWorthy": false
     }

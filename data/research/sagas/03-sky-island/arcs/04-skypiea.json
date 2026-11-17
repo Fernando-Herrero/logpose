@@ -1184,7 +1184,9 @@
       "episode": 153,
       "chapter": 237,
       "description": {
-        "es": "Llegada al Mar Blanco; Gan Fall salva a la tripulación del ataque de Wyper."
+        "es": "Llegada al Mar Blanco; Gan Fall salva a la tripulación del ataque de Wyper.",
+        "en": "Arrival at the White Sea; Gan Fall saves the crew from Wyper's attack.",
+        "ja": "白海に到着し、ガン・フォールがワイパーの襲撃から一味を救う。"
       },
       "cardWorthy": false
     },
@@ -1200,7 +1202,9 @@
       "episode": 161,
       "chapter": 248,
       "description": {
-        "es": "Luffy derrota al sacerdote Satori en el Bosque Perdido."
+        "es": "Luffy derrota al sacerdote Satori en el Bosque Perdido.",
+        "en": "Luffy defeats Priest Satori in the Lost Forest.",
+        "ja": "ルフィが迷いの森で神官サトリを倒す。"
       },
       "cardWorthy": true
     },
@@ -1215,7 +1219,9 @@
       "episode": 162,
       "chapter": 249,
       "description": {
-        "es": "Gan Fall pierde contra Shura defendiendo el Going Merry."
+        "es": "Gan Fall pierde contra Shura defendiendo el Going Merry.",
+        "en": "Gan Fall loses to Shura while defending the Going Merry.",
+        "ja": "ガン・フォールがゴーイング・メリー号を守る中、シュラに敗れる。"
       },
       "cardWorthy": false
     },
@@ -1228,7 +1234,9 @@
       "episode": 167,
       "chapter": 254,
       "description": {
-        "es": "Primera aparición de Enel ante sus sacerdotes."
+        "es": "Primera aparición de Enel ante sus sacerdotes.",
+        "en": "Enel's first appearance before his priests.",
+        "ja": "エネルが神官たちの前に初めて姿を現す。"
       },
       "cardWorthy": true
     },
@@ -1242,7 +1250,9 @@
       "episode": 170,
       "chapter": 258,
       "description": {
-        "es": "Zoro derrota a Braham durante el Juego de Supervivencia."
+        "es": "Zoro derrota a Braham durante el Juego de Supervivencia.",
+        "en": "Zoro defeats Braham during the Survival Game.",
+        "ja": "ゾロが生き残り合戦の最中にブラハムを倒す。"
       },
       "cardWorthy": false
     },
@@ -1256,7 +1266,9 @@
       "episode": 171,
       "chapter": 260,
       "description": {
-        "es": "Luffy se enfrenta a Wyper y su Burn Bazooka."
+        "es": "Luffy se enfrenta a Wyper y su Burn Bazooka.",
+        "en": "Luffy faces Wyper and his Burn Bazooka.",
+        "ja": "ルフィがワイパーとその燃焼砲(バーンバズーカ)に立ち向かう。"
       },
       "cardWorthy": true
     },
@@ -1270,7 +1282,9 @@
       "episode": 172,
       "chapter": 262,
       "description": {
-        "es": "Luffy derrota al sacerdote Gedatsu en el pantano."
+        "es": "Luffy derrota al sacerdote Gedatsu en el pantano.",
+        "en": "Luffy defeats Priest Gedatsu in the swamp.",
+        "ja": "ルフィが沼で神官ゲダツを倒す。"
       },
       "cardWorthy": false
     },
@@ -1283,7 +1297,9 @@
       "episode": 173,
       "chapter": 264,
       "description": {
-        "es": "Enel revela su poder: la Goro Goro no Mi, una Logia de rayo."
+        "es": "Enel revela su poder: la Goro Goro no Mi, una Logia de rayo.",
+        "en": "Enel reveals his power: the Goro Goro no Mi, a lightning Logia.",
+        "ja": "エネルが自らの能力を明かす。雷の自然系(ロギア)、ゴロゴロの実だ。"
       },
       "cardWorthy": true
     },
@@ -1297,7 +1313,9 @@
       "episode": 179,
       "chapter": 273,
       "description": {
-        "es": "Zoro derrota al sacerdote Ohm en las ruinas superiores."
+        "es": "Zoro derrota al sacerdote Ohm en las ruinas superiores.",
+        "en": "Zoro defeats Priest Ohm in the Upper Ruins.",
+        "ja": "ゾロが上層遺跡で神官オームを倒す。"
       },
       "cardWorthy": true
     },
@@ -1311,7 +1329,9 @@
       "episode": 180,
       "chapter": 274,
       "description": {
-        "es": "Wyper usa el Reject Dial contra Enel, que se reanima con su propio rayo."
+        "es": "Wyper usa el Reject Dial contra Enel, que se reanima con su propio rayo.",
+        "en": "Wyper uses the Reject Dial on Enel, who revives himself with his own lightning.",
+        "ja": "ワイパーがエネルに排撃貝(リジェクトダイアル)を打ち込むが、エネルは自らの雷で蘇生する。"
       },
       "cardWorthy": true
     },
@@ -1325,7 +1345,9 @@
       "episode": 181,
       "chapter": 276,
       "description": {
-        "es": "Enel muestra el arca Maxim y su plan de viajar a la Tierra Infinita."
+        "es": "Enel muestra el arca Maxim y su plan de viajar a la Tierra Infinita.",
+        "en": "Enel shows off the ark Maxim and his plan to travel to Fairy Vearth.",
+        "ja": "エネルが方舟マクシムと、限りない大地(フェアリーヴァース)へ向かう計画を明かす。"
       },
       "cardWorthy": false
     },
@@ -1339,7 +1361,9 @@
       "episode": 182,
       "chapter": 279,
       "description": {
-        "es": "Luffy se enfrenta a Enel y resulta inmune a su rayo por ser de goma."
+        "es": "Luffy se enfrenta a Enel y resulta inmune a su rayo por ser de goma.",
+        "en": "Luffy takes on Enel and turns out to be immune to his lightning because he is made of rubber.",
+        "ja": "ルフィがエネルに挑み、ゴム人間ゆえに雷が効かないと判明する。"
       },
       "cardWorthy": true
     },
@@ -1353,7 +1377,9 @@
       "episode": 188,
       "chapter": 290,
       "description": {
-        "es": "Flashback de la amistad entre Noland y Calgara, 400 años atrás."
+        "es": "Flashback de la amistad entre Noland y Calgara, 400 años atrás.",
+        "en": "Flashback to the friendship between Noland and Calgara, 400 years ago.",
+        "ja": "400年前のノーランドとカルガラの友情を描く回想。"
       },
       "cardWorthy": true
     },
@@ -1366,7 +1392,9 @@
       "episode": 191,
       "chapter": 297,
       "description": {
-        "es": "Luffy usa la bola de oro pegada a su brazo como arma contra Enel."
+        "es": "Luffy usa la bola de oro pegada a su brazo como arma contra Enel.",
+        "en": "Luffy uses the golden ball stuck to his arm as a weapon against Enel.",
+        "ja": "ルフィが腕にくっついた黄金の球をエネルへの武器にする。"
       },
       "cardWorthy": true
     },
@@ -1380,7 +1408,9 @@
       "episode": 192,
       "chapter": 298,
       "description": {
-        "es": "Luffy derrota a Enel con el Gomu Gomu no Ougon Rifle y hace sonar la campana dorada."
+        "es": "Luffy derrota a Enel con el Gomu Gomu no Ougon Rifle y hace sonar la campana dorada.",
+        "en": "Luffy defeats Enel with the Gomu Gomu no Ougon Rifle and rings the golden bell.",
+        "ja": "ルフィがゴムゴムの黄金ライフルでエネルを倒し、黄金の鐘を鳴らす。"
       },
       "cardWorthy": true
     },
@@ -1393,7 +1423,9 @@
       "episode": 194,
       "chapter": 301,
       "description": {
-        "es": "Robin lee el poneglifo de la campana y descubre el mensaje de Gol D. Roger."
+        "es": "Robin lee el poneglifo de la campana y descubre el mensaje de Gol D. Roger.",
+        "en": "Robin reads the Poneglyph on the bell and discovers Gol D. Roger's message.",
+        "ja": "ロビンが鐘の歴史の本文(ポーネグリフ)を読み、ゴール・D・ロジャーの伝言を見つける。"
       },
       "cardWorthy": true
     },
@@ -1412,7 +1444,9 @@
       "episode": 195,
       "chapter": 302,
       "description": {
-        "es": "La tripulación se lleva oro de Shandora y desciende al Mar Azul."
+        "es": "La tripulación se lleva oro de Shandora y desciende al Mar Azul.",
+        "en": "The crew takes gold from Shandora and descends to the Blue Sea.",
+        "ja": "一味がシャンドラの黄金を手に、青海へと降りる。"
       },
       "cardWorthy": false
     }

@@ -150,7 +150,9 @@
       "episode": 65,
       "chapter": 108,
       "description": {
-        "es": "Zoro derrota él solo a los cien cazarrecompensas de Baroque Works."
+        "es": "Zoro derrota él solo a los cien cazarrecompensas de Baroque Works.",
+        "en": "Zoro single-handedly defeats Baroque Works' hundred bounty hunters.",
+        "ja": "ゾロがバロックワークスの賞金稼ぎ100人をたった一人で倒す。"
       },
       "cardWorthy": true
     },
@@ -164,7 +166,9 @@
       "episode": 66,
       "chapter": 111,
       "description": {
-        "es": "Malentendido: Luffy y Zoro se enfrentan pensando que Zoro ha traicionado a la gente del pueblo."
+        "es": "Malentendido: Luffy y Zoro se enfrentan pensando que Zoro ha traicionado a la gente del pueblo.",
+        "en": "A misunderstanding: Luffy and Zoro fight, with Luffy thinking Zoro has betrayed the townspeople.",
+        "ja": "誤解から、ゾロが町の人々を裏切ったと思い込んだルフィとゾロがぶつかり合う。"
       },
       "cardWorthy": false
     },
@@ -180,7 +184,9 @@
       "episode": 67,
       "chapter": 113,
       "description": {
-        "es": "Luffy y Zoro derrotan a Mr. 5 y Miss Valentine para proteger a Vivi."
+        "es": "Luffy y Zoro derrotan a Mr. 5 y Miss Valentine para proteger a Vivi.",
+        "en": "Luffy and Zoro defeat Mr. 5 and Miss Valentine to protect Vivi.",
+        "ja": "ルフィとゾロがビビを守るため、Mr.5とミス・バレンタインを倒す。"
       },
       "cardWorthy": true
     },
@@ -194,7 +200,9 @@
       "episode": 67,
       "chapter": 113,
       "description": {
-        "es": "Vivi revela sin querer que el jefe de Baroque Works es Crocodile, uno de los Siete Señores de la Guerra."
+        "es": "Vivi revela sin querer que el jefe de Baroque Works es Crocodile, uno de los Siete Señores de la Guerra.",
+        "en": "Vivi accidentally reveals that the boss of Baroque Works is Crocodile, one of the Seven Warlords of the Sea.",
+        "ja": "ビビがうっかり、バロックワークスのボスが王下七武海の一人クロコダイルだと明かしてしまう。"
       },
       "cardWorthy": true
     },
@@ -207,7 +215,9 @@
       "episode": 67,
       "chapter": 114,
       "description": {
-        "es": "Primera aparición de Nico Robin como Miss All Sunday, socia de Mr. 0."
+        "es": "Primera aparición de Nico Robin como Miss All Sunday, socia de Mr. 0.",
+        "en": "Nico Robin makes her first appearance as Miss All Sunday, Mr. 0's partner.",
+        "ja": "ニコ・ロビンがMr.0のパートナー、ミス・オールサンデーとして初登場する。"
       },
       "cardWorthy": true
     },
@@ -222,7 +232,9 @@
       "episode": 67,
       "chapter": 114,
       "description": {
-        "es": "Los Sombrero de Paja aceptan escoltar a Vivi y a Karoo hasta Arabasta."
+        "es": "Los Sombrero de Paja aceptan escoltar a Vivi y a Karoo hasta Arabasta.",
+        "en": "The Straw Hats agree to escort Vivi and Karoo to Alabasta.",
+        "ja": "麦わらの一味がビビとカルーをアラバスタまで送り届けることを引き受ける。"
       },
       "cardWorthy": true
     }

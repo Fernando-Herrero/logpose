@@ -12,6 +12,7 @@ import {
   useSessionUserWriter,
 } from '@/features/auth/api/session-user';
 import { profileKeys } from '@/features/profile/api/profile.keys';
+import { serieKeys } from '@/features/serie/api/serie.keys';
 import { useLocale } from '@/integrations/next-i18next/use-locale';
 import { client } from '@/integrations/orpc/orpc.client';
 import { allQueriesOptions } from '@/integrations/tanstack-query/queries-options';
@@ -60,6 +61,7 @@ export function useSetProgressMutation() {
   const { t } = useTranslation();
 
   return useMutation({
+    mutationKey: serieKeys.progress(),
     mutationFn: (lastWatchedEpisode: number) =>
       client.progress.set({ lastWatchedEpisode }),
     onSuccess: ({ after }) => {

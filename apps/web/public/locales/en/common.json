@@ -446,7 +446,6 @@
     "subtitle": "Expand sagas and arcs like your original LogPose. Data is served from the Nest API.",
     "hero_eyebrow": "Grand Line · Your voyage",
     "progress_label": "Experience earned",
-    "progress_save_hint": "Marking episodes and unlocking cards will arrive with the progress API module.",
     "loading": "Loading…",
     "error": "Could not load the timeline",
     "progress_error": "Could not save your progress",

@@ -1,6 +1,5 @@
 import {
   Box,
-  Callout,
   Card,
   Flex,
   Heading,
@@ -180,15 +179,6 @@ export default function SeriePageContent() {
               </Suspense>
             </ErrorBoundary>
           </Box>
-
-          <Callout.Root
-            color="orange"
-            variant="surface"
-            size="1"
-            className="mt-6"
-          >
-            <Callout.Text>{t('serie.progress_save_hint')}</Callout.Text>
-          </Callout.Root>
         </Box>
       </Card>
 

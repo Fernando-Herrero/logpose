@@ -8,9 +8,12 @@ import {
   Text,
   Tooltip,
 } from '@radix-ui/themes';
+import { useIsMutating } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next/pages';
 import { useState } from 'react';
 
+import { serieKeys } from '@/features/serie/api/serie.keys';
+import { useSetProgressMutation } from '@/features/serie/api/use-serie';
 import { SERIE_REWARD_TYPES } from '@/features/serie/serie.constants';
 import type { SerieEpisodeRewards } from '@/features/serie/serie.types';
 
@@ -35,6 +38,9 @@ export function SerieEpisodeCard({
   const [previewRewards, setPreviewRewards] = useState(false);
   const showRewards = watched || previewRewards;
   const hasRewards = Object.values(rewards).some(ids => ids.length > 0);
+  const setProgress = useSetProgressMutation();
+  const isSavingProgress =
+    useIsMutating({ mutationKey: serieKeys.progress() }) > 0;
 
   return (
     <Box asChild>
@@ -71,7 +77,16 @@ export function SerieEpisodeCard({
 
               <Tooltip content={t('serie.viewed_chapter')}>
                 <Box>
-                  <Checkbox checked={watched} disabled />
+                  <Checkbox
+                    checked={watched}
+                    disabled={isSavingProgress}
+                    aria-label={t('serie.viewed_chapter')}
+                    onCheckedChange={() =>
+                      setProgress.mutate(
+                        watched ? episodeNumber - 1 : episodeNumber,
+                      )
+                    }
+                  />
                 </Box>
               </Tooltip>
             </Flex>

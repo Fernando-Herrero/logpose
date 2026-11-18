@@ -446,7 +446,6 @@
     "subtitle": "Despliega sagas y arcos como en tu LogPose original. Los datos vienen del servidor Nest.",
     "hero_eyebrow": "Grand Line · Tu travesía",
     "progress_label": "Experiencia acumulada",
-    "progress_save_hint": "Marcar capítulos y desbloquear cartas llegará con el módulo progress en la API.",
     "loading": "Cargando…",
     "error": "No se pudo cargar la cronología",
     "progress_error": "No se pudo guardar tu progreso",

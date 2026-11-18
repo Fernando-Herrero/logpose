@@ -446,7 +446,6 @@
     "subtitle": "旧LogPoseのようにサガとアークを展開。データはNest APIから取得します。",
     "hero_eyebrow": "グランドライン · あなたの航海",
     "progress_label": "獲得経験値",
-    "progress_save_hint": "エピソードのチェックとカード解放は、progress APIモジュールで対応予定です。",
     "loading": "読み込み中…",
     "error": "年表を読み込めませんでした",
     "progress_error": "進行状況を保存できませんでした",

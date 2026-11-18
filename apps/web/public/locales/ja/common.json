@@ -477,7 +477,10 @@
     "xp_closes_arc": "編の最終話",
     "xp_closes_saga": "章の最終話",
     "catch_up_label": "視聴済みの話数",
-    "catch_up_submit": "保存"
+    "catch_up_submit": "保存",
+    "next_title": "次のエピソード",
+    "next_mark_watched": "視聴済みにする",
+    "next_up_to_date": "最新話まで視聴済みです"
   },
   "settings": {
     "subtitle": "アカウント、プライバシー、設定を管理",

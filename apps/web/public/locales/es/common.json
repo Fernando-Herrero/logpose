@@ -478,7 +478,10 @@
     "xp_closes_arc": "Cierra el arco",
     "xp_closes_saga": "Cierra la saga",
     "catch_up_label": "Voy por el episodio",
-    "catch_up_submit": "Guardar"
+    "catch_up_submit": "Guardar",
+    "next_title": "Tu siguiente episodio",
+    "next_mark_watched": "Marcar como visto",
+    "next_up_to_date": "Estás al día: no quedan episodios por ver"
   },
   "settings": {
     "subtitle": "Gestiona tu cuenta, privacidad y preferencias",

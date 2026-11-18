@@ -9,4 +9,6 @@ export const serieKeys = {
   arcTexts: (arcSlug: string, locale: Locale) =>
     [...serieKeys.all, 'arc-texts', arcSlug, locale] as const,
   progress: () => [...serieKeys.all, 'progress'] as const,
+  episode: (episodeNumber: number) =>
+    [...serieKeys.all, 'episode', episodeNumber] as const,
 };

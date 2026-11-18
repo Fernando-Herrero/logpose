@@ -478,7 +478,10 @@
     "xp_closes_arc": "Closes the arc",
     "xp_closes_saga": "Closes the saga",
     "catch_up_label": "I'm on episode",
-    "catch_up_submit": "Save"
+    "catch_up_submit": "Save",
+    "next_title": "Your next episode",
+    "next_mark_watched": "Mark as watched",
+    "next_up_to_date": "You're up to date: no episodes left to watch"
   },
   "settings": {
     "subtitle": "Manage your account, privacy and preferences",

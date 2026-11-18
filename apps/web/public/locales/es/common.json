@@ -449,6 +449,7 @@
     "progress_save_hint": "Marcar capítulos y desbloquear cartas llegará con el módulo progress en la API.",
     "loading": "Cargando…",
     "error": "No se pudo cargar la cronología",
+    "progress_error": "No se pudo guardar tu progreso",
     "sagas_heading": "Sagas ({{count}})",
     "saga_meta": "{{arcs}} arcos · {{episodes}} episodios",
     "arcs_heading": "Arcos de {{saga}}",

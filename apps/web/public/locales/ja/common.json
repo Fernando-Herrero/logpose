@@ -449,6 +449,7 @@
     "progress_save_hint": "エピソードのチェックとカード解放は、progress APIモジュールで対応予定です。",
     "loading": "読み込み中…",
     "error": "年表を読み込めませんでした",
+    "progress_error": "進行状況を保存できませんでした",
     "sagas_heading": "サガ ({{count}})",
     "saga_meta": "{{arcs}} アーク · {{episodes}} 話",
     "arcs_heading": "{{saga}} のアーク",

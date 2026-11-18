@@ -449,6 +449,7 @@
     "progress_save_hint": "Marking episodes and unlocking cards will arrive with the progress API module.",
     "loading": "Loading…",
     "error": "Could not load the timeline",
+    "progress_error": "Could not save your progress",
     "sagas_heading": "Sagas ({{count}})",
     "saga_meta": "{{arcs}} arcs · {{episodes}} episodes",
     "arcs_heading": "{{saga}} arcs",

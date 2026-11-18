@@ -1,6 +1,19 @@
-import { useQuery, useSuspenseQuery } from '@tanstack/react-query';
+import {
+  useMutation,
+  useQuery,
+  useQueryClient,
+  useSuspenseQuery,
+} from '@tanstack/react-query';
+import { useTranslation } from 'next-i18next/pages';
+import { toast } from 'sonner';
 
+import {
+  getSessionUser,
+  useSessionUserWriter,
+} from '@/features/auth/api/session-user';
+import { profileKeys } from '@/features/profile/api/profile.keys';
 import { useLocale } from '@/integrations/next-i18next/use-locale';
+import { client } from '@/integrations/orpc/orpc.client';
 import { allQueriesOptions } from '@/integrations/tanstack-query/queries-options';
 
 type SerieQueryOptions = {
@@ -38,5 +51,35 @@ export function useSerieArcTexts(arcSlug: string, options?: SerieQueryOptions) {
   return useQuery({
     ...allQueriesOptions.serie.arcTexts(arcSlug, locale),
     enabled: options?.enabled,
+  });
+}
+
+export function useSetProgressMutation() {
+  const queryClient = useQueryClient();
+  const writeSessionUser = useSessionUserWriter();
+  const { t } = useTranslation();
+
+  return useMutation({
+    mutationFn: (lastWatchedEpisode: number) =>
+      client.progress.set({ lastWatchedEpisode }),
+    onSuccess: ({ after }) => {
+      const sessionUser = getSessionUser(queryClient);
+
+      if (sessionUser) {
+        writeSessionUser({
+          ...sessionUser,
+          lastWatchedEpisode: after.lastWatchedEpisode,
+          experience: after.experience,
+        });
+        void queryClient.invalidateQueries({
+          queryKey: profileKeys.byId(sessionUser._id),
+        });
+      }
+
+      void queryClient.invalidateQueries({ queryKey: profileKeys.ranking() });
+    },
+    onError: () => {
+      toast.error(t('serie.progress_error'));
+    },
   });
 }

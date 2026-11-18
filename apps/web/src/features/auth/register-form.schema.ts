@@ -3,6 +3,7 @@ import * as z from 'zod/v4';
 
 const registerFormBaseSchema = createUserSchema.extend({
   confirmPassword: z.string().min(6),
+  lastWatchedEpisode: z.string().regex(/^\d*$/),
 });
 
 export const registerFormSchema = registerFormBaseSchema.refine(

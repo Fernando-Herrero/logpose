@@ -13,7 +13,7 @@ type FieldProps = {
   label: string;
   required?: boolean;
   placeholder?: string;
-  type?: 'text' | 'email' | 'password';
+  type?: 'text' | 'email' | 'password' | 'number';
   autoComplete?: string;
   passwordToggle?: boolean;
 };

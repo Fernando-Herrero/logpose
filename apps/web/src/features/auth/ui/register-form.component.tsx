@@ -28,6 +28,7 @@ export function RegisterFormComponent() {
       email: '',
       password: '',
       confirmPassword: '',
+      lastWatchedEpisode: '',
       avatar: '',
     },
     validators: {
@@ -118,6 +119,16 @@ export function RegisterFormComponent() {
             autoComplete="new-password"
             passwordToggle
             required
+          />
+        )}
+      </form.AppField>
+
+      <form.AppField name="lastWatchedEpisode">
+        {field => (
+          <field.Field
+            label={t('auth.last_watched_episode')}
+            type="number"
+            placeholder="0"
           />
         )}
       </form.AppField>

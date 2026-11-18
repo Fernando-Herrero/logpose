@@ -13,6 +13,7 @@
     "username": "Username",
     "username_placeholder": "john123",
     "confirm_password": "Confirm password",
+    "last_watched_episode": "Which episode are you on? (optional)",
     "submit_login": "Sign in",
     "submit_login_pending": "Signing in…",
     "submit_redirect_pending": "Opening dashboard…",

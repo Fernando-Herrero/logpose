@@ -13,6 +13,7 @@
     "username": "ユーザー名",
     "username_placeholder": "taro123",
     "confirm_password": "パスワード確認",
+    "last_watched_episode": "何話まで観ましたか？（任意）",
     "submit_login": "ログイン",
     "submit_login_pending": "ログイン中…",
     "submit_redirect_pending": "ダッシュボードへ移動中…",

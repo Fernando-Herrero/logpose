@@ -13,6 +13,7 @@
     "username": "Username",
     "username_placeholder": "Juan123",
     "confirm_password": "Confirmar contraseña",
+    "last_watched_episode": "¿Por qué episodio vas? (opcional)",
     "submit_login": "Entrar",
     "submit_login_pending": "Entrando…",
     "submit_redirect_pending": "Entrando al dashboard…",

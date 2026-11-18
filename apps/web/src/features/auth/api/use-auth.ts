@@ -3,7 +3,9 @@ import { ORPCError } from '@orpc/client';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import type { TFunction } from 'i18next';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next/pages';
 import { useEffect, useState } from 'react';
+import { toast } from 'sonner';
 import type * as z from 'zod/v4';
 
 import { authKeys } from '@/features/auth/api/auth.keys';
@@ -96,11 +98,39 @@ export function useLoginMutation() {
 
 export function useRegisterMutation() {
   const { onSuccess, isRedirecting } = useAuthSubmitFlow();
+  const { t } = useTranslation();
 
   const mutation = useMutation({
-    mutationFn: (input: RegisterFormValues) => {
-      const { confirmPassword: _confirmPassword, ...payload } = input;
-      return client.auth.register(payload);
+    mutationFn: async (input: RegisterFormValues) => {
+      const {
+        confirmPassword: _confirmPassword,
+        lastWatchedEpisode,
+        ...payload
+      } = input;
+      const session = await client.auth.register(payload);
+      const episode = Number(lastWatchedEpisode);
+
+      if (!episode) {
+        return session;
+      }
+
+      // La cuenta ya existe: si el progreso falla se entra con 0 y se corrige desde la serie.
+      const progress = await client.progress
+        .set({ lastWatchedEpisode: episode })
+        .catch(() => null);
+
+      if (!progress) {
+        toast.error(t('serie.progress_error'));
+        return session;
+      }
+
+      return {
+        user: {
+          ...session.user,
+          lastWatchedEpisode: progress.after.lastWatchedEpisode,
+          experience: progress.after.experience,
+        },
+      };
     },
     onSuccess,
   });

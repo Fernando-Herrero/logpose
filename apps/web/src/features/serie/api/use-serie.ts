@@ -33,6 +33,15 @@ export function useSerieTotalExperience() {
   return data;
 }
 
+export function useSerieTotalEpisodes() {
+  const { data } = useSuspenseQuery({
+    ...allQueriesOptions.serie.sagas(),
+    select: ({ sagas }) =>
+      sagas.reduce((sum, saga) => sum + saga.totalEpisodes, 0),
+  });
+  return data;
+}
+
 export function useSerieArcs(sagaSlug: string, options?: SerieQueryOptions) {
   return useQuery({
     ...allQueriesOptions.serie.arcsBySaga(sagaSlug),

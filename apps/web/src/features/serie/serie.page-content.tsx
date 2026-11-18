@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Card,
   Flex,
   Heading,
@@ -7,6 +8,7 @@ import {
   Skeleton,
   Spinner,
   Text,
+  TextField,
 } from '@radix-ui/themes';
 import { gsap } from 'gsap';
 import Image from 'next/image';
@@ -17,7 +19,9 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { QueryErrorFallback } from '@/components/error-boundary/query-error-fallback';
 import { useAuthSession } from '@/features/auth/api/use-auth';
 import {
+  useSerieTotalEpisodes,
   useSerieTotalExperience,
+  useSetProgressMutation,
   useSuspenseSerieSagas,
 } from '@/features/serie/api/use-serie';
 import { getSerieXpPercent } from '@/features/serie/serie.selectors';
@@ -91,6 +95,43 @@ function SerieXpProgress({ experience }: { experience: number }) {
         className="profile-xp-progress h-2"
       />
     </>
+  );
+}
+
+function SerieCatchUp({ lastWatchedEpisode }: { lastWatchedEpisode: number }) {
+  const { t } = useTranslation();
+  const setProgress = useSetProgressMutation();
+  const totalEpisodes = useSerieTotalEpisodes();
+
+  return (
+    <form
+      className="mt-4"
+      onSubmit={event => {
+        event.preventDefault();
+        setProgress.mutate(
+          Number(new FormData(event.currentTarget).get('episode')),
+        );
+      }}
+    >
+      <Flex align="end" gap="2">
+        <Text as="label" size="1" className="text-foreground/70">
+          {t('serie.catch_up_label')}
+          <TextField.Root
+            key={lastWatchedEpisode}
+            name="episode"
+            type="number"
+            min={0}
+            max={totalEpisodes}
+            defaultValue={lastWatchedEpisode}
+            required
+            className="mt-1 w-28"
+          />
+        </Text>
+        <Button type="submit" loading={setProgress.isPending}>
+          {t('serie.catch_up_submit')}
+        </Button>
+      </Flex>
+    </form>
   );
 }
 
@@ -176,6 +217,7 @@ export default function SeriePageContent() {
             <ErrorBoundary FallbackComponent={QueryErrorFallback}>
               <Suspense fallback={<Skeleton height="32px" />}>
                 <SerieXpProgress experience={user?.experience ?? 0} />
+                <SerieCatchUp lastWatchedEpisode={lastWatchedEpisode} />
               </Suspense>
             </ErrorBoundary>
           </Box>

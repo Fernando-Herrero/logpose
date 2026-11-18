@@ -475,7 +475,9 @@
     "xp_events_one": "{{count}} momento clave",
     "xp_events_other": "{{count}} momentos clave",
     "xp_closes_arc": "Cierra el arco",
-    "xp_closes_saga": "Cierra la saga"
+    "xp_closes_saga": "Cierra la saga",
+    "catch_up_label": "Voy por el episodio",
+    "catch_up_submit": "Guardar"
   },
   "settings": {
     "subtitle": "Gestiona tu cuenta, privacidad y preferencias",

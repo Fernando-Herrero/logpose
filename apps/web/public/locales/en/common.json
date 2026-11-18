@@ -475,7 +475,9 @@
     "xp_events_one": "{{count}} key moment",
     "xp_events_other": "{{count}} key moments",
     "xp_closes_arc": "Closes the arc",
-    "xp_closes_saga": "Closes the saga"
+    "xp_closes_saga": "Closes the saga",
+    "catch_up_label": "I'm on episode",
+    "catch_up_submit": "Save"
   },
   "settings": {
     "subtitle": "Manage your account, privacy and preferences",

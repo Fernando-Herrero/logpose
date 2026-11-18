@@ -1,5 +1,6 @@
 import {
   arcSchema,
+  arcTextsSchema,
   episodeSchema,
   sagaSchema,
 } from '@logpose/contracts/common/serie.schemas';
@@ -12,3 +13,5 @@ export type SerieArc = z.infer<typeof arcSchema>;
 export type SerieEpisode = z.infer<typeof episodeSchema>;
 
 export type SerieEpisodeRewards = SerieEpisode['rewards'];
+
+export type SerieArcTexts = z.infer<typeof arcTextsSchema>;

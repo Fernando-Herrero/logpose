@@ -76,10 +76,8 @@ export function SerieArcBlock({
             {episodes.map(episode => (
               <SerieEpisodeCard
                 key={episode.number}
-                episodeNumber={episode.number}
-                {...texts.episodes[episode.number]}
-                experience={episode.experience}
-                rewards={episode.rewards}
+                episode={episode}
+                texts={texts}
                 watched={episode.number <= lastWatchedEpisode}
               />
             ))}

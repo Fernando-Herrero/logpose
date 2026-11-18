@@ -465,7 +465,17 @@
     "rewards_heading": "Rewards",
     "viewed_chapter": "Episode watched",
     "show_rewards": "View rewards",
-    "hide_rewards": "Hide rewards"
+    "hide_rewards": "Hide rewards",
+    "episode_type": {
+      "canon": "Canon",
+      "mixed": "Mixed",
+      "filler": "Filler",
+      "recap": "Recap"
+    },
+    "xp_events_one": "{{count}} key moment",
+    "xp_events_other": "{{count}} key moments",
+    "xp_closes_arc": "Closes the arc",
+    "xp_closes_saga": "Closes the saga"
   },
   "settings": {
     "subtitle": "Manage your account, privacy and preferences",

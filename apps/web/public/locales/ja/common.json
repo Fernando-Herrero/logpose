@@ -465,7 +465,16 @@
     "rewards_heading": "報酬",
     "viewed_chapter": "視聴済み",
     "show_rewards": "報酬を見る",
-    "hide_rewards": "報酬を隠す"
+    "hide_rewards": "報酬を隠す",
+    "episode_type": {
+      "canon": "原作",
+      "mixed": "一部オリジナル",
+      "filler": "アニメオリジナル",
+      "recap": "総集編"
+    },
+    "xp_events_other": "名場面 {{count}}件",
+    "xp_closes_arc": "編の最終話",
+    "xp_closes_saga": "章の最終話"
   },
   "settings": {
     "subtitle": "アカウント、プライバシー、設定を管理",

@@ -1,4 +1,10 @@
 import {
+  ARC_END_EXPERIENCE,
+  EPISODE_TYPE_EXPERIENCE,
+  EVENT_EXPERIENCE,
+  SAGA_END_EXPERIENCE,
+} from '@logpose/contracts/common/experience';
+import {
   Badge,
   Box,
   Button,
@@ -15,29 +21,23 @@ import { useState } from 'react';
 import { serieKeys } from '@/features/serie/api/serie.keys';
 import { useSetProgressMutation } from '@/features/serie/api/use-serie';
 import { SERIE_REWARD_TYPES } from '@/features/serie/serie.constants';
-import type { SerieEpisodeRewards } from '@/features/serie/serie.types';
+import type { SerieArcTexts, SerieEpisode } from '@/features/serie/serie.types';
 
 type SerieEpisodeCardProps = {
-  episodeNumber: number;
-  name?: string;
-  description?: string;
-  experience: number;
-  rewards: SerieEpisodeRewards;
+  episode: SerieEpisode;
+  texts: SerieArcTexts;
   watched: boolean;
 };
 
 export function SerieEpisodeCard({
-  episodeNumber,
-  name,
-  description,
-  experience,
-  rewards,
+  episode,
+  texts,
   watched,
 }: SerieEpisodeCardProps) {
   const { t } = useTranslation();
-  const [previewRewards, setPreviewRewards] = useState(false);
-  const showRewards = watched || previewRewards;
-  const hasRewards = Object.values(rewards).some(ids => ids.length > 0);
+  const [showRewards, setShowRewards] = useState(false);
+  const episodeTexts = texts.episodes[episode.number];
+  const hasRewards = Object.values(episode.rewards).some(ids => ids.length > 0);
   const setProgress = useSetProgressMutation();
   const isSavingProgress =
     useIsMutating({ mutationKey: serieKeys.progress() }) > 0;
@@ -54,7 +54,7 @@ export function SerieEpisodeCard({
                 weight="bold"
                 className="font-road-captain text-highlight shrink-0"
               >
-                {t('serie.episode_number', { number: episodeNumber })}
+                {t('serie.episode_number', { number: episode.number })}
               </Text>
               <Text
                 as="p"
@@ -62,7 +62,7 @@ export function SerieEpisodeCard({
                 weight="medium"
                 className="text-foreground min-w-0"
               >
-                {name}
+                {episodeTexts?.name}
               </Text>
             </Flex>
 
@@ -72,7 +72,7 @@ export function SerieEpisodeCard({
                 size="1"
                 className="text-foreground/75 min-w-0 flex-1"
               >
-                {description}
+                {episodeTexts?.description}
               </Text>
 
               <Tooltip content={t('serie.viewed_chapter')}>
@@ -83,7 +83,7 @@ export function SerieEpisodeCard({
                     aria-label={t('serie.viewed_chapter')}
                     onCheckedChange={() =>
                       setProgress.mutate(
-                        watched ? episodeNumber - 1 : episodeNumber,
+                        watched ? episode.number - 1 : episode.number,
                       )
                     }
                   />
@@ -93,45 +93,87 @@ export function SerieEpisodeCard({
 
             <Flex align="center" wrap="wrap" gap="2">
               <Badge color="orange" variant="soft" size="1">
-                {t('serie.episode_xp', { xp: experience })}
+                {t('serie.episode_xp', { xp: episode.experience })}
               </Badge>
-              {!watched && hasRewards ? (
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="1"
-                  highContrast
-                  className="text-highlight/80 hover:text-highlight h-auto cursor-pointer px-1"
-                  onClick={() => setPreviewRewards(open => !open)}
-                >
-                  {previewRewards
-                    ? t('serie.hide_rewards')
-                    : t('serie.show_rewards')}
-                </Button>
-              ) : null}
+              <Button
+                type="button"
+                variant="ghost"
+                size="1"
+                highContrast
+                aria-expanded={showRewards}
+                className="text-highlight/80 hover:text-highlight h-auto cursor-pointer px-1"
+                onClick={() => setShowRewards(open => !open)}
+              >
+                {showRewards
+                  ? t('serie.hide_rewards')
+                  : t('serie.show_rewards')}
+              </Button>
             </Flex>
 
-            {hasRewards ? (
-              <Card
-                className="faq-item border-0 bg-black/25 p-0 shadow-none"
-                data-open={showRewards || undefined}
-              >
-                <Box className="faq-panel">
-                  <Box className="faq-panel-inner">
-                    <Box className="p-3">
-                      <Text
-                        as="p"
-                        size="1"
-                        weight="bold"
-                        mb="2"
-                        className="text-highlight decoration-highlight/40 underline"
-                      >
-                        {t('serie.rewards_heading')}
-                      </Text>
+            <Card
+              className="faq-item border-0 bg-black/25 p-0 shadow-none"
+              data-open={showRewards || undefined}
+            >
+              <Box className="faq-panel">
+                <Box className="faq-panel-inner">
+                  <Box className="p-3">
+                    <Text
+                      as="p"
+                      size="1"
+                      weight="bold"
+                      mb="2"
+                      className="text-highlight decoration-highlight/40 underline"
+                    >
+                      {t('serie.rewards_heading')}
+                    </Text>
 
-                      <Flex direction="column" gap="1">
+                    <Flex
+                      direction="column"
+                      gap="1"
+                      className="text-foreground/80"
+                    >
+                      <Text as="p" size="1">
+                        {t(`serie.episode_type.${episode.type}`)} ·{' '}
+                        {EPISODE_TYPE_EXPERIENCE[episode.type]}
+                      </Text>
+                      {episode.events.length > 0 ? (
+                        <>
+                          <Text as="p" size="1">
+                            {t('serie.xp_events', {
+                              count: episode.events.length,
+                            })}{' '}
+                            · +{EVENT_EXPERIENCE * episode.events.length}
+                          </Text>
+                          <ul className="m-0 list-disc pl-5">
+                            {episode.events.map(slug => (
+                              <Text
+                                key={slug}
+                                asChild
+                                size="1"
+                                className="text-foreground/70"
+                              >
+                                <li>{texts.events[slug]}</li>
+                              </Text>
+                            ))}
+                          </ul>
+                        </>
+                      ) : null}
+                      {episode.closesArc ? (
+                        <Text as="p" size="1">
+                          {t('serie.xp_closes_arc')} · +{ARC_END_EXPERIENCE}
+                        </Text>
+                      ) : null}
+                      {episode.closesSaga ? (
+                        <Text as="p" size="1">
+                          {t('serie.xp_closes_saga')} · +{SAGA_END_EXPERIENCE}
+                        </Text>
+                      ) : null}
+                    </Flex>
+
+                    {hasRewards ? (
+                      <Flex direction="column" gap="1" mt="2">
                         {SERIE_REWARD_TYPES.map(({ key, labelKey }) => {
-                          const ids = rewards[key];
+                          const ids = episode.rewards[key];
                           if (!ids.length) {
                             return null;
                           }
@@ -155,11 +197,11 @@ export function SerieEpisodeCard({
                           );
                         })}
                       </Flex>
-                    </Box>
+                    ) : null}
                   </Box>
                 </Box>
-              </Card>
-            ) : null}
+              </Box>
+            </Card>
           </Flex>
         </Card>
       </li>

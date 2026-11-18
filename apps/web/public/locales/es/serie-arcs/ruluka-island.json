@@ -1,0 +1,23 @@
+{
+  "episodes": {
+    "139": {
+      "name": "Legend of the Rainbow Mist! Ruluka Island and the Old Man Henzo"
+    },
+    "140": {
+      "name": "Inhabitants of Neverland! The Pumpkin Pirates!"
+    },
+    "141": {
+      "name": "A Longing for Home! The Inescapable Pirate Graveyard!"
+    },
+    "142": {
+      "name": "Frantic Struggle! Wetton's Plans and the Rainbow Tower!"
+    },
+    "143": {
+      "name": "And Then the Legend Begins! To the End of the Rainbow!"
+    }
+  },
+  "events": {
+    "luffy-vs-wetton": "Luffy se enfrenta a Wetton por el control de la Torre del Arcoíris.",
+    "rainbow-mist-escape": "La tripulación escapa de la Niebla Arcoíris y Henzo cumple su leyenda."
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "episodes": {
+    "890": {
+      "name": "Marco! The Keeper of Whitebeard's Last Memento!"
+    },
+    "891": {
+      "name": "Climbing Up a Waterfall! A Great Journey Through the Land of Wano's Sea Zone!"
+    },
+    "892": {
+      "name": "The Land of Wano! To the Samurai Country where Cherry Blossoms Flutter!"
+    },
+    "893": {
+      "name": "Otama Appears! Luffy vs. Kaido's Army!"
+    },
+    "894": {
+      "name": "He'll Come! The Legend of Ace in the Land of Wano!"
+    },
+    "897": {
+      "name": "Save Otama! Straw Hat, Bounding through the Wasteland!"
+    },
+    "898": {
+      "name": "The Headliner! Hawkins the Magician Appears!"
+    },
+    "899": {
+      "name": "Defeat is Inevitable! The Strawman's Fierce Attack!"
+    },
+    "900": {
+      "name": "The Greatest Day of My Life! Otama and Her Sweet Red-bean Soup!"
+    },
+    "901": {
+      "name": "Charging into the Enemy's Territory! Bakura Town - Where Officials Thrive!"
+    },
+    "902": {
+      "name": "The Yokozuna Appears! The Invincible Urashima Goes After Okiku!"
+    },
+    "903": {
+      "name": "A Climatic Sumo Battle! Straw Hat vs. the Strongest Ever Yokozuna!"
+    },
+    "904": {
+      "name": "Luffy Rages! Rescue Otama from Danger!"
+    },
+    "905": {
+      "name": "Taking Back Otama! A Fierce Fight Against Holed'em!"
+    },
+    "906": {
+      "name": "Duel! The Magician and the Surgeon of Death!"
+    },
+    "908": {
+      "name": "The Coming of the Treasure Ship! Luffytaro Returns the Favor!"
+    },
+    "909": {
+      "name": "Mysterious Grave Markers! A Reunion at the Ruins of Oden Castle!"
+    },
+    "910": {
+      "name": "A Legendary Samurai! The Man Who Roger Admired!"
+    },
+    "911": {
+      "name": "Bringing Down the Emperor of the Sea! A Secret Raid Operation Begins!"
+    },
+    "912": {
+      "name": "The Strongest Man in the World! Shutenmaru, the Thieves Brigade Chief!"
+    },
+    "913": {
+      "name": "Everyone is Annihilated! Kaido's Furious Blast Breath!"
+    },
+    "914": {
+      "name": "Finally Clashing! The Ferocious Luffy vs. Kaido!"
+    },
+    "915": {
+      "name": "Destructive! One Shot, One Kill - Thunder Bagua!"
+    },
+    "916": {
+      "name": "A Living Hell! Luffy, Humiliated in the Great Mine!"
+    }
+  },
+  "events": {
+    "luffy-defeats-holedem": "Luffy defeats Holed'em to rescue Tama in Bakura.",
+    "kaido-first-appearance": "Kaido appears in Wano by hurling himself down from the heights.",
+    "kaido-defeats-luffy-thunder-bagua": "Kaido knocks Luffy down with a single Thunder Bagua strike.",
+    "luffy-imprisoned-udon": "Luffy is imprisoned in Udon's Great Mine."
+  }
+}

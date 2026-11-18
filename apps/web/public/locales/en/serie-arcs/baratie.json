@@ -1,0 +1,60 @@
+{
+  "episodes": {
+    "19": {
+      "name": "The Three-Sword Style's Past! Zoro and Kuina's Vow!",
+      "description": "Flashback to Zoro's past and his vow with childhood friend Kuina, revealing why he became a swordsman."
+    },
+    "20": {
+      "name": "Famous Cook! Sanji of the Sea Restaurant!",
+      "description": "The crew reaches the floating restaurant Baratie and meets Sanji, a cook dreaming of finding the All Blue."
+    },
+    "21": {
+      "name": "Unwelcome Customer! Sanji's Food and Ghin's Debt!",
+      "description": "A hungry pirate named Gin tests Baratie's principle of feeding anyone in need."
+    },
+    "22": {
+      "name": "The Strongest Pirate Fleet! Commodore Don Krieg!",
+      "description": "Don Krieg, leader of the East Blue's largest pirate fleet, arrives at Baratie intending to conquer the restaurant."
+    },
+    "23": {
+      "name": "Protect Baratie! The Great Pirate, Red Foot Zeff!",
+      "description": "Zeff's past as the pirate Red Leg and his connection to Sanji through a tragedy at sea is revealed."
+    },
+    "24": {
+      "name": "Hawk-Eye Mihawk! The Great Swordsman vs. Pirate Hunter Zoro!",
+      "description": "Dracule Mihawk, the world's strongest swordsman, arrives at Baratie seeking Zoro for an epic duel."
+    },
+    "25": {
+      "name": "The Emerge of the Deadly Weapon! Zoro's New Special Attack!",
+      "description": "Zoro unleashes a new special technique in his desperate battle against the world's most powerful swordsman."
+    },
+    "26": {
+      "name": "Zoro's Vow to His Captain! I'll Never Lose Again!",
+      "description": "After his crushing defeat by Mihawk, Zoro makes a solemn promise to Luffy that will define his future."
+    },
+    "27": {
+      "name": "Cool-headed, Cold-hearted Demon! Pirate Fleet Chief Commander Ghin!",
+      "description": "Gin struggles between loyalty to Don Krieg and gratitude toward Sanji."
+    },
+    "28": {
+      "name": "I Won't Die! Fierce Battle, Luffy vs. Krieg!",
+      "description": "The decisive battle between Luffy and Don Krieg begins while Gin sacrifices himself to save Luffy from poison gas."
+    },
+    "29": {
+      "name": "The Conclusion of the Deadly Battle! A Spear of Blind Determination!",
+      "description": "The final battle between Luffy and Don Krieg reaches its climax with Luffy's Gomu Gomu no Bazooka."
+    },
+    "30": {
+      "name": "Set Sail! The Seafaring Cook Sets off With Luffy!",
+      "description": "After the battle, Sanji joins Luffy's crew to pursue his All Blue dream and bids an emotional farewell to Baratie and Zeff."
+    }
+  },
+  "events": {
+    "zoro-vs-mihawk": "Zoro loses to Mihawk and swears to Luffy he will never lose again.",
+    "sanji-vs-pearl": "Sanji faces Pearl.",
+    "zeff-saves-sanji-flashback": "Flashback: Zeff sacrifices his leg to save Sanji.",
+    "sanji-vs-gin": "Gin defeats Sanji but refuses to kill him.",
+    "luffy-vs-don-krieg": "Luffy defeats Don Krieg.",
+    "sanji-joins-crew": "Sanji bids farewell to Zeff and joins the crew."
+  }
+}

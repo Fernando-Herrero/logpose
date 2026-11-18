@@ -1,0 +1,32 @@
+{
+  "episodes": {
+    "4": {
+      "name": "Luffy's Past! The Red-Haired Shanks Appears!",
+      "description": "A flashback reveals how Luffy gained his powers and straw hat through his childhood with Shanks. The crew reaches Orange Town."
+    },
+    "5": {
+      "name": "A Terrifying Mysterious Power! Captain Buggy, the Clown Pirate!",
+      "description": "The crew faces Buggy the Clown, a dangerous Devil Fruit pirate terrorizing Orange Town."
+    },
+    "6": {
+      "name": "Desperate Situation! Beast Tamer Mohji vs. Luffy!",
+      "description": "Luffy protects a loyal dog and its pet food shop while fighting beast tamer Mohji and his lion Richie."
+    },
+    "7": {
+      "name": "Epic Showdown! Swordsman Zoro vs. Acrobat Cabaji!",
+      "description": "Zoro proves his swordsmanship against acrobat Cabaji of Buggy's crew despite being injured."
+    },
+    "8": {
+      "name": "Who's the Lucky One? The Devil Fruit Power Showdown!",
+      "description": "Final showdown between Luffy and Buggy as Devil Fruit powers clash and Orange Town's fate is decided."
+    }
+  },
+  "events": {
+    "luffy-eats-gomu-gomu-no-mi": "Luffy eats the Gomu Gomu no Mi in the Foosha Village flashback.",
+    "shanks-loses-arm": "Shanks loses his arm saving Luffy from the Sea King and entrusts him with his straw hat.",
+    "luffy-vs-mohji": "Luffy defeats Mohji and his lion Richie.",
+    "zoro-vs-cabaji": "Though wounded, Zoro beats Cabaji.",
+    "luffy-vs-buggy": "Luffy defeats Buggy and sends him flying.",
+    "nami-allies-with-luffy": "Nami forms a temporary alliance with Luffy and Zoro."
+  }
+}

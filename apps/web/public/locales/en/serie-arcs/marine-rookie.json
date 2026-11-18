@@ -1,0 +1,16 @@
+{
+  "episodes": {
+    "780": {
+      "name": "A Hungry Front - Luffy and the Marine Rookies!"
+    },
+    "781": {
+      "name": "The Persistent Trio — The Great Pursuit for the Straw Hats!"
+    },
+    "782": {
+      "name": "Fist of the Devil — Showdown! Luffy vs. Grount"
+    }
+  },
+  "events": {
+    "luffy-vs-grount": "Luffy defeats the Marine rookie Grount."
+  }
+}

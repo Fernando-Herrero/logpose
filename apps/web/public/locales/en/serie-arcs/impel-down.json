@@ -1,0 +1,106 @@
+{
+  "episodes": {
+    "422": {
+      "name": "A deadly Infiltration! The Underwater Prison Impel Down!"
+    },
+    "423": {
+      "name": "Reunion in Hell!? The User of the Bara Bara No Mi!"
+    },
+    "424": {
+      "name": "Break through Crimson Hell! Buggys great Uproar Plan"
+    },
+    "425": {
+      "name": "The Prison's strongest Man! Introduction of the Poison-Man Magellan"
+    },
+    "430": {
+      "name": "The Imprisoned Royal Shichibukai! Jinbe, Knight of the Sea"
+    },
+    "431": {
+      "name": "The Trap of Chief Guard Saldeath - Level 3 Starvation Hell"
+    },
+    "432": {
+      "name": "The Liberated Swan! Reunion! Bon Kurei"
+    },
+    "433": {
+      "name": "Chief Warden Magellan Moves - The Net to Trap Straw Hat Is Complete!"
+    },
+    "434": {
+      "name": "Preparations for War! A Decisive Battle in Level 4 - Blazing Hell"
+    },
+    "435": {
+      "name": "Magellan's Strength! Bon Kurei Flees Before His Enemy"
+    },
+    "436": {
+      "name": "The Fight Finished! Luffy's Final Life Risking Attack"
+    },
+    "437": {
+      "name": "Because He's My Friend - Bon Kurei's Do-or-Die Rescue"
+    },
+    "438": {
+      "name": "Paradise in Hell - Impel Down Level 5.5"
+    },
+    "439": {
+      "name": "Luffy's Treatment Begins - Iva's Miraculous Power!!"
+    },
+    "440": {
+      "name": "Believe in Miracles! Bon Kurei Cheers From His Heart"
+    },
+    "441": {
+      "name": "Luffy Revives! Iva-san's Jailbreak Plan Begins!!"
+    },
+    "442": {
+      "name": "Ace's Convoy Starts - The Offense and Defense of the Lowest Level, Level 6!"
+    },
+    "443": {
+      "name": "The Strongest Team is Formed - Shake Impel Down to it's Core!"
+    },
+    "444": {
+      "name": "Even More Chaos! Blackbeard Teach Invades"
+    },
+    "445": {
+      "name": "A Dangerous Meeting! Blackbeard and Shiryu of the Rain"
+    },
+    "446": {
+      "name": "His Spirit Won't Break! Hannyabal Goes All Out"
+    },
+    "447": {
+      "name": "The Jet Pistol of Rage - Luffy vs. Blackbeard"
+    },
+    "448": {
+      "name": "Stop Magellan! Iva-san Unleashes His Secret Attack"
+    },
+    "449": {
+      "name": "Magellan's Clever Scheme! The Jailbreak Plan is Obstructed"
+    },
+    "450": {
+      "name": "The Jailbreak Team Driven Into a Corner - Forbidden Move 'Venom Demon'"
+    },
+    "451": {
+      "name": "Cause the Last Miracle - Breaking Through the Gate of Justice"
+    },
+    "452": {
+      "name": "The Destination is Marine Headquarters - The Ship Sets Out to Rescue Ace!"
+    },
+    "453": {
+      "name": "The Crewmates' Whereabouts - Weatheria Report and Cyborg Animals"
+    },
+    "454": {
+      "name": "The Crewmates' Whereabouts - Giant Bird Chicks and a Pink Showdown"
+    },
+    "455": {
+      "name": "The Crewmates' Whereabouts - The Revolutionary Army and the Forest of Gluttony's Trap!"
+    },
+    "456": {
+      "name": "The Crewmates' Whereabouts - The Giant Gravestone and Panties of Gratitude"
+    }
+  },
+  "events": {
+    "luffy-infiltrates-impel-down": "Luffy sneaks into Impel Down with Hancock's help.",
+    "luffy-buggy-mr3-alliance": "Luffy teams up with Buggy and Mr. 3 in the prison.",
+    "luffy-vs-magellan": "Luffy falls, poisoned, before Chief Warden Magellan.",
+    "ivankov-tension-hormones": "Ivankov saves Luffy from the poison with Tension Hormones.",
+    "jinbe-crocodile-freed": "Luffy frees Jinbe and Crocodile on Level 6.",
+    "blackbeard-invades-impel-down": "Blackbeard storms Impel Down and recruits Shiryu.",
+    "bon-kurei-sacrifice": "Bon Kurei stays behind to open the Gates of Justice."
+  }
+}

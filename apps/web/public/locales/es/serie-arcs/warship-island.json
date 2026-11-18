@@ -1,0 +1,40 @@
+{
+  "episodes": {
+    "54": {
+      "name": "Precursor to a New Adventure! Apis, a Mysterious Girl!",
+      "description": "Los Sombreros de Paja rescatan a una niña llamada Apis que tiene poderes misteriosos. Ella puede hablar con los animales y huye de la Marina."
+    },
+    "55": {
+      "name": "Miraculous Creature! Apis's Secret and the Legendary Island!",
+      "description": "Apis revela que puede comunicarse con un dragón milenario llamado Ryuji. Los piratas y la Marina buscan la isla legendaria donde viven los dragones."
+    },
+    "56": {
+      "name": "Eric Attacks! Great Escape from Warship Island!",
+      "description": "Eric ataca Warship Island buscando la Dragonite. Los Sombreros de Paja ayudan a los aldeanos a evacuar mientras protegen a Apis y al dragón anciano."
+    },
+    "57": {
+      "name": "Lone Island in a Distant Sea! The Legendary Lost Island!",
+      "description": "La búsqueda de Lost Island continúa mientras el grupo navega por mares peligrosos. Ryuji los guía hacia su hogar ancestral donde pueden vivir los dragones milenarios."
+    },
+    "58": {
+      "name": "Duel in the Ruins! Tense Zoro vs. Eric!",
+      "description": "Zoro se enfrenta a Eric en las ruinas de Lost Island. Eric usa su poder de las hoces de viento contra las técnicas de espada de Zoro en una batalla intensa."
+    },
+    "59": {
+      "name": "Luffy, Completely Surrounded! Admiral Nelson's Secret Strategy!",
+      "description": "Luffy cae en una trampa de Nelson y queda rodeado por la flota de la Marina. El almirante Nelson revela su plan para capturar tanto a los piratas como al dragón."
+    },
+    "60": {
+      "name": "Those Who Soar in the Open Sky! Revival of the 1000 Year Legend!",
+      "description": "Ryuji encuentra a sus compañeros dragones en Lost Island y recupera su vitalidad. Los dragones milenarios vuelan juntos una vez más, reviviendo la antigua leyenda."
+    },
+    "61": {
+      "name": "An Angry Showdown! Cross the Red Line!",
+      "description": "Episodio final de la saga East Blue. Los Sombreros de Paja se despiden de Apis y cruzan la Red Line para entrar al Grand Line, marcando el inicio de su gran aventura."
+    }
+  },
+  "events": {
+    "zoro-vs-eric": "Zoro vence a Eric en las ruinas.",
+    "ryuji-revival": "Renace la leyenda del dragón milenario."
+  }
+}

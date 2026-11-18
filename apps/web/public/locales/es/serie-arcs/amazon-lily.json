@@ -1,0 +1,53 @@
+{
+  "episodes": {
+    "408": {
+      "name": "Landing! No-Boys-Allowed Island Amazon Lily"
+    },
+    "409": {
+      "name": "Hurry! Back to the Crew - Adventure on the Isle of Women"
+    },
+    "410": {
+      "name": "Everyone's Drunk on Love! Pirate Empress Hancock"
+    },
+    "411": {
+      "name": "The Secret Hidden on Their Backs - Luffy Encounters the Snake Princess"
+    },
+    "412": {
+      "name": "The Heartless Judgment! Marguerite Turned to Stone!!"
+    },
+    "413": {
+      "name": "Luffy's Hard Trial! The Power of the Snake Sisters' Haki!!"
+    },
+    "414": {
+      "name": "Battle with Full-Powered Abilities!! Gomu Gomu vs. Hebi Hebi"
+    },
+    "415": {
+      "name": "Hancock's Confession - The Sisters' Disgusting Past"
+    },
+    "416": {
+      "name": "Rescue Ace! The New Destination is the Great Prison"
+    },
+    "417": {
+      "name": "Love is a Hurricane! Hancock in Love"
+    },
+    "418": {
+      "name": "The Crewmates' Whereabouts - Weather Science and Karakuri Island"
+    },
+    "419": {
+      "name": "The Crewmates' Whereabouts - The Island of Giant Birds and the Pink Paradise!"
+    },
+    "420": {
+      "name": "The Crewmates' Whereabouts - The Bridge that Connects Islands and Man-Eating Plants"
+    },
+    "421": {
+      "name": " The Crewmates' Whereabouts - The Negative Princess and the Devil King!"
+    }
+  },
+  "events": {
+    "luffy-meets-boa-hancock": "Luffy conoce a la Emperatriz Pirata.",
+    "luffy-vs-gorgon-sisters": "Luffy pelea contra las hermanas Gorgona en la arena.",
+    "luffy-awakens-conquerors-haki": "Luffy manifiesta por primera vez el Haki del Rey de forma consciente ante Hancock.",
+    "gorgon-sisters-mark-reveal": "Hancock revela el pasado de las hermanas como esclavas de los Dragones Celestiales.",
+    "ace-execution-news": "Luffy se entera de que Ace va a ser ejecutado."
+  }
+}

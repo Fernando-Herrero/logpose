@@ -1,0 +1,48 @@
+{
+  "episodes": {
+    "878": {
+      "name": "The World is Stunned - The Fifth Emperor of the Sea Emerges!"
+    },
+    "879": {
+      "name": "To the Levely - The Straw Hats' Sworn Allies Come Together"
+    },
+    "880": {
+      "name": "Sabo Goes into Action - All the Captains of the Revolutionary Army Appear!"
+    },
+    "881": {
+      "name": "Going into Action - The Implacable New Fleet Admiral Sakazuki"
+    },
+    "882": {
+      "name": "The Summit War - The Inherited Will of the Pirate King"
+    },
+    "883": {
+      "name": "One Step Forward for Her Dream - Shirahoshi Goes Out in the Sun!"
+    },
+    "884": {
+      "name": "I Miss Him - Vivi and Rebecca's Sentiments"
+    },
+    "885": {
+      "name": "In the Dark Recesses of the Holyland - A Mysterious Giant Straw Hat"
+    },
+    "886": {
+      "name": "The Holy Land in Tumult - The Targeted Princess Shirahoshi!"
+    },
+    "887": {
+      "name": "On the Verge - The Two Emperors Targeting Luffy"
+    },
+    "888": {
+      "name": "Sabo Gets Angry - Tragedy of the Revolutionary Army Officer Kuma"
+    },
+    "889": {
+      "name": "Finally, It Starts - The Conspiracy-filled Levely!"
+    }
+  },
+  "events": {
+    "luffy-fifth-emperor-bounty": "Luffy's bounty: 1,500,000,000 berries; the press calls him the Fifth Emperor.",
+    "sanji-bounty-330m": "Sanji's bounty: 330,000,000 berries, \"only alive\", under the Vinsmoke surname.",
+    "sanji-receives-raid-suit": "Sanji discovers the Stealth Black raid suit that Niji secretly left him.",
+    "revolutionary-army-commanders": "The commanders of the Revolutionary Army appear.",
+    "imu-revealed": "Imu appears before the Gorosei, next to the giant straw hat.",
+    "kuma-slave-revealed": "Kuma appears as a slave of the Celestial Dragons."
+  }
+}

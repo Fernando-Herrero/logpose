@@ -1,0 +1,140 @@
+{
+  "episodes": {
+    "92": {
+      "name": "The Hero of Arabasta and the Ballerina on Deck"
+    },
+    "93": {
+      "name": "Coming to the Desert Kingdom! The Rain-Calling Powder and the Rebel Army"
+    },
+    "94": {
+      "name": "Reunion of the Powerful! His Name is Fire Fist Ace"
+    },
+    "95": {
+      "name": "Ace and Luffy! Warm Memories and Brotherly Bonds"
+    },
+    "96": {
+      "name": "The Green City, Erumalu and the Kung Fu Dugongs!"
+    },
+    "97": {
+      "name": "Adventure in the Country of Sand! The Demons that Live in the Scorching Earth"
+    },
+    "98": {
+      "name": "Here Come the Desert Pirates! The Men Who Live Free"
+    },
+    "99": {
+      "name": "Spirit of the Fakes! Heart of the Rebel Army, Kamyu!"
+    },
+    "100": {
+      "name": "Rebel Warrior Koza! The Dream Sworn to Vivi!"
+    },
+    "101": {
+      "name": "Heat Haze Duel! Ace vs. Scorpion Man"
+    },
+    "102": {
+      "name": "Ruins and Lost Ways! Vivi, Her Friends, and the Country's Form"
+    },
+    "103": {
+      "name": "At Spiders Cafe - The Enemy Ringleaders Meet at 8 o'clock"
+    },
+    "104": {
+      "name": "Luffy vs. Vivi! A Tearful Vow for Comrades"
+    },
+    "105": {
+      "name": "The Arabasta War Front! City of Dreams, Rainbase"
+    },
+    "106": {
+      "name": "Trap in a Desperate Situation! Breaking Into Rain Dinners"
+    },
+    "107": {
+      "name": "Operation Utopia Commences! The Wave of Rebellion Begins to Move"
+    },
+    "108": {
+      "name": "The Fearsome Bananawani and Mr. Prince"
+    },
+    "109": {
+      "name": "The Key to Turning the Tide and a Great Escape! Doru Doru Ball!"
+    },
+    "110": {
+      "name": "Merciless Fight to the Death! Luffy vs. Crocodile"
+    },
+    "111": {
+      "name": "The Miracle Sprint! Arabasta the Animal Land"
+    },
+    "112": {
+      "name": "Rebel Army vs. Royal Army! The Battle will be in Alubarna!"
+    },
+    "113": {
+      "name": "Alubarna is Crying! Fierce Fight of Captain Karoo!"
+    },
+    "114": {
+      "name": "Swear on Your Crewmate's Dream! Battle at Molehill 4th Avenue"
+    },
+    "115": {
+      "name": "Today's Grand Performance! Mane Mane Montage!"
+    },
+    "116": {
+      "name": "Transforming Into Nami! Bon Kurei's Hard-Hitting Ballet Kenpo"
+    },
+    "117": {
+      "name": "Nami's Whirlwind Warning! Clima-Tact Explosion"
+    },
+    "118": {
+      "name": "Secret of the Royal Family! The Ancient Weapon, Pluton"
+    },
+    "119": {
+      "name": "Essence of a Mighty Sword! The Power to Cut Steel and the Breath of All Things"
+    },
+    "120": {
+      "name": "The Battle is Over! Koza Flies the White Flag"
+    },
+    "121": {
+      "name": "Vivi's Voice Goes Unheard! A Hero Descends!"
+    },
+    "122": {
+      "name": "Sand Crocodile and Water Luffy! Death Match: Round 2"
+    },
+    "123": {
+      "name": "Smells Like Croc! Run to the Tomb of the Royal Family, Luffy!"
+    },
+    "124": {
+      "name": "The Nightmare Draws Near! Secret Base of the Suna Suna Clan"
+    },
+    "125": {
+      "name": "Magnificent Wings! My Name is Pell, Guardian Spirit of the Kingdom"
+    },
+    "126": {
+      "name": "I Will Surpass You! Rain Falls on Arabasta!"
+    },
+    "127": {
+      "name": "A Farewell to Arms! Pirates and a Little Justice"
+    },
+    "128": {
+      "name": "The Pirates' Banquet and Operation Escape Arabasta!"
+    },
+    "129": {
+      "name": "Everything Began That Day! Vivi Tells of Her Adventures!"
+    },
+    "130": {
+      "name": "Beware Her Scent! The Seventh One is Nico Robin!"
+    }
+  },
+  "events": {
+    "bon-clay-friendship": "The ship runs into Mr. 2 Bon Clay, who befriends the Straw Hats.",
+    "ace-reunion": "Ace, a commander of the Whitebeard Pirates, stops Smoker and reunites with Luffy.",
+    "luffy-vs-vivi-yuba": "Luffy fights Vivi in Yuba and forces her to admit she cannot save the country without putting anyone at risk.",
+    "crocodile-unmasked-rain-dinners": "Crocodile traps the Straw Hats in Rain Dinners and reveals Operation Utopia.",
+    "luffy-vs-crocodile-round-1": "First fight: Crocodile dries Luffy out and leaves him half dead in the desert.",
+    "usopp-chopper-vs-mr4-miss-merry-christmas": "Usopp and Chopper defeat Mr. 4 and Miss Merry Christmas.",
+    "sanji-vs-mr2-bon-clay": "Sanji beats Mr. 2 Bon Clay and his Okama Kenpo.",
+    "nami-vs-miss-doublefinger": "Nami defeats Miss Doublefinger with the Clima-Tact.",
+    "cobra-reveals-pluton": "Cobra confirms that Crocodile is after the ancient weapon Pluton.",
+    "zoro-vs-mr1": "Zoro learns to cut steel and beats Mr. 1 with Shishi Sonson.",
+    "water-luffy": "Luffy soaks himself in water so he can hit Crocodile's sand body.",
+    "luffy-vs-crocodile-round-2": "Second fight: Water Luffy lands hits on Crocodile but falls, pierced by his hook.",
+    "pell-carries-the-bomb": "Pell flies off with the bomb from Alubarna's plaza and it explodes in the sky.",
+    "luffy-defeats-crocodile": "Luffy defeats Crocodile in the third fight and rain returns to Alabasta.",
+    "bon-clay-decoy": "Bon Clay sacrifices himself so the Straw Hats can escape the Marine blockade.",
+    "vivi-farewell-x-mark": "Vivi says goodbye from the dock and the crew raises their arms bearing the X mark.",
+    "nico-robin-joins-straw-hats": "Nico Robin appears aboard the Going Merry and asks to join the crew."
+  }
+}

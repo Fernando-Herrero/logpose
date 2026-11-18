@@ -1,0 +1,32 @@
+{
+  "episodes": {
+    "4": {
+      "name": "Luffy's Past! The Red-Haired Shanks Appears!",
+      "description": "Se revela cómo Luffy obtuvo sus poderes y su sombrero de paja a través de un flashback de su infancia con el pirata Shanks. La tripulación llega a Orange Town."
+    },
+    "5": {
+      "name": "A Terrifying Mysterious Power! Captain Buggy, the Clown Pirate!",
+      "description": "La tripulación se enfrenta a Buggy el Payaso, un peligroso pirata con poderes de fruta del diablo que aterroriza Orange Town."
+    },
+    "6": {
+      "name": "Desperate Situation! Beast Tamer Mohji vs. Luffy!",
+      "description": "Luffy protege a un perro fiel y su tienda de comida para mascotas enfrentándose al domador de bestias Mohji y su león Richie."
+    },
+    "7": {
+      "name": "Epic Showdown! Swordsman Zoro vs. Acrobat Cabaji!",
+      "description": "Zoro demuestra su habilidad como espadachín enfrentándose al acróbata Cabaji de los piratas de Buggy a pesar de estar herido."
+    },
+    "8": {
+      "name": "Who's the Lucky One? The Devil Fruit Power Showdown!",
+      "description": "Enfrentamiento final entre Luffy y Buggy. Los poderes de las frutas del diablo chocan mientras el destino de Orange Town se decide."
+    }
+  },
+  "events": {
+    "luffy-eats-gomu-gomu-no-mi": "Luffy come la Gomu Gomu no Mi en el flashback de Villa Foosha.",
+    "shanks-loses-arm": "Shanks pierde el brazo salvando a Luffy del Rey del Mar y le confía su sombrero de paja.",
+    "luffy-vs-mohji": "Luffy derrota a Mohji y a su león Richie.",
+    "zoro-vs-cabaji": "Zoro, herido, vence a Cabaji.",
+    "luffy-vs-buggy": "Luffy derrota a Buggy y lo manda volando.",
+    "nami-allies-with-luffy": "Nami se alía temporalmente con Luffy y Zoro."
+  }
+}

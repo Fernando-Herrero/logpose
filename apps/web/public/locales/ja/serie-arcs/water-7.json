@@ -1,0 +1,123 @@
+{
+  "episodes": {
+    "229": {
+      "name": "The Dashing Sea Train and the City of Water: Water Seven!"
+    },
+    "230": {
+      "name": "Adventure in the City on the Water! Head to the Mammoth Shipbuilding Plant!"
+    },
+    "231": {
+      "name": "The Franky Family and Iceburg!"
+    },
+    "232": {
+      "name": "Galley-La Company! A Grand Sight: Dock #1!"
+    },
+    "233": {
+      "name": "Pirate Abduction Incident! A Pirate Ship That Can Only Await Her End!"
+    },
+    "234": {
+      "name": "Rescuing Our Friend! Raid on the Franky House!"
+    },
+    "235": {
+      "name": "Big Fight Under the Moon! The Pirate Flag Flutters With Sorrow!"
+    },
+    "236": {
+      "name": "Luffy vs. Usopp! Collision of Two Men's Pride!"
+    },
+    "237": {
+      "name": "Severe Shock Hits the City of Water! Iceburg Targeted!"
+    },
+    "238": {
+      "name": "Gum-Gum Human vs. Fire-Breathing Cyborg!"
+    },
+    "239": {
+      "name": "The Straw Hat Pirates Are the Culprits? The Protectors of the City of Water!"
+    },
+    "240": {
+      "name": "Eternal Farewell? Nico Robin: The Woman Who Draws Darkness!"
+    },
+    "241": {
+      "name": "Capture Robin! The Determination of the Straw Hats!"
+    },
+    "242": {
+      "name": "Cannon Fire Is the Signal! CP9 Goes Into Action!"
+    },
+    "243": {
+      "name": "CP9 Takes Off Their Masks! Their Shocking True Faces!"
+    },
+    "244": {
+      "name": "Secret Bond! Iceburg and Franky!"
+    },
+    "245": {
+      "name": "Come Back, Robin! Showdown With CP9!"
+    },
+    "246": {
+      "name": "The Straw Hat Pirates Annihilated? The Menace of the Leopard Model!"
+    },
+    "247": {
+      "name": "The Man Who Is Loved Even by His Ship! Usopp's Tears!"
+    },
+    "248": {
+      "name": "Franky's Past! The Day the Sea Train First Ran"
+    },
+    "249": {
+      "name": "Spandam's Scheme! The Day the Sea Train Shook"
+    },
+    "250": {
+      "name": "The End of the Legendary Man! The Day the Sea Train Cried!"
+    },
+    "251": {
+      "name": "The Truth Behind Her Betrayal! Robin’s Sorrowful Decision!"
+    },
+    "252": {
+      "name": "The Steam Whistle Forces Friends Apart! The Sea Train Starts To Run"
+    },
+    "253": {
+      "name": "Sanji Barges In! Sea Train Battle in the Storm!"
+    },
+    "254": {
+      "name": "Nami's Soul Cries Out! Straw Hat Luffy Makes a Comeback!"
+    },
+    "255": {
+      "name": "Another Sea Train? Rocketman Charges Forth!"
+    },
+    "256": {
+      "name": "Rescue Our Friends! A Bond Among Foes Sworn With Fists!"
+    },
+    "257": {
+      "name": "Smash the Wave! Luffy and Zoro Use the Strongest Combo!"
+    },
+    "258": {
+      "name": "A Mysterious Man Appears?! His Name Is Sniperking!"
+    },
+    "259": {
+      "name": "Showdown Between Cooks! Sanji vs. Ramen Kenpo"
+    },
+    "260": {
+      "name": "Rooftop Duel! Franky vs. Nero"
+    },
+    "261": {
+      "name": "Clash! Demon-Slasher Zoro vs. Ship-Slasher T-Bone!"
+    },
+    "262": {
+      "name": "Scramble Over Robin! A Cunning Plan by Sniperking!!"
+    },
+    "263": {
+      "name": "The Judicial Island! Full View of Enies Lobby!"
+    }
+  },
+  "events": {
+    "merry-declared-unrepairable": "ガレーラカンパニーがゴーイング・メリー号は修理不能だと告げる。",
+    "luffy-vs-usopp": "ゴーイング・メリー号を賭けた決闘でルフィがウソップを破り、ウソップは一味を去る。",
+    "luffy-vs-franky": "ルフィが火を吹くサイボーグ、フランキーと対決する。",
+    "cp9-unmasked": "ルッチ、カク、カリファ、ブルーノがCP9の諜報員だと正体を明かす。",
+    "luffy-vs-lucci-galley-la": "豹の姿になったルッチがガレーラカンパニーでルフィとゾロを倒す。",
+    "tom-and-franky-past": "フランキーの過去。トムが海列車襲撃の罪を被り、有罪判決を受ける。",
+    "robin-surrenders-to-cp9": "ロビンが仲間をバスターコールから守るため、CP9に身を委ねる。",
+    "luffy-zoro-cut-aqua-laguna": "ロケットマン号の上で、ルフィとゾロがアクア・ラグナの波を断ち割る。",
+    "sogeking-debut": "ウソップが仮面をかぶり、そげキングとして登場する。",
+    "sanji-vs-wanze": "海列車でサンジがワンゼを倒す。",
+    "franky-vs-nero": "列車の屋根の上でフランキーがネロを倒す。",
+    "zoro-vs-t-bone": "ゾロがTボーン大佐を倒す。"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "episodes": {
+    "626": {
+      "name": "Caesar Goes Missing! The Pirate Alliance Makes a Sortie"
+    },
+    "627": {
+      "name": "Luffy Dies at Sea!? The Pirate Alliance Comes Apart"
+    },
+    "628": {
+      "name": "A Major Turnaround! Luffy's Angry Iron Fist Strikes"
+    }
+  },
+  "events": {
+    "luffy-defeats-breed": "Luffy derrota a Breed y la alianza recupera a Caesar."
+  }
+}

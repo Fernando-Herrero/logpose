@@ -1,0 +1,19 @@
+{
+  "episodes": {
+    "747": {
+      "name": "The Silver Fortress — The Great Adventures of Luffy and Bart"
+    },
+    "748": {
+      "name": "An Underground Labyrinth — Luffy vs Mine Cart Man"
+    },
+    "749": {
+      "name": "The Sword Technique Heats Up! Law and Zoro Finally Appear!"
+    },
+    "750": {
+      "name": "A Desperate Situation - Luffy Fights a Battle in Extreme Heat"
+    }
+  },
+  "events": {
+    "luffy-bartolomeo-vs-bill": "Luffy and Bartolomeo defeat Bill, leader of the Silver Mine alliance."
+  }
+}

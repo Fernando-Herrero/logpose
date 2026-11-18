@@ -1,0 +1,14 @@
+{
+  "episodes": {
+    "62": {
+      "name": "The First Obstacle? Giant Whale Laboon Appears"
+    },
+    "63": {
+      "name": "A Man's Promise! Luffy and the Whale Vow to Meet Again"
+    }
+  },
+  "events": {
+    "enter-grand-line": "The Going Merry climbs Reverse Mountain and enters the Grand Line.",
+    "luffy-vs-laboon-promise": "Luffy fights Laboon and promises to fight him again; he paints the Jolly Roger on his head."
+  }
+}

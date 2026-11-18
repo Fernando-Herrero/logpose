@@ -1,0 +1,42 @@
+{
+  "episodes": {
+    "144": {
+      "name": "The Log is Taken! Salvage King, Masira!"
+    },
+    "145": {
+      "name": "Monsters Appear! Don't Touch the Whitebeard Pirates"
+    },
+    "146": {
+      "name": "Stop Dreaming! The City of Ridicule, Mock Town!"
+    },
+    "147": {
+      "name": "The Pirate's Summit! The Man Who Talks of Dreams and the King of Underwater Exploration"
+    },
+    "148": {
+      "name": "The Legendary Family! 'Liar Noland'"
+    },
+    "149": {
+      "name": "Hard Turn to the Clouds! Find the Southbird!"
+    },
+    "150": {
+      "name": "Dreams Don't Come True!? Bellamy vs. The Saruyama Alliance"
+    },
+    "151": {
+      "name": "The 100,000,000 Man! The World's Highest Authority and the Pirate Blackbeard"
+    },
+    "152": {
+      "name": "Sail into the Sky! Ride the Knock-Up Stream"
+    }
+  },
+  "events": {
+    "robin-takes-eternal-pose": "Robin consigue un Eternal Pose de Jaya tras el encuentro con Masira.",
+    "luffy-zoro-refuse-bellamy": "Luffy y Zoro se dejan apalear por Bellamy en Mock Town sin devolver un golpe.",
+    "luffy-meets-blackbeard": "Primer encuentro de Luffy con Barbanegra, que defiende que los sueños de los piratas nunca acaban.",
+    "noland-legend": "Cricket cuenta la historia de Noland el Mentiroso y la ciudad de oro.",
+    "luffy-defeats-bellamy": "Luffy derrota a Bellamy de un solo puñetazo en Mock Town.",
+    "luffy-bounty-100m": "Llega la nueva recompensa de Luffy: 100.000.000 berries.",
+    "zoro-bounty-60m": "Zoro recibe su primera recompensa: 60.000.000 berries.",
+    "blackbeard-warlord-nomination": "Un hombre de Barbanegra se presenta en la reunión de los Shichibukai y propone a su capitán.",
+    "knock-up-stream": "El Going Merry sube al cielo montado en el Knock Up Stream."
+  }
+}

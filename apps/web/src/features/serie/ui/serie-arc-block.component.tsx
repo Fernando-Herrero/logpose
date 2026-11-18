@@ -1,7 +1,10 @@
 import { Badge, Box, Flex, Spinner, Text } from '@radix-ui/themes';
 import { useTranslation } from 'next-i18next/pages';
 
-import { useSerieEpisodes } from '@/features/serie/api/use-serie';
+import {
+  useSerieArcTexts,
+  useSerieEpisodes,
+} from '@/features/serie/api/use-serie';
 import type { SerieArc } from '@/features/serie/serie.types';
 import { SerieAccordion } from '@/features/serie/ui/serie-accordion.component';
 import { SerieEpisodeCard } from '@/features/serie/ui/serie-episode-card.component';
@@ -21,6 +24,10 @@ export function SerieArcBlock({
 }: SerieArcBlockProps) {
   const { t } = useTranslation(['common', 'serie']);
   const episodesQuery = useSerieEpisodes(arc.slug, { enabled: isOpen });
+  const textsQuery = useSerieArcTexts(arc.slug, { enabled: isOpen });
+  const isError = episodesQuery.isError || textsQuery.isError;
+  const texts = textsQuery.data;
+  const episodes = texts && episodesQuery.data?.episodes;
 
   return (
     <SerieAccordion
@@ -40,7 +47,9 @@ export function SerieArcBlock({
         </Badge>
       ) : null}
 
-      {isOpen && episodesQuery.isPending ? (
+      {isOpen &&
+      (episodesQuery.isPending || textsQuery.isPending) &&
+      !isError ? (
         <Flex align="center" gap="2" py="2">
           <Spinner size="2" />
           <Text size="1" color="gray">
@@ -49,25 +58,26 @@ export function SerieArcBlock({
         </Flex>
       ) : null}
 
-      {isOpen && episodesQuery.isError ? (
+      {isOpen && isError ? (
         <Text size="1" color="red">
           {t('serie.error')}
         </Text>
       ) : null}
 
-      {isOpen && episodesQuery.data?.total === 0 ? (
+      {isOpen && episodes?.length === 0 ? (
         <Text size="1" color="gray">
           {t('serie.no_episodes')}
         </Text>
       ) : null}
 
-      {isOpen && episodesQuery.data && episodesQuery.data.total > 0 ? (
+      {isOpen && texts && episodes && episodes.length > 0 ? (
         <Box asChild>
           <ul className="m-0 flex list-none flex-col gap-2 p-0">
-            {episodesQuery.data.episodes.map(episode => (
+            {episodes.map(episode => (
               <SerieEpisodeCard
                 key={episode.number}
                 episodeNumber={episode.number}
+                {...texts.episodes[episode.number]}
                 experience={episode.experience}
                 rewards={episode.rewards}
                 watched={episode.number <= lastWatchedEpisode}

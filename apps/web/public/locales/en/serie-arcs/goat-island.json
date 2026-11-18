@@ -1,0 +1,16 @@
+{
+  "episodes": {
+    "136": {
+      "name": "Zenny of Goat Island and the Pirate Ship in the Mountains!"
+    },
+    "137": {
+      "name": "How's That for Profit? Money Lender Zenny's Ambition!"
+    },
+    "138": {
+      "name": "Where the Island's Treasure Lies! Zenny Pirates Full Charge!"
+    }
+  },
+  "events": {
+    "zenny-pirates-set-sail": "Zenny fulfills his dream and sets sail as a pirate on his ship from the mountain."
+  }
+}

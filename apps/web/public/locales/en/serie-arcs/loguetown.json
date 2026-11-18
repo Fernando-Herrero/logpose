@@ -1,0 +1,40 @@
+{
+  "episodes": {
+    "45": {
+      "name": "Bounty! Straw Hat Luffy Becomes Known to the World!",
+      "description": "Corrupt marine Nezumi reports Luffy. His first bounty of 30,000,000 berries makes him an officially wanted pirate."
+    },
+    "48": {
+      "name": "The Town of the Beginning and the End! Landfall at Logue Town!",
+      "description": "The Straw Hats reach Logue Town, where Pirate King Gol D. Roger was born and executed — their last stop before the Grand Line."
+    },
+    "49": {
+      "name": "Kitetsu III and Yubashiri! Zoro's New Swords and the Woman Sergeant Major!",
+      "description": "Zoro seeks new katanas in Logue Town, meets Tashigi, and obtains Sandai Kitetsu and Yubashiri."
+    },
+    "50": {
+      "name": "Usopp vs. Daddy the Father! Showdown at High Noon!",
+      "description": "Usopp faces famous sharpshooter Daddy Masterson in a high-noon duel."
+    },
+    "51": {
+      "name": "Fiery Cooking Battle? Sanji vs. the Beautiful Chef!",
+      "description": "Sanji competes in a cooking battle against beautiful chef Carmen."
+    },
+    "52": {
+      "name": "Buggy's Revenge! The Man Who Smiles On the Execution Platform!",
+      "description": "Buggy tries to publicly execute Luffy on the same platform where Roger died. A mysterious storm saves Luffy."
+    },
+    "53": {
+      "name": "The Legend Has Started! Head for the Grand Line!",
+      "description": "The Straw Hats escape Logue Town as Smoker pursues them, heading toward the Grand Line."
+    }
+  },
+  "events": {
+    "luffy-first-bounty": "Luffy receives his first bounty: 30,000,000 berries.",
+    "zoro-new-swords": "Zoro obtains Sandai Kitetsu and Yubashiri.",
+    "luffy-smiles-at-execution": "Luffy smiles on Roger's execution platform and a lightning bolt saves him.",
+    "luffy-vs-smoker": "Smoker captures Luffy with his Logia power.",
+    "dragon-appears": "Dragon appears and helps Luffy escape.",
+    "grand-line-vow": "The crew makes a toast around the barrel before entering the Grand Line."
+  }
+}

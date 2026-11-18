@@ -1,0 +1,82 @@
+{
+  "episodes": {
+    "385": {
+      "name": "Arriving at Halfway Through the Grand Line! The Red Line"
+    },
+    "386": {
+      "name": "Hatred of the Straw Hat Crew - Enter Iron Mask Duval"
+    },
+    "387": {
+      "name": "The Fated Reunion! Save the Imprisoned Fishman"
+    },
+    "388": {
+      "name": "Tragedy! The Truth of the Unmasked Duval"
+    },
+    "389": {
+      "name": "Explosion! The Sunny's Super Secret Weapon: Gaon Cannon"
+    },
+    "390": {
+      "name": "Landing to Get to Fishman Island - The Sabaody Archipelago"
+    },
+    "391": {
+      "name": "Tyranny! The Rulers of Sabaody, the Celestial Dragons"
+    },
+    "392": {
+      "name": "New Rivals Gather! The 11 Supernovas"
+    },
+    "393": {
+      "name": "The Target is Camie!! The Kidnappers' Evil Draws Near"
+    },
+    "394": {
+      "name": "Rescue Camie - The Dark History of the Archipelago"
+    },
+    "395": {
+      "name": "Time Limit - The Human Auction Begins"
+    },
+    "396": {
+      "name": "The Fist Explodes! Destroy the Auction"
+    },
+    "397": {
+      "name": "Huge Panic! Struggle in the Auction Hall"
+    },
+    "398": {
+      "name": "Admiral Kizaru Moves! The Sabaody Archipelago in Chaos"
+    },
+    "399": {
+      "name": "Break Through the Encirclement! Marines vs. Three Captains"
+    },
+    "400": {
+      "name": "Roger and Rayleigh - The Pirate King and His Right Hand"
+    },
+    "401": {
+      "name": "Impossible to Avoid!? Admiral Kizaru's Speed of Light Kick!!"
+    },
+    "402": {
+      "name": "Overwhelming! The Marine Combat Weapon Pacifista"
+    },
+    "403": {
+      "name": "Another Strong Enemy Appears! Broadaxe-Wielding Sentomaru"
+    },
+    "404": {
+      "name": "Admiral Kizaru's Fierce Attack - The Straw Hat Crew's Desperate Situation!"
+    },
+    "405": {
+      "name": "Disappearing Crew - The Final Day of the Straw Hat Crew"
+    },
+    "406": {
+      "name": "Special Historical Arc - Boss Luffy Appears Again"
+    },
+    "407": {
+      "name": "Special Historical Arc - Destroy! Thriller Company's Trap"
+    }
+  },
+  "events": {
+    "eleven-supernovas-introduced": "Los Once Supernovas coinciden en el archipiélago Sabaody.",
+    "luffy-punches-saint-charlos": "Luffy golpea a un Dragón Celestial en la casa de subastas.",
+    "rayleigh-conquerors-haki-auction-house": "Rayleigh deja inconscientes a los presentes con el Haki del Rey.",
+    "rayleigh-roger-first-mate": "Rayleigh cuenta su pasado como segundo de a bordo de Gol D. Roger.",
+    "kizaru-vs-supernovas": "Kizaru se enfrenta a cuatro capitanes supernova.",
+    "straw-hats-vs-pacifista": "La tripulación derrota a duras penas a un Pacifista.",
+    "kuma-scatters-straw-hats": "Kuma hace desaparecer uno a uno a los Sombrero de Paja."
+  }
+}

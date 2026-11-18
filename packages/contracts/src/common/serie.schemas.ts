@@ -29,6 +29,14 @@ export const episodeSchema = z.object({
   rewards: unlockedCardsSchema,
 });
 
+export const arcTextsSchema = z.object({
+  episodes: z.record(
+    z.string(),
+    z.object({ name: z.string(), description: z.string().optional() }),
+  ),
+  events: z.record(z.string(), z.string()),
+});
+
 export const sagaListOutputSchema = z.object({
   sagas: z.array(sagaSchema),
   total: z.number().int().nonnegative(),

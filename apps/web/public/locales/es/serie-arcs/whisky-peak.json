@@ -1,0 +1,24 @@
+{
+  "episodes": {
+    "64": {
+      "name": "¿Un pueblo de amantes de los piratas? Llegada a Whisky Peak"
+    },
+    "65": {
+      "name": "¡Santōryū explosivo! ¡Zoro vs. Baroque Works!"
+    },
+    "66": {
+      "name": "¡Una seria batalla! Luffy vs. Zoro ¡El duelo inesperado!"
+    },
+    "67": {
+      "name": "¡Entregar a la princesa Vivi! Huida de los piratas de Luffy"
+    }
+  },
+  "events": {
+    "zoro-vs-whisky-peak-bounty-hunters": "Zoro derrota él solo a los cien cazarrecompensas de Baroque Works.",
+    "luffy-vs-zoro-whisky-peak": "Malentendido: Luffy y Zoro se enfrentan pensando que Zoro ha traicionado a la gente del pueblo.",
+    "luffy-zoro-vs-mr5-miss-valentine": "Luffy y Zoro derrotan a Mr. 5 y Miss Valentine para proteger a Vivi.",
+    "vivi-reveals-crocodile": "Vivi revela sin querer que el jefe de Baroque Works es Crocodile, uno de los Siete Señores de la Guerra.",
+    "miss-all-sunday-debut": "Primera aparición de Nico Robin como Miss All Sunday, socia de Mr. 0.",
+    "vivi-joins-straw-hats": "Los Sombrero de Paja aceptan escoltar a Vivi y a Karoo hasta Arabasta."
+  }
+}

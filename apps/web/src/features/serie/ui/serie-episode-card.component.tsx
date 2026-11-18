@@ -16,6 +16,8 @@ import type { SerieEpisodeRewards } from '@/features/serie/serie.types';
 
 type SerieEpisodeCardProps = {
   episodeNumber: number;
+  name?: string;
+  description?: string;
   experience: number;
   rewards: SerieEpisodeRewards;
   watched: boolean;
@@ -23,11 +25,13 @@ type SerieEpisodeCardProps = {
 
 export function SerieEpisodeCard({
   episodeNumber,
+  name,
+  description,
   experience,
   rewards,
   watched,
 }: SerieEpisodeCardProps) {
-  const { t } = useTranslation(['common', 'serie']);
+  const { t } = useTranslation();
   const [previewRewards, setPreviewRewards] = useState(false);
   const showRewards = watched || previewRewards;
   const hasRewards = Object.values(rewards).some(ids => ids.length > 0);
@@ -52,10 +56,7 @@ export function SerieEpisodeCard({
                 weight="medium"
                 className="text-foreground min-w-0"
               >
-                {t(`episodes.${episodeNumber}.name`, {
-                  ns: 'serie',
-                  defaultValue: '',
-                })}
+                {name}
               </Text>
             </Flex>
 
@@ -65,10 +66,7 @@ export function SerieEpisodeCard({
                 size="1"
                 className="text-foreground/75 min-w-0 flex-1"
               >
-                {t(`episodes.${episodeNumber}.description`, {
-                  ns: 'serie',
-                  defaultValue: '',
-                })}
+                {description}
               </Text>
 
               <Tooltip content={t('serie.viewed_chapter')}>

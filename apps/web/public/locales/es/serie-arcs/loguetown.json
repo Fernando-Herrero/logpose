@@ -1,0 +1,40 @@
+{
+  "episodes": {
+    "45": {
+      "name": "Bounty! Straw Hat Luffy Becomes Known to the World!",
+      "description": "El marine corrupto Nezumi informa sobre Luffy a la Marina. Se emite la primera recompensa de Luffy: 30,000,000 de berries, convirtiéndolo oficialmente en un pirata buscado."
+    },
+    "48": {
+      "name": "The Town of the Beginning and the End! Landfall at Logue Town!",
+      "description": "Los Sombreros de Paja llegan a Logue Town, el lugar donde nació y murió el Rey Pirata Gol D. Roger. Es su última parada antes del Grand Line."
+    },
+    "49": {
+      "name": "Kitetsu III and Yubashiri! Zoro's New Swords and the Woman Sergeant Major!",
+      "description": "Zoro busca nuevas katanas en Logue Town y conoce a Tashigi, quien se parece mucho a su amiga fallecida Kuina. Obtiene dos espadas: Sandai Kitetsu y Yubashiri."
+    },
+    "50": {
+      "name": "Usopp vs. Daddy the Father! Showdown at High Noon!",
+      "description": "Usopp se enfrenta a Daddy Masterson, un famoso francotirador, en un duelo al mediodía. Demuestra sus habilidades como tirador en una intensa competencia."
+    },
+    "51": {
+      "name": "Fiery Cooking Battle? Sanji vs. the Beautiful Chef!",
+      "description": "Sanji participa en una competencia culinaria contra Carmen, una hermosa chef. La competencia se convierte en una batalla de habilidades gastronómicas."
+    },
+    "52": {
+      "name": "Buggy's Revenge! The Man Who Smiles On the Execution Platform!",
+      "description": "Buggy intenta ejecutar públicamente a Luffy en la misma plataforma donde murió Roger. Una tormenta misteriosa salva a Luffy, recordando la ejecución del Rey Pirata."
+    },
+    "53": {
+      "name": "The Legend Has Started! Head for the Grand Line!",
+      "description": "Los Sombreros de Paja escapan de Logue Town mientras Smoker los persigue. Con determinación renovada, se dirigen hacia el Grand Line para cumplir sus sueños."
+    }
+  },
+  "events": {
+    "luffy-first-bounty": "Luffy recibe su primera recompensa: 30.000.000 berries.",
+    "zoro-new-swords": "Zoro obtiene Sandai Kitetsu y Yubashiri.",
+    "luffy-smiles-at-execution": "Luffy sonríe en el patíbulo de Roger y un rayo lo salva.",
+    "luffy-vs-smoker": "Smoker atrapa a Luffy con su Logia.",
+    "dragon-appears": "Dragon aparece y ayuda a Luffy a huir.",
+    "grand-line-vow": "La tripulación brinda junto al barril antes de entrar en el Grand Line."
+  }
+}

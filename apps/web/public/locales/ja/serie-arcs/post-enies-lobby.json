@@ -1,0 +1,52 @@
+{
+  "episodes": {
+    "313": {
+      "name": "Peace Interrupted! A Navy Vice Admiral With a Fist of Love!"
+    },
+    "314": {
+      "name": "The Strongest Family? Luffy's Father Revealed!"
+    },
+    "315": {
+      "name": "Its Name Is the New World! The Fate of the Grand Line!"
+    },
+    "316": {
+      "name": "Shanks Makes a Move! The Linchpin to the Reckless Era!"
+    },
+    "317": {
+      "name": "The Girl in Search of Her Yagara! Great Search in the City of Water!"
+    },
+    "318": {
+      "name": "Mothers Are Strong! Zoro's Hectic Household Chores!"
+    },
+    "319": {
+      "name": "Sanji's Shock! Mysterious Old Man and His Super Yummy Cooking!"
+    },
+    "320": {
+      "name": "Everyone Finally Has a Bounty! A Pirate Group Worth Over 600 Million!"
+    },
+    "321": {
+      "name": "The King of Animals That Overlooks the Sea! The Dream Ship Magnificently Completed!"
+    },
+    "322": {
+      "name": "Goodbye My Dear Underlings! Franky Departs!"
+    },
+    "323": {
+      "name": "Departing the City of Water! Usopp Mans up and Brings Closure to the Duel!"
+    },
+    "324": {
+      "name": "Wanted Posters Make It Around the World! Celebrations in Their Hometowns as the Ship Moves Forward!"
+    },
+    "325": {
+      "name": "The Most Heinous Power! Blackbeard’s Darkness Attacks Ace!"
+    }
+  },
+  "events": {
+    "garp-reveals-dragon": "ガープが自分はルフィの祖父であり、ルフィの父はモンキー・D・ドラゴンだと明かす。",
+    "shanks-meets-whitebeard": "シャンクスが白ひげのもとを訪れ、黒ひげについて忠告する。",
+    "straw-hats-new-bounties": "新たな懸賞金：ルフィ3億、ゾロ1億2000万、ロビン8000万、サンジ7700万、そげキング3000万、フランキー4400万、ナミ1600万、チョッパー50ベリー。",
+    "thousand-sunny-completed": "フランキーがサウザンド・サニー号を完成させる。",
+    "franky-joins": "フランキーが船大工として麦わらの一味に加わる。",
+    "usopp-returns": "ウソップが謝り、一味に戻る。",
+    "ace-vs-blackbeard": "エースがバナロ島で黒ひげと対決する。"
+  }
+}

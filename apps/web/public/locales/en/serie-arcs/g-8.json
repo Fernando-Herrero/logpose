@@ -1,0 +1,41 @@
+{
+  "episodes": {
+    "196": {
+      "name": "Emergency Official Announcement! Notorious Pirate Ship Infiltration!"
+    },
+    "197": {
+      "name": "Sanji the Cook! Showing His Real Worth at the Marine Dining-room!"
+    },
+    "198": {
+      "name": "Zoro's Imprisonment and Chopper's Emergency Operation!"
+    },
+    "199": {
+      "name": "The Search of the Approaching Marines! The Second Person Who Was Captured!"
+    },
+    "200": {
+      "name": "Luffy and Sanji's Desperate Decision! Large Rescue Maneuvers!"
+    },
+    "201": {
+      "name": "Hot Blood Special Unit Participation! Bridge Offensive and Defensive Battle!"
+    },
+    "202": {
+      "name": "Breaking Through the Siege! The Going Merry is Recovered"
+    },
+    "203": {
+      "name": "The Missing Pirate Ship! 2nd Round Assault on the Fortress"
+    },
+    "204": {
+      "name": "The Gold Recovery Plan and the Waver Recovery Plan!"
+    },
+    "205": {
+      "name": "Catch Them All in One Net! Jonathan's Secret Scheme!"
+    },
+    "206": {
+      "name": "So Long, Marine Base! The Final Battle for Freedom"
+    }
+  },
+  "events": {
+    "sanji-marine-kitchen": "Sanji infiltrates the G-8 base's mess hall as a cook.",
+    "escape-g8": "The Straw Hats escape Vice Admiral Jonathan's Navarone fortress."
+  }
+}

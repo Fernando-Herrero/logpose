@@ -1,0 +1,184 @@
+{
+  "episodes": {
+    "523": {
+      "name": "A Surprising Fact! The Man Who Guarded the Sunny!"
+    },
+    "524": {
+      "name": "Deadly Combat under the Sea! The Demon of the Ocean Strikes!"
+    },
+    "525": {
+      "name": "Lost in the Deep Sea! The Straw Hats Get Separated!"
+    },
+    "526": {
+      "name": "Undersea Volcanic Eruption! Drifting to the Fish-man Island!"
+    },
+    "527": {
+      "name": "Landing at the Fish-Man Island! Beautiful Mermaids!"
+    },
+    "528": {
+      "name": "Excitement Blow-out! Sanji's Life Under Threat!"
+    },
+    "529": {
+      "name": "The Fish-Man Island Will Be Annihilated?! Sharley's Prophecy!"
+    },
+    "530": {
+      "name": "The King of the Fish-Man Island! Neptune, the God of the Sea!"
+    },
+    "531": {
+      "name": "Ryugu Palace! Taken by the Shark that They Saved!"
+    },
+    "532": {
+      "name": "A Coward and a Crybaby! The Princess in the Hard Shell Tower!"
+    },
+    "533": {
+      "name": "It's an Emergency! The Ryugu Palace is Occupied!"
+    },
+    "534": {
+      "name": "The Ryugu Palace in Shock! The Kidnapping of Shirahoshi!"
+    },
+    "535": {
+      "name": "Hordy's Onslaught! The Retaliatory Plan Set Into Motion!"
+    },
+    "536": {
+      "name": "The Battle in the Ryugu Palace! Zoro vs. Hordy!"
+    },
+    "537": {
+      "name": "Keep Shirahoshi Safe! Decken Close Behind!"
+    },
+    "538": {
+      "name": "The Straw Hats Defeated?! Hordy Gains Control of the Ryugu Palace!"
+    },
+    "539": {
+      "name": "The Haunting Ties! Nami and the Fish-Man Pirates!"
+    },
+    "540": {
+      "name": "A Hero Who Freed the Slaves! An Adventurer Tiger!"
+    },
+    "541": {
+      "name": "Kizaru Appears! A Trap to Catch Tiger!"
+    },
+    "542": {
+      "name": "A Team Is Formed! Save Chopper!"
+    },
+    "543": {
+      "name": "The Death of the Hero! A Shocking Truth of Tiger!"
+    },
+    "544": {
+      "name": "The Sun Pirates Split! Jimbei vs Arlong!"
+    },
+    "545": {
+      "name": "Shaking Fish-Man Island! A Celestial Dragon Drifts In!"
+    },
+    "546": {
+      "name": "A Sudden Tragedy! A Gunshot Shuts Down the Future!"
+    },
+    "547": {
+      "name": "Back to the Present! Hordy Makes a Move!"
+    },
+    "548": {
+      "name": "The Kingdom in Shock! An Order to Execute Neptune Issued!"
+    },
+    "549": {
+      "name": "A Rift Opens Up! Luffy vs. Jimbei!"
+    },
+    "550": {
+      "name": "Something Has Happened to Hordy! The True Power of the Evil Drug!"
+    },
+    "551": {
+      "name": "The Battle is on! At Conchcorde Plaza!"
+    },
+    "552": {
+      "name": "Surprising Confession! The Truth Behind the Assassination of Otohime!"
+    },
+    "553": {
+      "name": "Shirahoshi's Tears! Luffy Finally Shows Up!"
+    },
+    "554": {
+      "name": "A Big Clash! The Straw Hats vs. A Hundred Thousand Enemies!"
+    },
+    "555": {
+      "name": "Deadly Attacks One After Another! Zoro and Sanji Join the Battle!"
+    },
+    "556": {
+      "name": "Unveiled! The Secret Weapons of the Sunny!"
+    },
+    "557": {
+      "name": "Iron Pirate! Here Comes General Franky!"
+    },
+    "558": {
+      "name": "The Noah Closing in! The Fish-Man Island Facing Destruction!"
+    },
+    "559": {
+      "name": "Hurry up, Luffy! Shirahoshi's Life in Jeopardy!"
+    },
+    "560": {
+      "name": "The Fierce Fight Begins! Luffy vs. Hordy!"
+    },
+    "561": {
+      "name": "A Massive Confused Fight! The Straw Hats vs. The New Fish-Man Pirates!"
+    },
+    "562": {
+      "name": "Luffy Loses the Fight?! Hordy's Long-Awaited Revenge!"
+    },
+    "563": {
+      "name": "A Shocking Fact! The True Identity of Hordy!"
+    },
+    "564": {
+      "name": "Back to Zero! Earnest Wishes for Luffy!"
+    },
+    "565": {
+      "name": "Luffy's All-Out Attack! Red Hawk Blasts!"
+    },
+    "566": {
+      "name": "Coming to an End! The Final Decisive Battle Against Hordy!"
+    },
+    "567": {
+      "name": "Stop, Noah! Desperate Elephant Gatling!"
+    },
+    "568": {
+      "name": "To the Future! The Path to the Sun!"
+    },
+    "569": {
+      "name": "The Secret Revealed! The Truth about the Ancient Weapon!"
+    },
+    "570": {
+      "name": "The Straw Hats Stunned! The New Fleet Admiral of the Navy!"
+    },
+    "571": {
+      "name": "She Loves Sweets! Big Mom of the Four Emperors!"
+    },
+    "572": {
+      "name": "Many Problems Lie Ahead! A Trap Awaiting in the New World!"
+    },
+    "573": {
+      "name": "Finally Time to Go! Goodbye, Fish-Man Island!"
+    },
+    "574": {
+      "name": "To the New World! Heading for the Ultimate Sea!"
+    }
+  },
+  "events": {
+    "kraken-surume-tamed": "Luffy, Zoro and Sanji defeat the kraken, and Luffy tames it, naming it Surume.",
+    "sanji-nosebleed-mermaid-cove": "Sanji nearly bleeds to death from a nosebleed at the sight of the mermaids.",
+    "shirahoshi-meets-luffy": "Luffy meets Princess Shirahoshi in the Hard Shell Tower.",
+    "zoro-vs-hody-ryugu-palace": "Zoro faces Hody Jones at the Ryugu Palace.",
+    "jinbe-reunites-luffy": "Jinbe reunites with Luffy in the Sea Forest.",
+    "fisher-tiger-frees-slaves": "Fisher Tiger scales the Red Line, storms Mary Geoise and frees the slaves.",
+    "fisher-tiger-death": "Fisher Tiger dies after refusing a transfusion of human blood.",
+    "jinbe-vs-arlong-sun-pirates-split": "The Sun Pirates split up and Jinbe confronts Arlong.",
+    "otohime-assassination": "Queen Otohime is shot dead; years later it is revealed that Hody did it.",
+    "luffy-vs-jinbe": "Luffy and Jinbe fight in the Sea Forest over the plan to stop Hody.",
+    "hody-reveals-otohime-murder": "Hody confesses at Conchcorde Plaza that he killed Otohime.",
+    "straw-hats-vs-100000": "The ten face the 100,000 New Fish-Man Pirates at Conchcorde Plaza; Luffy brings down 50,000 with Conqueror's Haki.",
+    "sunny-gaon-cannon": "Franky unveils the Sunny's secret weapons, including the Gaon Cannon.",
+    "general-franky": "Franky debuts the General Franky robot.",
+    "zoro-defeats-hyouzou": "Zoro defeats Hyouzou.",
+    "red-hawk-debut": "Luffy debuts the Red Hawk, a fiery punch with Armament Haki.",
+    "luffy-defeats-hody": "Luffy defeats Hody Jones.",
+    "elephant-gatling-stops-noah": "Luffy smashes the ark Noah with the Elephant Gatling (Gear Third with Haki).",
+    "jinbe-blood-transfusion": "Jinbe donates blood to Luffy, breaking the law that kept humans and fish-men apart.",
+    "shirahoshi-is-poseidon": "Shirahoshi is revealed to be Poseidon, one of the Ancient Weapons.",
+    "akainu-new-fleet-admiral": "Akainu is revealed to be the new Fleet Admiral.",
+    "luffy-declares-war-big-mom": "Luffy declares Fish-Man Island his territory and challenges Big Mom."
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "episodes": {
+    "575": {
+      "name": "Z's Ambition Arc - The Little Giant Lily!"
+    },
+    "576": {
+      "name": "Z's Ambition Arc - The Mysterious Strongest Army Appears!"
+    },
+    "577": {
+      "name": "Z's Ambition Arc - A Desperate Big Escape Strategy!"
+    },
+    "578": {
+      "name": "Z's Ambition Arc - Luffy vs. Shuzo!"
+    }
+  },
+  "events": {
+    "luffy-vs-shuzo": "Luffy derrota a Shuzo, miembro de los Neo Marines."
+  }
+}

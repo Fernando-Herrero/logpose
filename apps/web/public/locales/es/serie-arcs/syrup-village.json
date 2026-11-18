@@ -1,0 +1,50 @@
+{
+  "episodes": {
+    "9": {
+      "name": "The Honorable Liar? Captain Usopp!",
+      "description": "La tripulación llega a Syrup Village buscando un barco. Conocen a Usopp, un joven mentiroso que cuenta historias fantasiosas a los niños del pueblo."
+    },
+    "10": {
+      "name": "The Weirdest Guy Ever! Jango the Hypnotist!",
+      "description": "Un extraño hipnotizador llamado Jango llega al pueblo. Se revela una conspiración que involucra al mayordomo de Kaya y un plan siniestro."
+    },
+    "11": {
+      "name": "Expose the Plot! Pirate Butler, Captain Kuro!",
+      "description": "Se revela que Klahadore es en realidad el temido Capitán Kuro. Usopp descubre el plan para asesinar a Kaya y robar su fortuna."
+    },
+    "12": {
+      "name": "Clash with the Black Cat Pirates! The Great Battle on the Slope!",
+      "description": "Comienza la batalla decisiva en la pendiente norte. Los Sombrero de Paja y Usopp se enfrentan a los Piratas del Gato Negro."
+    },
+    "13": {
+      "name": "The Terrifying Duo! Meowban Brothers vs. Zoro!",
+      "description": "Zoro se enfrenta a los hermanos felinos Sham y Buchi mientras Luffy y los demás luchan contra el resto de la tripulación pirata."
+    },
+    "14": {
+      "name": "Luffy Back in Action! Miss Kaya's Desperate Resistance!",
+      "description": "Luffy se recupera de la hipnosis de Jango. Kaya intenta resistir las amenazas mientras la batalla se intensifica."
+    },
+    "15": {
+      "name": "Beat Kuro! Usopp the Man's Tearful Resolve!",
+      "description": "Usopp encuentra el valor para enfrentar sus miedos y defender el pueblo. Se prepara para la confrontación final con Kuro."
+    },
+    "16": {
+      "name": "Protect Kaya! The Usopp Pirates' Great Efforts!",
+      "description": "Los amigos de Usopp (Onion, Pepper y Carrot) hacen todo lo posible por proteger a Kaya de los invasores piratas."
+    },
+    "17": {
+      "name": "Anger Explosion! Kuro vs. Luffy! How It Ends!",
+      "description": "La confrontación final entre Luffy y el Capitán Kuro determina el destino del pueblo y la seguridad de Kaya."
+    },
+    "18": {
+      "name": "You're the Weird One! Jango vs. Usopp!",
+      "description": "Enfrentamiento final entre Usopp y Jango. Usopp demuestra su valor y habilidad como tirador en una batalla decisiva."
+    }
+  },
+  "events": {
+    "zoro-vs-nyaban-brothers": "Zoro vence a los hermanos Nyaban.",
+    "luffy-vs-kuro": "Luffy derrota al capitán Kuro.",
+    "usopp-joins-crew": "Usopp se une a la tripulación.",
+    "going-merry-obtained": "Kaya regala el Going Merry a la tripulación."
+  }
+}

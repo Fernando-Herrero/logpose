@@ -1,0 +1,69 @@
+{
+  "episodes": {
+    "31": {
+      "name": "The Worst Man in the Eastern Seas! Fishman Pirate Arlong!",
+      "description": "The crew learns Nami left with the Going Merry. Johnny and Yosaku bring news of Nami and the fish-man pirates led by Arlong."
+    },
+    "32": {
+      "name": "Witch of Cocoyashi Village! Arlong's Female Leader!",
+      "description": "Zoro and Usopp follow Nami to her hometown and discover she works for the fish-men as the \"witch\" who draws maps for Arlong."
+    },
+    "33": {
+      "name": "Usopp Dead?! When is Luffy Going to Make Landfall?!",
+      "description": "Usopp is defeated by Arlong's men while Luffy and Sanji sail toward Cocoyashi guided by Yosaku."
+    },
+    "34": {
+      "name": "Everyone's Gathered! Usopp Speaks the Truth About Nami!",
+      "description": "Usopp reveals Nami's tragic story and why she works for Arlong. The crew gathers to learn the truth about their navigator."
+    },
+    "35": {
+      "name": "Untold Past! Female Warrior Bellemere!",
+      "description": "Flashback revealing Nami's past: how retired marine Bell-mère found her as a baby and raised her with Nojiko."
+    },
+    "36": {
+      "name": "Survive! Mother Bellemere and Nami's Bond!",
+      "description": "The flashback continues as Arlong arrives, kills Bell-mère, and Nami agrees to work for him to save the villagers."
+    },
+    "37": {
+      "name": "Luffy Rises! Result of the Broken Promise!",
+      "description": "Arlong breaks his promise using corrupt marine Nezumi. When Nami finally asks for help, Luffy gives her his straw hat."
+    },
+    "38": {
+      "name": "Luffy in Big Trouble! Fishmen vs. the Luffy Pirates!",
+      "description": "Battle begins at Arlong Park as the Straw Hats face fish-man pirates while Luffy is trapped underwater."
+    },
+    "39": {
+      "name": "Luffy Submerged! Zoro vs. Hatchan the Octopus!",
+      "description": "Zoro faces octopus swordsman Hatchan in a six-sword versus three duel while Luffy remains trapped underwater."
+    },
+    "40": {
+      "name": "Proud Warriors! Sanji and Usopp's Fierce Battles!",
+      "description": "Sanji fights Kuroobi in the water while Usopp faces karateka Chu with his slingshot and wit."
+    },
+    "41": {
+      "name": "Luffy at Full Power! Nami's Determination and the Straw Hat!",
+      "description": "Genzo and Nojiko save Luffy from the water. Nami confronts her past and declares she wants to keep living."
+    },
+    "42": {
+      "name": "Explosion! Fishman Arlong's Fierce Assault From the Sea!",
+      "description": "Arlong shows his true fish-man power with superhuman strength and shark teeth against Luffy."
+    },
+    "43": {
+      "name": "End of the Fishman Empire! Nami's My Friend!",
+      "description": "Luffy destroys the room where Nami was forced to draw maps, proclaiming she is his nakama, and defeats Arlong."
+    },
+    "44": {
+      "name": "Departure! Farewell to the Brave Cocoyashi Village!",
+      "description": "The villagers celebrate freedom. Nami officially leaves her hometown and joins the Straw Hats as navigator."
+    }
+  },
+  "events": {
+    "bell-mere-death": "Arlong murders Bell-mère in front of Nami and Nojiko.",
+    "nami-asks-luffy-for-help": "Nami asks Luffy for help, and he puts his straw hat on her head.",
+    "zoro-vs-hatchan": "Zoro beats Hatchan.",
+    "sanji-vs-kuroobi": "Sanji beats Kuroobi.",
+    "usopp-vs-chew": "Usopp beats Chu.",
+    "luffy-vs-arlong": "Luffy defeats Arlong and destroys Arlong Park.",
+    "nami-joins-crew": "Nami officially joins the crew."
+  }
+}

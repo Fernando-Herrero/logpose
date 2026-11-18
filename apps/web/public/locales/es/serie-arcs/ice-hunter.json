@@ -1,0 +1,40 @@
+{
+  "episodes": {
+    "326": {
+      "name": "Mysterious Party of Pirates! The Sunny and a Dangerous Trap"
+    },
+    "327": {
+      "name": "Sunny in a Pinch! Roar, Secret Superspeed Mecha"
+    },
+    "328": {
+      "name": "The Dream Sinking in the New World! The Pirate of Despair, Puzzle"
+    },
+    "329": {
+      "name": "The Assassins Attack! The Great Battle Above the Ice Begins"
+    },
+    "330": {
+      "name": "The Hard Fights of the Straw Hat Crew! The Pirate Soul Banking it All on the Flag!"
+    },
+    "331": {
+      "name": "Hot Full Throttle! The Twins' Magnetic Power Draws Near"
+    },
+    "332": {
+      "name": "The Great Chaos Mansion! The Angry Don and the Imprisoned Crew"
+    },
+    "333": {
+      "name": "The Phoenix Returns! The Dream of the Pirate Flag Sworn to a Friend"
+    },
+    "334": {
+      "name": "The Super Final Atsu Atsu Battle! Luffy vs. the Scortching Don"
+    },
+    "335": {
+      "name": "Waiting in the New World! Farewell to the Courageous Pirates"
+    },
+    "336": {
+      "name": "Chopper Man Departs! Protect the TV Station by the Shore"
+    }
+  },
+  "events": {
+    "straw-hats-vs-accino-family": "Los Sombrero de Paja se enfrentan a la familia Accino (relleno)."
+  }
+}

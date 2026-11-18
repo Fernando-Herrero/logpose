@@ -1,0 +1,52 @@
+{
+  "episodes": {
+    "313": {
+      "name": "Peace Interrupted! A Navy Vice Admiral With a Fist of Love!"
+    },
+    "314": {
+      "name": "The Strongest Family? Luffy's Father Revealed!"
+    },
+    "315": {
+      "name": "Its Name Is the New World! The Fate of the Grand Line!"
+    },
+    "316": {
+      "name": "Shanks Makes a Move! The Linchpin to the Reckless Era!"
+    },
+    "317": {
+      "name": "The Girl in Search of Her Yagara! Great Search in the City of Water!"
+    },
+    "318": {
+      "name": "Mothers Are Strong! Zoro's Hectic Household Chores!"
+    },
+    "319": {
+      "name": "Sanji's Shock! Mysterious Old Man and His Super Yummy Cooking!"
+    },
+    "320": {
+      "name": "Everyone Finally Has a Bounty! A Pirate Group Worth Over 600 Million!"
+    },
+    "321": {
+      "name": "The King of Animals That Overlooks the Sea! The Dream Ship Magnificently Completed!"
+    },
+    "322": {
+      "name": "Goodbye My Dear Underlings! Franky Departs!"
+    },
+    "323": {
+      "name": "Departing the City of Water! Usopp Mans up and Brings Closure to the Duel!"
+    },
+    "324": {
+      "name": "Wanted Posters Make It Around the World! Celebrations in Their Hometowns as the Ship Moves Forward!"
+    },
+    "325": {
+      "name": "The Most Heinous Power! Blackbeard’s Darkness Attacks Ace!"
+    }
+  },
+  "events": {
+    "garp-reveals-dragon": "Garp reveals that he is Luffy's grandfather and that his father is Monkey D. Dragon.",
+    "shanks-meets-whitebeard": "Shanks visits Whitebeard to warn him about Blackbeard.",
+    "straw-hats-new-bounties": "New bounties: Luffy 300 million, Zoro 120, Robin 80, Sanji 77, Sogeking 30, Franky 44, Nami 16, Chopper 50 berries.",
+    "thousand-sunny-completed": "Franky finishes the Thousand Sunny.",
+    "franky-joins": "Franky joins the Straw Hats as shipwright.",
+    "usopp-returns": "Usopp apologizes and returns to the crew.",
+    "ace-vs-blackbeard": "Ace faces Blackbeard on Banaro."
+  }
+}

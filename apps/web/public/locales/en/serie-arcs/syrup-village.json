@@ -1,0 +1,50 @@
+{
+  "episodes": {
+    "9": {
+      "name": "The Honorable Liar? Captain Usopp!",
+      "description": "The crew reaches Syrup Village seeking a ship and meets Usopp, a young liar telling fantastical stories to the village children."
+    },
+    "10": {
+      "name": "The Weirdest Guy Ever! Jango the Hypnotist!",
+      "description": "A strange hypnotist named Jango arrives. A conspiracy involving Kaya's butler and a sinister plan is revealed."
+    },
+    "11": {
+      "name": "Expose the Plot! Pirate Butler, Captain Kuro!",
+      "description": "Klahadore is revealed to be the feared Captain Kuro. Usopp discovers the plan to kill Kaya and steal her fortune."
+    },
+    "12": {
+      "name": "Clash with the Black Cat Pirates! The Great Battle on the Slope!",
+      "description": "The decisive battle begins on the north slope as the Straw Hats and Usopp face the Black Cat Pirates."
+    },
+    "13": {
+      "name": "The Terrifying Duo! Meowban Brothers vs. Zoro!",
+      "description": "Zoro fights the Meowban Brothers Sham and Buchi while Luffy and the others battle the rest of the pirate crew."
+    },
+    "14": {
+      "name": "Luffy Back in Action! Miss Kaya's Desperate Resistance!",
+      "description": "Luffy recovers from Jango's hypnosis. Kaya tries to resist threats as the battle intensifies."
+    },
+    "15": {
+      "name": "Beat Kuro! Usopp the Man's Tearful Resolve!",
+      "description": "Usopp finds courage to face his fears and defend the village, preparing for the final confrontation with Kuro."
+    },
+    "16": {
+      "name": "Protect Kaya! The Usopp Pirates' Great Efforts!",
+      "description": "Usopp's friends Onion, Pepper, and Carrot do everything to protect Kaya from the invading pirates."
+    },
+    "17": {
+      "name": "Anger Explosion! Kuro vs. Luffy! How It Ends!",
+      "description": "The final confrontation between Luffy and Captain Kuro decides the village's fate and Kaya's safety."
+    },
+    "18": {
+      "name": "You're the Weird One! Jango vs. Usopp!",
+      "description": "Final showdown between Usopp and Jango as Usopp proves his marksmanship in a decisive battle."
+    }
+  },
+  "events": {
+    "zoro-vs-nyaban-brothers": "Zoro beats the Meowban Brothers.",
+    "luffy-vs-kuro": "Luffy defeats Captain Kuro.",
+    "usopp-joins-crew": "Usopp joins the crew.",
+    "going-merry-obtained": "Kaya gives the Going Merry to the crew."
+  }
+}

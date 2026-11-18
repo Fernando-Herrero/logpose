@@ -10,6 +10,12 @@ const noRewards = {
   boats: [],
 };
 
+const phrase = (slug: string) => ({
+  es: `${slug} es`,
+  en: `${slug} en`,
+  ja: `${slug} ja`,
+});
+
 // Entrada en desorden a propósito: sagas, arcos y episodios fuera de su orden.
 // `episodeRange` de Loguetown (45–53) contiene al de Buggy (46–47), como en los datos reales.
 // En alabasta, el arco de `order` 1 tiene episodios más altos que el de `order` 2.
@@ -39,7 +45,9 @@ const buildInput = () => [
             adaptsChapters: [101],
           },
         ],
-        events: [{ slug: 'crocus', episode: 80 }],
+        events: [
+          { slug: 'crocus', episode: 80, description: phrase('crocus') },
+        ],
       },
       {
         slug: 'whisky-peak',
@@ -115,9 +123,21 @@ const buildInput = () => [
           },
         ],
         events: [
-          { slug: 'buggy-bounty', episode: 45 },
-          { slug: 'luffy-bounty', episode: 45 },
-          { slug: 'loguetown-rain', episode: null },
+          {
+            slug: 'buggy-bounty',
+            episode: 45,
+            description: phrase('buggy-bounty'),
+          },
+          {
+            slug: 'luffy-bounty',
+            episode: 45,
+            description: phrase('luffy-bounty'),
+          },
+          {
+            slug: 'loguetown-rain',
+            episode: null,
+            description: phrase('loguetown-rain'),
+          },
         ],
       },
       {
@@ -153,16 +173,18 @@ const buildInput = () => [
 ];
 
 describe('normalizeResearch', () => {
-  it('devuelve exactamente sagas, arcs, episodes y locales', () => {
+  it('devuelve exactamente sagas, arcs, episodes, locales y arcTexts', () => {
     const result = normalizeResearch(buildInput());
 
     expect(Object.keys(result).sort()).toEqual([
+      'arcTexts',
       'arcs',
       'episodes',
       'locales',
       'sagas',
     ]);
     expect(Object.keys(result.locales).sort()).toEqual(['en', 'es', 'ja']);
+    expect(Object.keys(result.arcTexts).sort()).toEqual(['en', 'es', 'ja']);
   });
 
   it('ordena las sagas por su order, no por el orden de entrada', () => {
@@ -294,7 +316,7 @@ describe('normalizeResearch', () => {
     });
   });
 
-  it('genera el locale es con fallback a title.en y description solo si hay summary', () => {
+  it('genera el locale es con fallback a title.en y description solo si hay summary, sin episodios', () => {
     expect(normalizeResearch(buildInput()).locales.es).toStrictEqual({
       sagas: {
         'east-blue': { name: 'East Blue', nameJa: 'イーストブルー編' },
@@ -308,16 +330,6 @@ describe('normalizeResearch', () => {
           description: 'Whisky Peak resumen es',
         },
         'little-garden': { name: 'Jardín Pequeño' },
-      },
-      episodes: {
-        45: { name: '¡Recompensa!', description: 'Resumen 45 es' },
-        46: { name: '46 en' },
-        47: { name: '47 es', description: '47 resumen es' },
-        48: { name: 'Episode 48 en' },
-        53: { name: '53 es' },
-        80: { name: '80 en' },
-        91: { name: '91 en' },
-        92: { name: '92 es', description: '92 resumen es' },
       },
     });
   });
@@ -337,16 +349,6 @@ describe('normalizeResearch', () => {
         },
         'little-garden': { name: 'Little Garden' },
       },
-      episodes: {
-        45: { name: 'Bounty!', description: 'Summary 45 en' },
-        46: { name: '46 en' },
-        47: { name: '47 en', description: '47 summary en' },
-        48: { name: 'Episode 48 en' },
-        53: { name: '53 en' },
-        80: { name: '80 en' },
-        91: { name: '91 en' },
-        92: { name: '92 en', description: '92 summary en' },
-      },
     });
   });
 
@@ -365,7 +367,39 @@ describe('normalizeResearch', () => {
         },
         'little-garden': { name: 'リトルガーデン編' },
       },
-      episodes: {
+    });
+  });
+
+  it.each([
+    [
+      'es',
+      {
+        45: { name: '¡Recompensa!', description: 'Resumen 45 es' },
+        46: { name: '46 en' },
+        47: { name: '47 es', description: '47 resumen es' },
+        48: { name: 'Episode 48 en' },
+        53: { name: '53 es' },
+        80: { name: '80 en' },
+        91: { name: '91 en' },
+        92: { name: '92 es', description: '92 resumen es' },
+      },
+    ],
+    [
+      'en',
+      {
+        45: { name: 'Bounty!', description: 'Summary 45 en' },
+        46: { name: '46 en' },
+        47: { name: '47 en', description: '47 summary en' },
+        48: { name: 'Episode 48 en' },
+        53: { name: '53 en' },
+        80: { name: '80 en' },
+        91: { name: '91 en' },
+        92: { name: '92 en', description: '92 summary en' },
+      },
+    ],
+    [
+      'ja',
+      {
         45: { name: '賞金首！', description: '要約45' },
         46: { name: '46 ja' },
         47: { name: '47 ja', description: '47 要約' },
@@ -375,15 +409,45 @@ describe('normalizeResearch', () => {
         91: { name: '91 en' },
         92: { name: '92 en', description: '92 要約' },
       },
-    });
-  });
+    ],
+  ] as const)(
+    'genera un fichero de textos por arco en %s con sus episodios y las frases de sus eventos',
+    (locale, episodes) => {
+      expect(normalizeResearch(buildInput()).arcTexts[locale]).toStrictEqual({
+        'buggy-side-story': {
+          episodes: { 46: episodes[46], 47: episodes[47] },
+          events: {},
+        },
+        loguetown: {
+          episodes: { 45: episodes[45], 48: episodes[48], 53: episodes[53] },
+          events: {
+            'buggy-bounty': `buggy-bounty ${locale}`,
+            'luffy-bounty': `luffy-bounty ${locale}`,
+            'loguetown-rain': `loguetown-rain ${locale}`,
+          },
+        },
+        'whisky-peak': {
+          episodes: { 91: episodes[91], 92: episodes[92] },
+          events: {},
+        },
+        'little-garden': {
+          episodes: { 80: episodes[80] },
+          events: { crocus: `crocus ${locale}` },
+        },
+      });
+    },
+  );
 
   it('no crea la clave description cuando el arco o el episodio no trae summary', () => {
-    const { locales } = normalizeResearch(buildInput());
+    const { locales, arcTexts } = normalizeResearch(buildInput());
 
-    for (const locale of [locales.es, locales.en, locales.ja]) {
-      expect('description' in locale.arcs['buggy-side-story']!).toBe(false);
-      expect('description' in locale.episodes[46]!).toBe(false);
+    for (const locale of ['es', 'en', 'ja'] as const) {
+      expect('description' in locales[locale].arcs['buggy-side-story']!).toBe(
+        false,
+      );
+      expect(
+        'description' in arcTexts[locale]['buggy-side-story']!.episodes[46]!,
+      ).toBe(false);
     }
   });
 
@@ -425,6 +489,13 @@ describe('normalizeResearch', () => {
       'un episodio con canon fuera de canon/mixed/filler/recap',
       (input: ReturnType<typeof buildInput>) => {
         (input[0]!.arcs[0]!.episodes[0]!.canon as string) = 'special';
+      },
+    ],
+    [
+      'un evento sin su frase en japonés',
+      (input: ReturnType<typeof buildInput>) => {
+        delete (input[0]!.arcs[0]!.events![0]!.description as { ja?: string })
+          .ja;
       },
     ],
     [

@@ -1,0 +1,157 @@
+{
+  "episodes": {
+    "579": {
+      "name": "Landing! The Burning Island, Punk Hazard"
+    },
+    "580": {
+      "name": "A Scorching Battle! Luffy vs. the Giant Dragon!"
+    },
+    "581": {
+      "name": "The Crew is Confused! The Shocking Beheaded Samurai Appears!"
+    },
+    "582": {
+      "name": "Shock! The Secret of the Island is Finally Revealed"
+    },
+    "583": {
+      "name": "Save the Children! The Crew Starts to Fight"
+    },
+    "584": {
+      "name": "A Duel of Swordplay - Brook vs. the Mysterious Samurai Torso"
+    },
+    "585": {
+      "name": "Shichibukai! Trafalgar Law"
+    },
+    "586": {
+      "name": "A Big Pinch - Luffy Sinks into the Cold Lake"
+    },
+    "587": {
+      "name": "Clash! Law vs. Vice Admiral Smoker"
+    },
+    "588": {
+      "name": "Reunion after Two Years! Luffy and Law"
+    },
+    "589": {
+      "name": "Worst of the World - The Scary Scientist Caesar"
+    },
+    "590": {
+      "name": "History's Strongest Collaboration vs. Glutton of the Sea"
+    },
+    "591": {
+      "name": "Chopper Enraged - Master's Inhumane Experiments"
+    },
+    "592": {
+      "name": "To Annihilate the Crew! Legendary Assassins Attack!"
+    },
+    "593": {
+      "name": "Save Nami! Luffy's Fight on the Snow Mountains"
+    },
+    "594": {
+      "name": "Formed! The Luffy-Law Pirate Alliance!"
+    },
+    "595": {
+      "name": "Capture Master - The Pirate Alliance's Operation Begins!"
+    },
+    "596": {
+      "name": "On the Verge of Annihilation - A Deadly Monster Comes Flying In"
+    },
+    "597": {
+      "name": "An Intense Battle - Caesar Exercises His True Ability!"
+    },
+    "598": {
+      "name": "The Samurai Who Cuts Fire! Foxfire Kin'emon!"
+    },
+    "599": {
+      "name": "Shock! The Identity of the Mysterious Man Vergo!"
+    },
+    "600": {
+      "name": "Protect the Children! Master's Evil Hands Close in"
+    },
+    "601": {
+      "name": "Shaking Up the New World - Caesar's Nightmarish Experiment"
+    },
+    "602": {
+      "name": "History's Worst Weapon of Mass Destruction! Shinokuni"
+    },
+    "603": {
+      "name": "The Counterattack Begins! Luffy and Law's Great Escape"
+    },
+    "604": {
+      "name": "Get to Building R! The Pirate Alliance's Great Advance!"
+    },
+    "605": {
+      "name": "Tashigi's Tears - G-5's Desperate Breakthrough Plan"
+    },
+    "606": {
+      "name": "The Treacherous Vice Admiral! 'Demon Bamboo' Vergo"
+    },
+    "607": {
+      "name": "Heated Fierce Battle - Luffy vs. Caesar"
+    },
+    "608": {
+      "name": "The Mastermind in the Shadows! Doflamingo Moves!"
+    },
+    "609": {
+      "name": "Luffy's Freezing to Death!? The Terrifying Snow Woman, Monet!"
+    },
+    "610": {
+      "name": "Clashing Fists! The Battle of Two Vice Admirals"
+    },
+    "611": {
+      "name": "A Small Dragon! Momonosuke Appears"
+    },
+    "612": {
+      "name": "A Deadly Fight in a Blizzard -  The Straw Hats vs. the Snow Woman"
+    },
+    "613": {
+      "name": "Secret Technique Blasts! Zoro's Strongest One-Sword Style!"
+    },
+    "614": {
+      "name": "I'll Protect My Friends! Mocha's Desperate Escape"
+    },
+    "615": {
+      "name": "Brownbeard in Grief! Luffy's Furious Blow"
+    },
+    "616": {
+      "name": "Shocking Conclusion! Smoker vs. Vergo!"
+    },
+    "617": {
+      "name": "Caesar's Defeat! The Strongest Grizzly Magnum"
+    },
+    "618": {
+      "name": "Raid! The Assassins from Dressrosa"
+    },
+    "619": {
+      "name": "Running Wild! Invincible General Franky"
+    },
+    "620": {
+      "name": "A Critical Situation! Punk Hazard Explodes"
+    },
+    "621": {
+      "name": "Capture Caesar - General Cannon Blasts"
+    },
+    "622": {
+      "name": "A Touching Reunion! Momonosuke and Kin'emon"
+    },
+    "623": {
+      "name": "It's Time to Say Goodbye - Leaving Punk Hazard!"
+    },
+    "624": {
+      "name": "The G-5 Wiped Out! Doflamingo's Sudden Attack!"
+    },
+    "625": {
+      "name": "Intense! Aokiji vs. Doflamingo"
+    }
+  },
+  "events": {
+    "law-vs-smoker-punk-hazard": "Law defeats Smoker and swaps Smoker's and Tashigi's bodies.",
+    "luffy-law-pirate-alliance": "Law proposes a pirate alliance to Luffy to bring down an Emperor, and Luffy accepts.",
+    "vergo-identity-revealed": "Vice Admiral Vergo is revealed to be an undercover member of the Donquixote Family.",
+    "shinokuni-unleashed": "Caesar unleashes the lethal gas Shinokuni over Punk Hazard.",
+    "zoro-defeats-monet": "Zoro stops Tashigi and defeats Monet himself with a single slash.",
+    "law-defeats-vergo": "After Vergo defeats Smoker, Law cuts him in two along with the laboratory.",
+    "luffy-defeats-caesar-grizzly-magnum": "Luffy defeats Caesar with the Gomu Gomu no Grizzly Magnum.",
+    "general-franky-debut": "Franky debuts the General Franky robot.",
+    "law-ultimatum-doflamingo": "Law demands that Doflamingo give up being a Warlord in exchange for Caesar; Doflamingo attacks the G-5.",
+    "aokiji-vs-doflamingo": "Kuzan steps in to stop Doflamingo and save Smoker."
+  }
+}

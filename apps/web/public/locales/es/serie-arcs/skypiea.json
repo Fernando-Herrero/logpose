@@ -1,0 +1,152 @@
+{
+  "episodes": {
+    "153": {
+      "name": "This is the Sea of the Sky! The Knight of the Sky and Heaven's Gate"
+    },
+    "154": {
+      "name": "Godland Skypiea! The Angels of the Cloud Beach"
+    },
+    "155": {
+      "name": "Sacred Ground! The Island Where God Resides and Heaven's Judgement!"
+    },
+    "156": {
+      "name": "Criminals Already!? Skypiea's Upholders of the Law"
+    },
+    "157": {
+      "name": "Can we Escape!? God's Ordeals are Set in Motion!"
+    },
+    "158": {
+      "name": "Trap on Lovely Street! Almighty God Enel"
+    },
+    "159": {
+      "name": "Go Forth, Little Crow! To the Sacrificial Altar"
+    },
+    "160": {
+      "name": "Survival Rate: 10%! Priest Satori with the Power of Mantra!"
+    },
+    "161": {
+      "name": "Peril of the Ordeal of Balls! Fight to the Death in the Lost Forest"
+    },
+    "162": {
+      "name": "Chopper's in Danger! Former God vs. Priest Shura"
+    },
+    "163": {
+      "name": "Ever Mysterious! Ordeal of String and Ordeal of Love!?"
+    },
+    "164": {
+      "name": "Light the Fire of Shandia! Wyper the Warrior"
+    },
+    "165": {
+      "name": "Floating Land of Gold, Jaya! To God's Shrine!"
+    },
+    "166": {
+      "name": "Eve of Gold Festival! Feelings Toward 'Vearth'!"
+    },
+    "167": {
+      "name": "God Enel Appears!! Aubade to the Survivors"
+    },
+    "168": {
+      "name": "The Python Strikes! The Survival Game Begins"
+    },
+    "169": {
+      "name": "The Life-Threatening Reject! War Demon Wyper's Resolve"
+    },
+    "170": {
+      "name": "Fierce Sky Battle! Pirate Zoro vs. Fighter Braham"
+    },
+    "171": {
+      "name": "Howling Burn Bazooka!! Luffy vs. War Demon Wyper"
+    },
+    "172": {
+      "name": "Ordeal of Swamp! Chopper vs. Priest Gedatsu!!"
+    },
+    "173": {
+      "name": "The Invincible Ability! Enel's True Nature Revealed"
+    },
+    "174": {
+      "name": "The Vanished City! The Magnificent Ruins of Shandora!!"
+    },
+    "175": {
+      "name": "Chance of Survival: 0%!! Chopper vs. Priest Ohm"
+    },
+    "176": {
+      "name": "Climb Giant Jack!! Showdown in the Upper Ruins"
+    },
+    "177": {
+      "name": "Ultimate Test of the Ordeal of Iron! The White-Barbed Death Match!!"
+    },
+    "178": {
+      "name": "Gushing Blade Attack! Zoro vs. Priest Ohm!!"
+    },
+    "179": {
+      "name": "The Upper Ruins Crumble! The Quintet Finale!!"
+    },
+    "180": {
+      "name": "Battle in the Ancient Ruins! God Enel's Desire!!"
+    },
+    "181": {
+      "name": "Ambitions of Fairy Vearth - The Ark, Maxim!!"
+    },
+    "182": {
+      "name": "Finally Clashing! Pirate Luffy vs. God Enel!!"
+    },
+    "183": {
+      "name": "Maxim Rises! The Start of Deathpiea!!"
+    },
+    "184": {
+      "name": "Luffy's Fall! God's Judgement and Nami's Desire!!"
+    },
+    "185": {
+      "name": "Two People Awaken! A Rescue in Front of Burning Love!!"
+    },
+    "186": {
+      "name": "Capriccio to Destruction! The Impending Doom of Sky Island!!"
+    },
+    "187": {
+      "name": "Guidance from the Sound of a Bell! The Great Warrior and Tales of an Explorer"
+    },
+    "188": {
+      "name": "Released from Disgrace! The Tears of the Great Warrior!!"
+    },
+    "189": {
+      "name": "Eternal Friendship! The Bell of Oath Echoes Throughout the Giant Ocean!!"
+    },
+    "190": {
+      "name": "The Destruction of Angel Island! Terror of the Descending Raigo!!"
+    },
+    "191": {
+      "name": "Chop Down Giant Jack! The Last Hope of Escaping"
+    },
+    "192": {
+      "name": "The Miracle in God's Country! A Love Song Heard by Angels"
+    },
+    "193": {
+      "name": "The War Draws to a Close! Ringing Far and Wide, the Proud Fantasia"
+    },
+    "194": {
+      "name": "I Have Come Here! The Weaving of the Poneglyphs"
+    },
+    "195": {
+      "name": "Now Heading Towards the Blue Sea!! Memories of an Interwoven Finale"
+    }
+  },
+  "events": {
+    "arrival-white-sea": "Llegada al Mar Blanco; Gan Fall salva a la tripulación del ataque de Wyper.",
+    "luffy-defeats-satori": "Luffy derrota al sacerdote Satori en el Bosque Perdido.",
+    "gan-fall-vs-shura": "Gan Fall pierde contra Shura defendiendo el Going Merry.",
+    "enel-first-appearance": "Primera aparición de Enel ante sus sacerdotes.",
+    "zoro-vs-braham": "Zoro derrota a Braham durante el Juego de Supervivencia.",
+    "luffy-vs-wyper": "Luffy se enfrenta a Wyper y su Burn Bazooka.",
+    "luffy-defeats-gedatsu": "Luffy derrota al sacerdote Gedatsu en el pantano.",
+    "enel-goro-goro-reveal": "Enel revela su poder: la Goro Goro no Mi, una Logia de rayo.",
+    "zoro-defeats-ohm": "Zoro derrota al sacerdote Ohm en las ruinas superiores.",
+    "wyper-reject-enel": "Wyper usa el Reject Dial contra Enel, que se reanima con su propio rayo.",
+    "ark-maxim-reveal": "Enel muestra el arca Maxim y su plan de viajar a la Tierra Infinita.",
+    "luffy-vs-enel-rubber": "Luffy se enfrenta a Enel y resulta inmune a su rayo por ser de goma.",
+    "noland-kalgara-friendship": "Flashback de la amistad entre Noland y Calgara, 400 años atrás.",
+    "luffy-golden-arm": "Luffy usa la bola de oro pegada a su brazo como arma contra Enel.",
+    "luffy-defeats-enel": "Luffy derrota a Enel con el Gomu Gomu no Ougon Rifle y hace sonar la campana dorada.",
+    "robin-roger-poneglyph": "Robin lee el poneglifo de la campana y descubre el mensaje de Gol D. Roger.",
+    "straw-hats-take-gold": "La tripulación se lleva oro de Shandora y desciende al Mar Azul."
+  }
+}

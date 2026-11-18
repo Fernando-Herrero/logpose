@@ -1,0 +1,55 @@
+{
+  "episodes": {
+    "78": {
+      "name": "¿Nami está enferma? ¡Más allá de donde cae la nieve en el océano!"
+    },
+    "79": {
+      "name": "¡Emboscada! El Bliking y Wapol el Blik"
+    },
+    "80": {
+      "name": "¿Una isla sin médicos? ¡Aventura en el país sin nombre!"
+    },
+    "81": {
+      "name": "¿Es usted feliz? ¡La médica que es llamada bruja!"
+    },
+    "82": {
+      "name": "¡La solución de Dalton! El desembarco de las fuerzas de Wapol"
+    },
+    "83": {
+      "name": "¡La isla que vive en la nieve! ¡Ascenso de Drum Rockies!"
+    },
+    "84": {
+      "name": "¡El reno de nariz azul! El secreto de Chopper"
+    },
+    "85": {
+      "name": "¡El sueño de un forajido! ¡El curandero Hiriluk!"
+    },
+    "86": {
+      "name": "¡Los cerezos de Hiriluk y la voluntad heredada!"
+    },
+    "87": {
+      "name": "¡VS el ejército de Wapol! ¡Las habilidades de la Fruta Baku Baku!"
+    },
+    "88": {
+      "name": "¡Fruta del diablo de la familia Zoan! Las siete trasformaciones de Chopper"
+    },
+    "89": {
+      "name": "¡Cuando la tiranía del reino acaba! La bandera de la convicción durara por siempre"
+    },
+    "90": {
+      "name": "¡Los cerezos de Hiriluk! El milagro de Drum Rockies"
+    },
+    "91": {
+      "name": "¡Adiós, Isla de Drum! ¡Me voy al mar!"
+    }
+  },
+  "events": {
+    "chopper-debut": "Primera aparición de Tony Tony Chopper, el reno de nariz azul.",
+    "luffy-sanji-climb-drum-rockies": "Luffy escala las Drum Rockies cargando con Nami y Sanji herido.",
+    "hiriluk-death": "Hiriluk se suicida ante Wapol tras beber la seta que Chopper le dio por error.",
+    "chopper-rumble-ball": "Chopper usa la Rumble Ball y muestra sus siete transformaciones contra Chess y Kuromarimo.",
+    "luffy-defeats-wapol": "Luffy manda a Wapol por los aires con Gomu Gomu no Bazooka y la bandera de Hiriluk ondea en el castillo.",
+    "hiriluk-cherry-blossoms": "Kureha cumple el sueño de Hiriluk: nieve rosa sobre la isla de Drum.",
+    "chopper-joins-straw-hats": "Chopper se une a los Sombrero de Paja como médico del barco."
+  }
+}

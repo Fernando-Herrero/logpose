@@ -1,0 +1,22 @@
+{
+  "episodes": {
+    "220": {
+      "name": "Was It Lost? Stolen? Who Are You?"
+    },
+    "221": {
+      "name": "A Mysterious Boy With a Horn and Robin's Deduction!"
+    },
+    "222": {
+      "name": "Now, Let's Get Back Our Memories! The Pirate Crew Lands on the Island!"
+    },
+    "223": {
+      "name": "Zoro Bares His Fangs! A Savage Animal Stands in the Way!"
+    },
+    "224": {
+      "name": "The Last Counterattack by the Memory Thief Who Reveals His True Colors!"
+    }
+  },
+  "events": {
+    "crew-memory-loss": "記憶泥棒のせいで一味が記憶を失う。"
+  }
+}

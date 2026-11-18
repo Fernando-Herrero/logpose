@@ -1,0 +1,14 @@
+{
+  "episodes": {
+    "62": {
+      "name": "¿El primer obstáculo? La ballena gigante Laboon"
+    },
+    "63": {
+      "name": "¡Un hombre de promesa! Luffy y la ballena juran encontrarse nuevamente"
+    }
+  },
+  "events": {
+    "enter-grand-line": "El Going Merry sube Reverse Mountain y entra en el Grand Line.",
+    "luffy-vs-laboon-promise": "Luffy pelea contra Laboon y le promete volver a combatir; pinta la Jolly Roger en su cabeza."
+  }
+}

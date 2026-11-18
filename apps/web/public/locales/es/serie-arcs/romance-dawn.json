@@ -1,0 +1,22 @@
+{
+  "episodes": {
+    "1": {
+      "name": "I'm Luffy! The Man Who's Gonna Be King of the Pirates!",
+      "description": "Un misterioso joven emerge de un barril en medio del océano. Cuando un crucero es atacado por los piratas de Alvida, conoce a un chico llamado Coby que sueña con ser marine."
+    },
+    "2": {
+      "name": "Enter the Great Swordsman! Pirate Hunter Roronoa Zoro!",
+      "description": "Luffy y Coby llegan a Shell Town donde conocen al famoso cazador de piratas Roronoa Zoro, quien está atado como prisionero del corrupto Capitán Morgan."
+    },
+    "3": {
+      "name": "Morgan vs. Luffy! Who's This Beautiful Young Woman?",
+      "description": "Luffy y Zoro enfrentan al tiránico Capitán Morgan en Shell Town. Una misteriosa ladrona observa la batalla desde las sombras."
+    }
+  },
+  "events": {
+    "luffy-vs-alvida": "Luffy derrota a Alvida con su Gomu Gomu no Pistol.",
+    "zoro-joins-crew": "Zoro acepta unirse a Luffy para salir del cautiverio de Morgan.",
+    "luffy-vs-morgan": "Luffy y Zoro derrotan al capitán Morgan en Shells Town.",
+    "koby-joins-marines": "Koby se alista en la Marina."
+  }
+}

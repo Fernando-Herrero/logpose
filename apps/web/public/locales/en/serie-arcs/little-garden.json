@@ -1,0 +1,36 @@
+{
+  "episodes": {
+    "70": {
+      "name": "Prehistoric Island! The Shadow Lurking in Little Garden!"
+    },
+    "71": {
+      "name": "Humongous Battle! The Giants Dorry and Brogy!"
+    },
+    "72": {
+      "name": "Luffy's Anger! A Dirty Trick in a Sacred Battle"
+    },
+    "73": {
+      "name": "Brogy Wails in Victory! Elbaph's Judgement"
+    },
+    "74": {
+      "name": "The Devil's Candle! Tears of Regret and Tears of Anger"
+    },
+    "75": {
+      "name": "Luffy Attacked by Magic! Colors Trap"
+    },
+    "76": {
+      "name": "Critical Counterattack! Usopp's Quick Wit and Kaenboshi!"
+    },
+    "77": {
+      "name": "Farewell to the Giants' Island! On to Arabasta"
+    }
+  },
+  "events": {
+    "dorry-vs-brogy": "The hundred-year duel between the giants Dorry and Brogy, warriors of Elbaph.",
+    "dorry-beer-sabotage": "Baroque Works plants a bomb in Dorry's beer and taints the sacred duel.",
+    "candle-champion-trap": "Mr. 3 traps Zoro, Nami and Vivi in his wax cake; Zoro considers cutting off his own legs.",
+    "usopp-kaenboshi-candle-escape": "Usopp sets the wax setup on fire with his Kaenboshi and frees his crewmates; Luffy defeats Mr. 3.",
+    "brogy-dorry-elbaf-spear": "The giants split the Sea King blocking the route with the Elbaph Spear technique.",
+    "nami-falls-ill": "Nami falls seriously ill, forcing the crew to search for a doctor."
+  }
+}

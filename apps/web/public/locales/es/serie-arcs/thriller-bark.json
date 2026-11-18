@@ -1,0 +1,164 @@
+{
+  "episodes": {
+    "337": {
+      "name": "Venture Into the Devil's Sea! The Mysterious Skeleton Floating Through the Fog"
+    },
+    "338": {
+      "name": "The Delight of Having Met People! The Gentleman Skeleton's True Colors"
+    },
+    "339": {
+      "name": "One Phenomenon After Another! Disembarking at Thriller Bark"
+    },
+    "340": {
+      "name": "The Man Called a Genius! Hogback Appears!"
+    },
+    "341": {
+      "name": "Nami in Big Trouble! The Zombie Mansion and the Invisible Man"
+    },
+    "342": {
+      "name": "Mystery of the Zombies! Hogback's Nightmarish Research Laboratory"
+    },
+    "343": {
+      "name": "His Name is Moria! Trap of the Great Shadow-Stealing Pirate"
+    },
+    "344": {
+      "name": "Feast of the Zombie Song! The Bell of the Night Raid is a Sound of Darkness"
+    },
+    "345": {
+      "name": "Filled with Animals!? Perona's Wonder Garden"
+    },
+    "346": {
+      "name": "Disappearing Straw Hat Crew! The Mysterious Swordsman Appears!"
+    },
+    "347": {
+      "name": "Leftover Chivalry! The Traitorous Zombie who Protects Nami"
+    },
+    "348": {
+      "name": "Coming from the Sky! That Man is the \"Humming\" Swordsman!"
+    },
+    "349": {
+      "name": "Luffy in an Emergency! The Living Place of the Strongest Shadow!"
+    },
+    "350": {
+      "name": "The Warrior Called a Demon!! The Time of Oars' Resurrection"
+    },
+    "351": {
+      "name": "Awakening After 500 Years!! Oars Revives!!"
+    },
+    "352": {
+      "name": "Conviction Strong Enough to Beg for One's Life!! Brook Protects his Afro"
+    },
+    "353": {
+      "name": "A Man's Oath Never Dies!! To the Friend who Waits Under a Far-Away Sky"
+    },
+    "354": {
+      "name": "We will Definitely Meet Again!! Brook and the Cape of the Promise"
+    },
+    "355": {
+      "name": "Food, Nami and Shadows!! Luffy's Angry Counterattack"
+    },
+    "356": {
+      "name": "Usopp the Strongest? Leave the Negatives to Me"
+    },
+    "357": {
+      "name": "Sudden Death of the General Zombies!! Oars in an Adventurous Mood!!"
+    },
+    "358": {
+      "name": "Sanji, the Knight of Flames!! Kick Down the False Ceremony"
+    },
+    "359": {
+      "name": "Perverted Connection? Sanji's Stolen Dream"
+    },
+    "360": {
+      "name": "Saving Hero! The Enemy is the Invincible Princess"
+    },
+    "361": {
+      "name": "Perona's Terror!! The U in Uso is the U in Usopp"
+    },
+    "362": {
+      "name": "Slashes Dancing on the Roof! Finale - Zoro vs. Ryuma"
+    },
+    "363": {
+      "name": "Chopper's Rage!! Hogback's Demonic Medical Practice"
+    },
+    "364": {
+      "name": "Oars Roars!! Come Out Straw Hat Crew"
+    },
+    "365": {
+      "name": "The Enemy is Luffy!! The Strongest Zombie vs. the Straw Hat Crew"
+    },
+    "366": {
+      "name": "Defeat Absalom!! Nami's Lightning Attack of Friendship!!"
+    },
+    "367": {
+      "name": "One Down!! Sure Kill Straw Hat Docking?"
+    },
+    "368": {
+      "name": "Soundless Invasion!! The Mysterious Visitor: Kuma the Tyrant"
+    },
+    "369": {
+      "name": "Oars Plus Moria - The Greatest Combination of Brains and Brawn"
+    },
+    "370": {
+      "name": "A Secret Strategy to Turn the Tables - Nightmare Luffy Appears"
+    },
+    "371": {
+      "name": "The Straw Hat Crew Annihilated - Full-Throttle Kage Kage Abilities"
+    },
+    "372": {
+      "name": "The Battle for Superiority Starts! - Luffy vs. Luffy"
+    },
+    "373": {
+      "name": "The Conclusion Arrives! - Deliver the Finishing Blow"
+    },
+    "374": {
+      "name": "The Bodies Vanish! - The Morning Sun Pierces Through the Nightmare Island!"
+    },
+    "375": {
+      "name": "The Endless Crisis! Orders to Obliterate the Straw Hat Crew"
+    },
+    "376": {
+      "name": "Kuma's Nikyu Nikyu Power That Deflect Everything"
+    },
+    "377": {
+      "name": "My Crewmate's Pain is My Pain, Zoro Fights Prepared to Die"
+    },
+    "378": {
+      "name": "Promise on a Day Long Ago - The Pirate's Song and a Tiny Whale"
+    },
+    "379": {
+      "name": "Brook's Past - Sad Farewell to the Cheerful Friend"
+    },
+    "380": {
+      "name": "Bink's Sake - The Song that Connects the Past and Present"
+    },
+    "381": {
+      "name": "A New Crewmate! - The Musician \"Humming Brook\""
+    }
+  },
+  "events": {
+    "brook-first-appearance": "Los Sombrero de Paja encuentran a Brook, un esqueleto parlante, en un barco fantasma del Triángulo Florian; Luffy le invita a unirse.",
+    "arrival-at-thriller-bark": "El Thousand Sunny queda atrapado en Thriller Bark y Nami, Usopp y Chopper desembarcan en la isla.",
+    "gecko-moria-first-appearance": "Aparece Gecko Moria, Shichibukai y señor de Thriller Bark, con su poder de robar sombras.",
+    "shadows-stolen": "Moria roba las sombras de Luffy, Zoro y Sanji; la de Luffy va al cuerpo de Oars.",
+    "oars-revived": "Oars, el antiguo gigante demoníaco, despierta con la sombra de Luffy.",
+    "brook-vs-ryuma": "Brook se enfrenta al zombi Ryuma, que lleva su sombra, y pierde.",
+    "sanji-vs-absalom": "Sanji interrumpe la boda falsa de Absalom con Nami y lucha contra él.",
+    "usopp-vs-perona": "Usopp, inmune a los Negative Hollows, derrota a Perona.",
+    "zoro-vs-ryuma": "Zoro derrota a Ryuma en el tejado y obtiene la espada Shusui.",
+    "chopper-robin-vs-hogback": "Chopper y Robin derrotan a Hogback y Cindry.",
+    "nami-vs-absalom": "Nami derrota a Absalom con el Thunderbolt Tempo.",
+    "straw-hat-docking": "Franky, Usopp y Chopper intentan el \"Docking\" de los Sombrero de Paja contra Oars.",
+    "bartholomew-kuma-arrival": "Bartholomew Kuma, Shichibukai, llega a Thriller Bark.",
+    "nightmare-luffy": "Luffy absorbe 100 sombras robadas y se convierte en Nightmare Luffy.",
+    "luffy-vs-oars": "Nightmare Luffy y la tripulación derrotan a Oars.",
+    "shadows-asgard": "Moria absorbe 1000 sombras y se convierte en Shadow's Asgard.",
+    "luffy-vs-gecko-moria": "Luffy derrota a Gecko Moria con el Gear Second y Gear Third al amanecer.",
+    "zoro-vs-kuma": "Kuma derrota a la tripulación agotada con el Ursus Shock.",
+    "nothing-happened": "Zoro carga con todo el dolor de Luffy para salvarle: «No ha pasado nada».",
+    "brook-past-rumbar-pirates": "Brook cuenta su pasado con los Piratas Rumbar y la promesa a Laboon.",
+    "binks-sake": "Brook toca el Binks no Sake con los Sombrero de Paja y la gente liberada de Thriller Bark.",
+    "brook-joins-crew": "Brook se une a los Sombrero de Paja como músico.",
+    "brook-bounty-33m": "Se muestra el cartel de recompensa de Brook: 33.000.000 berries."
+  }
+}

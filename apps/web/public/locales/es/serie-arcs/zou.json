@@ -1,0 +1,101 @@
+{
+  "episodes": {
+    "751": {
+      "name": "The Start of a New Adventure - Arrival at the Mysterious Island, 'Zou'!"
+    },
+    "752": {
+      "name": "The New Warlord - Son of the Legendary Whitebeard Arrives"
+    },
+    "753": {
+      "name": "A Deadly Elephant Climb - A Great Adventure on the Back of the Giant Elephant!"
+    },
+    "754": {
+      "name": "Battle Starts! Luffy vs. the Mink Tribe!"
+    },
+    "755": {
+      "name": "Garchu! The Straw Hat Crew Reunites"
+    },
+    "756": {
+      "name": "The Counterattack Begins! The Curly Hat Pirates moves out!"
+    },
+    "757": {
+      "name": "An Incoming Threat - Jack of the Beasts Pirates!"
+    },
+    "758": {
+      "name": "Ruler of Day - Enter Duke Inuarashi!"
+    },
+    "759": {
+      "name": "Ruler of Night - Nekomamushi Appears"
+    },
+    "760": {
+      "name": "Destruction of the Capital - Curly Hat Pirates Arrive on Land!"
+    },
+    "761": {
+      "name": "Race Against Time - The Bond of the Minks and the Crew!"
+    },
+    "762": {
+      "name": "The Rascal Returns Home - Emperor Big Mom's Assassin"
+    },
+    "763": {
+      "name": "The Truth Behind His Disappearance - Sanji's Shocking Invitation"
+    },
+    "764": {
+      "name": "To My Buds! Sanji's Farewell Note!"
+    },
+    "765": {
+      "name": "Let's Go See Master Nekomamushi"
+    },
+    "766": {
+      "name": "Luffy's Decision - Sanji on the Brink of Quitting!"
+    },
+    "767": {
+      "name": "A Volatile Situation - The Dog and the Cat and the Samurai!"
+    },
+    "768": {
+      "name": "The Third One! Raizo of the Mist, the Ninja, Appears!"
+    },
+    "769": {
+      "name": "A Red Stone! A Guide to the One Piece"
+    },
+    "770": {
+      "name": "The Secret of Wano Country — The Kouzuki Clan and the Poneglyph"
+    },
+    "771": {
+      "name": "A Man’s Vow — Luffy and Kouzuki Momonosuke"
+    },
+    "772": {
+      "name": "The Legendary Journey! The Dog and the Cat and the Pirate King!"
+    },
+    "773": {
+      "name": "Returning Nightmare - Assault of the Invulnerable Jack"
+    },
+    "774": {
+      "name": "Defensive Battle of Zou - Luffy and Zunisha!"
+    },
+    "775": {
+      "name": "Save the Giant Elephant - The Straw Hats Rescue Operation!"
+    },
+    "776": {
+      "name": "Descending the Elephant — Setting Sail for Sanji’s Retrieval!"
+    },
+    "777": {
+      "name": "To the Levely - Princess Vivi and Princess Shirahoshi"
+    },
+    "778": {
+      "name": "To the Levely - Rebecca and the Sakura Kingdom"
+    },
+    "779": {
+      "name": "Kaido Returns - The Worst Generation Threatened!"
+    }
+  },
+  "events": {
+    "straw-hats-reunite-on-zou": "Los Sombrero de Paja se reencuentran en Zou con el grupo de Nami.",
+    "jack-destroys-mokomo-dukedom": "Flashback del asalto de Jack a Zou durante cinco días y cinco noches.",
+    "sanji-leaves-for-whole-cake": "Sanji se marcha con Capone Bege para su boda con Charlotte Pudding y deja una carta de despedida.",
+    "raizo-revealed-on-zou": "Los minks revelan que protegían al ninja Raizo de Kaido.",
+    "road-poneglyph-revealed": "Robin descubre el Road Poneglyph rojo de Zou, guía hacia Raftel.",
+    "ninja-pirate-mink-samurai-alliance": "Luffy y Momonosuke sellan la alianza ninja-pirata-mink-samurái contra Kaido.",
+    "zunesha-crushes-jack": "Momonosuke ordena a Zunesha atacar y la flota de Jack queda destrozada.",
+    "kaido-tries-suicide": "Presentación de Kaido, que se lanza desde Punk Hazard al vacío sin morir."
+  }
+}

@@ -1,4 +1,10 @@
-import { readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import {
+  mkdirSync,
+  readdirSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from 'node:fs';
 import path from 'node:path';
 
 import {
@@ -14,6 +20,7 @@ type Locale = 'es' | 'en' | 'ja';
 type Saga = z.infer<typeof serie.sagaSchema>;
 type Arc = z.infer<typeof serie.arcSchema>;
 type Episode = z.infer<typeof serie.episodeSchema>;
+type ArcTexts = z.infer<typeof serie.arcTextsSchema>;
 
 const titleSchema = z.object({
   en: z.string(),
@@ -46,6 +53,7 @@ const arcSchema = z.object({
       z.object({
         slug: z.string(),
         episode: z.number().int().positive().nullish(),
+        description: summarySchema,
       }),
     )
     .default([]),
@@ -122,10 +130,25 @@ export function normalizeResearch(input: unknown) {
       ]),
     ),
     arcs: Object.fromEntries(arcs.map(arc => [arc.slug, texts(arc, locale)])),
-    episodes: Object.fromEntries(
-      episodes.map(episode => [episode.number, texts(episode, locale)]),
-    ),
   });
+
+  const arcTexts = (locale: Locale) =>
+    Object.fromEntries(
+      arcs.map((arc): [string, ArcTexts] => [
+        arc.slug,
+        {
+          episodes: Object.fromEntries(
+            arc.episodes.map(episode => [
+              episode.number,
+              texts(episode, locale),
+            ]),
+          ),
+          events: Object.fromEntries(
+            arc.events.map(event => [event.slug, event.description[locale]]),
+          ),
+        },
+      ]),
+    );
 
   return {
     sagas: sagas.map(
@@ -170,6 +193,11 @@ export function normalizeResearch(input: unknown) {
       en: localeTexts('en'),
       ja: localeTexts('ja'),
     },
+    arcTexts: {
+      es: arcTexts('es'),
+      en: arcTexts('en'),
+      ja: arcTexts('ja'),
+    },
   };
 }
 
@@ -193,14 +221,20 @@ if (import.meta.main) {
     };
   });
 
-  const { sagas, arcs, episodes, locales } = normalizeResearch(research);
+  const { sagas, arcs, episodes, locales, arcTexts } =
+    normalizeResearch(research);
   writeJson(path.join(dataDir, 'sagas.json'), sagas);
   writeJson(path.join(dataDir, 'arcs.json'), arcs);
   writeJson(path.join(dataDir, 'episodes.json'), episodes);
-  for (const [locale, localeTexts] of Object.entries(locales)) {
-    writeJson(
-      path.join(root, 'apps/web/public/locales', locale, 'serie.json'),
-      localeTexts,
-    );
+  for (const locale of ['es', 'en', 'ja'] as const) {
+    const localeDir = path.join(root, 'apps/web/public/locales', locale);
+    const arcsDir = path.join(localeDir, 'serie-arcs');
+    writeJson(path.join(localeDir, 'serie.json'), locales[locale]);
+    // Se vacía antes: un arco renombrado no deja su fichero viejo suelto.
+    rmSync(arcsDir, { recursive: true, force: true });
+    mkdirSync(arcsDir);
+    for (const [slug, arcText] of Object.entries(arcTexts[locale])) {
+      writeJson(path.join(arcsDir, `${slug}.json`), arcText);
+    }
   }
 }

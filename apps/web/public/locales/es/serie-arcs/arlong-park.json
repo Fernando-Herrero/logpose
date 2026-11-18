@@ -1,0 +1,69 @@
+{
+  "episodes": {
+    "31": {
+      "name": "The Worst Man in the Eastern Seas! Fishman Pirate Arlong!",
+      "description": "La tripulación descubre que Nami se ha ido llevándose el Going Merry. Johnny y Yosaku llegan con noticias sobre Nami y los piratas hombres-pez liderados por el temible Arlong."
+    },
+    "32": {
+      "name": "Witch of Cocoyashi Village! Arlong's Female Leader!",
+      "description": "Zoro y Usopp siguen a Nami hasta su aldea natal. Descubren que ella trabaja para los piratas hombres-pez y es conocida como la 'bruja' que dibuja mapas para Arlong."
+    },
+    "33": {
+      "name": "Usopp Dead?! When is Luffy Going to Make Landfall?!",
+      "description": "Usopp es derrotado por Arlong y sus hombres. Mientras tanto, Luffy y Sanji navegan hacia Cocoyashi con Yosaku como guía, sin saber la verdadera situación."
+    },
+    "34": {
+      "name": "Everyone's Gathered! Usopp Speaks the Truth About Nami!",
+      "description": "Usopp revela a Luffy y Sanji la trágica historia de Nami y por qué trabaja para Arlong. La tripulación se reúne para conocer la verdad sobre su navegante."
+    },
+    "35": {
+      "name": "Untold Past! Female Warrior Bellemere!",
+      "description": "Flashback que revela el pasado de Nami: cómo Bell-mère, una marine retirada, la encontró como bebé y la crió junto a Nojiko en Cocoyashi Village."
+    },
+    "36": {
+      "name": "Survive! Mother Bellemere and Nami's Bond!",
+      "description": "Continúa el flashback mostrando cómo Arlong llegó al pueblo y asesinó a Bell-mère. Nami acepta trabajar para él para salvar a los aldeanos y comprar su libertad."
+    },
+    "37": {
+      "name": "Luffy Rises! Result of the Broken Promise!",
+      "description": "Arlong rompe su promesa con Nami usando al corrupto marine Nezumi. Cuando Nami finalmente pide ayuda, Luffy le da su sombrero de paja y promete derrotar a Arlong."
+    },
+    "38": {
+      "name": "Luffy in Big Trouble! Fishmen vs. the Luffy Pirates!",
+      "description": "Comienza la batalla en Arlong Park. Los Sombreros de Paja enfrentan a los piratas hombres-pez mientras Luffy queda atrapado bajo el agua por la piscina del parque."
+    },
+    "39": {
+      "name": "Luffy Submerged! Zoro vs. Hatchan the Octopus!",
+      "description": "Zoro se enfrenta al espadachín pulpo Hatchan en un duelo de seis espadas contra tres. Mientras tanto, Luffy permanece atrapado bajo el agua."
+    },
+    "40": {
+      "name": "Proud Warriors! Sanji and Usopp's Fierce Battles!",
+      "description": "Sanji lucha contra Kuroobi en el agua, demostrando su habilidad de combate acuático, mientras Usopp se enfrenta al karateka Chu con su honda y su ingenio."
+    },
+    "41": {
+      "name": "Luffy at Full Power! Nami's Determination and the Straw Hat!",
+      "description": "Genzo y Nojiko salvan a Luffy del agua. Nami finalmente se enfrenta a su pasado y declara que quiere seguir viviendo, inspirando a Luffy para la batalla final."
+    },
+    "42": {
+      "name": "Explosion! Fishman Arlong's Fierce Assault From the Sea!",
+      "description": "Arlong demuestra su verdadero poder como hombre-pez, mostrando su fuerza sobrehumana y sus afilados dientes de tiburón en la batalla contra Luffy."
+    },
+    "43": {
+      "name": "End of the Fishman Empire! Nami's My Friend!",
+      "description": "Luffy destruye la habitación donde Nami fue forzada a dibujar mapas, proclamando que ella es su nakama. Con su Gomu Gomu no Ono, derrota a Arlong y destruye Arlong Park."
+    },
+    "44": {
+      "name": "Departure! Farewell to the Brave Cocoyashi Village!",
+      "description": "Los aldeanos celebran su libertad. Nami se despide oficialmente de su pueblo natal y de Nojiko para unirse definitivamente a los Sombreros de Paja como su navegante."
+    }
+  },
+  "events": {
+    "bell-mere-death": "Arlong asesina a Bell-mère ante Nami y Nojiko.",
+    "nami-asks-luffy-for-help": "Nami pide ayuda a Luffy y él le pone su sombrero de paja.",
+    "zoro-vs-hatchan": "Zoro vence a Hatchan.",
+    "sanji-vs-kuroobi": "Sanji vence a Kuroobi.",
+    "usopp-vs-chew": "Usopp vence a Chew.",
+    "luffy-vs-arlong": "Luffy derrota a Arlong y destruye Arlong Park.",
+    "nami-joins-crew": "Nami se une oficialmente a la tripulación."
+  }
+}

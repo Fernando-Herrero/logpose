@@ -1,0 +1,15 @@
+{
+  "episodes": {
+    "46": {
+      "name": "Chase Straw Hat! Little Buggy's Big Adventure!",
+      "description": "Episodio especial que sigue las aventuras de Buggy después de su derrota. Buggy busca venganza contra Luffy mientras vive diversas desventuras."
+    },
+    "47": {
+      "name": "You've Been Waiting For It! The Return of Captain Buggy!",
+      "description": "Continuación de las aventuras de Buggy. El payaso pirata continúa su búsqueda de venganza mientras intenta reconstruir su tripulación."
+    }
+  },
+  "events": {
+    "buggy-revival": "Buggy recupera su cuerpo y se alía con Alvida."
+  }
+}

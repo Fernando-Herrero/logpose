@@ -1,0 +1,170 @@
+{
+  "episodes": {
+    "264": {
+      "name": "Landing Operations Start! Charge in, Straw Hats!"
+    },
+    "265": {
+      "name": "Luffy Cuts Through! Big Showdown on the Judicial Island!"
+    },
+    "266": {
+      "name": "Battle Against Giants! Open the Second Gate!"
+    },
+    "267": {
+      "name": "Find a Way Out! Rocketman Takes Flight!"
+    },
+    "268": {
+      "name": "Catch up With Luffy! The Straw Hats' All-Out Battle"
+    },
+    "269": {
+      "name": "Robin Betrayed! The Motive of the World Government!"
+    },
+    "270": {
+      "name": "Give Robin Back! Luffy vs. Blueno!"
+    },
+    "271": {
+      "name": "Don’t Stop! Hoist the Counterattack Signal!"
+    },
+    "272": {
+      "name": "Almost to Luffy! Gather at the Courthouse Plaza!"
+    },
+    "273": {
+      "name": "Everything Is To Protect My Friends! Second Gear Activated!"
+    },
+    "274": {
+      "name": "Give Us Your Answer, Robin! The Straw Hats' Outcry!"
+    },
+    "275": {
+      "name": "Robin's Past! The Girl Was Called a Devil!"
+    },
+    "276": {
+      "name": "Fated Mother and Daughter! The Mother's Name Is Olvia!"
+    },
+    "277": {
+      "name": "The Tragedy of Ohara! The Terror of the Buster Call!"
+    },
+    "278": {
+      "name": "Say You Want To Live! We Are Your Friends!!"
+    },
+    "279": {
+      "name": "Jump Towards the Falls! Luffy’s Feelings!"
+    },
+    "280": {
+      "name": "The Ways of Men! Zoro's Techniques, Usopp's Dream!"
+    },
+    "281": {
+      "name": "A Bond of Friendship Woven by Tears! Nami's World Map!"
+    },
+    "282": {
+      "name": "Parting Builds a Man's Character! Sanji and Chopper!"
+    },
+    "283": {
+      "name": "Everything Is for Her Friends! Robin in the Darkness!"
+    },
+    "284": {
+      "name": "I'm Not Gonna Hand Over the Blueprints! Franky's Decision!"
+    },
+    "285": {
+      "name": "Obtain the Five Keys! The Straw Hat Pirates vs. CP9!"
+    },
+    "286": {
+      "name": "Devil Fruit Powers! Kaku and Jabra Transform!"
+    },
+    "287": {
+      "name": "I Won't Kick Even if It Costs Me My Life! Sanji's Chivalry!"
+    },
+    "288": {
+      "name": "Fukurou's Miscalculation! My Cola Is the Water of Life!"
+    },
+    "289": {
+      "name": "Zoro Busts Out a New Technique! The Sword's Name Is Sniperking?"
+    },
+    "290": {
+      "name": "Uncontrollable! Chopper's Forbidden Rumble!"
+    },
+    "291": {
+      "name": "Boss Luffy Returns! Is It a Dream or Reality? Lottery Ruckus!"
+    },
+    "292": {
+      "name": "A Big Rice Cake Tossing Race at the Castle! Red Nose's Plot!"
+    },
+    "293": {
+      "name": "Bubble Master Kalifa! The Soap Trap Closes in on Nami!"
+    },
+    "294": {
+      "name": "Resounding Bad News! The Buster Call Invoked!"
+    },
+    "295": {
+      "name": "Five Namis? Nami Strikes Back With Mirages!"
+    },
+    "296": {
+      "name": "Nami's Decision! Fire at the Out-of-Control Chopper!"
+    },
+    "297": {
+      "name": "Hunter Sanji Makes an Entrance? Elegy for a Lying Wolf!"
+    },
+    "298": {
+      "name": "Fiery Kicks! Sanji's Full Course of Foot Techniques!"
+    },
+    "299": {
+      "name": "Fierce Sword Attacks! Zoro vs. Kaku, Powerful Sword Fighting Showdown!"
+    },
+    "300": {
+      "name": "Demon God Zoro! An Incarnation of Asura Born From Fighting Spirit!"
+    },
+    "301": {
+      "name": "Spandam Frightened! The Hero on the Tower of Law!"
+    },
+    "302": {
+      "name": "Robin Freed! Luffy vs. Lucci, Showdown Between Leaders!"
+    },
+    "303": {
+      "name": "Boss Luffy Is the Culprit? Track Down the Missing Great Cherry Tree!"
+    },
+    "304": {
+      "name": "I Can't Protect Anyone Unless I Win! Third Gear Activated!"
+    },
+    "305": {
+      "name": "Shivering Past! Dark Justice and Rob Lucci!"
+    },
+    "306": {
+      "name": "A Mysterious Mermaid Appears? As Consciousness Fades Away..."
+    },
+    "307": {
+      "name": "Cannon Fire Sinks the Island! Franky's Lamentation!"
+    },
+    "308": {
+      "name": "Wait for Luffy! Mortal Combat on the Bridge of Hesitation!"
+    },
+    "309": {
+      "name": "Fists Full of Emotion! Luffy Unleashes Gatling With All His Might!"
+    },
+    "310": {
+      "name": "From the Sea, a Friend Arrives! The Straw Hats Share the Strongest Bond!"
+    },
+    "311": {
+      "name": "Everyone Makes a Great Escape! The Road to Victory Is for the Pirates!"
+    },
+    "312": {
+      "name": "Thank You, Merry! Snow Falls Over the Parting Sea!"
+    }
+  },
+  "events": {
+    "luffy-vs-blueno": "Luffy defeats Blueno at the courthouse.",
+    "gear-second-debut": "Luffy activates Gear Second for the first time.",
+    "ohara-buster-call": "Robin's past: Ohara is wiped out by the Buster Call.",
+    "burning-world-government-flag": "Usopp burns the World Government flag: the Straw Hats declare war on it.",
+    "robin-i-want-to-live": "Robin cries out that she wants to live.",
+    "chopper-monster-point": "Chopper takes three Rumble Balls and turns into Monster Point.",
+    "franky-vs-fukurou": "Franky defeats Fukurou.",
+    "usopp-chopper-vs-kumadori": "Usopp and Chopper defeat Kumadori.",
+    "nami-vs-kalifa": "Nami defeats Kalifa with the upgraded Clima-Tact.",
+    "sanji-vs-jabra": "Sanji debuts Diable Jambe and defeats Jabra.",
+    "zoro-asura": "Zoro uses Asura for the first time.",
+    "zoro-vs-kaku": "Zoro defeats Kaku.",
+    "robin-freed": "Sogeking and Franky free Robin from her Seastone handcuffs.",
+    "gear-third-debut": "Luffy activates Gear Third against Lucci.",
+    "luffy-vs-lucci": "Luffy defeats Rob Lucci with a Gear Second Gatling.",
+    "going-merry-rescue": "The Going Merry shows up on its own to rescue the crew.",
+    "going-merry-funeral": "Viking funeral of the Going Merry."
+  }
+}

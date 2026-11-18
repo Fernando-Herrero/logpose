@@ -1,0 +1,24 @@
+{
+  "episodes": {
+    "64": {
+      "name": "A Pirate-Loving Town? Arrival at Whisky Peak"
+    },
+    "65": {
+      "name": "Exploding Santoryu! Zoro vs. Baroque Works!"
+    },
+    "66": {
+      "name": "A Serious Fight! Luffy vs. Zoro: the Baffling Duel!"
+    },
+    "67": {
+      "name": "Deliver Princess Vivi! Luffy Pirates Depart"
+    }
+  },
+  "events": {
+    "zoro-vs-whisky-peak-bounty-hunters": "Zoro single-handedly defeats Baroque Works' hundred bounty hunters.",
+    "luffy-vs-zoro-whisky-peak": "A misunderstanding: Luffy and Zoro fight, with Luffy thinking Zoro has betrayed the townspeople.",
+    "luffy-zoro-vs-mr5-miss-valentine": "Luffy and Zoro defeat Mr. 5 and Miss Valentine to protect Vivi.",
+    "vivi-reveals-crocodile": "Vivi accidentally reveals that the boss of Baroque Works is Crocodile, one of the Seven Warlords of the Sea.",
+    "miss-all-sunday-debut": "Nico Robin makes her first appearance as Miss All Sunday, Mr. 0's partner.",
+    "vivi-joins-straw-hats": "The Straw Hats agree to escort Vivi and Karoo to Alabasta."
+  }
+}

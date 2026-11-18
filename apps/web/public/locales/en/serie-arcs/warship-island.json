@@ -1,0 +1,40 @@
+{
+  "episodes": {
+    "54": {
+      "name": "Precursor to a New Adventure! Apis, a Mysterious Girl!",
+      "description": "The Straw Hats rescue Apis, a mysterious girl who can talk to animals and is fleeing the Marines."
+    },
+    "55": {
+      "name": "Miraculous Creature! Apis's Secret and the Legendary Island!",
+      "description": "Apis reveals she can communicate with millennium dragon Ryuji. Pirates and Marines seek the legendary dragon island."
+    },
+    "56": {
+      "name": "Eric Attacks! Great Escape from Warship Island!",
+      "description": "Eric attacks Warship Island seeking Dragonite. The Straw Hats help villagers evacuate while protecting Apis and the elder dragon."
+    },
+    "57": {
+      "name": "Lone Island in a Distant Sea! The Legendary Lost Island!",
+      "description": "The search for Lost Island continues as Ryuji guides them toward the ancestral home of millennium dragons."
+    },
+    "58": {
+      "name": "Duel in the Ruins! Tense Zoro vs. Eric!",
+      "description": "Zoro faces Eric in the ruins of Lost Island in an intense blade versus wind-scythe battle."
+    },
+    "59": {
+      "name": "Luffy, Completely Surrounded! Admiral Nelson's Secret Strategy!",
+      "description": "Luffy falls into Nelson's trap surrounded by the Marine fleet as Admiral Nelson reveals his plan."
+    },
+    "60": {
+      "name": "Those Who Soar in the Open Sky! Revival of the 1000 Year Legend!",
+      "description": "Ryuji finds fellow dragons on Lost Island and regains vitality as millennium dragons fly together once more."
+    },
+    "61": {
+      "name": "An Angry Showdown! Cross the Red Line!",
+      "description": "Final East Blue episode. The Straw Hats bid farewell to Apis and cross the Red Line into the Grand Line."
+    }
+  },
+  "events": {
+    "zoro-vs-eric": "Zoro beats Eric in the ruins.",
+    "ryuji-revival": "The legend of the millennium dragon is reborn."
+  }
+}

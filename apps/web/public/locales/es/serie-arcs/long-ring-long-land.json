@@ -1,0 +1,55 @@
+{
+  "episodes": {
+    "207": {
+      "name": "Great Adventure in Long Ring Long Land!"
+    },
+    "208": {
+      "name": "A Davy Back With the Foxy Pirates!"
+    },
+    "209": {
+      "name": "Round 1! One Lap of the Donut Race!"
+    },
+    "210": {
+      "name": "Silver Fox Foxy! The Merciless Interference!"
+    },
+    "211": {
+      "name": "Round 2! Shoot It Into the Groggy Ring!"
+    },
+    "212": {
+      "name": "A Barrage of Red Cards in Groggy Ring!"
+    },
+    "213": {
+      "name": "Round 3! The Round-and-Round Roller Race!"
+    },
+    "214": {
+      "name": "A Seriously Heated Race! Into the Final Round!"
+    },
+    "215": {
+      "name": "Screaming-Hot Bombardment! Pirate Dodgeball!"
+    },
+    "216": {
+      "name": "Showdown on the Cliff! Red Light, Green Light!"
+    },
+    "217": {
+      "name": "The Captains Square Off! The Final Combat Round!"
+    },
+    "218": {
+      "name": "Full-Blast Slow-Slow Onslaught vs. Invulnerable Luffy!"
+    },
+    "219": {
+      "name": "Epic, Heated Combat! The Fateful Final Conclusion!"
+    },
+    "227": {
+      "name": "Navy Headquarters Admiral Aokiji! The Ferocity of an Ultimate Powerhouse!"
+    },
+    "228": {
+      "name": "Duel Between Rubber and Ice! Luffy vs. Aokiji!"
+    }
+  },
+  "events": {
+    "davy-back-fight": "Foxy desafía a los Sombrero de Paja a un Davy Back Fight.",
+    "chopper-taken-by-foxy": "Foxy gana la Donut Race y se lleva a Chopper.",
+    "luffy-vs-foxy": "Combate final del Davy Back Fight: Luffy vence a Foxy pese al Noro Noro.",
+    "luffy-vs-aokiji": "El almirante Aokiji congela a Robin y derrota a Luffy en un uno contra uno."
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "episodes": {
+    "517": {
+      "name": "The Beginning of The New Chapter! The Straw Hats Reunited!"
+    },
+    "518": {
+      "name": "An Explosive Situation! Luffy vs. Fake Luffy!"
+    },
+    "519": {
+      "name": "The Navy Has Set Out! The Straw Hats in Danger!"
+    },
+    "520": {
+      "name": "Big Guns Assembled! The Danger of the Fake Straw Hats!"
+    },
+    "521": {
+      "name": "The Battle is on! Show Them What You Got From Training!"
+    },
+    "522": {
+      "name": "Everyone Together! Luffy, Setting Out for the New World!"
+    }
+  },
+  "events": {
+    "luffy-post-timeskip-return": "Luffy recupera su sombrero en Rusukaina y vuelve a Sabaody con su aspecto post-timeskip.",
+    "zoro-post-timeskip-return": "Zoro llega a Sabaody tras dos años con Mihawk, con la cicatriz en el ojo izquierdo.",
+    "nami-post-timeskip-return": "Nami regresa de Weatheria con el nuevo Sorcery Clima-Tact.",
+    "sanji-post-timeskip-return": "Sanji escapa del Reino Kamabakka y vuelve con su nuevo aspecto.",
+    "usopp-post-timeskip-return": "Usopp vuelve musculado tras entrenar en la isla Boin con Heracles.",
+    "chopper-post-timeskip-return": "Chopper reaparece tras estudiar medicina en Torino.",
+    "brook-soul-king-concert": "Brook, convertido en el Soul King, da su concierto de despedida en Sabaody.",
+    "robin-post-timeskip-return": "Robin llega a Sabaody tras dos años con el Ejército Revolucionario.",
+    "franky-new-body-bf37": "Franky muestra su nuevo cuerpo cyborg BF-37 construido con la tecnología de Vegapunk.",
+    "luffy-conquerors-haki-sabaody": "Luffy deja inconscientes a decenas de piratas con el Haki del Rey.",
+    "luffy-defeats-pacifista": "Luffy, Zoro y Sanji destruyen un Pacifista en segundos con sus nuevas técnicas.",
+    "straw-hats-set-sail-new-world": "Los nueve Mugiwara reunidos zarpan bajo el mar en el Sunny recubierto."
+  }
+}

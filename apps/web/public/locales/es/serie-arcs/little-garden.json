@@ -1,0 +1,36 @@
+{
+  "episodes": {
+    "70": {
+      "name": "¡Isla prehistórica! ¡La sombra que está al acecho en Little Garden!"
+    },
+    "71": {
+      "name": "¡El gran duelo! Los gigantes Dorry y Brogy"
+    },
+    "72": {
+      "name": "¡La ira de Luffy! ¡Un truco sucio en una batalla sagrada!"
+    },
+    "73": {
+      "name": "¡Brogy se lamenta en la victoria! Juicio de Elbaph"
+    },
+    "74": {
+      "name": "¡La vela del demonio! Lágrimas de arrepentimiento y lágrimas de cólera"
+    },
+    "75": {
+      "name": "¡Luffy atacado con magia! Colors Trap"
+    },
+    "76": {
+      "name": "¡Contraataque crítico! ¡El rápido ingenio de Usopp y Kaenboshi!"
+    },
+    "77": {
+      "name": "¡Adiós a la isla de los gigantes! Rumbo a Arabasta"
+    }
+  },
+  "events": {
+    "dorry-vs-brogy": "El duelo de cien años entre los gigantes Dorry y Brogy, guerreros de Elbaf.",
+    "dorry-beer-sabotage": "Baroque Works pone una bomba en la cerveza de Dorry y ensucia el duelo sagrado.",
+    "candle-champion-trap": "Mr. 3 atrapa a Zoro, Nami y Vivi en su torta de cera; Zoro se plantea cortarse las piernas.",
+    "usopp-kaenboshi-candle-escape": "Usopp prende fuego al montaje de cera con su Kaenboshi y libera a sus compañeros; Luffy derrota a Mr. 3.",
+    "brogy-dorry-elbaf-spear": "Los gigantes parten al Rey de los Mares que bloquea la ruta con la técnica Elbaf Spear.",
+    "nami-falls-ill": "Nami cae gravemente enferma, lo que obliga a buscar un médico."
+  }
+}

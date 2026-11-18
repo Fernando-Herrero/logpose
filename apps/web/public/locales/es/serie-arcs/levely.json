@@ -1,0 +1,48 @@
+{
+  "episodes": {
+    "878": {
+      "name": "The World is Stunned - The Fifth Emperor of the Sea Emerges!"
+    },
+    "879": {
+      "name": "To the Levely - The Straw Hats' Sworn Allies Come Together"
+    },
+    "880": {
+      "name": "Sabo Goes into Action - All the Captains of the Revolutionary Army Appear!"
+    },
+    "881": {
+      "name": "Going into Action - The Implacable New Fleet Admiral Sakazuki"
+    },
+    "882": {
+      "name": "The Summit War - The Inherited Will of the Pirate King"
+    },
+    "883": {
+      "name": "One Step Forward for Her Dream - Shirahoshi Goes Out in the Sun!"
+    },
+    "884": {
+      "name": "I Miss Him - Vivi and Rebecca's Sentiments"
+    },
+    "885": {
+      "name": "In the Dark Recesses of the Holyland - A Mysterious Giant Straw Hat"
+    },
+    "886": {
+      "name": "The Holy Land in Tumult - The Targeted Princess Shirahoshi!"
+    },
+    "887": {
+      "name": "On the Verge - The Two Emperors Targeting Luffy"
+    },
+    "888": {
+      "name": "Sabo Gets Angry - Tragedy of the Revolutionary Army Officer Kuma"
+    },
+    "889": {
+      "name": "Finally, It Starts - The Conspiracy-filled Levely!"
+    }
+  },
+  "events": {
+    "luffy-fifth-emperor-bounty": "Recompensa de Luffy: 1.500.000.000 berries; la prensa le llama el Quinto Emperador.",
+    "sanji-bounty-330m": "Recompensa de Sanji: 330.000.000 berries, «solo vivo», con apellido Vinsmoke.",
+    "sanji-receives-raid-suit": "Sanji descubre la raid suit Stealth Black que Niji le dejó en secreto.",
+    "revolutionary-army-commanders": "Aparecen los comandantes del Ejército Revolucionario.",
+    "imu-revealed": "Aparece Imu ante los Gorosei, junto al sombrero de paja gigante.",
+    "kuma-slave-revealed": "Kuma aparece como esclavo de los Dragones Celestiales."
+  }
+}

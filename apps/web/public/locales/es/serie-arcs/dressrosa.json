@@ -1,0 +1,391 @@
+{
+  "episodes": {
+    "629": {
+      "name": "Startling! The Big News Shakes Up the New World"
+    },
+    "630": {
+      "name": "Adventure! The Country of Love and Passion, Dressrosa"
+    },
+    "631": {
+      "name": "Full of Enthusiasm - Corrida Colosseum"
+    },
+    "632": {
+      "name": "A Dangerous Love - Dancing Girl Violet"
+    },
+    "633": {
+      "name": "A Formidable, Unknown Warrior! Lucy Appears"
+    },
+    "634": {
+      "name": "The Pirate Prince Cavendish"
+    },
+    "635": {
+      "name": "The Fateful Reunion - Bellamy the Hyena"
+    },
+    "636": {
+      "name": "Supernova! Bartolomeo the Cannibal"
+    },
+    "637": {
+      "name": "Big Names Duke It Out! The Heated Block B Battle!"
+    },
+    "638": {
+      "name": "A Deadly Blow! The Astonishing King Punch"
+    },
+    "639": {
+      "name": "The Fighting Fish Strike! Break through the Deadly Iron Bridge"
+    },
+    "640": {
+      "name": "Adventure! The Island of Fairies, Green Bit"
+    },
+    "641": {
+      "name": "The Unknown World - The Tontatta Kingdom"
+    },
+    "642": {
+      "name": "The Stratagem of the Century - Doflamingo Makes His Move!"
+    },
+    "643": {
+      "name": "Shaking Heaven and Earth! Admiral Fujitora's Power"
+    },
+    "644": {
+      "name": "A Blow of Anger! A Giant vs. Lucy"
+    },
+    "645": {
+      "name": "Destruction Cannon Blasts! Lucy in Trouble"
+    },
+    "646": {
+      "name": "The Legendary Pirate - Don Chinjao!"
+    },
+    "647": {
+      "name": "Light and Shadow - Darkness behind Dressrosa!"
+    },
+    "648": {
+      "name": "Making a Sortie - The Legendary Hero Usoland"
+    },
+    "649": {
+      "name": "The Fierce Battle Coming to the End - Lucy vs. Chinjao"
+    },
+    "650": {
+      "name": "Luffy and the Gladiator of Fate - Rebecca"
+    },
+    "651": {
+      "name": "Protect You to the End! Rebecca and the Toy Soldier"
+    },
+    "652": {
+      "name": "The Last and Bloodiest Block - Block D Battle Begins"
+    },
+    "653": {
+      "name": "A Decisive Battle! Giolla vs. the Straw Hats"
+    },
+    "654": {
+      "name": "Beautiful Sword! Cavendish of the White Horse"
+    },
+    "655": {
+      "name": "A Big Clash! Sanji vs. Doflamingo"
+    },
+    "656": {
+      "name": "Rebecca's Special Attack! Back-to-the-Water Sword Dance"
+    },
+    "657": {
+      "name": "The Most Violent Fighter! Logan vs. Rebecca"
+    },
+    "658": {
+      "name": "A Big Surprise! A True Identity of the Toy Soldier!"
+    },
+    "659": {
+      "name": "A Horrible Past! The Secret of Dressrosa"
+    },
+    "660": {
+      "name": "A Nightmare! The Tragic Night of Dressrosa"
+    },
+    "661": {
+      "name": "A Showdown Between the Warlords - Law vs. Doflamingo"
+    },
+    "662": {
+      "name": "Two Great Rivals Meet Each Other! Straw Hat and Heavenly Yaksha"
+    },
+    "663": {
+      "name": "Luffy Astonished - The Man Who Inherits Ace's Will"
+    },
+    "664": {
+      "name": "Operation SOP Starts - Usoland Charges Forth"
+    },
+    "665": {
+      "name": "A Burning Passion - Rebecca vs. Suleiman"
+    },
+    "666": {
+      "name": "Winner Decided!? A Surprising Result of Block D"
+    },
+    "667": {
+      "name": "The Admiral's Decision — Fujitora vs. Doflamingo"
+    },
+    "668": {
+      "name": "The Final Round Starts - Diamante the Hero Shows Up"
+    },
+    "669": {
+      "name": "A Moving Castle! Executive Officer Pica Rises Up"
+    },
+    "670": {
+      "name": "Dragon Claw Strikes! Lucy's Intimidating Attack!"
+    },
+    "671": {
+      "name": "Defeat Sugar - The Dwarf Soldiers Charge!"
+    },
+    "672": {
+      "name": "The Last Light — The Secret of Our Commander!"
+    },
+    "673": {
+      "name": "The Rupture Human — Gladius Blows Up Big Time!"
+    },
+    "674": {
+      "name": "Liar Usoland on the Run!"
+    },
+    "675": {
+      "name": "A Fateful Encounter — Kyros and King Riku"
+    },
+    "676": {
+      "name": "The Operation Failed! Hero Usoland Dies!?"
+    },
+    "677": {
+      "name": "The Legend is Back! Kyros' All-out Blow"
+    },
+    "678": {
+      "name": "The Fire Fist Strikes! The Power of the Mera Mera no Mi Returns"
+    },
+    "679": {
+      "name": "Dashing onto the Scene - The Chief of Staff of the Revolutionary Army, Sabo!"
+    },
+    "680": {
+      "name": "The Devil's Trap — A Dressrosa Extermination Plan"
+    },
+    "681": {
+      "name": "The 500 Million Man — The Target is Usoland!"
+    },
+    "682": {
+      "name": "Breaking through Enemy Lines - Luffy and Zoro Launch the Counter-Attack"
+    },
+    "683": {
+      "name": "With a Rumbling of the Ground - The God of Destruction, Giant Pica Descends"
+    },
+    "684": {
+      "name": "Gathering into a Powerful Front! Luffy and a Group of Brutal Warriors!"
+    },
+    "685": {
+      "name": "Steady Progress! Luffy's Army vs. Pica!"
+    },
+    "686": {
+      "name": "A Shocking Confession! Law's Soulful Vow!"
+    },
+    "687": {
+      "name": "A Big Collision! Chief of Staff Sabo vs. Admiral Fujitora"
+    },
+    "688": {
+      "name": "A Desperate Situation - Luffy Gets Caught in a Trap!"
+    },
+    "689": {
+      "name": "A Great Escape! Luffy's Tide-turning Elephant Gun"
+    },
+    "690": {
+      "name": "A United Front - Luffy's Breakthrough to the Victory"
+    },
+    "691": {
+      "name": "The Second Samurai — Evening Shower Kanjuro Appears"
+    },
+    "692": {
+      "name": "A Hard-Fought Battle Against Pica - Zoro's Deadly Attack!"
+    },
+    "693": {
+      "name": "The Little People's Princess - Captive Mansherry"
+    },
+    "694": {
+      "name": "Invincible! A Gruesome Army of Headcracker Dolls"
+    },
+    "695": {
+      "name": "Risking Their Lives! Luffy is the Trump Card for Victory"
+    },
+    "696": {
+      "name": "A Tearful Reunion — Rebecca and Kyros!"
+    },
+    "697": {
+      "name": "One Shot One Kill - The Man Who Will Save Dressrosa"
+    },
+    "698": {
+      "name": "Anger Erupts - Luffy and Law's Ultimate Stratagem"
+    },
+    "699": {
+      "name": "A Noble Family - The True Identity of Doflamingo!"
+    },
+    "700": {
+      "name": "The Ultimate Power - The Secret of the Ope Ope no Mi!"
+    },
+    "701": {
+      "name": "Sad Memories - Law the Boy from the White City!"
+    },
+    "702": {
+      "name": "A Celestial Dragon! Doffy's Stormy Past"
+    },
+    "703": {
+      "name": "A Rocky Road - Law and Corazon's Journey of Life"
+    },
+    "704": {
+      "name": "The Time is Ticking Down! Seize the Ope Ope no Mi!"
+    },
+    "705": {
+      "name": "The Moment of Resolution - Corazon's Farewell Smile!"
+    },
+    "706": {
+      "name": "Advance, Law - The Kindhearted Man's Final Fight!"
+    },
+    "707": {
+      "name": "To Be Free! Law's Injection Shot Blasts"
+    },
+    "708": {
+      "name": "An Intense Battle - Law vs. Doflamingo"
+    },
+    "709": {
+      "name": "A Decisive Battle Against the Executives - Proud Hajrudin"
+    },
+    "710": {
+      "name": "The Battle of Love - The New Leader Sai vs. Baby 5"
+    },
+    "711": {
+      "name": "The Man's Pride - Bellamy's Last Charge!"
+    },
+    "712": {
+      "name": "Storm and Stress - Hakuba vs. Dellinger"
+    },
+    "713": {
+      "name": "Bari-Bari - Homage God Fist Strikes!"
+    },
+    "714": {
+      "name": "The Healing Princess — Save Mansherry!"
+    },
+    "715": {
+      "name": "The Manly Duel — Senor's Elegy of Love"
+    },
+    "716": {
+      "name": "Stardust of Death - Diamante's Storm of Vicious Attacks"
+    },
+    "717": {
+      "name": "Trueno Bastardo! Kyros' Furious Strike!"
+    },
+    "718": {
+      "name": "Moving Across the Ground! The Giant Statue Pica's Surprise Maneuver!"
+    },
+    "719": {
+      "name": "A Decisive Battle in Midair - Zoro's New Special Secret Technique Blasts!"
+    },
+    "720": {
+      "name": "So Long! Bellamy's Farewell Blow!"
+    },
+    "721": {
+      "name": "Law Dies - Luffy's Raging Onslaught!"
+    },
+    "722": {
+      "name": "A Blade of Tenacity - The Gamma Knife Counterattack!"
+    },
+    "723": {
+      "name": "A Collision of Haki - Luffy vs. Doflamingo"
+    },
+    "724": {
+      "name": "Unassailable - The Stunning Secret of Trebol"
+    },
+    "725": {
+      "name": "Anger Erupts - I Will Take Everything upon Myself"
+    },
+    "726": {
+      "name": "Gear 4! The Phenomenal Boundman!"
+    },
+    "727": {
+      "name": "A Massive Counterattack! Doflamingo's Awakening!"
+    },
+    "728": {
+      "name": "Luffy! An All-Out Leo Bazooka!"
+    },
+    "729": {
+      "name": "Kaen Ryuo - Protect Luffy's Life"
+    },
+    "730": {
+      "name": "Tears of Miracles - Mansherry's Fight!"
+    },
+    "731": {
+      "name": "As Long as We Breathe - Stop the Deadly Birdcage!"
+    },
+    "732": {
+      "name": "Dead or Alive — A Fateful Countdown"
+    },
+    "733": {
+      "name": "Attack on a Celestial - Luffy's King Kong Gun of Anger"
+    },
+    "734": {
+      "name": "To Be Free! Dressrosa's Delight!"
+    },
+    "735": {
+      "name": "The Unheard-of - Admiral Fujitora's Surprising Decision!"
+    },
+    "736": {
+      "name": "Sending a Shock Wave - The Worst Generation Goes Into Action!"
+    },
+    "737": {
+      "name": "The Birth of the Legend - The Adventures of the Revolutionary Warrior Sabo!"
+    },
+    "738": {
+      "name": "The Brothers' Bond - The Untold Story Behind Luffy and Sabo's Reunion"
+    },
+    "739": {
+      "name": "The Strongest Creature - Emperor - Kaidou of the Beasts"
+    },
+    "740": {
+      "name": "Fujitora Takes Action - The Complete Siege of the Straw Hats"
+    },
+    "741": {
+      "name": "A State of Emergency - Rebecca Is Kidnapped!"
+    },
+    "742": {
+      "name": "The Bond Between Father and Daughter - Kyros and Rebecca!"
+    },
+    "743": {
+      "name": "Men's Pride - Luffy vs. Fujitora, Head-to-Head"
+    },
+    "744": {
+      "name": "No Way Out - Admiral Fujitora's Ruthless Pursuit!"
+    },
+    "745": {
+      "name": "Sons' Cups - Straw Hat Fleet is Formed!"
+    },
+    "746": {
+      "name": "The Numerous Rivals Struggle Amongst Themselves - The Raging Monsters of the New World"
+    }
+  },
+  "events": {
+    "doflamingo-fake-resignation": "La prensa anuncia que Doflamingo deja de ser Shichibukai y rey de Dressrosa (luego resulta ser falso).",
+    "sanji-vs-doflamingo": "Sanji frena a Doflamingo para proteger a Caesar y al grupo de Green Bit.",
+    "law-vs-doflamingo-green-bit": "Law se enfrenta a Doflamingo y cae capturado.",
+    "sabo-alive-revealed": "Luffy descubre que Lucy es Sabo, vivo y heredero de la voluntad de Ace.",
+    "usopp-defeats-sugar": "Usopp desmaya a Sugar y deshace la maldición de los juguetes; nace el «Dios Usopp».",
+    "kyros-strikes-doflamingo": "Kyros recupera su forma humana y decapita a lo que resulta ser un clon de hilo de Doflamingo.",
+    "sabo-eats-mera-mera-no-mi": "Sabo se come el Mera Mera no Mi y hereda el poder de Ace.",
+    "birdcage-activated": "Doflamingo encierra la isla con la Jaula y pone precio a las cabezas de sus enemigos.",
+    "sabo-vs-fujitora": "Sabo frena al almirante Fujitora en el Coliseo.",
+    "corazon-death": "En el pasado de Law, Corazón muere a manos de su hermano Doflamingo tras dar a Law el Ope Ope no Mi.",
+    "franky-defeats-senor-pink": "Franky vence a Senor Pink.",
+    "kyros-defeats-diamante": "Kyros derrota a Diamante con el Trueno Bastardo.",
+    "zoro-defeats-pica": "Zoro corta a Pica con el Ittoryu Daishinkan en pleno aire.",
+    "law-gamma-knife": "Law golpea a Doflamingo con el Gamma Knife.",
+    "gear-fourth-boundman": "Luffy estrena el Gear 4 Boundman contra Doflamingo.",
+    "doflamingo-awakening": "Doflamingo despierta el Ito Ito no Mi.",
+    "luffy-defeats-doflamingo": "Luffy derrota a Doflamingo con el King Kong Gun y la Jaula desaparece.",
+    "fujitora-bows-to-dressrosa": "Fujitora se arrodilla y se disculpa ante el pueblo de Dressrosa.",
+    "kaido-introduced": "Primera aparición completa de Kaido, el Emperador de las Bestias.",
+    "luffy-vs-fujitora": "Luffy y Fujitora chocan cara a cara durante la huida.",
+    "straw-hat-grand-fleet-formed": "Siete tripulaciones beben la copa de subordinados de Luffy, aunque él la rechaza, y forman la Gran Flota de los Sombrero de Paja.",
+    "luffy-bounty-500m": "Recompensa de Luffy: 500.000.000 berries.",
+    "law-bounty-500m": "Recompensa de Law: 500.000.000 berries.",
+    "zoro-bounty-320m": "Recompensa de Zoro: 320.000.000 berries.",
+    "usopp-bounty-200m": "Recompensa de Usopp («Dios Usopp»): 200.000.000 berries.",
+    "sanji-bounty-177m": "Recompensa de Sanji: 177.000.000 berries.",
+    "robin-bounty-130m": "Recompensa de Robin: 130.000.000 berries.",
+    "chopper-bounty-100": "Recompensa de Chopper: 100 berries.",
+    "franky-bounty-94m": "Recompensa de Franky: 94.000.000 berries.",
+    "brook-bounty-83m": "Recompensa de Brook: 83.000.000 berries.",
+    "nami-bounty-66m": "Recompensa de Nami: 66.000.000 berries."
+  }
+}

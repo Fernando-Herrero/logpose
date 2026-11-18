@@ -1,0 +1,55 @@
+{
+  "episodes": {
+    "78": {
+      "name": "Nami is Sick? Beyond the Snow that Falls on the Ocean!"
+    },
+    "79": {
+      "name": "Ambush! The Bliking and Wapol the Blik"
+    },
+    "80": {
+      "name": "A Doctorless Island? Adventure in the Country Without a Name!"
+    },
+    "81": {
+      "name": "Ya Happy? The Doctor Who is Called a Witch!"
+    },
+    "82": {
+      "name": "Dalton's Resolve! Wapol's Forces Land"
+    },
+    "83": {
+      "name": "Island that Lives in Snow! Ascend The Drum Rockies!"
+    },
+    "84": {
+      "name": "The Blue-Nosed Reindeer! Chopper's Secret"
+    },
+    "85": {
+      "name": "Dream of the Outcasts! The Quack Doctor Hiriluk!"
+    },
+    "86": {
+      "name": "Hiriluk's Cherry Blossoms and Inherited Will!"
+    },
+    "87": {
+      "name": "Against Wapol's Army Corps! The Abilities of the Baku Baku no Mi!"
+    },
+    "88": {
+      "name": "Zoan Type Devil's Fruit! Chopper's Seven-Level Transformation"
+    },
+    "89": {
+      "name": "When the Kingdom's Rule is Over! The Flag of Conviction Lasts Forever"
+    },
+    "90": {
+      "name": "Hiriluk's Cherry Blossoms! Miracle of the Drum Rockies"
+    },
+    "91": {
+      "name": "Farewell, Drum Island! I'm Going Out to Sea!"
+    }
+  },
+  "events": {
+    "chopper-debut": "First appearance of Tony Tony Chopper, the blue-nosed reindeer.",
+    "luffy-sanji-climb-drum-rockies": "Luffy climbs the Drum Rockies carrying Nami and the injured Sanji.",
+    "hiriluk-death": "Hiriluk kills himself before Wapol after drinking the mushroom Chopper gave him by mistake.",
+    "chopper-rumble-ball": "Chopper uses the Rumble Ball and shows his seven transformations against Chess and Kuromarimo.",
+    "luffy-defeats-wapol": "Luffy sends Wapol flying with Gomu Gomu no Bazooka, and Hiriluk's flag waves over the castle.",
+    "hiriluk-cherry-blossoms": "Kureha fulfills Hiriluk's dream: pink snow over Drum Island.",
+    "chopper-joins-straw-hats": "Chopper joins the Straw Hats as the ship's doctor."
+  }
+}

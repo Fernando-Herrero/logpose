@@ -1,0 +1,140 @@
+{
+  "episodes": {
+    "92": {
+      "name": "El héroe de Arabasta y la bailarina de a bordo"
+    },
+    "93": {
+      "name": "¡Rumbo al reino de la arena! Un polvo que trae la lluvia y el Ejército Rebelde"
+    },
+    "94": {
+      "name": "¡Reunión de poderosos! Su nombre es Ace Puño de Fuego"
+    },
+    "95": {
+      "name": "¡Ace y Luffy! Recuerdos ardientes y lazos fraternales"
+    },
+    "96": {
+      "name": "¡La ciudad verde Erumalu y los Kung-Fu Dugong!"
+    },
+    "97": {
+      "name": "¡Aventura en el país de la arena! Los demonios que viven en la abrasadora tierra"
+    },
+    "98": {
+      "name": "¡Aquí llegan los Piratas de las Arenas! Hombres que viven libremente"
+    },
+    "99": {
+      "name": "¡El orgullo de un impostor! ¡Camus, corazón del Ejército Rebelde!"
+    },
+    "100": {
+      "name": "¡Koza, guerrero del Ejército Rebelde! ¡El sueño que él juró a Vivi!"
+    },
+    "101": {
+      "name": "¡Duelo en una neblina de calor! Ace vs. Scorpion"
+    },
+    "102": {
+      "name": "¡Ruinas antiguas y almas perdidas! Vivi, amigos y la forma del país"
+    },
+    "103": {
+      "name": "Los oficiales enemigos se reúnen en el Spiders Cafe a las 8:00PM"
+    },
+    "104": {
+      "name": "¡Luffy vs. Vivi! Juramento de lágrimas que crean compañeros"
+    },
+    "105": {
+      "name": "¡Guerra de Arabasta! Rainbase, la Ciudad de los Sueños"
+    },
+    "106": {
+      "name": "¡La trampa del final absoluto! Asaltando Rain Dinners"
+    },
+    "107": {
+      "name": "¡La Operación Utopía ha comenzado! Los Rebeldes se ponen en movimiento"
+    },
+    "108": {
+      "name": "El terrible Bananawani y Mr. Prince"
+    },
+    "109": {
+      "name": "¡La llave a una revelación y escape! ¡Doru Doru Ball!"
+    },
+    "110": {
+      "name": "¡Combate a muerte sin piedad! Luffy vs. Crocodile"
+    },
+    "111": {
+      "name": "¡Correr hacia un milagro! Arabasta, reino animal"
+    },
+    "112": {
+      "name": "¡Ejército Rebelde vs. Ejército Real! ¡El combate final será en Alubarna!"
+    },
+    "113": {
+      "name": "¡Alubarna llora! ¡La fiera lucha del Capitán Karoo!"
+    },
+    "114": {
+      "name": "¡Jura por el sueño de tu compañero! Batalla en la 4ª madriguera"
+    },
+    "115": {
+      "name": "¡La gran interpretación de hoy! ¡Mane Mane montage!"
+    },
+    "116": {
+      "name": "¡Transformándose en Nami! El poderoso Ballet Kenpo de Bon Kurei"
+    },
+    "117": {
+      "name": "¡La advertencia del tornado de Nami! Explosión del Clima-Tact"
+    },
+    "118": {
+      "name": "¡El secreto de la familia Real! Pluton, el arma ancestral"
+    },
+    "119": {
+      "name": "¡La esencia de una espada poderosa! El poder para cortar el acero y el aliento de todas las cosas"
+    },
+    "120": {
+      "name": "¡La batalla ha terminado! Koza alza la bandera blanca"
+    },
+    "121": {
+      "name": "¡La voz de Vivi pasa inadvertida! ¡Un héroe desciende!"
+    },
+    "122": {
+      "name": "¡Crocodile de arena y Luffy de Agua! Combate a muerte: Ronda 2"
+    },
+    "123": {
+      "name": "¡Huele a cocodrilo! ¡Corre a la tumba de la Familia Real, Luffy!"
+    },
+    "124": {
+      "name": "¡La pesadilla se acerca! La base secreta del clan Suna Suna"
+    },
+    "125": {
+      "name": "¡Alas magníficas! Mi nombre es Pell, espíritu guardián del reino"
+    },
+    "126": {
+      "name": "¡Te superaré! ¡La lluvia cae en Arabasta!"
+    },
+    "127": {
+      "name": "¡Adiós a las armas! Piratas y un poco de justicia"
+    },
+    "128": {
+      "name": "¡El banquete de los piratas y la operación escape de Arabasta!"
+    },
+    "129": {
+      "name": "¡Todo comenzó aquel día! ¡Vivi cuenta sus aventuras!"
+    },
+    "130": {
+      "name": "¡Cuidado con su aroma! ¡La séptima es Nico Robin!"
+    }
+  },
+  "events": {
+    "bon-clay-friendship": "El barco se encuentra con Mr. 2 Bon Clay, que se hace amigo de los Sombrero de Paja.",
+    "ace-reunion": "Ace, comandante de los Piratas de Barbablanca, detiene a Smoker y se reencuentra con Luffy.",
+    "luffy-vs-vivi-yuba": "Luffy pelea con Vivi en Yuba y la obliga a admitir que no puede salvar el país sin arriesgar a nadie.",
+    "crocodile-unmasked-rain-dinners": "Crocodile atrapa a los Sombrero de Paja en Rain Dinners y desvela la Operación Utopía.",
+    "luffy-vs-crocodile-round-1": "Primer combate: Crocodile seca a Luffy y lo deja medio muerto en el desierto.",
+    "usopp-chopper-vs-mr4-miss-merry-christmas": "Usopp y Chopper derrotan a Mr. 4 y Miss Merry Christmas.",
+    "sanji-vs-mr2-bon-clay": "Sanji vence a Mr. 2 Bon Clay y su Okama Kenpo.",
+    "nami-vs-miss-doublefinger": "Nami derrota a Miss Doublefinger con el Clima-Tact.",
+    "cobra-reveals-pluton": "Cobra confirma que Crocodile busca el arma ancestral Pluton.",
+    "zoro-vs-mr1": "Zoro aprende a cortar el acero y vence a Mr. 1 con Shishi Sonson.",
+    "water-luffy": "Luffy se empapa de agua para poder golpear el cuerpo de arena de Crocodile.",
+    "luffy-vs-crocodile-round-2": "Segundo combate: Water Luffy toca a Crocodile pero cae atravesado por su garfio.",
+    "pell-carries-the-bomb": "Pell se lleva la bomba de la plaza de Alubarna en vuelo y estalla en el aire.",
+    "luffy-defeats-crocodile": "Luffy derrota a Crocodile en el tercer combate y la lluvia vuelve a Arabasta.",
+    "bon-clay-decoy": "Bon Clay se sacrifica para que los Sombrero de Paja escapen del bloqueo de la Marina.",
+    "vivi-farewell-x-mark": "Vivi se despide desde el muelle y la tripulación levanta el brazo con la marca X.",
+    "nico-robin-joins-straw-hats": "Nico Robin aparece en el Going Merry y pide unirse a la tripulación."
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "episodes": {
+    "457": {
+      "name": "Special Retrospective Before Marineford - The Siblings' Vow!"
+    },
+    "458": {
+      "name": "Special Retrospective Before Marineford - Assemble! The Three Admirals"
+    },
+    "459": {
+      "name": "The Time of the Decisive Battle Draws Near! The Marine's Strongest Battle Formation is Ready!"
+    },
+    "460": {
+      "name": "An Enormous Fleet Appears - Invasion! The Whitebeard Pirates"
+    },
+    "461": {
+      "name": "The Beginning of the Battle! Ace and Whitebeard's Past"
+    },
+    "462": {
+      "name": "The Power to Destroy the World! The Gura Gura no Mi's Ability"
+    },
+    "463": {
+      "name": "Burn Everything to Ash! Admiral Akainu's Power"
+    },
+    "464": {
+      "name": "The Devil's Descendant! Little Oars Jr. Dashes Off!"
+    },
+    "465": {
+      "name": "Only the Winner is Justice - Put Into Motion! Sengoku's Plan!"
+    },
+    "466": {
+      "name": "The Straw Hat Team Arrives — The Battlefield Grows More Intense"
+    },
+    "467": {
+      "name": "I'll Save You Even If I Die - Luffy vs. The Marines, The Battle Starts"
+    },
+    "468": {
+      "name": "Consecutive Battles! Devil Fruit User Army vs. Devil Fruit User Army"
+    },
+    "469": {
+      "name": "Kuma Causes Disaster — Iva-san's Angry Attack"
+    },
+    "470": {
+      "name": "Master Swordsman Mihawk - The Black Sword's Slash Draws Near Luffy"
+    },
+    "471": {
+      "name": "The Extermination Operation Begins - The Might of the Pacifista Army"
+    },
+    "472": {
+      "name": "Akainu's Plot! Whitebeard Entrapped"
+    },
+    "473": {
+      "name": "The Encirclement Walls Activated! The Whitebeard Pirates Driven Into a Corner!!"
+    },
+    "474": {
+      "name": "The Order to Perform the Execution is Given - Break Through the Encircling Wall!"
+    },
+    "475": {
+      "name": "Rush Into the Final Phase! Whitebeard's Maneuver to Turn the Tides"
+    },
+    "476": {
+      "name": "Luffy's Strength is Exhausted! All-Out War in the Oris Plaza!!"
+    },
+    "477": {
+      "name": "Power that Reduces One's Life - Tension Hormones Return"
+    },
+    "478": {
+      "name": "For a Promise!! Luffy and Koby Clash!"
+    },
+    "479": {
+      "name": "In Front of the Execution Platform! The Path to Ace is Opened!!"
+    },
+    "480": {
+      "name": "The Path they Each Chose - Luffy vs. Garp!"
+    },
+    "481": {
+      "name": "Ace Freed! Whitebeard's Final Captain's Order!"
+    },
+    "482": {
+      "name": "The Power that Burns Even Fire - Akainu's Ruthless Pursuit"
+    },
+    "483": {
+      "name": "Searching for an Answer - Fire Fist Ace Dies on the Battlefield"
+    },
+    "484": {
+      "name": "Marine Headquarters Collapses! Whitebeard's Silent Rage!"
+    },
+    "485": {
+      "name": "Settling the Score - Whitebeard vs. The Blackbeard Pirates"
+    },
+    "486": {
+      "name": "The Start of the Show - Blackbeard's Plot Revealed"
+    },
+    "487": {
+      "name": "Akainu's Tenacity! The Fist of Magma Attacks Luffy"
+    },
+    "488": {
+      "name": "A Desperate Cry - Seconds of Valor that Change Destiny"
+    },
+    "489": {
+      "name": "Enter Shanks! The Ultimate War Ends at Last"
+    }
+  },
+  "events": {
+    "ace-parentage-revealed": "Sengoku revela que Ace es hijo de Gol D. Roger.",
+    "whitebeard-arrives-marineford": "Barbablanca llega a Marineford con su flota.",
+    "luffy-arrives-marineford": "Luffy cae del cielo en Marineford con los fugados de Impel Down.",
+    "luffy-vs-mihawk": "Mihawk corta el paso a Luffy.",
+    "squard-stabs-whitebeard": "Squard apuñala a Barbablanca engañado por la Marina.",
+    "luffy-conquerors-haki-marineford": "Luffy desata el Haki del Rey en plena guerra.",
+    "ace-freed": "Luffy libera a Ace en el patíbulo.",
+    "death-of-portgas-d-ace": "Akainu mata a Ace, que muere protegiendo a Luffy.",
+    "death-of-edward-newgate": "Barbablanca muere en pie tras proclamar que el One Piece existe.",
+    "blackbeard-steals-gura-gura-no-mi": "Barbanegra roba el poder de la Gura Gura no Mi.",
+    "koby-stands-up": "Coby planta cara a Akainu para detener la guerra.",
+    "law-rescues-luffy": "Law saca a Luffy de Marineford en su submarino.",
+    "shanks-ends-war": "Shanks llega y pone fin a la guerra."
+  }
+}

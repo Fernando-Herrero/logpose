@@ -106,6 +106,7 @@
       "error_body": "Inténtalo de nuevo más tarde o vuelve a iniciar sesión."
     },
     "nav": {
+      "home": "Inicio",
       "profile": "Perfil",
       "community": "Comunidad",
       "serie": "Serie",
@@ -481,7 +482,8 @@
     "catch_up_submit": "Guardar",
     "next_title": "Tu siguiente episodio",
     "next_mark_watched": "Marcar como visto",
-    "next_up_to_date": "Estás al día: no quedan episodios por ver"
+    "next_up_to_date": "Estás al día: no quedan episodios por ver",
+    "next_arc_progress": "{{watched}} de {{total}} episodios"
   },
   "settings": {
     "subtitle": "Gestiona tu cuenta, privacidad y preferencias",

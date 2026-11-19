@@ -30,7 +30,7 @@ export function DashboardNavRail({
         className="border-highlight/15 h-14 shrink-0 border-b"
       >
         <Link
-          href="/dashboard/profile"
+          href="/dashboard"
           className="font-one-piece text-highlight hover:text-highlight text-lg no-underline"
         >
           LP

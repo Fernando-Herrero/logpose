@@ -9,7 +9,8 @@ export type DashboardNavLabelKey =
   | 'dashboard.nav.notifications'
   | 'dashboard.nav.settings'
   | 'dashboard.nav.admin'
-  | 'dashboard.nav.user_profile';
+  | 'dashboard.nav.user_profile'
+  | 'dashboard.nav.home';
 
 export type DashboardNavItem = {
   id: string;
@@ -70,13 +71,23 @@ export const DASHBOARD_ADMIN_NAV_ITEM = {
   icon: 'Admin',
 } as const satisfies DashboardNavItem;
 
-export const DASHBOARD_MAIN_NAV_ITEMS = DASHBOARD_NAV_ITEMS.filter(
-  item =>
-    item.id === 'profile' ||
-    item.id === 'community' ||
-    item.id === 'serie' ||
-    item.id === 'cards',
-);
+export const DASHBOARD_HOME_NAV_ITEM = {
+  id: 'home',
+  labelKey: 'dashboard.nav.home',
+  href: '/dashboard',
+  icon: 'Home',
+} as const satisfies DashboardNavItem;
+
+export const DASHBOARD_MAIN_NAV_ITEMS = [
+  DASHBOARD_HOME_NAV_ITEM,
+  ...DASHBOARD_NAV_ITEMS.filter(
+    item =>
+      item.id === 'profile' ||
+      item.id === 'community' ||
+      item.id === 'serie' ||
+      item.id === 'cards',
+  ),
+];
 
 export function getDashboardNavItems(isAdmin: boolean): DashboardNavItem[] {
   return isAdmin
@@ -89,9 +100,9 @@ export const DASHBOARD_TOPBAR_NAV_ITEMS = DASHBOARD_NAV_ITEMS.filter(
 );
 
 export function getDashboardActiveTab(pathname: string) {
-  if (pathname.startsWith('/dashboard/admin')) {
-    return 'admin';
-  }
+  if (pathname === '/dashboard') return 'home';
+
+  if (pathname.startsWith('/dashboard/admin')) return 'admin';
 
   const match = DASHBOARD_NAV_ITEMS.find(item =>
     pathname.startsWith(item.href),
@@ -102,13 +113,11 @@ export function getDashboardActiveTab(pathname: string) {
 export function getDashboardSectionLabelKey(
   pathname: string,
 ): DashboardNavLabelKey {
-  if (pathname.startsWith('/dashboard/admin')) {
-    return 'dashboard.nav.admin';
-  }
+  if (pathname === '/dashboard') return 'dashboard.nav.home';
+  if (pathname.startsWith('/dashboard/admin')) return 'dashboard.nav.admin';
 
-  if (pathname.startsWith('/dashboard/users/')) {
+  if (pathname.startsWith('/dashboard/users/'))
     return 'dashboard.nav.user_profile';
-  }
 
   const match = DASHBOARD_NAV_ITEMS.find(item =>
     pathname.startsWith(item.href),

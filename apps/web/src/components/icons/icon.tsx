@@ -10,6 +10,7 @@ import {
   ChatCircleIcon,
   ChatsCircleIcon,
   ClockIcon,
+  CompassIcon,
   CurrencyCircleDollarIcon,
   GearSixIcon,
   HeartIcon,
@@ -67,6 +68,7 @@ export const Icon = {
     <BookOpenIcon size={22} weight="duotone" {...p} />
   ),
   SignOut: (p: IconProps) => <SignOutIcon size={16} {...p} />,
+  Home: (p: IconProps) => <CompassIcon size={18} {...p} />,
 } as const;
 
 export type DashboardNavIcon = keyof Pick<
@@ -79,4 +81,5 @@ export type DashboardNavIcon = keyof Pick<
   | 'Bell'
   | 'Settings'
   | 'Admin'
+  | 'Home'
 >;

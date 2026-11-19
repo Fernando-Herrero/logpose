@@ -106,6 +106,7 @@
       "error_body": "Try again later or sign in again."
     },
     "nav": {
+      "home": "Home",
       "profile": "Profile",
       "community": "Community",
       "serie": "Series",
@@ -481,7 +482,8 @@
     "catch_up_submit": "Save",
     "next_title": "Your next episode",
     "next_mark_watched": "Mark as watched",
-    "next_up_to_date": "You're up to date: no episodes left to watch"
+    "next_up_to_date": "You're up to date: no episodes left to watch",
+    "next_arc_progress": "{{watched}} of {{total}} episodes"
   },
   "settings": {
     "subtitle": "Manage your account, privacy and preferences",

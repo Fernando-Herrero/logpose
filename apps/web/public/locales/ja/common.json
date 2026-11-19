@@ -106,6 +106,7 @@
       "error_body": "時間をおいて再度お試しいただくか、ログインし直してください。"
     },
     "nav": {
+      "home": "ホーム",
       "profile": "プロフィール",
       "community": "コミュニティ",
       "serie": "シリーズ",
@@ -480,7 +481,8 @@
     "catch_up_submit": "保存",
     "next_title": "次のエピソード",
     "next_mark_watched": "視聴済みにする",
-    "next_up_to_date": "最新話まで視聴済みです"
+    "next_up_to_date": "最新話まで視聴済みです",
+    "next_arc_progress": "{{watched}} / {{total}} 話"
   },
   "settings": {
     "subtitle": "アカウント、プライバシー、設定を管理",

@@ -12,5 +12,6 @@
   },
   "events": {
     "luffy-defeats-breed": "Luffy derrota a Breed y la alianza recupera a Caesar."
-  }
+  },
+  "name": "Rescate de Caesar"
 }

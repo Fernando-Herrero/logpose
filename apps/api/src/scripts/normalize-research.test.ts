@@ -383,6 +383,12 @@ describe('normalizeResearch', () => {
         91: { name: '91 en' },
         92: { name: '92 es', description: '92 resumen es' },
       },
+      {
+        'buggy-side-story': 'Buggy Side Story',
+        loguetown: 'Loguetown',
+        'whisky-peak': 'Whisky Peak',
+        'little-garden': 'Jardín Pequeño',
+      },
     ],
     [
       'en',
@@ -395,6 +401,12 @@ describe('normalizeResearch', () => {
         80: { name: '80 en' },
         91: { name: '91 en' },
         92: { name: '92 en', description: '92 summary en' },
+      },
+      {
+        'buggy-side-story': 'Buggy Side Story',
+        loguetown: 'Loguetown',
+        'whisky-peak': 'Whisky Peak',
+        'little-garden': 'Little Garden',
       },
     ],
     [
@@ -409,16 +421,24 @@ describe('normalizeResearch', () => {
         91: { name: '91 en' },
         92: { name: '92 en', description: '92 要約' },
       },
+      {
+        'buggy-side-story': 'バギー一味冒険記',
+        loguetown: 'ローグタウン編',
+        'whisky-peak': 'Whisky Peak',
+        'little-garden': 'リトルガーデン編',
+      },
     ],
   ] as const)(
-    'genera un fichero de textos por arco en %s con sus episodios y las frases de sus eventos',
-    (locale, episodes) => {
+    'genera un fichero de textos por arco en %s con su nombre, sus episodios y las frases de sus eventos',
+    (locale, episodes, names) => {
       expect(normalizeResearch(buildInput()).arcTexts[locale]).toStrictEqual({
         'buggy-side-story': {
+          name: names['buggy-side-story'],
           episodes: { 46: episodes[46], 47: episodes[47] },
           events: {},
         },
         loguetown: {
+          name: names.loguetown,
           episodes: { 45: episodes[45], 48: episodes[48], 53: episodes[53] },
           events: {
             'buggy-bounty': `buggy-bounty ${locale}`,
@@ -427,10 +447,12 @@ describe('normalizeResearch', () => {
           },
         },
         'whisky-peak': {
+          name: names['whisky-peak'],
           episodes: { 91: episodes[91], 92: episodes[92] },
           events: {},
         },
         'little-garden': {
+          name: names['little-garden'],
           episodes: { 80: episodes[80] },
           events: { crocus: `crocus ${locale}` },
         },

@@ -137,6 +137,7 @@ export function normalizeResearch(input: unknown) {
       arcs.map((arc): [string, ArcTexts] => [
         arc.slug,
         {
+          name: texts(arc, locale).name,
           episodes: Object.fromEntries(
             arc.episodes.map(episode => [
               episode.number,

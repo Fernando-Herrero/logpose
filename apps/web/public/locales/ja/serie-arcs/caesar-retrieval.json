@@ -12,5 +12,6 @@
   },
   "events": {
     "luffy-defeats-breed": "ルフィがブリードを倒し、同盟はシーザーを取り戻す。"
-  }
+  },
+  "name": "Caesar Retrieval"
 }

@@ -12,5 +12,6 @@
   },
   "events": {
     "zenny-pirates-set-sail": "Zenny cumple su sueño y zarpa como pirata en su barco de la montaña."
-  }
+  },
+  "name": "Isla Goat"
 }

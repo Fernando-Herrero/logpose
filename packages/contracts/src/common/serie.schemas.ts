@@ -30,6 +30,7 @@ export const episodeSchema = z.object({
 });
 
 export const arcTextsSchema = z.object({
+  name: z.string(),
   episodes: z.record(
     z.string(),
     z.object({ name: z.string(), description: z.string().optional() }),

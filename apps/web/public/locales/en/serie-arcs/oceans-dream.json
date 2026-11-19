@@ -18,5 +18,6 @@
   },
   "events": {
     "crew-memory-loss": "The crew loses their memories because of the memory thief."
-  }
+  },
+  "name": "Ocean's Dream"
 }

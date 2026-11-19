@@ -18,5 +18,6 @@
   },
   "events": {
     "crew-memory-loss": "La tripulación pierde la memoria por culpa del ladrón de recuerdos."
-  }
+  },
+  "name": "Ocean's Dream"
 }

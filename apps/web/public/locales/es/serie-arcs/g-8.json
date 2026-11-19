@@ -37,5 +37,6 @@
   "events": {
     "sanji-marine-kitchen": "Sanji se infiltra como cocinero en el comedor de la base G-8.",
     "escape-g8": "Los Sombrero de Paja escapan de la fortaleza Navarone del vicealmirante Jonathan."
-  }
+  },
+  "name": "G-8"
 }

@@ -37,5 +37,6 @@
   "events": {
     "sanji-marine-kitchen": "Sanji infiltrates the G-8 base's mess hall as a cook.",
     "escape-g8": "The Straw Hats escape Vice Admiral Jonathan's Navarone fortress."
-  }
+  },
+  "name": "G-8"
 }

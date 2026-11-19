@@ -86,6 +86,16 @@
   }
 }
 
+@keyframes logpose-sway {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(6deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .community-create-fab,
   .community-modal-backdrop,

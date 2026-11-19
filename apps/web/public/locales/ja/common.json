@@ -482,7 +482,9 @@
     "next_title": "次のエピソード",
     "next_mark_watched": "視聴済みにする",
     "next_up_to_date": "最新話まで視聴済みです",
-    "next_arc_progress": "{{watched}} / {{total}} 話"
+    "next_arc_progress": "{{watched}} / {{total}} 話",
+    "next_arc_heading": "次の目的地：{{arc}}",
+    "next_arc_remaining_other": "あと{{count}}話"
   },
   "settings": {
     "subtitle": "アカウント、プライバシー、設定を管理",

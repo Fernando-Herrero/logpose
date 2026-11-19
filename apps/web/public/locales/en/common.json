@@ -483,7 +483,10 @@
     "next_title": "Your next episode",
     "next_mark_watched": "Mark as watched",
     "next_up_to_date": "You're up to date: no episodes left to watch",
-    "next_arc_progress": "{{watched}} of {{total}} episodes"
+    "next_arc_progress": "{{watched}} of {{total}} episodes",
+    "next_arc_heading": "Heading for {{arc}}",
+    "next_arc_remaining_one": "{{count}} episode to go",
+    "next_arc_remaining_other": "{{count}} episodes to go"
   },
   "settings": {
     "subtitle": "Manage your account, privacy and preferences",

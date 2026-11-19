@@ -21,7 +21,13 @@ import {
 import { useLocale } from '@/integrations/next-i18next/use-locale';
 import { allQueriesOptions } from '@/integrations/tanstack-query/queries-options';
 
-function NextEpisode({ number }: { number: number }) {
+function NextEpisode({
+  number,
+  totalEpisodes,
+}: {
+  number: number;
+  totalEpisodes: number;
+}) {
   const { t } = useTranslation();
   const locale = useLocale();
   const setProgress = useSetProgressMutation();
@@ -35,6 +41,7 @@ function NextEpisode({ number }: { number: number }) {
     ],
   });
   const watched = arc.episodes.filter(ep => ep.number < number).length;
+  const nextArcStart = Math.max(...arc.episodes.map(ep => ep.number)) + 1;
 
   return (
     <>
@@ -66,6 +73,9 @@ function NextEpisode({ number }: { number: number }) {
         size="2"
         className="profile-xp-progress h-2"
       />
+      {nextArcStart <= totalEpisodes && (
+        <ArcCompass episode={nextArcStart} remaining={nextArcStart - number} />
+      )}
       <Button
         size="3"
         mt="4"
@@ -78,6 +88,57 @@ function NextEpisode({ number }: { number: number }) {
   );
 }
 
+function ArcCompass({
+  episode,
+  remaining,
+}: {
+  episode: number;
+  remaining: number;
+}) {
+  const { t } = useTranslation();
+  const locale = useLocale();
+  const { data: nextArcEpisode } = useSuspenseQuery(
+    allQueriesOptions.serie.episode(episode),
+  );
+  const { data: texts } = useSuspenseQuery(
+    allQueriesOptions.serie.arcTexts(nextArcEpisode.arcSlug, locale),
+  );
+
+  return (
+    <Flex align="center" gap="3" mt="4">
+      <svg
+        viewBox="0 0 48 48"
+        aria-hidden
+        className="text-highlight size-12 shrink-0"
+      >
+        <circle
+          cx="24"
+          cy="24"
+          r="21"
+          fill="none"
+          stroke="currentColor"
+          strokeOpacity={0.4}
+          strokeWidth="2"
+        />
+        <g transform="rotate(35 24 24)">
+          <g className="origin-center transform-fill md:motion-safe:animate-[logpose-sway_3s_ease-in-out_infinite]">
+            <path d="M24 7 28 24H20Z" fill="currentColor" />
+            <path d="M20 24H28L24 41Z" fill="currentColor" fillOpacity={0.35} />
+          </g>
+        </g>
+      </svg>
+      <div>
+        <Text as="p" size="2" weight="medium">
+          {t('serie.next_arc_heading', { arc: texts.name })}
+        </Text>
+        <Text as="p" size="1" className="text-foreground/70">
+          {t('serie.next_arc_remaining', { count: remaining })}
+        </Text>
+      </div>
+    </Flex>
+  );
+}
+
 function HomeNextEpisode({
   lastWatchedEpisode,
 }: {
@@ -87,7 +148,10 @@ function HomeNextEpisode({
   const totalEpisodes = useSerieTotalEpisodes();
 
   return lastWatchedEpisode < totalEpisodes ? (
-    <NextEpisode number={lastWatchedEpisode + 1} />
+    <NextEpisode
+      number={lastWatchedEpisode + 1}
+      totalEpisodes={totalEpisodes}
+    />
   ) : (
     <Text as="p" size="2">
       {t('serie.next_up_to_date')}

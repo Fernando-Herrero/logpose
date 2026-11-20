@@ -3,324 +3,378 @@
     "slug": "romance-dawn",
     "sagaSlug": "east-blue",
     "type": "canon",
-    "totalEpisodes": 3
+    "totalEpisodes": 3,
+    "firstEpisode": 1
   },
   {
     "slug": "orange-town",
     "sagaSlug": "east-blue",
     "type": "canon",
-    "totalEpisodes": 5
+    "totalEpisodes": 5,
+    "firstEpisode": 4
   },
   {
     "slug": "syrup-village",
     "sagaSlug": "east-blue",
     "type": "canon",
-    "totalEpisodes": 10
+    "totalEpisodes": 10,
+    "firstEpisode": 9
   },
   {
     "slug": "baratie",
     "sagaSlug": "east-blue",
     "type": "canon",
-    "totalEpisodes": 12
+    "totalEpisodes": 12,
+    "firstEpisode": 19
   },
   {
     "slug": "arlong-park",
     "sagaSlug": "east-blue",
     "type": "canon",
-    "totalEpisodes": 14
+    "totalEpisodes": 14,
+    "firstEpisode": 31
   },
   {
     "slug": "buggy-side-story",
     "sagaSlug": "east-blue",
     "type": "mixed",
-    "totalEpisodes": 2
+    "totalEpisodes": 2,
+    "firstEpisode": 46
   },
   {
     "slug": "loguetown",
     "sagaSlug": "east-blue",
     "type": "mixed",
-    "totalEpisodes": 7
+    "totalEpisodes": 7,
+    "firstEpisode": 45
   },
   {
     "slug": "warship-island",
     "sagaSlug": "east-blue",
     "type": "filler",
-    "totalEpisodes": 8
+    "totalEpisodes": 8,
+    "firstEpisode": 54
   },
   {
     "slug": "reverse-mountain",
     "sagaSlug": "arabasta",
     "type": "canon",
-    "totalEpisodes": 2
+    "totalEpisodes": 2,
+    "firstEpisode": 62
   },
   {
     "slug": "whisky-peak",
     "sagaSlug": "arabasta",
     "type": "canon",
-    "totalEpisodes": 4
+    "totalEpisodes": 4,
+    "firstEpisode": 64
   },
   {
     "slug": "koby-and-helmeppo",
     "sagaSlug": "arabasta",
     "type": "mixed",
-    "totalEpisodes": 2
+    "totalEpisodes": 2,
+    "firstEpisode": 68
   },
   {
     "slug": "little-garden",
     "sagaSlug": "arabasta",
     "type": "canon",
-    "totalEpisodes": 8
+    "totalEpisodes": 8,
+    "firstEpisode": 70
   },
   {
     "slug": "drum-island",
     "sagaSlug": "arabasta",
     "type": "canon",
-    "totalEpisodes": 14
+    "totalEpisodes": 14,
+    "firstEpisode": 78
   },
   {
     "slug": "arabasta",
     "sagaSlug": "arabasta",
     "type": "canon",
-    "totalEpisodes": 39
+    "totalEpisodes": 39,
+    "firstEpisode": 92
   },
   {
     "slug": "post-arabasta",
     "sagaSlug": "arabasta",
     "type": "filler",
-    "totalEpisodes": 5
+    "totalEpisodes": 5,
+    "firstEpisode": 131
   },
   {
     "slug": "goat-island",
     "sagaSlug": "sky-island",
     "type": "filler",
-    "totalEpisodes": 3
+    "totalEpisodes": 3,
+    "firstEpisode": 136
   },
   {
     "slug": "ruluka-island",
     "sagaSlug": "sky-island",
     "type": "filler",
-    "totalEpisodes": 5
+    "totalEpisodes": 5,
+    "firstEpisode": 139
   },
   {
     "slug": "jaya",
     "sagaSlug": "sky-island",
     "type": "canon",
-    "totalEpisodes": 9
+    "totalEpisodes": 9,
+    "firstEpisode": 144
   },
   {
     "slug": "skypiea",
     "sagaSlug": "sky-island",
     "type": "canon",
-    "totalEpisodes": 43
+    "totalEpisodes": 43,
+    "firstEpisode": 153
   },
   {
     "slug": "g-8",
     "sagaSlug": "sky-island",
     "type": "filler",
-    "totalEpisodes": 11
+    "totalEpisodes": 11,
+    "firstEpisode": 196
   },
   {
     "slug": "long-ring-long-land",
     "sagaSlug": "water-7",
     "type": "mixed",
-    "totalEpisodes": 15
+    "totalEpisodes": 15,
+    "firstEpisode": 207
   },
   {
     "slug": "oceans-dream",
     "sagaSlug": "water-7",
     "type": "filler",
-    "totalEpisodes": 5
+    "totalEpisodes": 5,
+    "firstEpisode": 220
   },
   {
     "slug": "foxys-return",
     "sagaSlug": "water-7",
     "type": "mixed",
-    "totalEpisodes": 2
+    "totalEpisodes": 2,
+    "firstEpisode": 225
   },
   {
     "slug": "water-7",
     "sagaSlug": "water-7",
     "type": "canon",
-    "totalEpisodes": 35
+    "totalEpisodes": 35,
+    "firstEpisode": 229
   },
   {
     "slug": "enies-lobby",
     "sagaSlug": "water-7",
     "type": "mixed",
-    "totalEpisodes": 49
+    "totalEpisodes": 49,
+    "firstEpisode": 264
   },
   {
     "slug": "post-enies-lobby",
     "sagaSlug": "water-7",
     "type": "mixed",
-    "totalEpisodes": 13
+    "totalEpisodes": 13,
+    "firstEpisode": 313
   },
   {
     "slug": "ice-hunter",
     "sagaSlug": "thriller-bark",
     "type": "filler",
-    "totalEpisodes": 11
+    "totalEpisodes": 11,
+    "firstEpisode": 326
   },
   {
     "slug": "thriller-bark",
     "sagaSlug": "thriller-bark",
     "type": "canon",
-    "totalEpisodes": 45
+    "totalEpisodes": 45,
+    "firstEpisode": 337
   },
   {
     "slug": "spa-island",
     "sagaSlug": "thriller-bark",
     "type": "filler",
-    "totalEpisodes": 3
+    "totalEpisodes": 3,
+    "firstEpisode": 382
   },
   {
     "slug": "sabaody-archipelago",
     "sagaSlug": "summit-war",
     "type": "mixed",
-    "totalEpisodes": 23
+    "totalEpisodes": 23,
+    "firstEpisode": 385
   },
   {
     "slug": "amazon-lily",
     "sagaSlug": "summit-war",
     "type": "canon",
-    "totalEpisodes": 14
+    "totalEpisodes": 14,
+    "firstEpisode": 408
   },
   {
     "slug": "impel-down",
     "sagaSlug": "summit-war",
     "type": "mixed",
-    "totalEpisodes": 31
+    "totalEpisodes": 31,
+    "firstEpisode": 422
   },
   {
     "slug": "little-east-blue",
     "sagaSlug": "summit-war",
     "type": "filler",
-    "totalEpisodes": 4
+    "totalEpisodes": 4,
+    "firstEpisode": 426
   },
   {
     "slug": "marineford",
     "sagaSlug": "summit-war",
     "type": "mixed",
-    "totalEpisodes": 33
+    "totalEpisodes": 33,
+    "firstEpisode": 457
   },
   {
     "slug": "post-war",
     "sagaSlug": "summit-war",
     "type": "mixed",
-    "totalEpisodes": 27
+    "totalEpisodes": 27,
+    "firstEpisode": 490
   },
   {
     "slug": "return-to-sabaody",
     "sagaSlug": "fish-man-island",
     "type": "canon",
-    "totalEpisodes": 6
+    "totalEpisodes": 6,
+    "firstEpisode": 517
   },
   {
     "slug": "fish-man-island",
     "sagaSlug": "fish-man-island",
     "type": "canon",
-    "totalEpisodes": 52
+    "totalEpisodes": 52,
+    "firstEpisode": 523
   },
   {
     "slug": "zs-ambition",
     "sagaSlug": "dressrosa",
     "type": "filler",
-    "totalEpisodes": 4
+    "totalEpisodes": 4,
+    "firstEpisode": 575
   },
   {
     "slug": "punk-hazard",
     "sagaSlug": "dressrosa",
     "type": "canon",
-    "totalEpisodes": 47
+    "totalEpisodes": 47,
+    "firstEpisode": 579
   },
   {
     "slug": "caesar-retrieval",
     "sagaSlug": "dressrosa",
     "type": "filler",
-    "totalEpisodes": 3
+    "totalEpisodes": 3,
+    "firstEpisode": 626
   },
   {
     "slug": "dressrosa",
     "sagaSlug": "dressrosa",
     "type": "canon",
-    "totalEpisodes": 118
+    "totalEpisodes": 118,
+    "firstEpisode": 629
   },
   {
     "slug": "silver-mine",
     "sagaSlug": "whole-cake-island",
     "type": "filler",
-    "totalEpisodes": 4
+    "totalEpisodes": 4,
+    "firstEpisode": 747
   },
   {
     "slug": "zou",
     "sagaSlug": "whole-cake-island",
     "type": "canon",
-    "totalEpisodes": 29
+    "totalEpisodes": 29,
+    "firstEpisode": 751
   },
   {
     "slug": "marine-rookie",
     "sagaSlug": "whole-cake-island",
     "type": "filler",
-    "totalEpisodes": 3
+    "totalEpisodes": 3,
+    "firstEpisode": 780
   },
   {
     "slug": "whole-cake-island",
     "sagaSlug": "whole-cake-island",
     "type": "canon",
-    "totalEpisodes": 95
+    "totalEpisodes": 95,
+    "firstEpisode": 783
   },
   {
     "slug": "levely",
     "sagaSlug": "whole-cake-island",
     "type": "canon",
-    "totalEpisodes": 12
+    "totalEpisodes": 12,
+    "firstEpisode": 878
   },
   {
     "slug": "wano-country-act-1",
     "sagaSlug": "wano-country",
     "type": "canon",
-    "totalEpisodes": 24
+    "totalEpisodes": 24,
+    "firstEpisode": 890
   },
   {
     "slug": "cidre-guild",
     "sagaSlug": "wano-country",
     "type": "filler",
-    "totalEpisodes": 2
+    "totalEpisodes": 2,
+    "firstEpisode": 895
   },
   {
     "slug": "romance-dawn-special",
     "sagaSlug": "wano-country",
     "type": "filler",
-    "totalEpisodes": 1
+    "totalEpisodes": 1,
+    "firstEpisode": 907
   },
   {
     "slug": "wano-country-act-2",
     "sagaSlug": "wano-country",
     "type": "canon",
-    "totalEpisodes": 41
+    "totalEpisodes": 41,
+    "firstEpisode": 917
   },
   {
     "slug": "wano-country-act-3",
     "sagaSlug": "wano-country",
     "type": "canon",
-    "totalEpisodes": 126
+    "totalEpisodes": 126,
+    "firstEpisode": 958
   },
   {
     "slug": "uta-past",
     "sagaSlug": "wano-country",
     "type": "filler",
-    "totalEpisodes": 2
+    "totalEpisodes": 2,
+    "firstEpisode": 1029
   },
   {
     "slug": "egghead",
     "sagaSlug": "final-saga",
     "type": "canon",
-    "totalEpisodes": 70
+    "totalEpisodes": 70,
+    "firstEpisode": 1086
   },
   {
     "slug": "elbaph",
     "sagaSlug": "final-saga",
     "type": "canon",
-    "totalEpisodes": 25
+    "totalEpisodes": 25,
+    "firstEpisode": 1156
   }
 ]

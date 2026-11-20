@@ -201,26 +201,43 @@ describe('normalizeResearch', () => {
         sagaSlug: 'east-blue',
         type: 'mixed',
         totalEpisodes: 2,
+        firstEpisode: 46,
       },
       {
         slug: 'loguetown',
         sagaSlug: 'east-blue',
         type: 'mixed',
         totalEpisodes: 3,
+        firstEpisode: 45,
       },
       {
         slug: 'whisky-peak',
         sagaSlug: 'alabasta',
         type: 'filler',
         totalEpisodes: 2,
+        firstEpisode: 91,
       },
       {
         slug: 'little-garden',
         sagaSlug: 'alabasta',
         type: 'canon',
         totalEpisodes: 1,
+        firstEpisode: 80,
       },
     ]);
+  });
+
+  it('da a cada arco como firstEpisode su episodio más bajo, aunque su order vaya antes que el de otro arco con episodios más bajos', () => {
+    const firstOf = Object.fromEntries(
+      normalizeResearch(buildInput()).arcs.map(a => [a.slug, a.firstEpisode]),
+    );
+
+    expect(firstOf).toStrictEqual({
+      'buggy-side-story': 46, // su episodeRange es 46–47, pero Loguetown (order 7) contiene el 45–53
+      loguetown: 45,
+      'whisky-peak': 91, // order 1, pero sus episodios son más altos que los de Little Garden (80)
+      'little-garden': 80,
+    });
   });
 
   it('ordena los episodios por número ascendente', () => {

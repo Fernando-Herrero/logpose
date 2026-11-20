@@ -13,6 +13,7 @@ export const arcSchema = z.object({
   sagaSlug: z.string(),
   type: z.enum(['canon', 'filler', 'mixed']),
   totalEpisodes: z.number().int().nonnegative(),
+  firstEpisode: z.number().int().positive(),
 });
 
 export const episodeTypeSchema = z.enum(['canon', 'mixed', 'filler', 'recap']);

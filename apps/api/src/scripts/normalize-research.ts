@@ -168,6 +168,7 @@ export function normalizeResearch(input: unknown) {
         sagaSlug: arc.sagaSlug,
         type: arc.type,
         totalEpisodes: arc.episodes.length,
+        firstEpisode: Math.min(...arc.episodes.map(episode => episode.number)),
       }),
     ),
     episodes: episodes.map(

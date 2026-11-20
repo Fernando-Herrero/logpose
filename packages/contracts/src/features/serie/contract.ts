@@ -1,6 +1,7 @@
 import { oc } from '@orpc/contract';
 
 import {
+  allArcsOutputSchema,
   arcListOutputSchema,
   episodeListOutputSchema,
   sagaListOutputSchema,
@@ -71,4 +72,12 @@ export const serieContract = oc
       .input(episodeNumberParamsSchema)
       .errors(serieErrors)
       .output(episodeOutputSchema),
+
+    listArcs: oc
+      .route({
+        method: 'GET',
+        path: '/arcs',
+        description: 'List all arcs in chronological order',
+      })
+      .output(allArcsOutputSchema),
   });

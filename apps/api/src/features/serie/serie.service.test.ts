@@ -17,3 +17,39 @@ describe('SerieService.listSagas', () => {
     expect(totalExperience).toBe(145_360);
   });
 });
+
+describe('SerieService.listArcs', () => {
+  it('devuelve los 54 arcos con su total', () => {
+    const { arcs, total } = new SerieService().listArcs();
+
+    expect(total).toBe(54);
+    expect(arcs).toHaveLength(54);
+  });
+
+  it('empieza en Romance Dawn y acaba en Elbaph, con la forma del JSON', () => {
+    const { arcs } = new SerieService().listArcs();
+
+    expect(arcs[0]).toEqual({
+      slug: 'romance-dawn',
+      sagaSlug: 'east-blue',
+      type: 'canon',
+      totalEpisodes: 3,
+      firstEpisode: 1,
+    });
+    expect(arcs.at(-1)).toEqual({
+      slug: 'elbaph',
+      sagaSlug: 'final-saga',
+      type: 'canon',
+      totalEpisodes: 25,
+      firstEpisode: 1156,
+    });
+  });
+
+  it('mantiene el orden del fichero, no el del primer episodio: Buggy (46) va antes que Loguetown (45)', () => {
+    const slugs = new SerieService().listArcs().arcs.map(arc => arc.slug);
+
+    expect(slugs.indexOf('loguetown')).toBe(
+      slugs.indexOf('buggy-side-story') + 1,
+    );
+  });
+});

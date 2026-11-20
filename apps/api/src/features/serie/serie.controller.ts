@@ -37,4 +37,11 @@ export class SerieController {
       this.serieService.getEpisode(input.params.episodeNumber),
     );
   }
+
+  @Implement(contract.serie.listArcs)
+  listArcs() {
+    return implement(contract.serie.listArcs).handler(() =>
+      this.serieService.listArcs(),
+    );
+  }
 }

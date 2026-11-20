@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { ORPCError } from '@orpc/server';
 
 import {
+  arcs,
   getArcBySlug,
   getArcsBySagaSlug,
   getEpisodeByNumber,
@@ -43,5 +44,9 @@ export class SerieService {
     }
 
     return episode;
+  }
+
+  listArcs() {
+    return { arcs, total: arcs.length };
   }
 }

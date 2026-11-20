@@ -21,7 +21,7 @@ function readSerieFile<T>(fileName: string, schema: z.ZodType<T>) {
 
 // Se valida al importar: un JSON que no cumple el contrato tumba el arranque, no una petición.
 export const sagas = readSerieFile('sagas.json', sagaSchema);
-const arcs = readSerieFile('arcs.json', arcSchema);
+export const arcs = readSerieFile('arcs.json', arcSchema);
 const episodes = readSerieFile('episodes.json', episodeSchema);
 
 export const totalExperience = experienceUpTo(episodes.length);

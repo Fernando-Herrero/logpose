@@ -51,6 +51,10 @@ export const arcListOutputSchema = z.object({
   total: z.number().int().nonnegative(),
 });
 
+export const allArcsOutputSchema = arcListOutputSchema.omit({
+  sagaSlug: true,
+});
+
 export const episodeListOutputSchema = z.object({
   arcSlug: z.string(),
   episodes: z.array(episodeSchema),

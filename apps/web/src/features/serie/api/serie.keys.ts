@@ -11,4 +11,5 @@ export const serieKeys = {
   progress: () => [...serieKeys.all, 'progress'] as const,
   episode: (episodeNumber: number) =>
     [...serieKeys.all, 'episode', episodeNumber] as const,
+  allArcs: () => [...serieKeys.all, 'all-arcs'] as const,
 };

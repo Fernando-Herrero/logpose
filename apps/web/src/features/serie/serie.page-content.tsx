@@ -5,6 +5,7 @@ import {
   Flex,
   Heading,
   Progress,
+  Select,
   Skeleton,
   Spinner,
   Text,
@@ -22,11 +23,16 @@ import {
   useSerieTotalEpisodes,
   useSerieTotalExperience,
   useSetProgressMutation,
+  useSuspenseSerieAllArcs,
   useSuspenseSerieSagas,
 } from '@/features/serie/api/use-serie';
-import { getSerieXpPercent } from '@/features/serie/serie.selectors';
+import {
+  getArcArrivalDate,
+  getSerieXpPercent,
+} from '@/features/serie/serie.selectors';
 import { SerieSagaBlock } from '@/features/serie/ui/serie-saga-block.component';
 import { useGsapMotion } from '@/integrations/gsap/motion';
+import { useLocale } from '@/integrations/next-i18next/use-locale';
 
 type SerieSagaListProps = {
   openSagaSlugs: Record<string, boolean>;
@@ -135,6 +141,72 @@ function SerieCatchUp({ lastWatchedEpisode }: { lastWatchedEpisode: number }) {
   );
 }
 
+function SerieArrival({ lastWatchedEpisode }: { lastWatchedEpisode: number }) {
+  const { t } = useTranslation();
+  const locale = useLocale();
+  const { data } = useSuspenseSerieAllArcs();
+  const [arcSlug, setArcSlug] = useState<string>();
+  const [episodesPerDay, setEpisodesPerDay] = useState(3);
+
+  const aheadArcs = data.arcs.filter(
+    arc => arc.firstEpisode > lastWatchedEpisode,
+  );
+
+  const arc = aheadArcs.find(item => item.slug === arcSlug) ?? aheadArcs[0];
+  if (!arc) return null;
+
+  const arcName = (slug: string) =>
+    t(`arcs.${slug}.name`, { ns: 'serie', defaultValue: '' });
+  const arrivalDate = getArcArrivalDate({
+    firstEpisode: arc.firstEpisode,
+    lastWatchedEpisode,
+    episodesPerDay,
+    today: new Date(),
+  });
+
+  return (
+    <Box mt="4">
+      <Flex align="end" gap="2" wrap="wrap">
+        <Text as="label" size="1" className="text-foreground/70">
+          {t('serie.arrival_arc_label')}
+          <Select.Root value={arc.slug} onValueChange={setArcSlug}>
+            <Select.Trigger className="mt-1 flex" />
+            <Select.Content position="popper">
+              {aheadArcs.map(item => (
+                <Select.Item key={item.slug} value={item.slug}>
+                  {arcName(item.slug)}
+                </Select.Item>
+              ))}
+            </Select.Content>
+          </Select.Root>
+        </Text>
+        <Text as="label" size="1" className="text-foreground/70">
+          {t('serie.arrival_per_day_label')}
+          <TextField.Root
+            type="number"
+            min={1}
+            defaultValue={3}
+            onChange={event =>
+              setEpisodesPerDay(event.currentTarget.valueAsNumber)
+            }
+            className="mt-1 w-28"
+          />
+        </Text>
+      </Flex>
+      {arrivalDate && (
+        <Text as="p" size="2" mt="2" className="text-highlight">
+          {t('serie.arrival_result', {
+            arc: arcName(arc.slug),
+            date: new Intl.DateTimeFormat(locale, { dateStyle: 'long' }).format(
+              arrivalDate,
+            ),
+          })}
+        </Text>
+      )}
+    </Box>
+  );
+}
+
 export default function SeriePageContent() {
   const { t } = useTranslation();
   const { user } = useAuthSession();
@@ -218,6 +290,7 @@ export default function SeriePageContent() {
               <Suspense fallback={<Skeleton height="32px" />}>
                 <SerieXpProgress experience={user?.experience ?? 0} />
                 <SerieCatchUp lastWatchedEpisode={lastWatchedEpisode} />
+                <SerieArrival lastWatchedEpisode={lastWatchedEpisode} />
               </Suspense>
             </ErrorBoundary>
           </Box>

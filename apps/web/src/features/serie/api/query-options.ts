@@ -39,9 +39,16 @@ export const getSerieQueriesOptions = (client: OrpcClient) => ({
       },
       staleTime: Infinity,
     }),
+
   episode: (episodeNumber: number) =>
     queryOptions({
       queryKey: serieKeys.episode(episodeNumber),
       queryFn: () => client.serie.getEpisode({ params: { episodeNumber } }),
+    }),
+
+  allArcs: () =>
+    queryOptions({
+      queryKey: serieKeys.allArcs(),
+      queryFn: () => client.serie.listArcs(),
     }),
 });

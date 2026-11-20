@@ -25,6 +25,10 @@ export function useSuspenseSerieSagas() {
   return useSuspenseQuery(allQueriesOptions.serie.sagas());
 }
 
+export function useSuspenseSerieAllArcs() {
+  return useSuspenseQuery(allQueriesOptions.serie.allArcs());
+}
+
 export function useSerieTotalExperience() {
   const { data } = useSuspenseQuery({
     ...allQueriesOptions.serie.sagas(),

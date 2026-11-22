@@ -482,6 +482,7 @@
     "arrival_arc_label": "目標のアーク",
     "arrival_per_day_label": "1日に見る話数",
     "arrival_result": "{{date}}に{{arc}}に到達します",
+    "skip_filler": "フィラーと総集編をスキップ",
     "next_title": "次のエピソード",
     "next_mark_watched": "視聴済みにする",
     "next_up_to_date": "最新話まで視聴済みです",

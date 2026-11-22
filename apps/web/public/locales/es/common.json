@@ -483,6 +483,7 @@
     "arrival_arc_label": "Quiero llegar a",
     "arrival_per_day_label": "Episodios al día",
     "arrival_result": "Llegas a {{arc}} el {{date}}",
+    "skip_filler": "Saltar relleno y resúmenes",
     "next_title": "Tu siguiente episodio",
     "next_mark_watched": "Marcar como visto",
     "next_up_to_date": "Estás al día: no quedan episodios por ver",

@@ -27,12 +27,14 @@ type SerieEpisodeCardProps = {
   episode: SerieEpisode;
   texts: SerieArcTexts;
   watched: boolean;
+  skipped: boolean;
 };
 
 export function SerieEpisodeCard({
   episode,
   texts,
   watched,
+  skipped,
 }: SerieEpisodeCardProps) {
   const { t } = useTranslation();
   const [showRewards, setShowRewards] = useState(false);
@@ -44,7 +46,7 @@ export function SerieEpisodeCard({
 
   return (
     <Box asChild>
-      <li>
+      <li className={skipped ? 'opacity-50' : undefined}>
         <Card className="bg-deep/55 hover:border-highlight/25 hover:bg-deep/75 border border-white/10 p-3 shadow-sm transition-colors duration-300">
           <Flex direction="column" gap="2">
             <Flex align="start" gap="2">

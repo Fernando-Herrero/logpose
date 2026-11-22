@@ -14,6 +14,7 @@ type SerieSagaBlockProps = {
   openArcSlugs: Record<string, boolean>;
   onToggleArc: (arcSlug: string) => void;
   lastWatchedEpisode: number;
+  skipFiller: boolean;
 };
 
 export function SerieSagaBlock({
@@ -23,6 +24,7 @@ export function SerieSagaBlock({
   openArcSlugs,
   onToggleArc,
   lastWatchedEpisode,
+  skipFiller,
 }: SerieSagaBlockProps) {
   const { t } = useTranslation(['common', 'serie']);
   const locale = useLocale();
@@ -70,6 +72,7 @@ export function SerieSagaBlock({
               isOpen={openArcSlugs[arc.slug] ?? false}
               onToggle={() => onToggleArc(arc.slug)}
               lastWatchedEpisode={lastWatchedEpisode}
+              skipFiller={skipFiller}
             />
           ))
         : null}

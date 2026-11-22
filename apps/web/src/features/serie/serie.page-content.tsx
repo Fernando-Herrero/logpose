@@ -8,6 +8,7 @@ import {
   Select,
   Skeleton,
   Spinner,
+  Switch,
   Text,
   TextField,
 } from '@radix-ui/themes';
@@ -31,6 +32,7 @@ import {
   getSerieXpPercent,
 } from '@/features/serie/serie.selectors';
 import { SerieSagaBlock } from '@/features/serie/ui/serie-saga-block.component';
+import { useSettingsPreferences } from '@/features/settings/use-settings-preferences';
 import { useGsapMotion } from '@/integrations/gsap/motion';
 import { useLocale } from '@/integrations/next-i18next/use-locale';
 
@@ -40,6 +42,7 @@ type SerieSagaListProps = {
   openArcSlugs: Record<string, boolean>;
   onToggleArc: (arcSlug: string) => void;
   lastWatchedEpisode: number;
+  skipFiller: boolean;
 };
 
 function SerieSagaList({
@@ -48,6 +51,7 @@ function SerieSagaList({
   openArcSlugs,
   onToggleArc,
   lastWatchedEpisode,
+  skipFiller,
 }: SerieSagaListProps) {
   const { data } = useSuspenseSerieSagas();
 
@@ -62,6 +66,7 @@ function SerieSagaList({
           openArcSlugs={openArcSlugs}
           onToggleArc={onToggleArc}
           lastWatchedEpisode={lastWatchedEpisode}
+          skipFiller={skipFiller}
         />
       ))}
     </Flex>
@@ -210,6 +215,7 @@ function SerieArrival({ lastWatchedEpisode }: { lastWatchedEpisode: number }) {
 export default function SeriePageContent() {
   const { t } = useTranslation();
   const { user } = useAuthSession();
+  const { preferences, savePreference, isSaving } = useSettingsPreferences();
   const heroRef = useRef<HTMLDivElement>(null);
   const [openSagaSlugs, setOpenSagaSlugs] = useState<Record<string, boolean>>(
     {},
@@ -217,6 +223,7 @@ export default function SeriePageContent() {
   const [openArcSlugs, setOpenArcSlugs] = useState<Record<string, boolean>>({});
 
   const lastWatchedEpisode = user?.lastWatchedEpisode ?? 0;
+  const skipFiller = preferences?.serie.skipFiller ?? false;
 
   useGsapMotion(() => {
     gsap.fromTo(
@@ -293,6 +300,20 @@ export default function SeriePageContent() {
                 <SerieArrival lastWatchedEpisode={lastWatchedEpisode} />
               </Suspense>
             </ErrorBoundary>
+            <Text
+              as="label"
+              size="1"
+              className="text-foreground/70 mt-4 flex items-center gap-2"
+            >
+              <Switch
+                checked={skipFiller}
+                disabled={isSaving}
+                onCheckedChange={checked =>
+                  savePreference('serie', { skipFiller: checked })
+                }
+              />
+              {t('serie.skip_filler')}
+            </Text>
           </Box>
         </Box>
       </Card>
@@ -301,6 +322,7 @@ export default function SeriePageContent() {
         <Suspense fallback={<SerieSagaListSkeleton />}>
           <SerieSagaList
             lastWatchedEpisode={lastWatchedEpisode}
+            skipFiller={skipFiller}
             openSagaSlugs={openSagaSlugs}
             onToggleSaga={toggleSaga}
             openArcSlugs={openArcSlugs}

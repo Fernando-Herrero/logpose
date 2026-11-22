@@ -176,6 +176,35 @@ describe('UsersService.updatePreferences', () => {
       timeline: { ...DEFAULT_USER_PREFERENCES.timeline, compactMode: true },
     });
   });
+
+  it('guarda que el usuario salta los episodios de relleno y lo devuelve', async () => {
+    const zoro = await usersPersistence.insert(newUser('pref_zoro'));
+    const zoroId = zoro._id.toString();
+    const viewer: UserViewer = { kind: 'user', id: zoroId, role: 'user' };
+
+    const updated = await service.updatePreferences(zoroId, viewer, {
+      serie: { skipFiller: true },
+    });
+    const stored = await usersPersistence.findById(zoroId);
+
+    expect(updated.preferences.serie.skipFiller).toBe(true);
+    expect(stored?.preferences?.serie.skipFiller).toBe(true);
+  });
+
+  it('a un usuario sin preferences en Mongo le sirve serie con el relleno sin saltar', async () => {
+    const brook = await usersPersistence.insert(newUser('pref_brook'));
+    const brookId = brook._id.toString();
+    const viewer: UserViewer = { kind: 'user', id: brookId, role: 'user' };
+    await db
+      .collection('users')
+      .updateOne({ _id: brook._id }, { $unset: { preferences: '' } });
+
+    const updated = await service.updatePreferences(brookId, viewer, {
+      timeline: { compactMode: true },
+    });
+
+    expect(updated.preferences.serie).toEqual({ skipFiller: false });
+  });
 });
 
 describe('UsersService, pestaña privada del perfil', () => {

@@ -4,6 +4,7 @@ import { postPageQuerySchema } from '../../common/post.schemas.js';
 import {
   accessibilityPreferencesSchema,
   notificationPreferencesSchema,
+  seriePreferencesSchema,
   sessionUserSchema,
   timelinePreferencesSchema,
   updateUserSchema,
@@ -55,6 +56,7 @@ export const updatePreferencesSchema = z
     notifications: notificationPreferencesSchema.partial().optional(),
     timeline: timelinePreferencesSchema.partial().optional(),
     accessibility: accessibilityPreferencesSchema.partial().optional(),
+    serie: seriePreferencesSchema.partial().optional(),
   })
   .strict()
   .refine(data => Object.keys(data).length > 0, {

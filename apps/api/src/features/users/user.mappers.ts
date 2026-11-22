@@ -61,6 +61,10 @@ export function withPreferenceDefaults(
       ...DEFAULT_USER_PREFERENCES.accessibility,
       ...preferences?.accessibility,
     },
+    serie: {
+      ...DEFAULT_USER_PREFERENCES.serie,
+      ...preferences?.serie,
+    },
   };
 }
 

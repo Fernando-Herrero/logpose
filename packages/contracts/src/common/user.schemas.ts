@@ -37,10 +37,15 @@ export const accessibilityPreferencesSchema = z.object({
   highContrast: z.boolean(),
 });
 
+export const seriePreferencesSchema = z.object({
+  skipFiller: z.boolean(),
+});
+
 export const userPreferencesSchema = z.object({
   notifications: notificationPreferencesSchema,
   timeline: timelinePreferencesSchema,
   accessibility: accessibilityPreferencesSchema,
+  serie: seriePreferencesSchema,
 });
 
 /** Valores por defecto: se aplican al registrar y al serializar usuarios antiguos. */
@@ -61,6 +66,9 @@ export const DEFAULT_USER_PREFERENCES: z.infer<typeof userPreferencesSchema> = {
     reduceMotion: false,
     fontScale: 'md',
     highContrast: false,
+  },
+  serie: {
+    skipFiller: false,
   },
 };
 

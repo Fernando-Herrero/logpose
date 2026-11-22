@@ -22,6 +22,9 @@ Fuente única de la serie: sagas, arcos y episodios con sus textos en es/en/ja. 
 **Progreso de la serie** (`lastWatchedEpisode`):
 Número del último episodio visto (0 = ninguno); un episodio está visto si su número no lo supera. Saga y arco salen del episodio. Es el único dato de progreso que se guarda: XP, nivel, cartas de episodio, avatares (`AVATAR_PROGRESS_UNLOCK_RULES`) y logros se calculan a partir de él ([ADR 0021](docs/adr/0021-progreso-derivado-de-un-numero.md)).
 
+**Saltar relleno** (`preferences.serie.skipFiller`):
+Preferencia del usuario, apagada por defecto. Encendida, la web se salta los episodios `filler` y `recap` (los `mixed` no) al proponer el siguiente episodio y al calcular cuándo llegas a un arco. Los saltados cuentan como vistos, porque el progreso es un solo número.
+
 ## Cartas y progresión
 
 **Character**:

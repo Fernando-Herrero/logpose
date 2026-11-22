@@ -169,6 +169,12 @@ export function normalizeResearch(input: unknown) {
         type: arc.type,
         totalEpisodes: arc.episodes.length,
         firstEpisode: Math.min(...arc.episodes.map(episode => episode.number)),
+        skippableEpisodes: arc.episodes
+          .filter(
+            episode => episode.canon === 'filler' || episode.canon === 'recap',
+          )
+          .map(episode => episode.number)
+          .sort((a, b) => a - b),
       }),
     ),
     episodes: episodes.map(

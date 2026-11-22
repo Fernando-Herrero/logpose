@@ -4,377 +4,431 @@
     "sagaSlug": "east-blue",
     "type": "canon",
     "totalEpisodes": 3,
-    "firstEpisode": 1
+    "firstEpisode": 1,
+    "skippableEpisodes": []
   },
   {
     "slug": "orange-town",
     "sagaSlug": "east-blue",
     "type": "canon",
     "totalEpisodes": 5,
-    "firstEpisode": 4
+    "firstEpisode": 4,
+    "skippableEpisodes": []
   },
   {
     "slug": "syrup-village",
     "sagaSlug": "east-blue",
     "type": "canon",
     "totalEpisodes": 10,
-    "firstEpisode": 9
+    "firstEpisode": 9,
+    "skippableEpisodes": []
   },
   {
     "slug": "baratie",
     "sagaSlug": "east-blue",
     "type": "canon",
     "totalEpisodes": 12,
-    "firstEpisode": 19
+    "firstEpisode": 19,
+    "skippableEpisodes": []
   },
   {
     "slug": "arlong-park",
     "sagaSlug": "east-blue",
     "type": "canon",
     "totalEpisodes": 14,
-    "firstEpisode": 31
+    "firstEpisode": 31,
+    "skippableEpisodes": []
   },
   {
     "slug": "buggy-side-story",
     "sagaSlug": "east-blue",
     "type": "mixed",
     "totalEpisodes": 2,
-    "firstEpisode": 46
+    "firstEpisode": 46,
+    "skippableEpisodes": []
   },
   {
     "slug": "loguetown",
     "sagaSlug": "east-blue",
     "type": "mixed",
     "totalEpisodes": 7,
-    "firstEpisode": 45
+    "firstEpisode": 45,
+    "skippableEpisodes": [50]
   },
   {
     "slug": "warship-island",
     "sagaSlug": "east-blue",
     "type": "filler",
     "totalEpisodes": 8,
-    "firstEpisode": 54
+    "firstEpisode": 54,
+    "skippableEpisodes": [54, 55, 56, 57, 58, 59, 60]
   },
   {
     "slug": "reverse-mountain",
     "sagaSlug": "arabasta",
     "type": "canon",
     "totalEpisodes": 2,
-    "firstEpisode": 62
+    "firstEpisode": 62,
+    "skippableEpisodes": []
   },
   {
     "slug": "whisky-peak",
     "sagaSlug": "arabasta",
     "type": "canon",
     "totalEpisodes": 4,
-    "firstEpisode": 64
+    "firstEpisode": 64,
+    "skippableEpisodes": []
   },
   {
     "slug": "koby-and-helmeppo",
     "sagaSlug": "arabasta",
     "type": "mixed",
     "totalEpisodes": 2,
-    "firstEpisode": 68
+    "firstEpisode": 68,
+    "skippableEpisodes": []
   },
   {
     "slug": "little-garden",
     "sagaSlug": "arabasta",
     "type": "canon",
     "totalEpisodes": 8,
-    "firstEpisode": 70
+    "firstEpisode": 70,
+    "skippableEpisodes": []
   },
   {
     "slug": "drum-island",
     "sagaSlug": "arabasta",
     "type": "canon",
     "totalEpisodes": 14,
-    "firstEpisode": 78
+    "firstEpisode": 78,
+    "skippableEpisodes": []
   },
   {
     "slug": "arabasta",
     "sagaSlug": "arabasta",
     "type": "canon",
     "totalEpisodes": 39,
-    "firstEpisode": 92
+    "firstEpisode": 92,
+    "skippableEpisodes": [99, 102]
   },
   {
     "slug": "post-arabasta",
     "sagaSlug": "arabasta",
     "type": "filler",
     "totalEpisodes": 5,
-    "firstEpisode": 131
+    "firstEpisode": 131,
+    "skippableEpisodes": [131, 132, 133, 134, 135]
   },
   {
     "slug": "goat-island",
     "sagaSlug": "sky-island",
     "type": "filler",
     "totalEpisodes": 3,
-    "firstEpisode": 136
+    "firstEpisode": 136,
+    "skippableEpisodes": [136, 137, 138]
   },
   {
     "slug": "ruluka-island",
     "sagaSlug": "sky-island",
     "type": "filler",
     "totalEpisodes": 5,
-    "firstEpisode": 139
+    "firstEpisode": 139,
+    "skippableEpisodes": [139, 140, 141, 142, 143]
   },
   {
     "slug": "jaya",
     "sagaSlug": "sky-island",
     "type": "canon",
     "totalEpisodes": 9,
-    "firstEpisode": 144
+    "firstEpisode": 144,
+    "skippableEpisodes": []
   },
   {
     "slug": "skypiea",
     "sagaSlug": "sky-island",
     "type": "canon",
     "totalEpisodes": 43,
-    "firstEpisode": 153
+    "firstEpisode": 153,
+    "skippableEpisodes": []
   },
   {
     "slug": "g-8",
     "sagaSlug": "sky-island",
     "type": "filler",
     "totalEpisodes": 11,
-    "firstEpisode": 196
+    "firstEpisode": 196,
+    "skippableEpisodes": [196, 197, 198, 199, 200, 201, 202, 204, 205, 206]
   },
   {
     "slug": "long-ring-long-land",
     "sagaSlug": "water-7",
     "type": "mixed",
     "totalEpisodes": 15,
-    "firstEpisode": 207
+    "firstEpisode": 207,
+    "skippableEpisodes": [213, 214, 215, 216]
   },
   {
     "slug": "oceans-dream",
     "sagaSlug": "water-7",
     "type": "filler",
     "totalEpisodes": 5,
-    "firstEpisode": 220
+    "firstEpisode": 220,
+    "skippableEpisodes": [220, 221, 222, 223, 224]
   },
   {
     "slug": "foxys-return",
     "sagaSlug": "water-7",
     "type": "mixed",
     "totalEpisodes": 2,
-    "firstEpisode": 225
+    "firstEpisode": 225,
+    "skippableEpisodes": [225]
   },
   {
     "slug": "water-7",
     "sagaSlug": "water-7",
     "type": "canon",
     "totalEpisodes": 35,
-    "firstEpisode": 229
+    "firstEpisode": 229,
+    "skippableEpisodes": []
   },
   {
     "slug": "enies-lobby",
     "sagaSlug": "water-7",
     "type": "mixed",
     "totalEpisodes": 49,
-    "firstEpisode": 264
+    "firstEpisode": 264,
+    "skippableEpisodes": [279, 280, 281, 282, 283, 291, 292, 303]
   },
   {
     "slug": "post-enies-lobby",
     "sagaSlug": "water-7",
     "type": "mixed",
     "totalEpisodes": 13,
-    "firstEpisode": 313
+    "firstEpisode": 313,
+    "skippableEpisodes": [317, 318, 319]
   },
   {
     "slug": "ice-hunter",
     "sagaSlug": "thriller-bark",
     "type": "filler",
     "totalEpisodes": 11,
-    "firstEpisode": 326
+    "firstEpisode": 326,
+    "skippableEpisodes": [327, 328, 329, 330, 331, 332, 333, 334, 335, 336]
   },
   {
     "slug": "thriller-bark",
     "sagaSlug": "thriller-bark",
     "type": "canon",
     "totalEpisodes": 45,
-    "firstEpisode": 337
+    "firstEpisode": 337,
+    "skippableEpisodes": []
   },
   {
     "slug": "spa-island",
     "sagaSlug": "thriller-bark",
     "type": "filler",
     "totalEpisodes": 3,
-    "firstEpisode": 382
+    "firstEpisode": 382,
+    "skippableEpisodes": [382, 383, 384]
   },
   {
     "slug": "sabaody-archipelago",
     "sagaSlug": "summit-war",
     "type": "mixed",
     "totalEpisodes": 23,
-    "firstEpisode": 385
+    "firstEpisode": 385,
+    "skippableEpisodes": [406, 407]
   },
   {
     "slug": "amazon-lily",
     "sagaSlug": "summit-war",
     "type": "canon",
     "totalEpisodes": 14,
-    "firstEpisode": 408
+    "firstEpisode": 408,
+    "skippableEpisodes": []
   },
   {
     "slug": "impel-down",
     "sagaSlug": "summit-war",
     "type": "mixed",
     "totalEpisodes": 31,
-    "firstEpisode": 422
+    "firstEpisode": 422,
+    "skippableEpisodes": []
   },
   {
     "slug": "little-east-blue",
     "sagaSlug": "summit-war",
     "type": "filler",
     "totalEpisodes": 4,
-    "firstEpisode": 426
+    "firstEpisode": 426,
+    "skippableEpisodes": [426, 427, 428, 429]
   },
   {
     "slug": "marineford",
     "sagaSlug": "summit-war",
     "type": "mixed",
     "totalEpisodes": 33,
-    "firstEpisode": 457
+    "firstEpisode": 457,
+    "skippableEpisodes": [457, 458]
   },
   {
     "slug": "post-war",
     "sagaSlug": "summit-war",
     "type": "mixed",
     "totalEpisodes": 27,
-    "firstEpisode": 490
+    "firstEpisode": 490,
+    "skippableEpisodes": [492, 499, 506]
   },
   {
     "slug": "return-to-sabaody",
     "sagaSlug": "fish-man-island",
     "type": "canon",
     "totalEpisodes": 6,
-    "firstEpisode": 517
+    "firstEpisode": 517,
+    "skippableEpisodes": []
   },
   {
     "slug": "fish-man-island",
     "sagaSlug": "fish-man-island",
     "type": "canon",
     "totalEpisodes": 52,
-    "firstEpisode": 523
+    "firstEpisode": 523,
+    "skippableEpisodes": [542]
   },
   {
     "slug": "zs-ambition",
     "sagaSlug": "dressrosa",
     "type": "filler",
     "totalEpisodes": 4,
-    "firstEpisode": 575
+    "firstEpisode": 575,
+    "skippableEpisodes": [575, 576, 577, 578]
   },
   {
     "slug": "punk-hazard",
     "sagaSlug": "dressrosa",
     "type": "canon",
     "totalEpisodes": 47,
-    "firstEpisode": 579
+    "firstEpisode": 579,
+    "skippableEpisodes": [590]
   },
   {
     "slug": "caesar-retrieval",
     "sagaSlug": "dressrosa",
     "type": "filler",
     "totalEpisodes": 3,
-    "firstEpisode": 626
+    "firstEpisode": 626,
+    "skippableEpisodes": [627]
   },
   {
     "slug": "dressrosa",
     "sagaSlug": "dressrosa",
     "type": "canon",
     "totalEpisodes": 118,
-    "firstEpisode": 629
+    "firstEpisode": 629,
+    "skippableEpisodes": []
   },
   {
     "slug": "silver-mine",
     "sagaSlug": "whole-cake-island",
     "type": "filler",
     "totalEpisodes": 4,
-    "firstEpisode": 747
+    "firstEpisode": 747,
+    "skippableEpisodes": [747, 748, 749, 750]
   },
   {
     "slug": "zou",
     "sagaSlug": "whole-cake-island",
     "type": "canon",
     "totalEpisodes": 29,
-    "firstEpisode": 751
+    "firstEpisode": 751,
+    "skippableEpisodes": [775]
   },
   {
     "slug": "marine-rookie",
     "sagaSlug": "whole-cake-island",
     "type": "filler",
     "totalEpisodes": 3,
-    "firstEpisode": 780
+    "firstEpisode": 780,
+    "skippableEpisodes": [780, 781, 782]
   },
   {
     "slug": "whole-cake-island",
     "sagaSlug": "whole-cake-island",
     "type": "canon",
     "totalEpisodes": 95,
-    "firstEpisode": 783
+    "firstEpisode": 783,
+    "skippableEpisodes": []
   },
   {
     "slug": "levely",
     "sagaSlug": "whole-cake-island",
     "type": "canon",
     "totalEpisodes": 12,
-    "firstEpisode": 878
+    "firstEpisode": 878,
+    "skippableEpisodes": []
   },
   {
     "slug": "wano-country-act-1",
     "sagaSlug": "wano-country",
     "type": "canon",
     "totalEpisodes": 24,
-    "firstEpisode": 890
+    "firstEpisode": 890,
+    "skippableEpisodes": []
   },
   {
     "slug": "cidre-guild",
     "sagaSlug": "wano-country",
     "type": "filler",
     "totalEpisodes": 2,
-    "firstEpisode": 895
+    "firstEpisode": 895,
+    "skippableEpisodes": [895, 896]
   },
   {
     "slug": "romance-dawn-special",
     "sagaSlug": "wano-country",
     "type": "filler",
     "totalEpisodes": 1,
-    "firstEpisode": 907
+    "firstEpisode": 907,
+    "skippableEpisodes": [907]
   },
   {
     "slug": "wano-country-act-2",
     "sagaSlug": "wano-country",
     "type": "canon",
     "totalEpisodes": 41,
-    "firstEpisode": 917
+    "firstEpisode": 917,
+    "skippableEpisodes": []
   },
   {
     "slug": "wano-country-act-3",
     "sagaSlug": "wano-country",
     "type": "canon",
     "totalEpisodes": 126,
-    "firstEpisode": 958
+    "firstEpisode": 958,
+    "skippableEpisodes": [1084]
   },
   {
     "slug": "uta-past",
     "sagaSlug": "wano-country",
     "type": "filler",
     "totalEpisodes": 2,
-    "firstEpisode": 1029
+    "firstEpisode": 1029,
+    "skippableEpisodes": [1029, 1030]
   },
   {
     "slug": "egghead",
     "sagaSlug": "final-saga",
     "type": "canon",
     "totalEpisodes": 70,
-    "firstEpisode": 1086
+    "firstEpisode": 1086,
+    "skippableEpisodes": []
   },
   {
     "slug": "elbaph",
     "sagaSlug": "final-saga",
     "type": "canon",
     "totalEpisodes": 25,
-    "firstEpisode": 1156
+    "firstEpisode": 1156,
+    "skippableEpisodes": []
   }
 ]

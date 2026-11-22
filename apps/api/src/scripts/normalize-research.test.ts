@@ -202,6 +202,7 @@ describe('normalizeResearch', () => {
         type: 'mixed',
         totalEpisodes: 2,
         firstEpisode: 46,
+        skippableEpisodes: [47],
       },
       {
         slug: 'loguetown',
@@ -209,6 +210,7 @@ describe('normalizeResearch', () => {
         type: 'mixed',
         totalEpisodes: 3,
         firstEpisode: 45,
+        skippableEpisodes: [48],
       },
       {
         slug: 'whisky-peak',
@@ -216,6 +218,7 @@ describe('normalizeResearch', () => {
         type: 'filler',
         totalEpisodes: 2,
         firstEpisode: 91,
+        skippableEpisodes: [91, 92],
       },
       {
         slug: 'little-garden',
@@ -223,6 +226,7 @@ describe('normalizeResearch', () => {
         type: 'canon',
         totalEpisodes: 1,
         firstEpisode: 80,
+        skippableEpisodes: [],
       },
     ]);
   });
@@ -237,6 +241,22 @@ describe('normalizeResearch', () => {
       loguetown: 45,
       'whisky-peak': 91, // order 1, pero sus episodios son más altos que los de Little Garden (80)
       'little-garden': 80,
+    });
+  });
+
+  it('lleva en skippableEpisodes los episodios filler y recap de cada arco en orden ascendente, sin los mixed ni los canon', () => {
+    const skippableOf = Object.fromEntries(
+      normalizeResearch(buildInput()).arcs.map(a => [
+        a.slug,
+        a.skippableEpisodes,
+      ]),
+    );
+
+    expect(skippableOf).toStrictEqual({
+      'buggy-side-story': [47], // 47 es recap; el 46 es mixed y no entra
+      loguetown: [48], // 48 es filler; el 45 (canon) y el 53 (mixed) no entran
+      'whisky-peak': [91, 92], // ambos filler, y en la entrada vienen como 92, 91
+      'little-garden': [], // su único episodio (80) es canon
     });
   });
 

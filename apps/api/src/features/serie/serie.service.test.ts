@@ -35,6 +35,7 @@ describe('SerieService.listArcs', () => {
       type: 'canon',
       totalEpisodes: 3,
       firstEpisode: 1,
+      skippableEpisodes: [],
     });
     expect(arcs.at(-1)).toEqual({
       slug: 'elbaph',
@@ -42,6 +43,7 @@ describe('SerieService.listArcs', () => {
       type: 'canon',
       totalEpisodes: 25,
       firstEpisode: 1156,
+      skippableEpisodes: [],
     });
   });
 

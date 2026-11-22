@@ -17,16 +17,18 @@ import { useAuthSession } from '@/features/auth/api/use-auth';
 import {
   useSerieTotalEpisodes,
   useSetProgressMutation,
+  useSuspenseSerieAllArcs,
 } from '@/features/serie/api/use-serie';
+import { getNextStop } from '@/features/serie/serie.selectors';
 import { useLocale } from '@/integrations/next-i18next/use-locale';
 import { allQueriesOptions } from '@/integrations/tanstack-query/queries-options';
 
 function NextEpisode({
   number,
-  totalEpisodes,
+  compass,
 }: {
   number: number;
-  totalEpisodes: number;
+  compass: { arcSlug: string; remaining: number } | undefined;
 }) {
   const { t } = useTranslation();
   const locale = useLocale();
@@ -41,7 +43,6 @@ function NextEpisode({
     ],
   });
   const watched = arc.episodes.filter(ep => ep.number < number).length;
-  const nextArcStart = Math.max(...arc.episodes.map(ep => ep.number)) + 1;
 
   return (
     <>
@@ -73,9 +74,7 @@ function NextEpisode({
         size="2"
         className="profile-xp-progress h-2"
       />
-      {nextArcStart <= totalEpisodes && (
-        <ArcCompass episode={nextArcStart} remaining={nextArcStart - number} />
-      )}
+      {compass && <ArcCompass {...compass} />}
       <Button
         size="3"
         mt="4"
@@ -89,19 +88,16 @@ function NextEpisode({
 }
 
 function ArcCompass({
-  episode,
+  arcSlug,
   remaining,
 }: {
-  episode: number;
+  arcSlug: string;
   remaining: number;
 }) {
   const { t } = useTranslation();
   const locale = useLocale();
-  const { data: nextArcEpisode } = useSuspenseQuery(
-    allQueriesOptions.serie.episode(episode),
-  );
   const { data: texts } = useSuspenseQuery(
-    allQueriesOptions.serie.arcTexts(nextArcEpisode.arcSlug, locale),
+    allQueriesOptions.serie.arcTexts(arcSlug, locale),
   );
 
   return (
@@ -141,17 +137,23 @@ function ArcCompass({
 
 function HomeNextEpisode({
   lastWatchedEpisode,
+  skipFiller,
 }: {
   lastWatchedEpisode: number;
+  skipFiller: boolean;
 }) {
   const { t } = useTranslation();
   const totalEpisodes = useSerieTotalEpisodes();
+  const { data } = useSuspenseSerieAllArcs();
+  const stop = getNextStop({
+    arcs: data.arcs,
+    lastWatchedEpisode,
+    totalEpisodes,
+    skipFiller,
+  });
 
-  return lastWatchedEpisode < totalEpisodes ? (
-    <NextEpisode
-      number={lastWatchedEpisode + 1}
-      totalEpisodes={totalEpisodes}
-    />
+  return stop ? (
+    <NextEpisode number={stop.episode} compass={stop.compass} />
   ) : (
     <Text as="p" size="2">
       {t('serie.next_up_to_date')}
@@ -175,7 +177,10 @@ export default function HomePageContent() {
       </Heading>
       <ErrorBoundary FallbackComponent={QueryErrorFallback}>
         <Suspense fallback={<Skeleton height="140px" />}>
-          <HomeNextEpisode lastWatchedEpisode={user?.lastWatchedEpisode ?? 0} />
+          <HomeNextEpisode
+            lastWatchedEpisode={user?.lastWatchedEpisode ?? 0}
+            skipFiller={user?.preferences.serie.skipFiller ?? false}
+          />
         </Suspense>
       </ErrorBoundary>
     </Card>

@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest';
 
-import { getArcArrivalDate } from '@/features/serie/serie.selectors';
+import {
+  getArcArrivalDate,
+  getNextStop,
+} from '@/features/serie/serie.selectors';
+import type { SerieArc } from '@/features/serie/serie.types';
 
 // Las fechas se construyen con hora local: sin fijar la zona, el caso del
 // cambio de hora solo tendría sentido en máquinas configuradas en Europa.
@@ -82,4 +86,163 @@ describe('getArcArrivalDate', () => {
       ).toEqual(expected);
     },
   );
+});
+
+// Arcos reales de arcs.json en el orden del fichero: loguetown (45) va
+// después de buggy-side-story (46), así que no vienen ordenados por episodio.
+const arcs: SerieArc[] = [
+  {
+    slug: 'baratie',
+    sagaSlug: 'east-blue',
+    type: 'canon',
+    totalEpisodes: 12,
+    firstEpisode: 19,
+    skippableEpisodes: [],
+  },
+  {
+    slug: 'arlong-park',
+    sagaSlug: 'east-blue',
+    type: 'canon',
+    totalEpisodes: 14,
+    firstEpisode: 31,
+    skippableEpisodes: [],
+  },
+  {
+    slug: 'buggy-side-story',
+    sagaSlug: 'east-blue',
+    type: 'mixed',
+    totalEpisodes: 2,
+    firstEpisode: 46,
+    skippableEpisodes: [],
+  },
+  {
+    slug: 'loguetown',
+    sagaSlug: 'east-blue',
+    type: 'mixed',
+    totalEpisodes: 7,
+    firstEpisode: 45,
+    skippableEpisodes: [50],
+  },
+  {
+    slug: 'warship-island',
+    sagaSlug: 'east-blue',
+    type: 'filler',
+    totalEpisodes: 8,
+    firstEpisode: 54,
+    skippableEpisodes: [54, 55, 56, 57, 58, 59, 60],
+  },
+  {
+    slug: 'reverse-mountain',
+    sagaSlug: 'arabasta',
+    type: 'canon',
+    totalEpisodes: 2,
+    firstEpisode: 62,
+    skippableEpisodes: [],
+  },
+  {
+    slug: 'whisky-peak',
+    sagaSlug: 'arabasta',
+    type: 'canon',
+    totalEpisodes: 4,
+    firstEpisode: 64,
+    skippableEpisodes: [],
+  },
+  {
+    slug: 'koby-and-helmeppo',
+    sagaSlug: 'arabasta',
+    type: 'mixed',
+    totalEpisodes: 2,
+    firstEpisode: 68,
+    skippableEpisodes: [],
+  },
+  {
+    slug: 'little-garden',
+    sagaSlug: 'arabasta',
+    type: 'canon',
+    totalEpisodes: 8,
+    firstEpisode: 70,
+    skippableEpisodes: [],
+  },
+  {
+    slug: 'drum-island',
+    sagaSlug: 'arabasta',
+    type: 'canon',
+    totalEpisodes: 14,
+    firstEpisode: 78,
+    skippableEpisodes: [],
+  },
+];
+
+describe('getNextStop', () => {
+  it.each([
+    // [descripción, último visto, skipFiller, episodio, arco de la brújula, faltan]
+    ['apagado, tras el 39', 39, false, 40, 'loguetown', 5],
+    // El 54 y el 61 son de Warship Island; con el interruptor encendido el
+    // siguiente episodio es el 61 (mixto, no saltable) y no el 54.
+    ['encendido, tras el 53', 53, true, 61, 'reverse-mountain', 1],
+    ['apagado, tras el 53', 53, false, 54, 'reverse-mountain', 8],
+    // Warship Island (54) es relleno: apagado recibe la brújula, encendido no.
+    [
+      'apagado, un arco de relleno recibe la brújula',
+      50,
+      false,
+      51,
+      'warship-island',
+      3,
+    ],
+    [
+      'encendido, un arco de relleno no recibe la brújula',
+      50,
+      true,
+      51,
+      'reverse-mountain',
+      4,
+    ],
+    // De 46 a 61 hay 16 episodios; el 50 y el 54-60 se saltan y no cuentan.
+    [
+      'encendido, los saltables del recorrido no cuentan',
+      45,
+      true,
+      46,
+      'reverse-mountain',
+      8,
+    ],
+  ])('%s', (_, lastWatchedEpisode, skipFiller, episode, arcSlug, remaining) => {
+    expect(
+      getNextStop({ arcs, lastWatchedEpisode, totalEpisodes: 91, skipFiller }),
+    ).toEqual({ episode, compass: { arcSlug, remaining } });
+  });
+
+  it('no da siguiente parada si ya has visto todos los episodios', () => {
+    expect(
+      getNextStop({
+        arcs,
+        lastWatchedEpisode: 91,
+        totalEpisodes: 91,
+        skipFiller: false,
+      }),
+    ).toBeUndefined();
+  });
+
+  it('no da siguiente parada si todo lo que queda es saltable', () => {
+    expect(
+      getNextStop({
+        arcs,
+        lastWatchedEpisode: 53,
+        totalEpisodes: 60,
+        skipFiller: true,
+      }),
+    ).toBeUndefined();
+  });
+
+  it('da el episodio sin brújula si no queda ningún arco después', () => {
+    expect(
+      getNextStop({
+        arcs,
+        lastWatchedEpisode: 80,
+        totalEpisodes: 91,
+        skipFiller: false,
+      }),
+    ).toEqual({ episode: 81, compass: undefined });
+  });
 });

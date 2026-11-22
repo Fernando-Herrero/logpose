@@ -1,3 +1,5 @@
+import type { SerieArc } from '@/features/serie/serie.types';
+
 export function getSerieXpPercent(experience: number, totalExperience: number) {
   return Math.min(100, Math.round((experience / totalExperience) * 100));
 }
@@ -28,4 +30,45 @@ export function getArcArrivalDate({
     today.getMonth(),
     today.getDate() + days,
   );
+}
+
+type NextStopInput = {
+  arcs: SerieArc[];
+  lastWatchedEpisode: number;
+  totalEpisodes: number;
+  skipFiller: boolean;
+};
+
+export function getNextStop({
+  arcs,
+  lastWatchedEpisode,
+  totalEpisodes,
+  skipFiller,
+}: NextStopInput) {
+  const skipped = new Set(
+    skipFiller ? arcs.flatMap(arc => arc.skippableEpisodes) : [],
+  );
+  // Los que quedan por ver, en orden; los saltados cuentan como vistos.
+  const pending = Array.from(
+    { length: totalEpisodes - lastWatchedEpisode },
+    (_, index) => lastWatchedEpisode + 1 + index,
+  ).filter(number => !skipped.has(number));
+
+  const episode = pending[0];
+  if (episode === undefined) return undefined;
+
+  const nextArc = arcs
+    .filter(
+      arc =>
+        arc.firstEpisode > episode && !(skipFiller && arc.type === 'filler'),
+    )
+    .toSorted((a, b) => a.firstEpisode - b.firstEpisode)[0];
+
+  return {
+    episode,
+    compass: nextArc && {
+      arcSlug: nextArc.slug,
+      remaining: pending.filter(number => number < nextArc.firstEpisode).length,
+    },
+  };
 }

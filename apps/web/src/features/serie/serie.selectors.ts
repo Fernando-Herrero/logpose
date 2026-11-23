@@ -5,24 +5,20 @@ export function getSerieXpPercent(experience: number, totalExperience: number) {
 }
 
 type ArcArrivalInput = {
-  firstEpisode: number;
-  lastWatchedEpisode: number;
+  episodesLeft: number;
   episodesPerDay: number;
   today: Date;
 };
 
 export function getArcArrivalDate({
-  firstEpisode,
-  lastWatchedEpisode,
+  episodesLeft,
   episodesPerDay,
   today,
 }: ArcArrivalInput) {
   // Negado para que también descarte NaN, que es lo que da el campo vacío.
   if (!(episodesPerDay >= 1)) return undefined;
 
-  const days = Math.floor(
-    (firstEpisode - lastWatchedEpisode - 1) / episodesPerDay,
-  );
+  const days = Math.floor(episodesLeft / episodesPerDay);
 
   // Días de calendario, no milisegundos: el cambio de hora no mueve la fecha.
   return new Date(
@@ -32,27 +28,32 @@ export function getArcArrivalDate({
   );
 }
 
-type NextStopInput = {
+type PendingEpisodesInput = {
   arcs: SerieArc[];
   lastWatchedEpisode: number;
   totalEpisodes: number;
   skipFiller: boolean;
 };
 
-export function getNextStop({
+// Los que quedan por ver, en orden; los saltados cuentan como vistos.
+export function getPendingEpisodes({
   arcs,
   lastWatchedEpisode,
   totalEpisodes,
   skipFiller,
-}: NextStopInput) {
+}: PendingEpisodesInput) {
   const skipped = new Set(
     skipFiller ? arcs.flatMap(arc => arc.skippableEpisodes) : [],
   );
-  // Los que quedan por ver, en orden; los saltados cuentan como vistos.
-  const pending = Array.from(
+  return Array.from(
     { length: totalEpisodes - lastWatchedEpisode },
     (_, index) => lastWatchedEpisode + 1 + index,
   ).filter(number => !skipped.has(number));
+}
+
+export function getNextStop(input: PendingEpisodesInput) {
+  const { arcs, skipFiller } = input;
+  const pending = getPendingEpisodes(input);
 
   const episode = pending[0];
   if (episode === undefined) return undefined;

@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import {
   getArcArrivalDate,
   getNextStop,
+  getPendingEpisodes,
 } from '@/features/serie/serie.selectors';
 import type { SerieArc } from '@/features/serie/serie.types';
 
@@ -13,25 +14,20 @@ process.env.TZ = 'Europe/Madrid';
 const today = new Date(2026, 10, 19);
 
 describe('getArcArrivalDate', () => {
+  // Tras el 40: hasta Loguetown (45) faltan 4; hasta Wano (890), 849.
   it.each([
-    ['Loguetown (episodio 45)', 45, new Date(2026, 10, 20)],
-    ['Wano acto 1 (episodio 890)', 890, new Date(2027, 7, 29)],
-  ])('llega a %s con el ritmo de 3 al día', (_, firstEpisode, expected) => {
+    ['Loguetown (episodio 45)', 4, new Date(2026, 10, 20)],
+    ['Wano acto 1 (episodio 890)', 849, new Date(2027, 7, 29)],
+  ])('llega a %s con el ritmo de 3 al día', (_, episodesLeft, expected) => {
     expect(
-      getArcArrivalDate({
-        firstEpisode,
-        lastWatchedEpisode: 40,
-        episodesPerDay: 3,
-        today,
-      }),
+      getArcArrivalDate({ episodesLeft, episodesPerDay: 3, today }),
     ).toEqual(expected);
   });
 
-  it('llega hoy si el arco empieza en el episodio siguiente al visto', () => {
+  it('llega hoy si no falta ningún episodio antes del arco', () => {
     expect(
       getArcArrivalDate({
-        firstEpisode: 41,
-        lastWatchedEpisode: 40,
+        episodesLeft: 0,
         episodesPerDay: 3,
         today,
       }),
@@ -44,8 +40,7 @@ describe('getArcArrivalDate', () => {
   ])('no da fecha si el ritmo es %s', (_, episodesPerDay) => {
     expect(
       getArcArrivalDate({
-        firstEpisode: 45,
-        lastWatchedEpisode: 40,
+        episodesLeft: 4,
         episodesPerDay,
         today,
       }),
@@ -77,12 +72,7 @@ describe('getArcArrivalDate', () => {
     'suma 3 días de calendario al cruzar el cambio de hora %s',
     (_, today, expected) => {
       expect(
-        getArcArrivalDate({
-          firstEpisode: 14,
-          lastWatchedEpisode: 10,
-          episodesPerDay: 1,
-          today,
-        }),
+        getArcArrivalDate({ episodesLeft: 3, episodesPerDay: 1, today }),
       ).toEqual(expected);
     },
   );
@@ -244,5 +234,71 @@ describe('getNextStop', () => {
         skipFiller: false,
       }),
     ).toEqual({ episode: 81, compass: undefined });
+  });
+});
+
+describe('getPendingEpisodes', () => {
+  it('apagado, tras el 53, devuelve del 54 al 62', () => {
+    expect(
+      getPendingEpisodes({
+        arcs,
+        lastWatchedEpisode: 53,
+        totalEpisodes: 62,
+        skipFiller: false,
+      }),
+    ).toEqual([54, 55, 56, 57, 58, 59, 60, 61, 62]);
+  });
+
+  it('encendido, tras el 53, solo quedan el 61 y el 62', () => {
+    expect(
+      getPendingEpisodes({
+        arcs,
+        lastWatchedEpisode: 53,
+        totalEpisodes: 62,
+        skipFiller: true,
+      }),
+    ).toEqual([61, 62]);
+  });
+
+  it('encendido, tras el 45, se salta el 50 y del 54 al 60', () => {
+    expect(
+      getPendingEpisodes({
+        arcs,
+        lastWatchedEpisode: 45,
+        totalEpisodes: 62,
+        skipFiller: true,
+      }),
+    ).toEqual([46, 47, 48, 49, 51, 52, 53, 61, 62]);
+  });
+
+  it.each([
+    ['encendido', true, 1],
+    ['apagado', false, 8],
+  ])(
+    '%s, tras el 53, quedan %i episodios antes de Reverse Mountain (62)',
+    (_, skipFiller, expected) => {
+      expect(
+        getPendingEpisodes({
+          arcs,
+          lastWatchedEpisode: 53,
+          totalEpisodes: 62,
+          skipFiller,
+        }).filter(n => n < 62).length,
+      ).toBe(expected);
+    },
+  );
+
+  it.each([
+    ['has visto todo', 62],
+    ['lo visto supera el total', 70],
+  ])('devuelve [] si %s', (_, lastWatchedEpisode) => {
+    expect(
+      getPendingEpisodes({
+        arcs,
+        lastWatchedEpisode,
+        totalEpisodes: 62,
+        skipFiller: false,
+      }),
+    ).toEqual([]);
   });
 });

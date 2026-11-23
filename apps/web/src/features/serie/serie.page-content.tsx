@@ -29,6 +29,7 @@ import {
 } from '@/features/serie/api/use-serie';
 import {
   getArcArrivalDate,
+  getPendingEpisodes,
   getSerieXpPercent,
 } from '@/features/serie/serie.selectors';
 import { SerieSagaBlock } from '@/features/serie/ui/serie-saga-block.component';
@@ -146,15 +147,24 @@ function SerieCatchUp({ lastWatchedEpisode }: { lastWatchedEpisode: number }) {
   );
 }
 
-function SerieArrival({ lastWatchedEpisode }: { lastWatchedEpisode: number }) {
+function SerieArrival({
+  lastWatchedEpisode,
+  skipFiller,
+}: {
+  lastWatchedEpisode: number;
+  skipFiller: boolean;
+}) {
   const { t } = useTranslation();
   const locale = useLocale();
   const { data } = useSuspenseSerieAllArcs();
+  const totalEpisodes = useSerieTotalEpisodes();
   const [arcSlug, setArcSlug] = useState<string>();
   const [episodesPerDay, setEpisodesPerDay] = useState(3);
 
   const aheadArcs = data.arcs.filter(
-    arc => arc.firstEpisode > lastWatchedEpisode,
+    arc =>
+      arc.firstEpisode > lastWatchedEpisode &&
+      !(skipFiller && arc.type === 'filler'),
   );
 
   const arc = aheadArcs.find(item => item.slug === arcSlug) ?? aheadArcs[0];
@@ -163,8 +173,12 @@ function SerieArrival({ lastWatchedEpisode }: { lastWatchedEpisode: number }) {
   const arcName = (slug: string) =>
     t(`arcs.${slug}.name`, { ns: 'serie', defaultValue: '' });
   const arrivalDate = getArcArrivalDate({
-    firstEpisode: arc.firstEpisode,
-    lastWatchedEpisode,
+    episodesLeft: getPendingEpisodes({
+      arcs: data.arcs,
+      lastWatchedEpisode,
+      totalEpisodes,
+      skipFiller,
+    }).filter(number => number < arc.firstEpisode).length,
     episodesPerDay,
     today: new Date(),
   });
@@ -297,7 +311,10 @@ export default function SeriePageContent() {
               <Suspense fallback={<Skeleton height="32px" />}>
                 <SerieXpProgress experience={user?.experience ?? 0} />
                 <SerieCatchUp lastWatchedEpisode={lastWatchedEpisode} />
-                <SerieArrival lastWatchedEpisode={lastWatchedEpisode} />
+                <SerieArrival
+                  lastWatchedEpisode={lastWatchedEpisode}
+                  skipFiller={skipFiller}
+                />
               </Suspense>
             </ErrorBoundary>
             <Text

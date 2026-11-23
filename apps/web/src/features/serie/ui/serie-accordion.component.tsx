@@ -10,6 +10,7 @@ type SerieAccordionProps = {
   meta?: string;
   isOpen: boolean;
   onToggle: () => void;
+  dimmed?: boolean;
   children: ReactNode;
 };
 
@@ -20,6 +21,7 @@ export function SerieAccordion({
   meta,
   isOpen,
   onToggle,
+  dimmed,
   children,
 }: SerieAccordionProps) {
   const isSaga = variant === 'saga';
@@ -39,7 +41,7 @@ export function SerieAccordion({
         highContrast
         aria-expanded={isOpen}
         onClick={onToggle}
-        className="h-auto w-full max-w-full min-w-0 cursor-pointer justify-between gap-3 p-0 text-left hover:bg-transparent"
+        className={`h-auto w-full max-w-full min-w-0 cursor-pointer justify-between gap-3 p-0 text-left hover:bg-transparent ${dimmed ? 'opacity-50' : ''}`}
       >
         <Flex align="start" justify="between" gap="3" className="w-full">
           <Box className="min-w-0 flex-1">

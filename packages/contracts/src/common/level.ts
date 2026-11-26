@@ -2,3 +2,8 @@
 export function levelFromExperience(experience: number): number {
   return Math.floor((1 + Math.sqrt(1 + (4 * experience) / 15)) / 2);
 }
+
+/** Cumulative experience that reaching `level` requires (ADR 0021). */
+export function experienceForLevel(level: number): number {
+  return 15 * level * (level - 1);
+}

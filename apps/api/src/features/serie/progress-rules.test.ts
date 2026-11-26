@@ -5,7 +5,10 @@ import {
   AVATAR_PROGRESS_UNLOCK_RULES,
   type AvatarProgressUnlockCharacterId,
 } from '@logpose/contracts/common/avatar';
-import { levelFromExperience } from '@logpose/contracts/common/level';
+import {
+  experienceForLevel,
+  levelFromExperience,
+} from '@logpose/contracts/common/level';
 import { describe, expect, it } from 'vitest';
 
 const sagasDir = path.join(
@@ -61,5 +64,18 @@ describe('levelFromExperience', () => {
     [145_360, 98],
   ])('%i XP es nivel %i', (experience, level) => {
     expect(levelFromExperience(experience)).toBe(level);
+  });
+});
+
+describe('experienceForLevel', () => {
+  it.each([
+    [1, 0],
+    [2, 30],
+    [3, 90],
+    [4, 180],
+    [10, 1_350],
+    [98, 142_590],
+  ])('el nivel %i requiere %i XP', (level, experience) => {
+    expect(experienceForLevel(level)).toBe(experience);
   });
 });

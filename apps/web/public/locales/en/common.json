@@ -152,7 +152,9 @@
         "body": "Coming soon: moderation panel."
       },
       "home": {
-        "title": "Your journey"
+        "title": "Your journey",
+        "level": "Level {{level}}",
+        "level_remaining": "{{xp}} XP to level {{next}}"
       }
     }
   },

@@ -152,7 +152,9 @@
         "body": "近日公開：モデレーションパネル。"
       },
       "home": {
-        "title": "あなたの航海"
+        "title": "あなたの航海",
+        "level": "レベル {{level}}",
+        "level_remaining": "レベル{{next}}まであと {{xp}} XP"
       }
     }
   },

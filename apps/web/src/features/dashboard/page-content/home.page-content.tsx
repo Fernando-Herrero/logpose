@@ -16,6 +16,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { QueryErrorFallback } from '@/components/error-boundary/query-error-fallback';
 import { MapHeader } from '@/components/map-header/map-header.component';
 import { useAuthSession } from '@/features/auth/api/use-auth';
+import { DashboardLevelProgress } from '@/features/dashboard/ui/dashboard-level-progress.component';
 import {
   useSerieTotalEpisodes,
   useSetProgressMutation,
@@ -171,7 +172,9 @@ export default function HomePageContent() {
 
   return (
     <Box className="mx-auto max-w-3xl lg:max-w-4xl">
-      <MapHeader title={t('dashboard.pages.home.title')} />
+      <MapHeader title={t('dashboard.pages.home.title')}>
+        <DashboardLevelProgress experience={user?.experience ?? 0} />
+      </MapHeader>
       <Card asChild className="card p-6">
         <section aria-labelledby={headingId}>
           <Heading

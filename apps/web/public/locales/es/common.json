@@ -152,7 +152,9 @@
         "body": "Próximamente: panel de moderación."
       },
       "home": {
-        "title": "Tu travesía"
+        "title": "Tu travesía",
+        "level": "Nivel {{level}}",
+        "level_remaining": "{{xp}} XP para el nivel {{next}}"
       }
     }
   },

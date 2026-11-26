@@ -66,31 +66,6 @@ const SETTINGS_MENU = [
   },
 ] as const;
 
-function SettingsMenuIcon({
-  name,
-}: {
-  name: (typeof SETTINGS_MENU)[number]['icon'];
-}) {
-  switch (name) {
-    case 'Lock':
-      return <Icon.Lock />;
-    case 'Monetisation':
-      return <Icon.Monetisation />;
-    case 'Star':
-      return <Icon.Star />;
-    case 'Clock':
-      return <Icon.Clock />;
-    case 'ShieldCheck':
-      return <Icon.ShieldCheck />;
-    case 'Bell':
-      return <Icon.Bell size={22} />;
-    case 'Accessibility':
-      return <Icon.Accessibility />;
-    case 'BookOpen':
-      return <Icon.BookOpen />;
-  }
-}
-
 export default function SettingsPageContent() {
   const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
@@ -110,9 +85,14 @@ export default function SettingsPageContent() {
   }, sectionRef);
 
   return (
-    <section ref={sectionRef} className="mx-auto max-w-3xl">
+    <section
+      ref={sectionRef}
+      aria-labelledby="settings-title"
+      className="mx-auto max-w-3xl"
+    >
       <Heading
         as="h1"
+        id="settings-title"
         size="6"
         mb="2"
         className="font-one-piece text-highlight tracking-wide"
@@ -123,70 +103,70 @@ export default function SettingsPageContent() {
         {t('settings.subtitle')}
       </Text>
 
-      <Grid columns={{ initial: '1', sm: '2' }} gap="3">
-        {SETTINGS_MENU.map(item => {
-          const isActive = 'href' in item;
-          const cardClassName =
-            'settings-hub-card flex h-full min-h-32 flex-col gap-3 border border-highlight/12 bg-linear-to-br from-raised/50 to-page/70 p-4 backdrop-blur-sm transition-[border-color,box-shadow] duration-300';
+      <Grid asChild columns={{ initial: '1', sm: '2' }} gap="3">
+        <ul className="m-0 list-none p-0">
+          {SETTINGS_MENU.map(item => {
+            const isActive = 'href' in item;
+            const MenuIcon = Icon[item.icon];
+            const cardClassName =
+              'settings-hub-card flex h-full min-h-32 flex-col gap-3 border border-highlight/12 bg-linear-to-br from-raised/50 to-page/70 p-4 backdrop-blur-sm transition-[border-color,box-shadow] duration-300';
 
-          const content = (
-            <>
-              <Flex align="start" justify="between" gap="3">
-                <Box className="border-highlight/15 bg-deep/40 text-highlight rounded-lg border p-2">
-                  <SettingsMenuIcon name={item.icon} />
-                </Box>
-                {!isActive ? (
-                  <Badge
-                    size="1"
-                    color="gray"
-                    variant="soft"
-                    className="shrink-0"
-                  >
-                    {t('settings.coming_soon')}
-                  </Badge>
-                ) : null}
-              </Flex>
-              <Heading
-                as="h2"
-                size="3"
-                className="font-road-captain text-highlight/90 tracking-wide"
-              >
-                {t(item.titleKey)}
-              </Heading>
-              <Text
-                as="p"
-                size="2"
-                className="text-foreground/65 leading-relaxed"
-              >
-                {t(item.textKey)}
-              </Text>
-            </>
-          );
-
-          if (isActive) {
-            return (
-              <Card
-                key={item.id}
-                asChild
-                onMouseMove={tilt.onMouseMove}
-                onMouseLeave={tilt.onMouseLeave}
-                className={`${cardClassName} hover:border-highlight/40 cursor-pointer hover:shadow-[0_20px_50px_rgba(0,0,0,0.45)]`}
-              >
-                <Link href={item.href}>{content}</Link>
-              </Card>
+            const content = (
+              <>
+                <Flex align="start" justify="between" gap="3">
+                  <Box className="border-highlight/15 bg-deep/40 text-highlight rounded-lg border p-2">
+                    <MenuIcon size={22} />
+                  </Box>
+                  {!isActive ? (
+                    <Badge
+                      size="1"
+                      color="gray"
+                      variant="soft"
+                      className="shrink-0"
+                    >
+                      {t('settings.coming_soon')}
+                    </Badge>
+                  ) : null}
+                </Flex>
+                <Heading
+                  as="h2"
+                  size="3"
+                  className="font-road-captain text-highlight/90 tracking-wide"
+                >
+                  {t(item.titleKey)}
+                </Heading>
+                <Text
+                  as="p"
+                  size="2"
+                  className="text-foreground/65 leading-relaxed"
+                >
+                  {t(item.textKey)}
+                </Text>
+              </>
             );
-          }
 
-          return (
-            <Card
-              key={item.id}
-              aria-disabled
-              className={`${cardClassName} cursor-default opacity-80`}
-            >
-              {content}
-            </Card>
-          );
-        })}
+            return (
+              <li key={item.id}>
+                {isActive ? (
+                  <Card
+                    asChild
+                    onMouseMove={tilt.onMouseMove}
+                    onMouseLeave={tilt.onMouseLeave}
+                    className={`${cardClassName} hover:border-highlight/40 cursor-pointer hover:shadow-[0_20px_50px_rgba(0,0,0,0.45)]`}
+                  >
+                    <Link href={item.href}>{content}</Link>
+                  </Card>
+                ) : (
+                  <Card
+                    className={`${cardClassName} cursor-default opacity-80`}
+                  >
+                    {content}
+                  </Card>
+                )}
+              </li>
+            );
+          })}
+        </ul>
       </Grid>
     </section>
   );

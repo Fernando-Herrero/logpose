@@ -67,6 +67,7 @@ export function ProfileIdentityCard({
         <Flex direction="column" gap="1" align="start">
           {isOwner ? (
             <ProfileEditableField
+              label={t('profile.display_name')}
               value={displayName}
               emptyText={t('profile.empty_displayname')}
               placeholder={t('profile.display_name_placeholder')}
@@ -106,6 +107,7 @@ export function ProfileIdentityCard({
 
         {isOwner ? (
           <ProfileEditableField
+            label={t('profile.bio')}
             value={bio}
             emptyText={t('profile.empty_bio')}
             placeholder={t('profile.bio_placeholder')}

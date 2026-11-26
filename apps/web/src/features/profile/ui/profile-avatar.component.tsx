@@ -29,6 +29,7 @@ export function ProfileAvatar({ user, isOwner }: ProfileAvatarProps) {
   const avatar = (
     <Avatar
       src={loadError ? DEFAULT_AVATAR_SRC : resolvedAvatar}
+      alt=""
       fallback={avatarFallback}
       size="6"
       radius="full"
@@ -71,6 +72,7 @@ export function ProfileAvatar({ user, isOwner }: ProfileAvatarProps) {
         avatar
       )}
       <Box
+        role="img"
         position="absolute"
         className={`border-page right-0.5 bottom-0.5 size-4 rounded-full border-[3px] shadow-[0_0_0_1px_--alpha(var(--color-highlight)/35%)] ${
           user.isActive ? 'bg-green-400' : 'bg-red-400'

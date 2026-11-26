@@ -170,7 +170,7 @@ export function CreatePostForm({
         </Flex>
 
         {formError ? (
-          <Text as="p" size="2" color="red">
+          <Text as="p" role="alert" size="2" color="red">
             {formError}
           </Text>
         ) : null}

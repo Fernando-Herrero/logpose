@@ -1,5 +1,5 @@
-import { Box, Button, Card, Flex, Text } from '@radix-ui/themes';
-import type { ReactNode } from 'react';
+import { Box, Button, Card, Flex, Heading, Text } from '@radix-ui/themes';
+import { type ReactNode, useId } from 'react';
 
 import { Icon } from '@/components/icons/icon';
 
@@ -25,6 +25,7 @@ export function SerieAccordion({
   children,
 }: SerieAccordionProps) {
   const isSaga = variant === 'saga';
+  const panelId = useId();
 
   return (
     <Card
@@ -35,19 +36,26 @@ export function SerieAccordion({
       }
       data-open={isOpen || undefined}
     >
-      <Button
-        type="button"
-        variant="ghost"
-        highContrast
-        aria-expanded={isOpen}
-        onClick={onToggle}
-        className={`h-auto w-full max-w-full min-w-0 cursor-pointer justify-between gap-3 p-0 text-left hover:bg-transparent ${dimmed ? 'opacity-50' : ''}`}
+      {/* El botón solo envuelve el título, para que el encabezado no lea la descripción; su ::after extiende el clic a toda la cabecera. */}
+      <Flex
+        align="start"
+        justify="between"
+        gap="3"
+        className={`relative ${dimmed ? 'opacity-50' : ''}`}
       >
-        <Flex align="start" justify="between" gap="3" className="w-full">
-          <Box className="min-w-0 flex-1">
-            <Flex align="baseline" wrap="wrap" gap="2">
+        <Box className="min-w-0 flex-1">
+          <Heading as={isSaga ? 'h2' : 'h3'} weight="regular">
+            <Button
+              type="button"
+              variant="ghost"
+              highContrast
+              aria-expanded={isOpen}
+              aria-controls={panelId}
+              onClick={onToggle}
+              className="m-0! flex h-auto cursor-pointer flex-wrap items-baseline justify-start gap-2 p-0 text-left after:absolute after:inset-0 hover:bg-transparent"
+            >
               <Text
-                as="p"
+                as="span"
                 size={isSaga ? '4' : '3'}
                 weight="bold"
                 className={`font-one-piece text-highlight tracking-wide ${isSaga ? 'text-2xl md:text-3xl' : 'text-xl'}`}
@@ -64,28 +72,28 @@ export function SerieAccordion({
                   {meta}
                 </Text>
               ) : null}
-            </Flex>
-            {subtitle ? (
-              <Text
-                as="p"
-                size="1"
-                className={`text-foreground/70 mt-1 ${isSaga ? 'font-road-captain tracking-wide' : 'line-clamp-2'}`}
-              >
-                {subtitle}
-              </Text>
-            ) : null}
-          </Box>
+            </Button>
+          </Heading>
+          {subtitle ? (
+            <Text
+              as="p"
+              size="1"
+              className={`text-foreground/70 mt-1 ${isSaga ? 'font-road-captain tracking-wide' : 'line-clamp-2'}`}
+            >
+              {subtitle}
+            </Text>
+          ) : null}
+        </Box>
 
-          <Box
-            aria-hidden="true"
-            className={`text-highlight mt-1 shrink-0 transition-transform duration-300 ease-in-out motion-reduce:transition-none ${isOpen ? 'rotate-180' : ''}`}
-          >
-            <Icon.CaretDown />
-          </Box>
-        </Flex>
-      </Button>
+        <Box
+          aria-hidden="true"
+          className={`text-highlight mt-1 shrink-0 transition-transform duration-300 ease-in-out motion-reduce:transition-none ${isOpen ? 'rotate-180' : ''}`}
+        >
+          <Icon.CaretDown />
+        </Box>
+      </Flex>
 
-      <Box className="faq-panel">
+      <Box id={panelId} inert={!isOpen} className="faq-panel">
         <Box className="faq-panel-inner">
           <Flex direction="column" gap="2" className="pt-4">
             {children}

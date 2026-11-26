@@ -23,7 +23,7 @@ export function DashboardNavRail({
   const navItems = getDashboardNavItems(isAdmin);
 
   return (
-    <aside className="border-highlight/15 bg-deep text-foreground flex h-full w-14 shrink-0 flex-col border-r">
+    <div className="border-highlight/15 bg-deep text-foreground flex h-full w-14 shrink-0 flex-col border-r">
       <Flex
         align="center"
         justify="center"
@@ -37,14 +37,14 @@ export function DashboardNavRail({
         </Link>
       </Flex>
 
-      <nav className="flex flex-1 flex-col items-center gap-2 px-2 py-6">
-        {navItems.map(item => (
-          <NavRailLink
-            key={item.id}
-            item={item}
-            active={activeTab === item.id}
-          />
-        ))}
+      <nav aria-label={t('dashboard.nav.label')} className="flex-1">
+        <ul className="m-0 flex list-none flex-col items-center gap-2 px-2 py-6">
+          {navItems.map(item => (
+            <li key={item.id}>
+              <NavRailLink item={item} active={activeTab === item.id} />
+            </li>
+          ))}
+        </ul>
       </nav>
 
       <Box
@@ -66,7 +66,7 @@ export function DashboardNavRail({
           </IconButton>
         </Tooltip>
       </Box>
-    </aside>
+    </div>
   );
 }
 
@@ -88,9 +88,10 @@ function NavRailLink({
         color={active ? 'orange' : 'gray'}
         highContrast={active}
         className="m-0! box-border size-9 p-0"
+        aria-label={t(item.labelKey)}
       >
-        <Link href={item.href}>
-          <NavIcon aria-hidden />
+        <Link href={item.href} aria-current={active ? 'page' : undefined}>
+          <NavIcon />
         </Link>
       </Button>
     </Tooltip>

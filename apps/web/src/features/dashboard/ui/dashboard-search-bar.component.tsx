@@ -82,7 +82,7 @@ export function DashboardSearchBar() {
         aria-label={t('dashboard.nav.search')}
       >
         <Link href="/dashboard/search">
-          <Icon.Search aria-hidden />
+          <Icon.Search />
         </Link>
       </IconButton>
 
@@ -120,7 +120,7 @@ export function DashboardSearchBar() {
           aria-label={desktopButtonLabel}
           aria-expanded={isOpen}
         >
-          <Icon.Search aria-hidden />
+          <Icon.Search />
         </IconButton>
       </form>
     </>

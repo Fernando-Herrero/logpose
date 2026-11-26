@@ -21,15 +21,19 @@ export default function FaqPageContent() {
           {t('landing.nav.faq')}
         </Heading>
       </Reveal>
-      <Flex direction="column" gap="3">
-        {FAQ_ITEMS.map(([titleKey, textKey]) => (
-          <Reveal key={titleKey} y={20}>
-            <FaqItem
-              question={t(`faq.${titleKey}`)}
-              answer={t(`faq.${textKey}`)}
-            />
-          </Reveal>
-        ))}
+      <Flex asChild direction="column" gap="3">
+        <ul className="m-0 list-none p-0">
+          {FAQ_ITEMS.map(([titleKey, textKey]) => (
+            <li key={titleKey}>
+              <Reveal y={20}>
+                <FaqItem
+                  question={t(`faq.${titleKey}`)}
+                  answer={t(`faq.${textKey}`)}
+                />
+              </Reveal>
+            </li>
+          ))}
+        </ul>
       </Flex>
     </LandingPublicLayout>
   );

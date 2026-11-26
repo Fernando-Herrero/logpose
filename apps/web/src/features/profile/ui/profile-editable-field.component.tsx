@@ -6,6 +6,7 @@ export const profileFieldClassName =
   'bg-deep/50 text-foreground placeholder:text-foreground/40 border-foreground/20';
 
 type ProfileEditableFieldProps = {
+  label: string;
   value: string;
   emptyText: string;
   placeholder: string;
@@ -19,6 +20,7 @@ type ProfileEditableFieldProps = {
 };
 
 export function ProfileEditableField({
+  label,
   value,
   emptyText,
   placeholder,
@@ -57,19 +59,23 @@ export function ProfileEditableField({
       <Flex direction="column" gap="2" onKeyDown={handleKeyDown}>
         {multiline ? (
           <TextArea
+            aria-label={label}
             className={profileFieldClassName}
             rows={4}
             maxLength={2000}
             value={draft}
             placeholder={placeholder}
+            // eslint-disable-next-line jsx-a11y/no-autofocus -- aparece al pulsar «editar»: el foco sigue al botón que sustituye
             autoFocus
             onChange={event => setDraft(event.target.value)}
           />
         ) : (
           <TextField.Root
+            aria-label={label}
             className={profileFieldClassName}
             value={draft}
             placeholder={placeholder}
+            // eslint-disable-next-line jsx-a11y/no-autofocus -- aparece al pulsar «editar»: el foco sigue al botón que sustituye
             autoFocus
             onChange={event => setDraft(event.target.value)}
           />
@@ -106,6 +112,7 @@ export function ProfileEditableField({
       variant="ghost"
       color="gray"
       highContrast={hasValue}
+      aria-label={`${label}: ${hasValue ? value.trim() : emptyText}`}
       className="group hover:border-highlight/20 hover:bg-highlight/5 active:bg-highlight/8 h-auto w-full max-w-full cursor-pointer justify-between rounded-md border border-transparent px-2 py-1 text-left"
       onClick={startEdit}
     >

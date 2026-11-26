@@ -35,6 +35,7 @@ export function ProfileViewMore({
         color="gray"
         highContrast
         className="flex h-auto w-full cursor-pointer justify-between p-0 hover:bg-transparent active:bg-transparent"
+        aria-expanded={open}
         onClick={() => setOpen(current => !current)}
       >
         <Text as="span" size="2" weight="medium" className="text-highlight">
@@ -46,25 +47,22 @@ export function ProfileViewMore({
       </Button>
 
       {open ? (
-        <Flex
-          direction="column"
-          gap="4"
-          mt="4"
-          className="motion-safe:animate-[profile-fade-up_0.5s_ease-out_both]"
-        >
-          <ProfileReadonlyRow
-            label={t('profile.full_name_label')}
-            value={fullName}
-          />
+        <Flex asChild direction="column" gap="4" mt="4">
+          <dl className="mb-0 motion-safe:animate-[profile-fade-up_0.5s_ease-out_both]">
+            <ProfileReadonlyRow
+              label={t('profile.full_name_label')}
+              value={fullName}
+            />
 
-          {user.access === 'full' ? (
-            <ProfilePrivateRows user={user} isOwner={isOwner} />
-          ) : null}
+            {user.access === 'full' ? (
+              <ProfilePrivateRows user={user} isOwner={isOwner} />
+            ) : null}
 
-          <ProfileReadonlyRow
-            label={t('profile.created_at_label')}
-            value={createdAtLabel}
-          />
+            <ProfileReadonlyRow
+              label={t('profile.created_at_label')}
+              value={createdAtLabel}
+            />
+          </dl>
         </Flex>
       ) : null}
     </Card>
@@ -94,24 +92,29 @@ function ProfilePrivateRows({ user, isOwner }: ProfilePrivateRowsProps) {
       />
 
       {isOwner ? (
-        <Flex direction="column" gap="1">
-          <Text as="span" size="1" color="gray">
-            {t('profile.address_label')}
-          </Text>
-          <ProfileEditableField
-            value={address}
-            emptyText={t('profile.input_address')}
-            placeholder={t('profile.input_address')}
-            isEditing={editingField === 'address'}
-            isSaving={isSaving('address')}
-            onStartEdit={() => setEditingField('address')}
-            onCancel={() => setEditingField(null)}
-            onSave={value =>
-              void save({ address: value.trim() || null }, 'address', () =>
-                setEditingField(null),
-              )
-            }
-          />
+        <Flex asChild direction="column" gap="1">
+          <div>
+            <Text asChild size="1" color="gray">
+              <dt>{t('profile.address_label')}</dt>
+            </Text>
+            <dd className="m-0">
+              <ProfileEditableField
+                label={t('profile.address_label')}
+                value={address}
+                emptyText={t('profile.input_address')}
+                placeholder={t('profile.input_address')}
+                isEditing={editingField === 'address'}
+                isSaving={isSaving('address')}
+                onStartEdit={() => setEditingField('address')}
+                onCancel={() => setEditingField(null)}
+                onSave={value =>
+                  void save({ address: value.trim() || null }, 'address', () =>
+                    setEditingField(null),
+                  )
+                }
+              />
+            </dd>
+          </div>
         </Flex>
       ) : (
         <ProfileReadonlyRow
@@ -122,26 +125,31 @@ function ProfilePrivateRows({ user, isOwner }: ProfilePrivateRowsProps) {
       )}
 
       {isOwner ? (
-        <Flex direction="column" gap="1">
-          <Text as="span" size="1" color="gray">
-            {t('profile.phone_label')}
-          </Text>
-          <ProfileEditableField
-            value={phoneNumber}
-            emptyText={t('profile.phone_placeholder')}
-            placeholder={t('profile.phone_placeholder')}
-            isEditing={editingField === 'phoneNumber'}
-            isSaving={isSaving('phoneNumber')}
-            onStartEdit={() => setEditingField('phoneNumber')}
-            onCancel={() => setEditingField(null)}
-            onSave={value =>
-              void save(
-                { phoneNumber: value.trim() || null },
-                'phoneNumber',
-                () => setEditingField(null),
-              )
-            }
-          />
+        <Flex asChild direction="column" gap="1">
+          <div>
+            <Text asChild size="1" color="gray">
+              <dt>{t('profile.phone_label')}</dt>
+            </Text>
+            <dd className="m-0">
+              <ProfileEditableField
+                label={t('profile.phone_label')}
+                value={phoneNumber}
+                emptyText={t('profile.phone_placeholder')}
+                placeholder={t('profile.phone_placeholder')}
+                isEditing={editingField === 'phoneNumber'}
+                isSaving={isSaving('phoneNumber')}
+                onStartEdit={() => setEditingField('phoneNumber')}
+                onCancel={() => setEditingField(null)}
+                onSave={value =>
+                  void save(
+                    { phoneNumber: value.trim() || null },
+                    'phoneNumber',
+                    () => setEditingField(null),
+                  )
+                }
+              />
+            </dd>
+          </div>
         </Flex>
       ) : (
         <ProfileReadonlyRow

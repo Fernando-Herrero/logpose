@@ -141,7 +141,11 @@ export function HeroMaskComponent() {
   }, heroRef);
 
   return (
-    <section ref={heroRef} className="landing-hero">
+    <section
+      ref={heroRef}
+      aria-labelledby="hero-title"
+      className="landing-hero"
+    >
       <div className="landing-bg" />
 
       <div ref={maskRef} className="landing-mask">
@@ -155,7 +159,7 @@ export function HeroMaskComponent() {
       <div ref={vignetteRef} className="landing-vignette" />
       <div className="landing-grain" />
 
-      <h1 ref={titleRef} className="landing-title">
+      <h1 id="hero-title" ref={titleRef} className="landing-title">
         LogPose
       </h1>
       <p ref={taglineRef} className="landing-tagline">

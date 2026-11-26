@@ -58,6 +58,7 @@ export function CinematicShowcaseComponent() {
   return (
     <section
       ref={sectionRef}
+      aria-labelledby="showcase-title"
       className="bg-deep relative z-10 flex min-h-[88vh] items-center overflow-hidden"
     >
       <div ref={bgRef} className="absolute inset-0 -z-20 will-change-transform">
@@ -90,6 +91,7 @@ export function CinematicShowcaseComponent() {
         </Text>
         <Heading
           as="h2"
+          id="showcase-title"
           className="font-one-piece text-highlight title-glow text-[clamp(2.4rem,7vw,5.5rem)] leading-[0.95] tracking-wide"
         >
           {t('landing.showcase.title')}

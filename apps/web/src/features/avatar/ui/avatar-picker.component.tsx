@@ -36,15 +36,29 @@ export function AvatarPickerComponent({
       mt="4"
     >
       <Flex direction="column" gap="1" align="center">
-        <Text as="p" size="2" weight="medium" className="text-foreground/90">
+        <Text
+          as="p"
+          id="avatar-picker-title"
+          size="2"
+          weight="medium"
+          className="text-foreground/90"
+        >
           {t('avatar.pick_title')}
         </Text>
-        <Text as="p" size="1" color="gray">
+        <Text as="p" id="avatar-picker-hint" size="1" color="gray">
           {t('avatar.pick_hint')}
         </Text>
       </Flex>
 
-      <Flex wrap="wrap" align="start" justify="center" gap="3">
+      <Flex
+        role="group"
+        aria-labelledby="avatar-picker-title"
+        aria-describedby="avatar-picker-hint"
+        wrap="wrap"
+        align="start"
+        justify="center"
+        gap="3"
+      >
         {options.map(option => {
           const selected = value === option.path;
 
@@ -102,7 +116,7 @@ export function AvatarPickerComponent({
       </Flex>
 
       {error ? (
-        <Text as="p" size="1" color="red" align="center">
+        <Text as="p" role="alert" size="1" color="red" align="center">
           {error}
         </Text>
       ) : null}

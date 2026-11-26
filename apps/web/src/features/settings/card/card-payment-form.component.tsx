@@ -1,6 +1,11 @@
 import { Badge, Button, Flex, Text, TextField } from '@radix-ui/themes';
 import { useTranslation } from 'next-i18next/pages';
-import { useState } from 'react';
+import {
+  type ChangeEvent,
+  type ComponentProps,
+  type ReactNode,
+  useState,
+} from 'react';
 
 import {
   type CardField,
@@ -76,113 +81,63 @@ export function CardPaymentForm({
     }
   }
 
-  function fieldState(field: CardField) {
+  function fieldProps(field: CardField) {
     const error = errors[field];
     const showValid = form[field].length > 0 && isValid(field, form[field]);
 
     return {
-      error,
+      field,
+      value: form[field],
+      error: error ? t(error) : undefined,
       className: error
         ? 'border border-red-500/60'
         : showValid
           ? 'border border-green-500/40'
           : undefined,
+      onChange: (event: ChangeEvent<HTMLInputElement>) =>
+        handleChange(field, event.target.value),
+      onBlur: () => validateField(field, form[field]),
     };
   }
 
   return (
     <form onSubmit={handleSubmit} noValidate>
       <Flex direction="column" gap="3">
-        <Flex direction="column" gap="1">
-          <Text as="label" size="2" htmlFor="card-name">
-            {t('settings.premium.card_name')}
-          </Text>
-          <TextField.Root
-            id="card-name"
-            value={form.name}
-            autoComplete="cc-name"
-            placeholder={t('settings.premium.card_name_placeholder')}
-            className={fieldState('name').className}
-            onChange={event => handleChange('name', event.target.value)}
-            onBlur={() => validateField('name', form.name)}
-          />
-          {errors.name ? (
-            <Text size="1" className="text-red-400">
-              {t(errors.name)}
-            </Text>
-          ) : null}
-        </Flex>
-
-        <Flex direction="column" gap="1">
-          <Flex align="center" justify="between">
-            <Text as="label" size="2" htmlFor="card-number">
-              {t('settings.premium.card_number')}
-            </Text>
-            {brand ? (
+        <CardFieldInput
+          {...fieldProps('name')}
+          label={t('settings.premium.card_name')}
+          autoComplete="cc-name"
+          placeholder={t('settings.premium.card_name_placeholder')}
+        />
+        <CardFieldInput
+          {...fieldProps('number')}
+          label={t('settings.premium.card_number')}
+          aside={
+            brand ? (
               <Badge size="1" variant="soft" color="gray">
                 {brand}
               </Badge>
-            ) : null}
-          </Flex>
-          <TextField.Root
-            id="card-number"
-            value={form.number}
+            ) : null
+          }
+          inputMode="numeric"
+          autoComplete="cc-number"
+          placeholder="4242 4242 4242 4242"
+        />
+        <Flex gap="3" className="*:flex-1">
+          <CardFieldInput
+            {...fieldProps('expiry')}
+            label={t('settings.premium.card_expiry')}
             inputMode="numeric"
-            autoComplete="cc-number"
-            placeholder="4242 4242 4242 4242"
-            className={fieldState('number').className}
-            onChange={event => handleChange('number', event.target.value)}
-            onBlur={() => validateField('number', form.number)}
+            autoComplete="cc-exp"
+            placeholder="08/30"
           />
-          {errors.number ? (
-            <Text size="1" className="text-red-400">
-              {t(errors.number)}
-            </Text>
-          ) : null}
-        </Flex>
-
-        <Flex gap="3">
-          <Flex direction="column" gap="1" className="flex-1">
-            <Text as="label" size="2" htmlFor="card-expiry">
-              {t('settings.premium.card_expiry')}
-            </Text>
-            <TextField.Root
-              id="card-expiry"
-              value={form.expiry}
-              inputMode="numeric"
-              autoComplete="cc-exp"
-              placeholder="08/30"
-              className={fieldState('expiry').className}
-              onChange={event => handleChange('expiry', event.target.value)}
-              onBlur={() => validateField('expiry', form.expiry)}
-            />
-            {errors.expiry ? (
-              <Text size="1" className="text-red-400">
-                {t(errors.expiry)}
-              </Text>
-            ) : null}
-          </Flex>
-
-          <Flex direction="column" gap="1" className="flex-1">
-            <Text as="label" size="2" htmlFor="card-cvv">
-              {t('settings.premium.card_cvv')}
-            </Text>
-            <TextField.Root
-              id="card-cvv"
-              value={form.cvv}
-              inputMode="numeric"
-              autoComplete="cc-csc"
-              placeholder="123"
-              className={fieldState('cvv').className}
-              onChange={event => handleChange('cvv', event.target.value)}
-              onBlur={() => validateField('cvv', form.cvv)}
-            />
-            {errors.cvv ? (
-              <Text size="1" className="text-red-400">
-                {t(errors.cvv)}
-              </Text>
-            ) : null}
-          </Flex>
+          <CardFieldInput
+            {...fieldProps('cvv')}
+            label={t('settings.premium.card_cvv')}
+            inputMode="numeric"
+            autoComplete="cc-csc"
+            placeholder="123"
+          />
         </Flex>
 
         <Text size="1" className="text-foreground/50">
@@ -207,5 +162,44 @@ export function CardPaymentForm({
         </Flex>
       </Flex>
     </form>
+  );
+}
+
+type CardFieldInputProps = ComponentProps<typeof TextField.Root> & {
+  field: CardField;
+  label: string;
+  error?: string;
+  aside?: ReactNode;
+};
+
+function CardFieldInput({
+  field,
+  label,
+  error,
+  aside,
+  ...props
+}: CardFieldInputProps) {
+  const id = `card-${field}`;
+
+  return (
+    <Flex direction="column" gap="1">
+      <Flex align="center" justify="between">
+        <Text as="label" size="2" htmlFor={id}>
+          {label}
+        </Text>
+        {aside}
+      </Flex>
+      <TextField.Root
+        id={id}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={error ? `${id}-error` : undefined}
+        {...props}
+      />
+      {error ? (
+        <Text id={`${id}-error`} size="1" className="text-red-400">
+          {error}
+        </Text>
+      ) : null}
+    </Flex>
   );
 }

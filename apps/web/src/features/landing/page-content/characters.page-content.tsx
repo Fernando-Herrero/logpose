@@ -42,6 +42,7 @@ export default function CharactersPageContent() {
     <LandingPublicLayout title={t('characters.meta_title')} wide>
       <section
         ref={sectionRef}
+        aria-labelledby="characters-title"
         className="flex w-full flex-col items-center gap-4 bg-cover bg-center bg-no-repeat pb-20"
         style={{
           backgroundImage:
@@ -51,6 +52,7 @@ export default function CharactersPageContent() {
         <Reveal>
           <Heading
             as="h1"
+            id="characters-title"
             size="7"
             mb="2"
             align="center"
@@ -61,19 +63,21 @@ export default function CharactersPageContent() {
         </Reveal>
 
         <Grid
+          asChild
           columns={{ initial: '1', sm: '2', md: '3', lg: '2' }}
           gap="4"
-          className="w-full justify-items-center lg:justify-items-stretch lg:overflow-visible"
         >
-          {visibleCrew.map((char, index) => (
-            <CharacterCardComponent
-              key={char.name}
-              name={char.name}
-              text={t(`characters.${char.key}`)}
-              images={char.images}
-              isLast={index === visibleCrew.length - 1}
-            />
-          ))}
+          <ul className="m-0 w-full list-none justify-items-center p-0 lg:justify-items-stretch lg:overflow-visible">
+            {visibleCrew.map((char, index) => (
+              <CharacterCardComponent
+                key={char.name}
+                name={char.name}
+                text={t(`characters.${char.key}`)}
+                images={char.images}
+                isLast={index === visibleCrew.length - 1}
+              />
+            ))}
+          </ul>
         </Grid>
 
         {visibleCount < CREW.length ? (

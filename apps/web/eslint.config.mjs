@@ -1,6 +1,7 @@
 import tanstackQueryPlugin from '@tanstack/eslint-plugin-query';
 import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import unusedImports from 'eslint-plugin-unused-imports';
 import turboPlugin from 'eslint-plugin-turbo';
@@ -22,6 +23,8 @@ export default [
       ],
     },
   },
+  // Next ya registra el plugin con seis reglas; aquí van las recomendadas enteras.
+  { rules: jsxA11y.flatConfigs.recommended.rules },
   ...tseslint.configs.recommended,
   {
     settings: {

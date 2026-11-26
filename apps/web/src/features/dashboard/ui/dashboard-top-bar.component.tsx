@@ -54,8 +54,11 @@ export function DashboardTopBar({ sectionLabel }: DashboardTopBarProps) {
                 className="m-0! box-border size-9 p-0"
                 aria-label={t(item.labelKey)}
               >
-                <Link href={item.href}>
-                  <NavIcon aria-hidden />
+                <Link
+                  href={item.href}
+                  aria-current={active ? 'page' : undefined}
+                >
+                  <NavIcon />
                 </Link>
               </IconButton>
             );

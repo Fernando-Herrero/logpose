@@ -67,6 +67,7 @@ function ProfileRankingRow({
       <Box position="relative" className="shrink-0">
         <Avatar
           src={avatarSrc}
+          alt=""
           fallback={name.slice(0, 1).toUpperCase()}
           size="2"
           radius="full"
@@ -105,6 +106,7 @@ function ProfileRankingRow({
         </Text>
         <Flex align="center" gap="2" className="pt-0.5">
           <Progress
+            aria-label={t('profile.progress_xp_label')}
             value={xpPercent}
             size="2"
             className="profile-xp-progress min-w-0 flex-1"
@@ -131,7 +133,13 @@ export function ProfileRankingSidebar({
 
   return (
     <Card className="card p-4">
-      <Heading as="h2" size="3" mb="4" className="text-highlight">
+      <Heading
+        as="h2"
+        id="profile-ranking-title"
+        size="3"
+        mb="4"
+        className="text-highlight"
+      >
         {t('profile.sidebar_ranking_title')}
       </Heading>
 
@@ -140,15 +148,18 @@ export function ProfileRankingSidebar({
           {t('profile.sidebar_ranking_empty')}
         </Text>
       ) : (
-        <Flex direction="column" gap="2">
-          {ranking.map((entry, index) => (
-            <ProfileRankingRow
-              key={entry._id}
-              entry={entry}
-              rank={index + 1}
-              isCurrentUser={entry._id === currentUserId}
-            />
-          ))}
+        <Flex asChild direction="column" gap="2">
+          <ol className="m-0 list-none p-0">
+            {ranking.map((entry, index) => (
+              <li key={entry._id}>
+                <ProfileRankingRow
+                  entry={entry}
+                  rank={index + 1}
+                  isCurrentUser={entry._id === currentUserId}
+                />
+              </li>
+            ))}
+          </ol>
         </Flex>
       )}
     </Card>

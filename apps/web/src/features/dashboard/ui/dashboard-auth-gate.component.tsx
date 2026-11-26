@@ -1,4 +1,4 @@
-import { Flex, Spinner, Text } from '@radix-ui/themes';
+import { Flex, Heading, Spinner, Text } from '@radix-ui/themes';
 import { useQueryClient } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next/pages';
@@ -43,19 +43,15 @@ export function DashboardAuthGate({ children }: PropsWithChildren) {
 
   if (error) {
     return (
-      <Flex
-        align="center"
-        justify="center"
-        direction="column"
-        gap="2"
-        className="bg-page min-h-dvh flex-1 px-4"
-      >
-        <Text size="3" weight="medium" className="text-highlight">
-          {t('dashboard.auth.error_title')}
-        </Text>
-        <Text size="2" color="gray" align="center">
-          {t('dashboard.auth.error_body')}
-        </Text>
+      <Flex asChild align="center" justify="center" direction="column" gap="2">
+        <main className="bg-page min-h-dvh flex-1 px-4">
+          <Heading as="h1" size="3" weight="medium" className="text-highlight">
+            {t('dashboard.auth.error_title')}
+          </Heading>
+          <Text as="p" size="2" color="gray" align="center">
+            {t('dashboard.auth.error_body')}
+          </Text>
+        </main>
       </Flex>
     );
   }

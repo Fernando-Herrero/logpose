@@ -47,7 +47,9 @@ export function ProfileCover({
           <TextField.Root
             className={profileFieldClassName}
             value={draft}
+            aria-label={t('profile.change_cover_img')}
             placeholder={t('profile.input_cover_image')}
+            // eslint-disable-next-line jsx-a11y/no-autofocus -- aparece al pulsar «editar»: el foco sigue al botón que sustituye
             autoFocus
             onChange={event => setDraft(event.target.value)}
             onKeyDown={event => {

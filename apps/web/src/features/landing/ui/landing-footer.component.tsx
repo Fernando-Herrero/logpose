@@ -4,6 +4,17 @@ import { useTranslation } from 'next-i18next/pages';
 
 import { LandingLocaleToggleComponent } from '@/features/landing/ui/landing-locale-toggle.component';
 
+const FOOTER_LINKS = [
+  ['/#features', 'landing.nav.features'],
+  ['/history', 'landing.nav.history'],
+  ['/characters', 'landing.nav.characters'],
+  ['/map', 'landing.nav.map'],
+  ['/faq', 'landing.nav.faq'],
+  ['/contact', 'landing.nav.contact'],
+  ['/login', 'landing.nav.sign_in'],
+  ['/register', 'landing.nav.sign_up'],
+] as const;
+
 export function LandingFooterComponent() {
   const { t } = useTranslation();
   const year = new Date().getFullYear();
@@ -16,34 +27,16 @@ export function LandingFooterComponent() {
         gap="4"
         className="mx-auto max-w-3xl text-center"
       >
-        <nav
-          aria-label="Footer"
-          className="font-road-captain flex flex-wrap justify-center gap-5 text-sm tracking-[0.15em] uppercase"
-        >
-          <RadixLink asChild color="gray" highContrast>
-            <Link href="/#features">{t('landing.nav.features')}</Link>
-          </RadixLink>
-          <RadixLink asChild color="gray" highContrast>
-            <Link href="/history">{t('landing.nav.history')}</Link>
-          </RadixLink>
-          <RadixLink asChild color="gray" highContrast>
-            <Link href="/characters">{t('landing.nav.characters')}</Link>
-          </RadixLink>
-          <RadixLink asChild color="gray" highContrast>
-            <Link href="/map">{t('landing.nav.map')}</Link>
-          </RadixLink>
-          <RadixLink asChild color="gray" highContrast>
-            <Link href="/faq">{t('landing.nav.faq')}</Link>
-          </RadixLink>
-          <RadixLink asChild color="gray" highContrast>
-            <Link href="/contact">{t('landing.nav.contact')}</Link>
-          </RadixLink>
-          <RadixLink asChild color="gray" highContrast>
-            <Link href="/login">{t('landing.nav.sign_in')}</Link>
-          </RadixLink>
-          <RadixLink asChild color="gray" highContrast>
-            <Link href="/register">{t('landing.nav.sign_up')}</Link>
-          </RadixLink>
+        <nav aria-label={t('landing.footer.nav_label')}>
+          <ul className="font-road-captain m-0 flex list-none flex-wrap justify-center gap-5 p-0 text-sm tracking-[0.15em] uppercase">
+            {FOOTER_LINKS.map(([href, labelKey]) => (
+              <li key={href}>
+                <RadixLink asChild color="gray" highContrast>
+                  <Link href={href}>{t(labelKey)}</Link>
+                </RadixLink>
+              </li>
+            ))}
+          </ul>
         </nav>
         <LandingLocaleToggleComponent />
         <Separator size="4" className="w-full max-w-xs bg-white/10" />

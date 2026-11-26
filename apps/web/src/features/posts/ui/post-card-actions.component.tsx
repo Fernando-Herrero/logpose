@@ -56,7 +56,10 @@ export function PostCardActions({
   return (
     <Flex align="center" gap="4" mt="1">
       <Flex align="center" gap="1" className="text-foreground/50">
-        <Icon.Comment aria-hidden />
+        <Icon.Comment />
+        <Text as="span" className="sr-only">
+          {t('posts.comments_label')}
+        </Text>
         <Text as="span" size="1">
           {post.commentsCount}
         </Text>
@@ -73,9 +76,9 @@ export function PostCardActions({
         className={actionButtonClassName}
       >
         {userRetweeted ? (
-          <Icon.RepeatFill className="text-green-400" aria-hidden />
+          <Icon.RepeatFill className="text-green-400" />
         ) : (
-          <Icon.Repeat aria-hidden />
+          <Icon.Repeat />
         )}
         <Text as="span" size="1">
           {post.retweetsCount}
@@ -93,9 +96,9 @@ export function PostCardActions({
         className={actionButtonClassName}
       >
         {userLiked ? (
-          <Icon.HeartFill className="text-red-400" aria-hidden />
+          <Icon.HeartFill className="text-red-400" />
         ) : (
-          <Icon.Heart aria-hidden />
+          <Icon.Heart />
         )}
         <Text as="span" size="1">
           {post.likesCount}
@@ -113,9 +116,9 @@ export function PostCardActions({
         className={actionButtonClassName}
       >
         {userBookmarked ? (
-          <Icon.BookmarkFill className="text-sky-400" aria-hidden />
+          <Icon.BookmarkFill className="text-sky-400" />
         ) : (
-          <Icon.Bookmark aria-hidden />
+          <Icon.Bookmark />
         )}
         <Text as="span" size="1">
           {post.bookmarksCount}

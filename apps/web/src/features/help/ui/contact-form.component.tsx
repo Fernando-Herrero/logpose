@@ -28,8 +28,8 @@ const EMPTY_FORM: ContactFormValues = {
 type ContactFormProps = {
   /** Datos de la sesión con los que prerrellenar el formulario, si los hay. */
   initialValues?: Partial<ContactFormValues>;
-  /** `h1` en /contact, donde el formulario es el encabezado de la página. */
-  titleAs?: 'h1' | 'h2';
+  /** `h1` en /contact, donde el formulario es el encabezado de la página. Sin él no hay título: en ajustes lo pone la página. */
+  titleAs?: 'h1';
 };
 
 /**
@@ -37,10 +37,7 @@ type ContactFormProps = {
  * El envío sigue siendo simulado (se guarda en localStorage): no hay endpoint
  * de soporte todavía.
  */
-export function ContactForm({
-  initialValues,
-  titleAs = 'h2',
-}: ContactFormProps) {
+export function ContactForm({ initialValues, titleAs }: ContactFormProps) {
   const { t } = useTranslation();
   const [form, setForm] = useState<ContactFormValues>({
     ...EMPTY_FORM,
@@ -79,14 +76,16 @@ export function ContactForm({
       className="border-foreground/10 to-page/65 from-raised/55 w-full max-w-md border bg-linear-to-br"
     >
       <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
-        <Heading
-          as={titleAs}
-          size="5"
-          align="center"
-          className="font-one-piece text-highlight"
-        >
-          {t('contact.title')}
-        </Heading>
+        {titleAs ? (
+          <Heading
+            as={titleAs}
+            size="5"
+            align="center"
+            className="font-one-piece text-highlight"
+          >
+            {t('contact.title')}
+          </Heading>
+        ) : null}
 
         <label className="flex flex-col gap-1">
           <Text as="span" size="2" weight="bold">

@@ -65,7 +65,7 @@ export function PostCard({
             gap="1"
             className="text-foreground/55 mb-2 text-xs"
           >
-            <Icon.Repeat className="shrink-0 text-green-400/80" aria-hidden />
+            <Icon.Repeat className="shrink-0 text-green-400/80" />
             {user?._id === post.userId._id ? (
               <Text as="span" size="1">
                 {t('posts.retweeted_by_you')}
@@ -88,6 +88,7 @@ export function PostCard({
           <Link href={profileHref} className="shrink-0">
             <Avatar
               src={avatarSrc}
+              alt={authorName}
               fallback={authorName.slice(0, 1).toUpperCase()}
               size={{ initial: '2', sm: '4' }}
               radius="full"

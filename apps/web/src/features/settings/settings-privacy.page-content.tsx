@@ -1,13 +1,12 @@
-import { Card, Flex, Heading, Switch, Text } from '@radix-ui/themes';
-import Link from 'next/link';
+import { Flex, Heading, Switch, Text } from '@radix-ui/themes';
 import { useTranslation } from 'next-i18next/pages';
 import { toast } from 'sonner';
 
-import { Icon } from '@/components/icons/icon';
 import { useAuthSession } from '@/features/auth/api/use-auth';
 import { useUpdateProfileMutation } from '@/features/profile/api/use-profile';
 import { PROFILE_POSTS_TAB_CONFIG } from '@/features/profile/profile.constants';
 import type { ProfilePrivacy } from '@/features/profile/profile.types';
+import { SettingsPageShell } from '@/features/settings/settings-page-shell.component';
 
 export default function SettingsPrivacyPageContent() {
   const { t } = useTranslation();
@@ -41,47 +40,51 @@ export default function SettingsPrivacyPageContent() {
   }
 
   return (
-    <Card className="card mx-auto max-w-xl p-6 motion-safe:animate-[profile-fade-up_0.45s_ease-out_both]">
-      <Link
-        href="/dashboard/settings"
-        className="text-highlight/80 hover:text-highlight mb-4 inline-flex items-center gap-1 text-sm underline-offset-2 hover:underline"
-      >
-        <Icon.CaretLeft aria-hidden />
-        {t('settings.back')}
-      </Link>
-
+    <SettingsPageShell
+      titleKey="settings.title_privacy"
+      descriptionKey="settings.privacy.description"
+    >
       <Heading
-        as="h1"
-        size="6"
-        mb="2"
-        className="font-one-piece text-highlight"
+        as="h2"
+        size="3"
+        weight="medium"
+        mb="4"
+        className="text-highlight/90"
       >
-        {t('settings.title_privacy')}
+        {t('settings.privacy.title')}
       </Heading>
-      <Text as="p" size="2" mb="5" className="text-foreground/75">
-        {t('settings.privacy.description')}
-      </Text>
-
-      <Flex direction="column" gap="4">
-        <Text as="p" size="3" weight="medium" className="text-highlight/90">
-          {t('settings.privacy.title')}
-        </Text>
-
-        {PROFILE_POSTS_TAB_CONFIG.map(tab => (
-          <Flex key={tab.privacyKey} align="center" justify="between" gap="4">
-            <Text as="label" size="2" className="text-foreground/85">
-              {t(tab.labelKey)}
-            </Text>
-            <Switch
-              checked={sessionUser.privacy[tab.privacyKey]}
-              disabled={updateProfile.isPending}
-              onCheckedChange={checked =>
-                handlePrivacyChange(tab.privacyKey, checked)
-              }
-            />
-          </Flex>
-        ))}
+      <Flex asChild direction="column" gap="4">
+        <ul className="m-0 list-none p-0">
+          {PROFILE_POSTS_TAB_CONFIG.map(tab => (
+            <Flex
+              asChild
+              key={tab.privacyKey}
+              align="center"
+              justify="between"
+              gap="4"
+            >
+              <li>
+                <Text
+                  as="label"
+                  htmlFor={tab.privacyKey}
+                  size="2"
+                  className="text-foreground/85"
+                >
+                  {t(tab.labelKey)}
+                </Text>
+                <Switch
+                  id={tab.privacyKey}
+                  checked={sessionUser.privacy[tab.privacyKey]}
+                  disabled={updateProfile.isPending}
+                  onCheckedChange={checked =>
+                    handlePrivacyChange(tab.privacyKey, checked)
+                  }
+                />
+              </li>
+            </Flex>
+          ))}
+        </ul>
       </Flex>
-    </Card>
+    </SettingsPageShell>
   );
 }

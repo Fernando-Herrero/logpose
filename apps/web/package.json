@@ -51,6 +51,7 @@
     "eslint": "catalog:",
     "eslint-config-next": "^16.2.4",
     "eslint-config-prettier": "catalog:",
+    "eslint-plugin-jsx-a11y": "catalog:",
     "eslint-plugin-simple-import-sort": "catalog:",
     "eslint-plugin-turbo": "catalog:",
     "eslint-plugin-unused-imports": "catalog:",

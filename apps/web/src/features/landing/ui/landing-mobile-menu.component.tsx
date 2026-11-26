@@ -81,26 +81,29 @@ export function LandingMobileMenuPanel({
         gap="6"
         className="min-h-0 flex-1 overflow-y-auto"
       >
-        <nav className="flex flex-col pt-4">
+        <nav aria-label={t('landing.nav.label')} className="flex flex-col pt-4">
           {MOBILE_NAV_SECTIONS.map((section, sectionIndex) => (
             <div key={sectionIndex}>
               {sectionIndex > 0 ? (
                 <Separator size="4" className="my-4 bg-white/10" />
               ) : null}
-              <Flex direction="column" gap="1">
-                {section.map(item => (
-                  <Button
-                    key={item.href}
-                    asChild
-                    variant="ghost"
-                    highContrast
-                    className={`h-auto ${MOBILE_NAV_LINK_CLASS}`}
-                  >
-                    <Link href={item.href} onClick={onClose}>
-                      {t(item.labelKey)}
-                    </Link>
-                  </Button>
-                ))}
+              <Flex asChild direction="column" gap="1">
+                <ul className="m-0 list-none p-0">
+                  {section.map(item => (
+                    <li key={item.href}>
+                      <Button
+                        asChild
+                        variant="ghost"
+                        highContrast
+                        className={`h-auto ${MOBILE_NAV_LINK_CLASS}`}
+                      >
+                        <Link href={item.href} onClick={onClose}>
+                          {t(item.labelKey)}
+                        </Link>
+                      </Button>
+                    </li>
+                  ))}
+                </ul>
               </Flex>
             </div>
           ))}

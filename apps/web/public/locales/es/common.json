@@ -1,4 +1,7 @@
 {
+  "a11y": {
+    "skip_to_content": "Saltar al contenido"
+  },
   "auth": {
     "login_title": "Login",
     "register_title": "Formulario de registro",
@@ -85,7 +88,8 @@
     "empty_following": "Aquí saldrá lo que publiquen y retuiteen las personas a las que sigues.",
     "empty_following_link": "Buscar a alguien a quien seguir",
     "load_more": "Cargar más publicaciones",
-    "load_more_pending": "Cargando…"
+    "load_more_pending": "Cargando…",
+    "feed_label": "Publicaciones a mostrar"
   },
   "contact": {
     "meta_title": "Contacto — LogPose",
@@ -117,7 +121,8 @@
       "admin": "Admin",
       "user_profile": "Perfil de usuario",
       "expand": "Expandir menú",
-      "collapse": "Contraer menú"
+      "collapse": "Contraer menú",
+      "label": "Navegación principal"
     },
     "topbar": {
       "account_menu": "Menú de cuenta",
@@ -259,6 +264,7 @@
     },
     "cta_title": "¿Listo para zarpar?",
     "nav": {
+      "label": "Principal",
       "features": "Features",
       "onepiece": "One Piece",
       "characters": "Personajes",
@@ -281,6 +287,7 @@
       "ja": "日本語"
     },
     "footer": {
+      "nav_label": "Pie de página",
       "disclaimer": "LogPose es una app de fans para el seguimiento de progreso de One Piece. Contenido para uso personal, sin fines comerciales.",
       "copyright": "LogPose. Todos los derechos reservados."
     }
@@ -294,7 +301,6 @@
     "title": "404 — Página no encontrada",
     "message": "¡Oops! No pudimos encontrar esta página.",
     "back_home": "Volver al inicio",
-    "bg_alt": "Sunny navegando por el mar",
     "crew_alt": "Tripulación del Sombrero de Paja"
   },
   "posts": {
@@ -304,7 +310,7 @@
     "retweeted_by_you": "Has retweeteado",
     "bookmark_action": "Guardar",
     "login_to_interact": "Inicia sesión para dar like, retweetear o guardar publicaciones",
-    "create_label": "Nueva publicación",
+    "create_label": "Texto de la publicación",
     "create_placeholder": "¿Qué está pasando en el Grand Line?",
     "create_submit": "Publicar",
     "create_submit_pending": "Publicando…",
@@ -324,6 +330,7 @@
     "create_modal_title": "Nueva publicación",
     "create_modal_subtitle": "Comparte algo con la tripulación",
     "create_cancel": "Cancelar",
+    "create_close": "Cerrar",
     "create_images_label": "Imágenes",
     "create_images_count": "{{count}} / {{max}}",
     "create_images_pick": "Añadir imágenes",
@@ -334,7 +341,9 @@
     "create_images_size_error": "Cada imagen debe pesar menos de 10 MB",
     "create_images_truncated": "Solo se añadieron {{added}} de {{selected}} seleccionadas (máximo {{max}} por publicación)",
     "create_images_pick_pending": "Abriendo selector…",
-    "create_char_limit_reached": "Has alcanzado el máximo de {{max}} caracteres"
+    "create_char_limit_reached": "Has alcanzado el máximo de {{max}} caracteres",
+    "image_alt": "Imagen {{index}} de {{total}}",
+    "comments_label": "Comentarios"
   },
   "profile": {
     "title": "Tu perfil",

@@ -1,7 +1,7 @@
 import { EyeIcon, EyeSlashIcon } from '@phosphor-icons/react';
 import { IconButton, Text, TextField } from '@radix-ui/themes';
 import { useTranslation } from 'next-i18next/pages';
-import { type ChangeEvent, useState } from 'react';
+import { type ChangeEvent, useId, useState } from 'react';
 
 import { getFieldErrorMessage } from '@/components/form/field-error-message';
 import { useFieldContext } from '@/features/auth/form/auth-form';
@@ -27,6 +27,7 @@ export function Field({
   passwordToggle = false,
 }: FieldProps) {
   const { t } = useTranslation();
+  const id = useId();
   const [passwordVisible, setPasswordVisible] = useState(false);
   const field = useFieldContext<string>();
   const showErrors = field.form.state.submissionAttempts > 0;
@@ -41,11 +42,14 @@ export function Field({
       : type;
 
   return (
-    <label className="flex flex-col gap-1">
-      <Text as="span" size="2" className="text-foreground/85">
+    <div className="flex flex-col gap-1">
+      <Text as="label" htmlFor={id} size="2" className="text-foreground/85">
         {label}
       </Text>
       <TextField.Root
+        id={id}
+        aria-invalid={errorMsg ? true : undefined}
+        aria-describedby={errorMsg ? `${id}-error` : undefined}
         className={authFieldClassName}
         color={errorMsg ? 'red' : undefined}
         type={inputType}
@@ -85,10 +89,10 @@ export function Field({
         ) : null}
       </TextField.Root>
       {errorMsg ? (
-        <Text as="span" size="1" color="red">
+        <Text as="span" id={`${id}-error`} size="1" color="red">
           {errorMsg}
         </Text>
       ) : null}
-    </label>
+    </div>
   );
 }

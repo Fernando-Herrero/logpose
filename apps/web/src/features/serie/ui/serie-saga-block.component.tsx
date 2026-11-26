@@ -64,18 +64,23 @@ export function SerieSagaBlock({
         </Text>
       ) : null}
 
-      {isOpen && arcsQuery.data
-        ? arcsQuery.data.arcs.map(arc => (
-            <SerieArcBlock
-              key={arc.slug}
-              arc={arc}
-              isOpen={openArcSlugs[arc.slug] ?? false}
-              onToggle={() => onToggleArc(arc.slug)}
-              lastWatchedEpisode={lastWatchedEpisode}
-              skipFiller={skipFiller}
-            />
-          ))
-        : null}
+      {isOpen && arcsQuery.data ? (
+        <Flex asChild direction="column" gap="2">
+          <ul className="m-0 list-none p-0">
+            {arcsQuery.data.arcs.map(arc => (
+              <li key={arc.slug}>
+                <SerieArcBlock
+                  arc={arc}
+                  isOpen={openArcSlugs[arc.slug] ?? false}
+                  onToggle={() => onToggleArc(arc.slug)}
+                  lastWatchedEpisode={lastWatchedEpisode}
+                  skipFiller={skipFiller}
+                />
+              </li>
+            ))}
+          </ul>
+        </Flex>
+      ) : null}
     </SerieAccordion>
   );
 }

@@ -105,9 +105,13 @@ export default function HistoryPageContent() {
 
         {HISTORY_SECTIONS.map(item => (
           <Reveal key={item.section} y={24}>
-            <section className="mb-6 flex flex-col gap-2">
+            <section
+              aria-labelledby={`history-${item.section}`}
+              className="mb-6 flex flex-col gap-2"
+            >
               <Heading
                 as="h2"
+                id={`history-${item.section}`}
                 size="4"
                 className="font-road-captain text-highlight/90 underline"
               >
@@ -120,9 +124,9 @@ export default function HistoryPageContent() {
                     href="/characters"
                     className="inline-flex items-center gap-2 transition-transform hover:-translate-y-0.5"
                   >
-                    <span>→</span>
+                    <span aria-hidden>→</span>
                     {t('history.section_characters')}
-                    <span>←</span>
+                    <span aria-hidden>←</span>
                   </Link>
                 </RadixLink>
               ) : (

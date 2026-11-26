@@ -63,14 +63,19 @@ function CommunityFeed({
 
   return (
     <Flex direction="column" gap="3">
-      {posts.map(post => (
-        <PostCard
-          key={post._id}
-          post={post}
-          onDeletePost={onDeletePost}
-          isDeleting={deletingPostId === (post.retweetOf ?? post._id)}
-        />
-      ))}
+      <Flex asChild direction="column" gap="3">
+        <ul className="m-0 list-none p-0">
+          {posts.map(post => (
+            <li key={post._id}>
+              <PostCard
+                post={post}
+                onDeletePost={onDeletePost}
+                isDeleting={deletingPostId === (post.retweetOf ?? post._id)}
+              />
+            </li>
+          ))}
+        </ul>
+      </Flex>
 
       {hasNextPage ? (
         <Flex justify="center" pt="2">
@@ -117,6 +122,7 @@ export default function CommunityPageContent() {
       </Text>
 
       <SegmentedControl.Root
+        aria-label={t('community.feed_label')}
         size="2"
         value={feed}
         onValueChange={value =>

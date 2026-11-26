@@ -1,4 +1,4 @@
-import { Badge, Card, Flex, Text } from '@radix-ui/themes';
+import { Badge, Card, Flex, Heading, Text } from '@radix-ui/themes';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next/pages';
 import type { ReactNode } from 'react';
@@ -68,54 +68,57 @@ export default function SettingsResourcesPageContent() {
       titleKey="settings.title_resources"
       descriptionKey="settings.resources.description"
     >
-      <Flex direction="column" gap="3">
-        {RESOURCES.map(resource => {
-          const body = (
-            <Flex gap="3" align="start">
-              <span className="text-highlight mt-0.5">{resource.icon}</span>
-              <Flex direction="column" gap="1" className="min-w-0">
-                <Flex align="center" gap="2">
-                  <Text
-                    as="p"
-                    size="2"
-                    weight="medium"
-                    className="text-highlight/90"
-                  >
-                    {t(resource.titleKey)}
+      <Flex asChild direction="column" gap="3">
+        <ul className="m-0 list-none p-0">
+          {RESOURCES.map(resource => {
+            const body = (
+              <Flex gap="3" align="start">
+                <span className="text-highlight mt-0.5">{resource.icon}</span>
+                <Flex direction="column" gap="1" className="min-w-0">
+                  <Flex align="center" gap="2">
+                    <Heading
+                      as="h2"
+                      size="2"
+                      weight="medium"
+                      className="text-highlight/90"
+                    >
+                      {t(resource.titleKey)}
+                    </Heading>
+                    {resource.external ? (
+                      <Badge size="1" variant="soft" color="gray">
+                        {t('settings.resources.external')}
+                      </Badge>
+                    ) : null}
+                  </Flex>
+                  <Text as="p" size="2" className="text-foreground/65">
+                    {t(resource.textKey)}
                   </Text>
-                  {resource.external ? (
-                    <Badge size="1" variant="soft" color="gray">
-                      {t('settings.resources.external')}
-                    </Badge>
-                  ) : null}
                 </Flex>
-                <Text as="p" size="2" className="text-foreground/65">
-                  {t(resource.textKey)}
-                </Text>
               </Flex>
-            </Flex>
-          );
+            );
 
-          return (
-            <Card
-              key={resource.id}
-              asChild
-              className="border-highlight/12 hover:border-highlight/35 bg-raised/30 border p-3 transition-colors"
-            >
-              {resource.external ? (
-                <a
-                  href={resource.href}
-                  target="_blank"
-                  rel="noreferrer noopener"
+            return (
+              <li key={resource.id}>
+                <Card
+                  asChild
+                  className="border-highlight/12 hover:border-highlight/35 bg-raised/30 border p-3 transition-colors"
                 >
-                  {body}
-                </a>
-              ) : (
-                <Link href={resource.href}>{body}</Link>
-              )}
-            </Card>
-          );
-        })}
+                  {resource.external ? (
+                    <a
+                      href={resource.href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      {body}
+                    </a>
+                  ) : (
+                    <Link href={resource.href}>{body}</Link>
+                  )}
+                </Card>
+              </li>
+            );
+          })}
+        </ul>
       </Flex>
     </SettingsPageShell>
   );

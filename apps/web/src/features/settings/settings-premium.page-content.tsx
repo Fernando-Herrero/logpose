@@ -9,6 +9,7 @@ import {
   Heading,
   Text,
 } from '@radix-ui/themes';
+import Head from 'next/head';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next/pages';
 import { useState } from 'react';
@@ -79,11 +80,14 @@ export default function SettingsPremiumPageContent() {
 
   return (
     <Card className="card mx-auto max-w-xl p-6 motion-safe:animate-[profile-fade-up_0.45s_ease-out_both]">
+      <Head>
+        <title>{`${t('settings.title_premium')} · LogPose`}</title>
+      </Head>
       <Link
         href="/dashboard/settings"
         className="text-highlight/80 hover:text-highlight mb-4 inline-flex items-center gap-1 text-sm underline-offset-2 hover:underline"
       >
-        <Icon.CaretLeft aria-hidden />
+        <Icon.CaretLeft />
         {t('settings.back')}
       </Link>
 
@@ -104,30 +108,29 @@ export default function SettingsPremiumPageContent() {
           : t('settings.premium.description')}
       </Text>
 
-      <Flex direction="column" gap="3" mb="5">
-        {PREMIUM_PERKS.map(perk => (
-          <Flex
-            key={perk.id}
-            gap="3"
-            align="start"
-            className="border-highlight/12 bg-raised/30 rounded-lg border p-3"
-          >
-            <span className="text-highlight mt-0.5">{perk.icon}</span>
-            <Flex direction="column" gap="1">
-              <Text
-                as="p"
-                size="2"
-                weight="medium"
-                className="text-highlight/90"
-              >
-                {t(perk.titleKey)}
-              </Text>
-              <Text as="p" size="2" className="text-foreground/65">
-                {t(perk.textKey, { max: POST_TEXT_MAX_LENGTH_VERIFIED })}
-              </Text>
+      <Flex asChild direction="column" gap="3" mb="5">
+        <ul className="mx-0 mt-0 list-none p-0">
+          {PREMIUM_PERKS.map(perk => (
+            <Flex asChild key={perk.id} gap="3" align="start">
+              <li className="border-highlight/12 bg-raised/30 rounded-lg border p-3">
+                <span className="text-highlight mt-0.5">{perk.icon}</span>
+                <Flex direction="column" gap="1">
+                  <Heading
+                    as="h2"
+                    size="2"
+                    weight="medium"
+                    className="text-highlight/90"
+                  >
+                    {t(perk.titleKey)}
+                  </Heading>
+                  <Text as="p" size="2" className="text-foreground/65">
+                    {t(perk.textKey, { max: POST_TEXT_MAX_LENGTH_VERIFIED })}
+                  </Text>
+                </Flex>
+              </li>
             </Flex>
-          </Flex>
-        ))}
+          ))}
+        </ul>
       </Flex>
 
       {sessionUser.verified ? (

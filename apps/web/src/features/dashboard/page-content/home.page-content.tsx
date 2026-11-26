@@ -70,6 +70,7 @@ function NextEpisode({
         </Text>
       </Flex>
       <Progress
+        aria-label={texts.name}
         value={(watched / arc.total) * 100}
         size="2"
         className="profile-xp-progress h-2"

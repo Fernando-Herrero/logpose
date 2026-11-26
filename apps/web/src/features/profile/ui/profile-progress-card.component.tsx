@@ -36,6 +36,7 @@ function ProfileXpProgress({ experience }: { experience: number }) {
         </Text>
       </Flex>
       <Progress
+        aria-label={t('profile.progress_xp_label')}
         value={getSerieXpPercent(experience, totalExperience)}
         size="2"
         className="profile-xp-progress"
@@ -57,50 +58,59 @@ export function ProfileProgressCard({
   const { t } = useTranslation();
 
   return (
-    <Card className="card p-4">
-      <Flex align="center" justify="between" gap="3" mb="4">
-        <Heading as="h2" size="3" className="text-highlight">
-          {t('profile.progress_card_title')}
-        </Heading>
-        {isOwner ? (
-          <Link
-            href="/dashboard/serie"
-            className="text-highlight/80 hover:text-highlight text-xs underline-offset-2 transition hover:underline"
+    <Card asChild className="card p-4">
+      <section aria-labelledby="profile-progress-title">
+        <Flex align="center" justify="between" gap="3" mb="4">
+          <Heading
+            as="h2"
+            id="profile-progress-title"
+            size="3"
+            className="text-highlight"
           >
-            {t('profile.progress_view_serie')}
-          </Link>
-        ) : null}
-      </Flex>
-
-      {user.lastWatchedEpisode > 0 ? (
-        <Flex direction="column" gap="3">
-          <Flex direction="column" gap="1" className="tile">
-            <Text as="span" size="1" color="gray">
-              {t('profile.progress_episode_label')}
-            </Text>
-            <Text
-              as="span"
-              size="2"
-              weight="medium"
-              className="text-foreground"
+            {t('profile.progress_card_title')}
+          </Heading>
+          {isOwner ? (
+            <Link
+              href="/dashboard/serie"
+              className="text-highlight/80 hover:text-highlight text-xs underline-offset-2 transition hover:underline"
             >
-              {t('serie.episode_number', { number: user.lastWatchedEpisode })}
-            </Text>
-          </Flex>
-
-          <ErrorBoundary FallbackComponent={QueryErrorFallback}>
-            <Suspense fallback={<Skeleton height="64px" />}>
-              <ProfileXpProgress experience={user.experience} />
-            </Suspense>
-          </ErrorBoundary>
+              {t('profile.progress_view_serie')}
+            </Link>
+          ) : null}
         </Flex>
-      ) : (
-        <Text as="p" size="2" className="text-foreground/50 italic">
-          {t(
-            isOwner ? 'profile.progress_empty' : 'profile.progress_empty_other',
-          )}
-        </Text>
-      )}
+
+        {user.lastWatchedEpisode > 0 ? (
+          <Flex direction="column" gap="3">
+            <Flex direction="column" gap="1" className="tile">
+              <Text as="span" size="1" color="gray">
+                {t('profile.progress_episode_label')}
+              </Text>
+              <Text
+                as="span"
+                size="2"
+                weight="medium"
+                className="text-foreground"
+              >
+                {t('serie.episode_number', { number: user.lastWatchedEpisode })}
+              </Text>
+            </Flex>
+
+            <ErrorBoundary FallbackComponent={QueryErrorFallback}>
+              <Suspense fallback={<Skeleton height="64px" />}>
+                <ProfileXpProgress experience={user.experience} />
+              </Suspense>
+            </ErrorBoundary>
+          </Flex>
+        ) : (
+          <Text as="p" size="2" className="text-foreground/50 italic">
+            {t(
+              isOwner
+                ? 'profile.progress_empty'
+                : 'profile.progress_empty_other',
+            )}
+          </Text>
+        )}
+      </section>
     </Card>
   );
 }

@@ -106,7 +106,7 @@ function ProfilePageBody({ user, isOwner, isFollowing }: ProfilePageBodyProps) {
         </Flex>
 
         {showRanking ? (
-          <aside>
+          <aside aria-labelledby="profile-ranking-title">
             <Flex direction="column" gap="6">
               <ErrorBoundary FallbackComponent={QueryErrorFallback}>
                 <Suspense fallback={<ProfileRankingSidebarSkeleton />}>

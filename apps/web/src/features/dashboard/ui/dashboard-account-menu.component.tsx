@@ -52,6 +52,7 @@ export function DashboardAccountMenu() {
         >
           <Avatar
             src={avatarSrc}
+            alt=""
             fallback={displayName.slice(0, 1).toUpperCase()}
             size="2"
             radius="full"
@@ -89,7 +90,7 @@ export function DashboardAccountMenu() {
         <DropdownMenu.Item asChild>
           <Link href="/dashboard/profile">
             <Flex align="center" gap="2">
-              <Icon.User aria-hidden />
+              <Icon.User />
               {t('posts.menu_view_profile')}
             </Flex>
           </Link>
@@ -97,7 +98,7 @@ export function DashboardAccountMenu() {
         <DropdownMenu.Item asChild>
           <Link href="/dashboard/settings">
             <Flex align="center" gap="2">
-              <Icon.Settings aria-hidden />
+              <Icon.Settings />
               {t('dashboard.nav.settings')}
             </Flex>
           </Link>
@@ -132,7 +133,7 @@ export function DashboardAccountMenu() {
         <DropdownMenu.Item asChild>
           <Link href="/dashboard/settings/resources">
             <Flex align="center" gap="2">
-              <Icon.BookOpen aria-hidden />
+              <Icon.BookOpen />
               {t('dashboard.topbar.help')}
             </Flex>
           </Link>
@@ -146,7 +147,7 @@ export function DashboardAccountMenu() {
           onSelect={() => logout.mutate()}
         >
           <Flex align="center" gap="2">
-            <Icon.SignOut aria-hidden />
+            <Icon.SignOut />
             {t('dashboard.topbar.logout')}
           </Flex>
         </DropdownMenu.Item>

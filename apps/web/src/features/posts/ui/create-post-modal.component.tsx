@@ -1,6 +1,5 @@
-import { Card, Flex, Heading, IconButton, Text } from '@radix-ui/themes';
+import { Dialog, Flex, IconButton } from '@radix-ui/themes';
 import { useTranslation } from 'next-i18next/pages';
-import { useEffect } from 'react';
 
 import type { CreatePostVariables } from '@/features/posts/api/use-posts';
 import { CreatePostForm } from '@/features/posts/ui/create-post-form.component';
@@ -18,69 +17,44 @@ export function CreatePostModal({
 }: CreatePostModalProps) {
   const { t } = useTranslation();
 
-  useEffect(() => {
-    if (!open) {
-      return;
-    }
-
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        onClose();
-      }
-    }
-
-    document.addEventListener('keydown', onKeyDown);
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      document.removeEventListener('keydown', onKeyDown);
-    };
-  }, [open, onClose]);
-
-  if (!open) {
-    return null;
-  }
-
   return (
-    <Flex
-      align="center"
-      justify="center"
-      className="community-modal-backdrop bg-deep/82 fixed inset-0 z-50 p-4 backdrop-blur-md motion-safe:animate-[community-backdrop-in_0.35s_ease-out_both]"
-      role="dialog"
-      aria-modal="true"
-      aria-label={t('posts.create_modal_title')}
-      onClick={event => {
-        if (event.target === event.currentTarget) {
+    <Dialog.Root
+      open={open}
+      onOpenChange={nextOpen => {
+        if (!nextOpen) {
           onClose();
         }
       }}
     >
-      <Card
-        className="community-modal-panel border-highlight/20 bg-page/95 relative max-h-[min(90vh,720px)] w-full max-w-lg overflow-y-auto border p-5 shadow-[0_24px_80px_rgb(0_0_0/0.55)] motion-safe:animate-[community-modal-in_0.45s_cubic-bezier(0.16,1,0.3,1)_both] sm:p-6"
-        onClick={event => event.stopPropagation()}
+      <Dialog.Content
+        maxWidth="512px"
+        className="community-modal-panel border-highlight/20 bg-page/95 max-h-[min(90vh,720px)] border p-5 shadow-[0_24px_80px_rgb(0_0_0/0.55)] motion-safe:animate-[community-modal-in_0.45s_cubic-bezier(0.16,1,0.3,1)_both] sm:p-6"
       >
         <Flex align="start" justify="between" gap="3" mb="4">
           <Flex direction="column" gap="1">
-            <Heading as="h2" size="4" className="text-highlight">
+            <Dialog.Title size="4" mb="0" className="text-highlight">
               {t('posts.create_modal_title')}
-            </Heading>
-            <Text as="p" size="1" color="gray" className="text-foreground/60">
+            </Dialog.Title>
+            <Dialog.Description
+              size="1"
+              color="gray"
+              className="text-foreground/60"
+            >
               {t('posts.create_modal_subtitle')}
-            </Text>
+            </Dialog.Description>
           </Flex>
-          <IconButton
-            type="button"
-            variant="ghost"
-            color="gray"
-            size="2"
-            aria-label={t('posts.create_cancel')}
-            className="cursor-pointer"
-            onClick={onClose}
-          >
-            ✕
-          </IconButton>
+          <Dialog.Close>
+            <IconButton
+              type="button"
+              variant="ghost"
+              color="gray"
+              size="2"
+              aria-label={t('posts.create_close')}
+              className="cursor-pointer"
+            >
+              <span aria-hidden>✕</span>
+            </IconButton>
+          </Dialog.Close>
         </Flex>
 
         <CreatePostForm
@@ -88,7 +62,7 @@ export function CreatePostModal({
           onSuccess={onClose}
           onCancel={onClose}
         />
-      </Card>
-    </Flex>
+      </Dialog.Content>
+    </Dialog.Root>
   );
 }

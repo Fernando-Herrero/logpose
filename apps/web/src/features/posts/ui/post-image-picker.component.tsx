@@ -73,32 +73,34 @@ export function PostImagePicker({
       </Flex>
 
       {pendingImages.length > 0 ? (
-        <Flex gap="2" wrap="wrap">
-          {pendingImages.map(item => (
-            <div
-              key={item.previewUrl}
-              className="group border-highlight/20 bg-deep/60 relative size-20 overflow-hidden rounded-xl border motion-safe:animate-[community-image-in_0.35s_ease-out_both]"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={item.previewUrl}
-                alt=""
-                className="size-full object-cover"
-              />
-              <IconButton
-                type="button"
-                size="1"
-                variant="solid"
-                color="gray"
-                highContrast
-                aria-label={t('posts.create_images_remove')}
-                className="absolute top-1 right-1 cursor-pointer opacity-90"
-                onClick={() => onRemove(item.previewUrl)}
+        <Flex asChild gap="2" wrap="wrap">
+          <ul className="m-0 list-none p-0">
+            {pendingImages.map(item => (
+              <li
+                key={item.previewUrl}
+                className="group border-highlight/20 bg-deep/60 relative size-20 overflow-hidden rounded-xl border motion-safe:animate-[community-image-in_0.35s_ease-out_both]"
               >
-                <XIcon size={12} aria-hidden />
-              </IconButton>
-            </div>
-          ))}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.previewUrl}
+                  alt=""
+                  className="size-full object-cover"
+                />
+                <IconButton
+                  type="button"
+                  size="1"
+                  variant="solid"
+                  color="gray"
+                  highContrast
+                  aria-label={t('posts.create_images_remove')}
+                  className="absolute top-1 right-1 cursor-pointer opacity-90"
+                  onClick={() => onRemove(item.previewUrl)}
+                >
+                  <XIcon size={12} aria-hidden />
+                </IconButton>
+              </li>
+            ))}
+          </ul>
         </Flex>
       ) : null}
     </Flex>

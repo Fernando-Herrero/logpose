@@ -2,6 +2,7 @@ import { Box } from '@radix-ui/themes';
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next/pages';
 
+import { SkipLink } from '@/components/skip-link/skip-link.component';
 import { useSmoothScroll } from '@/features/landing/motion/use-smooth-scroll';
 import { CinematicShowcaseComponent } from '@/features/landing/ui/cinematic-showcase.component';
 import { FeatureCardsComponent } from '@/features/landing/ui/feature-cards.component';
@@ -20,11 +21,14 @@ export default function LandingPageContent() {
         <title>{t('landing.meta_title')}</title>
         <meta name="description" content={t('landing.meta_description')} />
       </Head>
+      <SkipLink />
       <LandingHeaderComponent />
-      <HeroMaskComponent />
-      <FeatureCardsComponent />
-      <CinematicShowcaseComponent />
-      <LandingCtaComponent />
+      <main id="main" tabIndex={-1}>
+        <HeroMaskComponent />
+        <FeatureCardsComponent />
+        <CinematicShowcaseComponent />
+        <LandingCtaComponent />
+      </main>
       <LandingFooterComponent />
     </Box>
   );

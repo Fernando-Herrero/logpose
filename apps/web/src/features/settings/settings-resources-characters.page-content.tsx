@@ -18,16 +18,18 @@ export default function SettingsResourcesCharactersPageContent() {
     >
       {/* Sin el scroll-trigger de la landing: aquí la tripulación es material
           de consulta, no una presentación. */}
-      <Grid columns={{ initial: '1', sm: '2' }} gap="4" className="w-full">
-        {CREW.map((character, index) => (
-          <CharacterCardComponent
-            key={character.name}
-            name={character.name}
-            text={t(`characters.${character.key}`)}
-            images={character.images}
-            isLast={index === CREW.length - 1}
-          />
-        ))}
+      <Grid asChild columns={{ initial: '1', sm: '2' }} gap="4">
+        <ul className="m-0 w-full list-none p-0">
+          {CREW.map((character, index) => (
+            <CharacterCardComponent
+              key={character.name}
+              name={character.name}
+              text={t(`characters.${character.key}`)}
+              images={character.images}
+              isLast={index === CREW.length - 1}
+            />
+          ))}
+        </ul>
       </Grid>
     </SettingsPageShell>
   );

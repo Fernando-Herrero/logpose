@@ -20,7 +20,7 @@ export function FeatureCardsComponent() {
   const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const headRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLUListElement>(null);
   const tilt = useTilt();
 
   useGsapMotion(() => {
@@ -68,6 +68,7 @@ export function FeatureCardsComponent() {
     <section
       id="features"
       ref={sectionRef}
+      aria-labelledby="features-title"
       className="from-deep to-deep via-page relative z-10 bg-linear-to-b px-6 py-[clamp(5rem,12vh,10rem)] pb-[clamp(7rem,16vh,12rem)]"
     >
       <Flex
@@ -79,6 +80,7 @@ export function FeatureCardsComponent() {
       >
         <Heading
           as="h2"
+          id="features-title"
           size="8"
           align="center"
           className="font-one-piece text-highlight tracking-wide"
@@ -96,36 +98,42 @@ export function FeatureCardsComponent() {
         </Text>
       </Flex>
 
-      <Flex
-        ref={gridRef}
-        wrap="wrap"
-        justify="center"
-        gap="5"
-        className="mx-auto max-w-6xl"
-      >
-        {FEATURES.map(({ emoji, key }) => (
-          <Card
-            key={key}
-            size="3"
-            onMouseMove={tilt.onMouseMove}
-            onMouseLeave={tilt.onMouseLeave}
-            className="landing-card landing-card-shine border-foreground/10 to-page/65 hover:border-highlight/35 from-raised/55 max-w-68 flex-[1_1_16rem] border bg-linear-to-br backdrop-blur-sm transition-[border-color,box-shadow] duration-300 hover:shadow-[0_24px_60px_rgba(0,0,0,0.45)]"
-          >
-            <Flex direction="column" gap="3">
-              <Text size="6">{emoji}</Text>
-              <Heading
-                as="h3"
-                size="4"
-                className="font-road-captain text-highlight/90 text-xl font-bold tracking-wide"
-              >
-                {t(`landing.cards.${key}.title`)}
-              </Heading>
-              <Text as="p" size="2" color="gray" className="leading-relaxed">
-                {t(`landing.cards.${key}.text`)}
-              </Text>
-            </Flex>
-          </Card>
-        ))}
+      <Flex asChild wrap="wrap" justify="center" gap="5">
+        <ul ref={gridRef} className="mx-auto max-w-6xl list-none p-0">
+          {FEATURES.map(({ emoji, key }) => (
+            <Card
+              asChild
+              key={key}
+              size="3"
+              onMouseMove={tilt.onMouseMove}
+              onMouseLeave={tilt.onMouseLeave}
+              className="landing-card landing-card-shine border-foreground/10 to-page/65 hover:border-highlight/35 from-raised/55 max-w-68 flex-[1_1_16rem] border bg-linear-to-br backdrop-blur-sm transition-[border-color,box-shadow] duration-300 hover:shadow-[0_24px_60px_rgba(0,0,0,0.45)]"
+            >
+              <li>
+                <Flex direction="column" gap="3">
+                  <Text size="6" aria-hidden>
+                    {emoji}
+                  </Text>
+                  <Heading
+                    as="h3"
+                    size="4"
+                    className="font-road-captain text-highlight/90 text-xl font-bold tracking-wide"
+                  >
+                    {t(`landing.cards.${key}.title`)}
+                  </Heading>
+                  <Text
+                    as="p"
+                    size="2"
+                    color="gray"
+                    className="leading-relaxed"
+                  >
+                    {t(`landing.cards.${key}.text`)}
+                  </Text>
+                </Flex>
+              </li>
+            </Card>
+          ))}
+        </ul>
       </Flex>
     </section>
   );

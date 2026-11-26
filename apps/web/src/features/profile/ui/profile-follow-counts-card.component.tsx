@@ -43,6 +43,7 @@ function ProfileFollowUserRow({ user }: { user: UserSummary }) {
     >
       <Avatar
         src={avatarSrc}
+        alt=""
         fallback={name.slice(0, 1).toUpperCase()}
         size="2"
         radius="full"
@@ -87,10 +88,14 @@ function ProfileFollowersList({ userId }: { userId: string }) {
   }
 
   return (
-    <Flex direction="column" gap="2" className="max-h-48 overflow-y-auto">
-      {users.map(user => (
-        <ProfileFollowUserRow key={user._id} user={user} />
-      ))}
+    <Flex asChild direction="column" gap="2">
+      <ul className="m-0 max-h-48 list-none overflow-y-auto p-0">
+        {users.map(user => (
+          <li key={user._id}>
+            <ProfileFollowUserRow user={user} />
+          </li>
+        ))}
+      </ul>
     </Flex>
   );
 }
@@ -108,10 +113,14 @@ function ProfileFollowingList({ userId }: { userId: string }) {
   }
 
   return (
-    <Flex direction="column" gap="2" className="max-h-48 overflow-y-auto">
-      {users.map(user => (
-        <ProfileFollowUserRow key={user._id} user={user} />
-      ))}
+    <Flex asChild direction="column" gap="2">
+      <ul className="m-0 max-h-48 list-none overflow-y-auto p-0">
+        {users.map(user => (
+          <li key={user._id}>
+            <ProfileFollowUserRow user={user} />
+          </li>
+        ))}
+      </ul>
     </Flex>
   );
 }
@@ -146,59 +155,72 @@ export function ProfileFollowCountsCard({
   ];
 
   return (
-    <Card className="card p-4">
-      <Heading as="h2" size="3" mb="4" className="text-highlight">
-        {t('profile.follow_title')}
-      </Heading>
-      <Flex gap="3">
-        {items.map(item => {
-          const isActive = expandedList === item.kind;
-
-          return (
-            <Button
-              key={item.kind}
-              type="button"
-              variant={isActive ? 'soft' : 'outline'}
-              color="orange"
-              highContrast={isActive}
-              aria-expanded={isActive}
-              aria-controls={`profile-follow-list-${item.kind}`}
-              className={`h-auto flex-1 cursor-pointer flex-col items-center gap-1 px-3 py-3 ${
-                isActive
-                  ? 'border-highlight/40 bg-highlight/10'
-                  : 'border-highlight/10 bg-deep/40 hover:border-highlight/25'
-              }`}
-              onClick={() =>
-                setExpandedList(current =>
-                  current === item.kind ? null : item.kind,
-                )
-              }
-            >
-              <Text as="span" size="5" weight="bold" className="text-highlight">
-                {item.value}
-              </Text>
-              <Text as="span" size="1" color="gray" align="center">
-                {item.label}
-              </Text>
-            </Button>
-          );
-        })}
-      </Flex>
-
-      {expandedList ? (
-        <Box
-          id={`profile-follow-list-${expandedList}`}
-          className="border-highlight/10 mt-4 border-t pt-4 motion-safe:animate-[profile-fade-up_0.5s_ease-out_both]"
+    <Card asChild className="card p-4">
+      <section aria-labelledby="profile-follow-title">
+        <Heading
+          as="h2"
+          id="profile-follow-title"
+          size="3"
+          mb="4"
+          className="text-highlight"
         >
-          <Suspense fallback={<ProfileFollowListSkeleton />}>
-            {expandedList === 'followers' ? (
-              <ProfileFollowersList userId={userId} />
-            ) : (
-              <ProfileFollowingList userId={userId} />
-            )}
-          </Suspense>
-        </Box>
-      ) : null}
+          {t('profile.follow_title')}
+        </Heading>
+        <Flex gap="3">
+          {items.map(item => {
+            const isActive = expandedList === item.kind;
+
+            return (
+              <Button
+                key={item.kind}
+                type="button"
+                variant={isActive ? 'soft' : 'outline'}
+                color="orange"
+                highContrast={isActive}
+                aria-expanded={isActive}
+                aria-controls={`profile-follow-list-${item.kind}`}
+                className={`h-auto flex-1 cursor-pointer flex-col items-center gap-1 px-3 py-3 ${
+                  isActive
+                    ? 'border-highlight/40 bg-highlight/10'
+                    : 'border-highlight/10 bg-deep/40 hover:border-highlight/25'
+                }`}
+                onClick={() =>
+                  setExpandedList(current =>
+                    current === item.kind ? null : item.kind,
+                  )
+                }
+              >
+                <Text
+                  as="span"
+                  size="5"
+                  weight="bold"
+                  className="text-highlight"
+                >
+                  {item.value}
+                </Text>
+                <Text as="span" size="1" color="gray" align="center">
+                  {item.label}
+                </Text>
+              </Button>
+            );
+          })}
+        </Flex>
+
+        {expandedList ? (
+          <Box
+            id={`profile-follow-list-${expandedList}`}
+            className="border-highlight/10 mt-4 border-t pt-4 motion-safe:animate-[profile-fade-up_0.5s_ease-out_both]"
+          >
+            <Suspense fallback={<ProfileFollowListSkeleton />}>
+              {expandedList === 'followers' ? (
+                <ProfileFollowersList userId={userId} />
+              ) : (
+                <ProfileFollowingList userId={userId} />
+              )}
+            </Suspense>
+          </Box>
+        ) : null}
+      </section>
     </Card>
   );
 }

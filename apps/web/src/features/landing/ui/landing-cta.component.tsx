@@ -72,6 +72,7 @@ export function LandingCtaComponent() {
   return (
     <section
       ref={sectionRef}
+      aria-labelledby="cta-title"
       className="bg-deep relative z-10 overflow-hidden px-6 pt-[clamp(4rem,10vh,7rem)] pb-[clamp(6rem,14vh,10rem)] text-center"
     >
       <div
@@ -83,6 +84,7 @@ export function LandingCtaComponent() {
       <Heading
         ref={titleRef}
         as="h2"
+        id="cta-title"
         size="8"
         align="center"
         mb="6"

@@ -28,53 +28,69 @@ export function ProfileCollectionTeaser({
   })).filter(item => item.count > 0);
 
   return (
-    <Card className="card p-4">
-      <Flex align="center" justify="between" gap="3" mb="4">
-        <Heading as="h2" size="3" className="text-highlight">
-          {t('profile.collection_title')}
-        </Heading>
-        {isOwner ? (
-          <Link
-            href="/dashboard/cards"
-            className="text-highlight/80 hover:text-highlight text-xs underline-offset-2 transition hover:underline"
+    <Card asChild className="card p-4">
+      <section aria-labelledby="profile-collection-title">
+        <Flex align="center" justify="between" gap="3" mb="4">
+          <Heading
+            as="h2"
+            id="profile-collection-title"
+            size="3"
+            className="text-highlight"
           >
-            {t('profile.collection_view_all')}
-          </Link>
-        ) : null}
-      </Flex>
-
-      <Text as="p" size="2" mb="3" className="text-foreground/85">
-        {t('profile.collection_total', { count: totalUnlocked })}
-      </Text>
-
-      {breakdown.length === 0 ? (
-        <Text as="p" size="2" className="text-foreground/50 italic">
-          {t(
-            isOwner
-              ? 'profile.collection_empty'
-              : 'profile.collection_empty_other',
-          )}
-        </Text>
-      ) : (
-        <Flex direction="column" gap="2">
-          {breakdown.map(item => (
-            <Flex
-              key={item.key}
-              align="center"
-              justify="between"
-              gap="3"
-              className="tile"
+            {t('profile.collection_title')}
+          </Heading>
+          {isOwner ? (
+            <Link
+              href="/dashboard/cards"
+              className="text-highlight/80 hover:text-highlight text-xs underline-offset-2 transition hover:underline"
             >
-              <Text as="span" size="2" className="text-foreground/85">
-                {item.label}
-              </Text>
-              <Text as="span" size="2" weight="bold" className="text-highlight">
-                {item.count}
-              </Text>
-            </Flex>
-          ))}
+              {t('profile.collection_view_all')}
+            </Link>
+          ) : null}
         </Flex>
-      )}
+
+        <Text as="p" size="2" mb="3" className="text-foreground/85">
+          {t('profile.collection_total', { count: totalUnlocked })}
+        </Text>
+
+        {breakdown.length === 0 ? (
+          <Text as="p" size="2" className="text-foreground/50 italic">
+            {t(
+              isOwner
+                ? 'profile.collection_empty'
+                : 'profile.collection_empty_other',
+            )}
+          </Text>
+        ) : (
+          <Flex asChild direction="column" gap="2">
+            <dl className="m-0">
+              {breakdown.map(item => (
+                <Flex
+                  asChild
+                  key={item.key}
+                  align="center"
+                  justify="between"
+                  gap="3"
+                >
+                  <div className="tile">
+                    <Text asChild size="2" className="text-foreground/85">
+                      <dt>{item.label}</dt>
+                    </Text>
+                    <Text
+                      asChild
+                      size="2"
+                      weight="bold"
+                      className="text-highlight"
+                    >
+                      <dd className="m-0">{item.count}</dd>
+                    </Text>
+                  </div>
+                </Flex>
+              ))}
+            </dl>
+          </Flex>
+        )}
+      </section>
     </Card>
   );
 }

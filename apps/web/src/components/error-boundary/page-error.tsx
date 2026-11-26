@@ -32,8 +32,13 @@ export function PageError({
       py="9"
       className="text-center"
     >
-      <Callout.Root color="red" variant="soft" className="max-w-md text-left">
-        <Callout.Icon>⚠️</Callout.Icon>
+      <Callout.Root
+        role="alert"
+        color="red"
+        variant="soft"
+        className="max-w-md text-left"
+      >
+        <Callout.Icon aria-hidden>⚠️</Callout.Icon>
         <Flex direction="column" gap="2" className="flex-1">
           <Heading as="h2" size="4">
             {title}

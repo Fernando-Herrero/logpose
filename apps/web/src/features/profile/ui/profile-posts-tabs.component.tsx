@@ -93,18 +93,22 @@ function ProfilePostList({
           : undefined
       }
     >
-      {posts.map(post => (
-        <Box key={post._id} className="shrink-0">
-          <PostCard
-            post={post}
-            onDeletePost={postId => deletePost.mutate(postId)}
-            isDeleting={
-              deletePost.isPending &&
-              deletePost.variables === (post.retweetOf ?? post._id)
-            }
-          />
-        </Box>
-      ))}
+      <Flex asChild direction="column" gap="2">
+        <ul className="m-0 list-none p-0">
+          {posts.map(post => (
+            <li key={post._id} className="shrink-0">
+              <PostCard
+                post={post}
+                onDeletePost={postId => deletePost.mutate(postId)}
+                isDeleting={
+                  deletePost.isPending &&
+                  deletePost.variables === (post.retweetOf ?? post._id)
+                }
+              />
+            </li>
+          ))}
+        </ul>
+      </Flex>
       {hasNextPage ? (
         <Box ref={sentinelRef} className="shrink-0">
           {isFetchingNextPage ? (
@@ -159,71 +163,75 @@ export function ProfilePostsTabs({
       : 'mask-[linear-gradient(to_right,transparent_0%,black_12%,black_88%,transparent_100%)]';
 
   return (
-    <Card className="card p-4">
-      <Flex align="start" justify="between" gap="3" mb="4" wrap="wrap">
-        <Heading as="h2" size="3" className="text-highlight">
-          {t('profile.activity_title')}
-        </Heading>
-        {isOwner ? (
-          <Link
-            href="/dashboard/settings/privacy"
-            className="text-highlight/75 hover:text-highlight text-xs underline-offset-2 transition hover:underline"
+    <Card asChild className="card p-4">
+      <section aria-labelledby="profile-activity-title">
+        <Flex align="start" justify="between" gap="3" mb="4" wrap="wrap">
+          <Heading
+            as="h2"
+            id="profile-activity-title"
+            size="3"
+            className="text-highlight"
           >
-            {t('profile.activity_manage_visibility')}
-          </Link>
-        ) : null}
-      </Flex>
-      <Box
-        className={`relative mb-4 min-w-0 scrollbar-none overflow-x-auto pb-1 [-ms-overflow-style:none] md:overflow-x-visible md:mask-none [&::-webkit-scrollbar]:hidden ${tabsScrollMaskClass}`}
-      >
-        <SegmentedControl.Root
-          size="2"
-          value={activeTab}
-          onValueChange={value => {
-            if (!value) {
-              return;
-            }
-
-            const selectedTab = tabs.find(tab => tab.key === value);
-            if (selectedTab?.visible) {
-              setActiveTab(value as ProfilePostsTab);
-            }
-          }}
-          className="profile-posts-segmented border-highlight/15 w-max min-w-full border [&_.rt-SegmentedControlItem]:shrink-0 [&_.rt-SegmentedControlItem]:whitespace-nowrap"
-        >
-          {tabs.map(tab => (
-            <SegmentedControl.Item
-              key={tab.key}
-              value={tab.key}
-              className={
-                !tab.visible ? 'pointer-events-none opacity-50' : undefined
-              }
-            >
-              {tab.label}
-            </SegmentedControl.Item>
-          ))}
-        </SegmentedControl.Root>
-      </Box>
-
-      {isActiveTabPrivate ? (
-        <Flex direction="column" align="center" gap="2" className="py-8">
-          <Text as="p" size="2" align="center" className="text-foreground/50">
-            {t(privateMessage)}
-          </Text>
+            {t('profile.activity_title')}
+          </Heading>
           {isOwner ? (
             <Link
-              href="/dashboard/settings"
-              className="text-highlight/80 hover:text-highlight text-sm underline-offset-2 hover:underline"
+              href="/dashboard/settings/privacy"
+              className="text-highlight/75 hover:text-highlight text-xs underline-offset-2 transition hover:underline"
             >
-              {t('profile.activity_private_settings_link')}
+              {t('profile.activity_manage_visibility')}
             </Link>
           ) : null}
         </Flex>
-      ) : (
-        <Suspense key={activeTab} fallback={<PostFeedSkeleton count={2} />}>
-          <ProfilePostList userId={userId} tab={activeTab} />
-        </Suspense>
-      )}
+        <Box
+          className={`relative mb-4 min-w-0 scrollbar-none overflow-x-auto pb-1 [-ms-overflow-style:none] md:overflow-x-visible md:mask-none [&::-webkit-scrollbar]:hidden ${tabsScrollMaskClass}`}
+        >
+          <SegmentedControl.Root
+            aria-labelledby="profile-activity-title"
+            size="2"
+            value={activeTab}
+            onValueChange={value => {
+              const selectedTab = tabs.find(tab => tab.key === value);
+              if (selectedTab?.visible) {
+                setActiveTab(selectedTab.key);
+              }
+            }}
+            className="profile-posts-segmented border-highlight/15 w-max min-w-full border [&_.rt-SegmentedControlItem]:shrink-0 [&_.rt-SegmentedControlItem]:whitespace-nowrap"
+          >
+            {tabs.map(tab => (
+              <SegmentedControl.Item
+                key={tab.key}
+                value={tab.key}
+                className={
+                  !tab.visible ? 'pointer-events-none opacity-50' : undefined
+                }
+              >
+                {tab.label}
+              </SegmentedControl.Item>
+            ))}
+          </SegmentedControl.Root>
+        </Box>
+
+        {isActiveTabPrivate ? (
+          <Flex direction="column" align="center" gap="2" className="py-8">
+            <Text as="p" size="2" align="center" className="text-foreground/50">
+              {t(privateMessage)}
+            </Text>
+            {isOwner ? (
+              <Link
+                href="/dashboard/settings"
+                className="text-highlight/80 hover:text-highlight text-sm underline-offset-2 hover:underline"
+              >
+                {t('profile.activity_private_settings_link')}
+              </Link>
+            ) : null}
+          </Flex>
+        ) : (
+          <Suspense key={activeTab} fallback={<PostFeedSkeleton count={2} />}>
+            <ProfilePostList userId={userId} tab={activeTab} />
+          </Suspense>
+        )}
+      </section>
     </Card>
   );
 }

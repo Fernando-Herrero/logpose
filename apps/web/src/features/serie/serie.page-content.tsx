@@ -1,16 +1,12 @@
 import {
   Box,
-  Button,
   Card,
   Flex,
   Heading,
-  Progress,
-  Select,
   Skeleton,
   Spinner,
   Switch,
   Text,
-  TextField,
 } from '@radix-ui/themes';
 import { gsap } from 'gsap';
 import Image from 'next/image';
@@ -20,22 +16,13 @@ import { ErrorBoundary } from 'react-error-boundary';
 
 import { QueryErrorFallback } from '@/components/error-boundary/query-error-fallback';
 import { useAuthSession } from '@/features/auth/api/use-auth';
-import {
-  useSerieTotalEpisodes,
-  useSerieTotalExperience,
-  useSetProgressMutation,
-  useSuspenseSerieAllArcs,
-  useSuspenseSerieSagas,
-} from '@/features/serie/api/use-serie';
-import {
-  getArcArrivalDate,
-  getPendingEpisodes,
-  getSerieXpPercent,
-} from '@/features/serie/serie.selectors';
+import { useSuspenseSerieSagas } from '@/features/serie/api/use-serie';
+import { SerieArrival } from '@/features/serie/ui/serie-arrival.component';
+import { SerieCatchUp } from '@/features/serie/ui/serie-catch-up.component';
 import { SerieSagaBlock } from '@/features/serie/ui/serie-saga-block.component';
+import { SerieXpProgress } from '@/features/serie/ui/serie-xp-progress.component';
 import { useSettingsPreferences } from '@/features/settings/use-settings-preferences';
 import { useGsapMotion } from '@/integrations/gsap/motion';
-import { useLocale } from '@/integrations/next-i18next/use-locale';
 
 type SerieSagaListProps = {
   openSagaSlugs: Record<string, boolean>;
@@ -57,19 +44,22 @@ function SerieSagaList({
   const { data } = useSuspenseSerieSagas();
 
   return (
-    <Flex direction="column" gap="3">
-      {data.sagas.map(saga => (
-        <SerieSagaBlock
-          key={saga.slug}
-          saga={saga}
-          isOpen={openSagaSlugs[saga.slug] ?? false}
-          onToggle={() => onToggleSaga(saga.slug)}
-          openArcSlugs={openArcSlugs}
-          onToggleArc={onToggleArc}
-          lastWatchedEpisode={lastWatchedEpisode}
-          skipFiller={skipFiller}
-        />
-      ))}
+    <Flex asChild direction="column" gap="3">
+      <ul className="m-0 list-none p-0">
+        {data.sagas.map(saga => (
+          <li key={saga.slug}>
+            <SerieSagaBlock
+              saga={saga}
+              isOpen={openSagaSlugs[saga.slug] ?? false}
+              onToggle={() => onToggleSaga(saga.slug)}
+              openArcSlugs={openArcSlugs}
+              onToggleArc={onToggleArc}
+              lastWatchedEpisode={lastWatchedEpisode}
+              skipFiller={skipFiller}
+            />
+          </li>
+        ))}
+      </ul>
     </Flex>
   );
 }
@@ -84,145 +74,6 @@ function SerieSagaListSkeleton() {
         {t('serie.loading')}
       </Text>
     </Flex>
-  );
-}
-
-function SerieXpProgress({ experience }: { experience: number }) {
-  const { t } = useTranslation();
-  const totalExperience = useSerieTotalExperience();
-
-  return (
-    <>
-      <Flex align="center" justify="between" gap="3" mb="2">
-        <Text as="p" size="1" className="text-foreground/70">
-          {t('serie.progress_label')}
-        </Text>
-        <Text as="p" size="1" weight="medium" className="text-highlight">
-          {experience.toLocaleString()} / {totalExperience.toLocaleString()} XP
-        </Text>
-      </Flex>
-      <Progress
-        value={getSerieXpPercent(experience, totalExperience)}
-        size="2"
-        className="profile-xp-progress h-2"
-      />
-    </>
-  );
-}
-
-function SerieCatchUp({ lastWatchedEpisode }: { lastWatchedEpisode: number }) {
-  const { t } = useTranslation();
-  const setProgress = useSetProgressMutation();
-  const totalEpisodes = useSerieTotalEpisodes();
-
-  return (
-    <form
-      className="mt-4"
-      onSubmit={event => {
-        event.preventDefault();
-        setProgress.mutate(
-          Number(new FormData(event.currentTarget).get('episode')),
-        );
-      }}
-    >
-      <Flex align="end" gap="2">
-        <Text as="label" size="1" className="text-foreground/70">
-          {t('serie.catch_up_label')}
-          <TextField.Root
-            key={lastWatchedEpisode}
-            name="episode"
-            type="number"
-            min={0}
-            max={totalEpisodes}
-            defaultValue={lastWatchedEpisode}
-            required
-            className="mt-1 w-28"
-          />
-        </Text>
-        <Button type="submit" loading={setProgress.isPending}>
-          {t('serie.catch_up_submit')}
-        </Button>
-      </Flex>
-    </form>
-  );
-}
-
-function SerieArrival({
-  lastWatchedEpisode,
-  skipFiller,
-}: {
-  lastWatchedEpisode: number;
-  skipFiller: boolean;
-}) {
-  const { t } = useTranslation();
-  const locale = useLocale();
-  const { data } = useSuspenseSerieAllArcs();
-  const totalEpisodes = useSerieTotalEpisodes();
-  const [arcSlug, setArcSlug] = useState<string>();
-  const [episodesPerDay, setEpisodesPerDay] = useState(3);
-
-  const aheadArcs = data.arcs.filter(
-    arc =>
-      arc.firstEpisode > lastWatchedEpisode &&
-      !(skipFiller && arc.type === 'filler'),
-  );
-
-  const arc = aheadArcs.find(item => item.slug === arcSlug) ?? aheadArcs[0];
-  if (!arc) return null;
-
-  const arcName = (slug: string) =>
-    t(`arcs.${slug}.name`, { ns: 'serie', defaultValue: '' });
-  const arrivalDate = getArcArrivalDate({
-    episodesLeft: getPendingEpisodes({
-      arcs: data.arcs,
-      lastWatchedEpisode,
-      totalEpisodes,
-      skipFiller,
-    }).filter(number => number < arc.firstEpisode).length,
-    episodesPerDay,
-    today: new Date(),
-  });
-
-  return (
-    <Box mt="4">
-      <Flex align="end" gap="2" wrap="wrap">
-        <Text as="label" size="1" className="text-foreground/70">
-          {t('serie.arrival_arc_label')}
-          <Select.Root value={arc.slug} onValueChange={setArcSlug}>
-            <Select.Trigger className="mt-1 flex" />
-            <Select.Content position="popper">
-              {aheadArcs.map(item => (
-                <Select.Item key={item.slug} value={item.slug}>
-                  {arcName(item.slug)}
-                </Select.Item>
-              ))}
-            </Select.Content>
-          </Select.Root>
-        </Text>
-        <Text as="label" size="1" className="text-foreground/70">
-          {t('serie.arrival_per_day_label')}
-          <TextField.Root
-            type="number"
-            min={1}
-            defaultValue={3}
-            onChange={event =>
-              setEpisodesPerDay(event.currentTarget.valueAsNumber)
-            }
-            className="mt-1 w-28"
-          />
-        </Text>
-      </Flex>
-      {arrivalDate && (
-        <Text as="p" size="2" mt="2" className="text-highlight">
-          {t('serie.arrival_result', {
-            arc: arcName(arc.slug),
-            date: new Intl.DateTimeFormat(locale, { dateStyle: 'long' }).format(
-              arrivalDate,
-            ),
-          })}
-        </Text>
-      )}
-    </Box>
   );
 }
 

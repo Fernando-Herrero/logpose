@@ -19,57 +19,60 @@ export function CharacterCardComponent({
 
   return (
     <Card
+      asChild
       onMouseMove={tilt.onMouseMove}
       onMouseLeave={tilt.onMouseLeave}
       className="landing-card group border-foreground/10 to-page/75 from-raised/70 flex w-full max-w-[300px] flex-col items-center overflow-hidden rounded-xl border bg-linear-to-br backdrop-blur-sm transition-shadow duration-300 hover:shadow-[0_24px_60px_rgba(0,0,0,0.45)] lg:min-h-80 lg:max-w-full lg:flex-row lg:gap-4 lg:overflow-visible"
     >
-      <Box className="lg:bg-trim/25 relative w-full lg:h-full lg:min-h-80 lg:rounded-tl-xl lg:rounded-bl-xl">
-        <picture className="z-20 block h-full w-full transition-transform duration-300 group-hover:scale-105 lg:absolute lg:top-0 lg:left-3 lg:group-hover:scale-110">
-          <source
-            srcSet={images[2]}
-            media="(min-width: 1024px)"
-            type="image/webp"
-          />
-          <source
-            srcSet={images[1]}
-            media="(min-width: 700px)"
-            type="image/webp"
-          />
-          <source
-            srcSet={images[0]}
-            media="(min-width: 400px)"
-            type="image/webp"
-          />
-          <img
-            src={images[0]}
-            alt={name}
-            className={`block max-h-40 w-full object-cover lg:h-full lg:max-h-none lg:min-w-50 lg:object-cover lg:object-[center_-5px] ${
-              isLast ? 'object-[center_-4px]' : ''
-            }`}
-          />
-        </picture>
-      </Box>
+      <li>
+        <Box className="lg:bg-trim/25 relative w-full lg:h-full lg:min-h-80 lg:rounded-tl-xl lg:rounded-bl-xl">
+          <picture className="z-20 block h-full w-full transition-transform duration-300 group-hover:scale-105 lg:absolute lg:top-0 lg:left-3 lg:group-hover:scale-110">
+            <source
+              srcSet={images[2]}
+              media="(min-width: 1024px)"
+              type="image/webp"
+            />
+            <source
+              srcSet={images[1]}
+              media="(min-width: 700px)"
+              type="image/webp"
+            />
+            <source
+              srcSet={images[0]}
+              media="(min-width: 400px)"
+              type="image/webp"
+            />
+            <img
+              src={images[0]}
+              alt=""
+              className={`block max-h-40 w-full object-cover lg:h-full lg:max-h-none lg:min-w-50 lg:object-cover lg:object-[center_-5px] ${
+                isLast ? 'object-[center_-4px]' : ''
+              }`}
+            />
+          </picture>
+        </Box>
 
-      <Flex
-        direction="column"
-        gap="2"
-        className="px-6 pb-4 text-center lg:max-w-55 lg:justify-center lg:pr-8 lg:text-right"
-      >
-        <Heading
-          as="h2"
-          size="4"
-          className="font-road-captain text-highlight tracking-wide"
+        <Flex
+          direction="column"
+          gap="2"
+          className="px-6 pb-4 text-center lg:max-w-55 lg:justify-center lg:pr-8 lg:text-right"
         >
-          {name}
-        </Heading>
-        <Text
-          as="p"
-          size="2"
-          className="text-foreground/75 leading-relaxed lg:pl-7"
-        >
-          {text}
-        </Text>
-      </Flex>
+          <Heading
+            as="h2"
+            size="4"
+            className="font-road-captain text-highlight tracking-wide"
+          >
+            {name}
+          </Heading>
+          <Text
+            as="p"
+            size="2"
+            className="text-foreground/75 leading-relaxed lg:pl-7"
+          >
+            {text}
+          </Text>
+        </Flex>
+      </li>
     </Card>
   );
 }

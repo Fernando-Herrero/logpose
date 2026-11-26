@@ -1,4 +1,7 @@
 {
+  "a11y": {
+    "skip_to_content": "Skip to content"
+  },
   "auth": {
     "login_title": "Login",
     "register_title": "Sign up",
@@ -85,7 +88,8 @@
     "empty_following": "Posts and retweets from the people you follow will show up here.",
     "empty_following_link": "Find someone to follow",
     "load_more": "Load more posts",
-    "load_more_pending": "Loading…"
+    "load_more_pending": "Loading…",
+    "feed_label": "Posts to show"
   },
   "contact": {
     "meta_title": "Contact — LogPose",
@@ -117,7 +121,8 @@
       "admin": "Admin",
       "user_profile": "User profile",
       "expand": "Expand menu",
-      "collapse": "Collapse menu"
+      "collapse": "Collapse menu",
+      "label": "Main navigation"
     },
     "topbar": {
       "account_menu": "Account menu",
@@ -259,6 +264,7 @@
     },
     "cta_title": "Ready to set sail?",
     "nav": {
+      "label": "Main",
       "features": "Features",
       "onepiece": "One Piece",
       "characters": "Characters",
@@ -281,6 +287,7 @@
       "ja": "日本語"
     },
     "footer": {
+      "nav_label": "Footer",
       "disclaimer": "LogPose is a fan app for tracking One Piece progress. For personal use only, not for commercial purposes.",
       "copyright": "LogPose. All rights reserved."
     }
@@ -294,7 +301,6 @@
     "title": "404 — Page not found",
     "message": "Oops! We couldn't find this page.",
     "back_home": "Back to home",
-    "bg_alt": "Sunny sailing the sea",
     "crew_alt": "Straw Hat crew"
   },
   "posts": {
@@ -304,7 +310,7 @@
     "retweeted_by_you": "You retweeted",
     "bookmark_action": "Bookmark",
     "login_to_interact": "Sign in to like, retweet or bookmark posts",
-    "create_label": "New post",
+    "create_label": "Post text",
     "create_placeholder": "What's happening on the Grand Line?",
     "create_submit": "Post",
     "create_submit_pending": "Posting…",
@@ -324,6 +330,7 @@
     "create_modal_title": "New post",
     "create_modal_subtitle": "Share something with the crew",
     "create_cancel": "Cancel",
+    "create_close": "Close",
     "create_images_label": "Images",
     "create_images_count": "{{count}} / {{max}}",
     "create_images_pick": "Add images",
@@ -334,7 +341,9 @@
     "create_images_size_error": "Each image must be under 10 MB",
     "create_images_truncated": "Only {{added}} of {{selected}} selected were added (maximum {{max}} per post)",
     "create_images_pick_pending": "Opening picker…",
-    "create_char_limit_reached": "You reached the maximum of {{max}} characters"
+    "create_char_limit_reached": "You reached the maximum of {{max}} characters",
+    "image_alt": "Image {{index}} of {{total}}",
+    "comments_label": "Comments"
   },
   "profile": {
     "title": "Your profile",

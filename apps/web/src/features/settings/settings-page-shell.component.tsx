@@ -1,4 +1,5 @@
 import { Card, Heading, Text } from '@radix-ui/themes';
+import Head from 'next/head';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next/pages';
 import type { ReactNode } from 'react';
@@ -34,11 +35,14 @@ export function SettingsPageShell({
         wide ? 'max-w-5xl' : 'max-w-xl'
       }`}
     >
+      <Head>
+        <title>{`${t(titleKey)} · LogPose`}</title>
+      </Head>
       <Link
         href={backHref}
         className="text-highlight/80 hover:text-highlight mb-4 inline-flex items-center gap-1 text-sm underline-offset-2 hover:underline"
       >
-        <Icon.CaretLeft aria-hidden />
+        <Icon.CaretLeft />
         {t(backLabelKey)}
       </Link>
 

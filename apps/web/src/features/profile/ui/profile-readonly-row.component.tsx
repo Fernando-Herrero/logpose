@@ -14,19 +14,21 @@ export function ProfileReadonlyRow({
   const display = value.trim();
 
   return (
-    <Flex direction="column" gap="1">
-      <Text as="span" size="1" color="gray">
-        {label}
-      </Text>
-      {display ? (
-        <Text as="p" size="2" className="text-foreground/85">
-          {display}
+    <Flex asChild direction="column" gap="1">
+      <div>
+        <Text asChild size="1" color="gray">
+          <dt>{label}</dt>
         </Text>
-      ) : (
-        <Text as="p" size="2" className="text-foreground/50 italic">
-          {emptyText ?? '—'}
+        <Text
+          asChild
+          size="2"
+          className={
+            display ? 'text-foreground/85' : 'text-foreground/50 italic'
+          }
+        >
+          <dd className="m-0">{display || (emptyText ?? '—')}</dd>
         </Text>
-      )}
+      </div>
     </Flex>
   );
 }

@@ -30,7 +30,7 @@ export function CreatePostFab({ onClick }: CreatePostFabProps) {
         aria-hidden
         className="community-create-fab-ring pointer-events-none absolute inset-0 rounded-full"
       />
-      <PlusIcon size={28} weight="bold" className="relative z-10" />
+      <PlusIcon size={28} weight="bold" className="relative z-10" aria-hidden />
     </button>
   );
 }

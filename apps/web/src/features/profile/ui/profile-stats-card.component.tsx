@@ -20,28 +20,47 @@ export function ProfileStatsCard({ userId }: ProfileStatsCardProps) {
   ];
 
   return (
-    <Card className="card p-4">
-      <Heading as="h2" size="3" mb="4" className="text-highlight">
-        {t('profile.stats_title')}
-      </Heading>
-      <Flex direction="column" gap="2">
-        {statItems.map(item => (
-          <Flex
-            key={item.label}
-            align="center"
-            justify="between"
-            gap="3"
-            className="tile"
-          >
-            <Text as="span" size="2" className="text-foreground/85">
-              {item.label}
-            </Text>
-            <Text as="span" size="2" weight="bold" className="text-highlight">
-              {item.value ?? t('profile.stats_hidden')}
-            </Text>
-          </Flex>
-        ))}
-      </Flex>
+    <Card asChild className="card p-4">
+      <section aria-labelledby="profile-stats-title">
+        <Heading
+          as="h2"
+          id="profile-stats-title"
+          size="3"
+          mb="4"
+          className="text-highlight"
+        >
+          {t('profile.stats_title')}
+        </Heading>
+        <Flex asChild direction="column" gap="2">
+          <dl className="m-0">
+            {statItems.map(item => (
+              <Flex
+                asChild
+                key={item.label}
+                align="center"
+                justify="between"
+                gap="3"
+              >
+                <div className="tile">
+                  <Text asChild size="2" className="text-foreground/85">
+                    <dt>{item.label}</dt>
+                  </Text>
+                  <Text
+                    asChild
+                    size="2"
+                    weight="bold"
+                    className="text-highlight"
+                  >
+                    <dd className="m-0">
+                      {item.value ?? t('profile.stats_hidden')}
+                    </dd>
+                  </Text>
+                </div>
+              </Flex>
+            ))}
+          </dl>
+        </Flex>
+      </section>
     </Card>
   );
 }

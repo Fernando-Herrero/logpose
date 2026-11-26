@@ -1,8 +1,10 @@
 import { Box, Flex } from '@radix-ui/themes';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next/pages';
 import type { PropsWithChildren } from 'react';
 
+import { SkipLink } from '@/components/skip-link/skip-link.component';
 import {
   getDashboardActiveTab,
   getDashboardSectionLabelKey,
@@ -23,6 +25,10 @@ export function DashboardLayout({ children }: PropsWithChildren) {
 
   return (
     <DashboardAuthGate>
+      <Head>
+        <title>{`${sectionLabel} · LogPose`}</title>
+      </Head>
+      <SkipLink />
       <Flex direction="row" className="bg-page h-dvh min-h-0">
         <Box
           className={`shrink-0 overflow-hidden transition-[width] duration-200 ${
@@ -48,7 +54,9 @@ export function DashboardLayout({ children }: PropsWithChildren) {
             asChild
             className="min-h-0 flex-1 overflow-auto px-4 py-6 md:p-6"
           >
-            <main>{children}</main>
+            <main id="main" tabIndex={-1}>
+              {children}
+            </main>
           </Box>
         </Flex>
       </Flex>

@@ -29,21 +29,37 @@ export default function SettingsNotificationsPageContent() {
       titleKey="settings.title_notifications"
       descriptionKey="settings.notifications.description"
     >
-      <Flex direction="column" gap="4">
-        {NOTIFICATION_TOGGLES.map(toggle => (
-          <Flex key={toggle.key} align="center" justify="between" gap="4">
-            <Text as="label" size="2" className="text-foreground/85">
-              {t(toggle.labelKey)}
-            </Text>
-            <Switch
-              checked={preferences.notifications[toggle.key]}
-              disabled={isSaving}
-              onCheckedChange={checked =>
-                savePreference('notifications', { [toggle.key]: checked })
-              }
-            />
-          </Flex>
-        ))}
+      <Flex asChild direction="column" gap="4">
+        <ul className="m-0 list-none p-0">
+          {NOTIFICATION_TOGGLES.map(toggle => (
+            <Flex
+              asChild
+              key={toggle.key}
+              align="center"
+              justify="between"
+              gap="4"
+            >
+              <li>
+                <Text
+                  as="label"
+                  htmlFor={toggle.key}
+                  size="2"
+                  className="text-foreground/85"
+                >
+                  {t(toggle.labelKey)}
+                </Text>
+                <Switch
+                  id={toggle.key}
+                  checked={preferences.notifications[toggle.key]}
+                  disabled={isSaving}
+                  onCheckedChange={checked =>
+                    savePreference('notifications', { [toggle.key]: checked })
+                  }
+                />
+              </li>
+            </Flex>
+          ))}
+        </ul>
       </Flex>
     </SettingsPageShell>
   );

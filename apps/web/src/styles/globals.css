@@ -40,17 +40,6 @@
   }
 }
 
-@keyframes community-backdrop-in {
-  from {
-    opacity: 0;
-    backdrop-filter: blur(0);
-  }
-  to {
-    opacity: 1;
-    backdrop-filter: blur(12px);
-  }
-}
-
 @keyframes community-modal-in {
   from {
     opacity: 0;
@@ -98,7 +87,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .community-create-fab,
-  .community-modal-backdrop,
   .community-modal-panel {
     animation: none !important;
   }
@@ -402,7 +390,7 @@ html {
   transform: translateX(120%);
 }
 
-.faq-item > button {
+.faq-item > :is(h2, h3) > button {
   margin: 0;
   box-sizing: border-box;
 }

@@ -15,14 +15,17 @@ export default function SettingsResourcesFaqPageContent() {
       backHref="/dashboard/settings/resources"
       backLabelKey="settings.resources.back"
     >
-      <Flex direction="column" gap="3">
-        {FAQ_ITEMS.map(([titleKey, textKey]) => (
-          <FaqItem
-            key={titleKey}
-            question={t(`faq.${titleKey}`)}
-            answer={t(`faq.${textKey}`)}
-          />
-        ))}
+      <Flex asChild direction="column" gap="3">
+        <ul className="m-0 list-none p-0">
+          {FAQ_ITEMS.map(([titleKey, textKey]) => (
+            <li key={titleKey}>
+              <FaqItem
+                question={t(`faq.${titleKey}`)}
+                answer={t(`faq.${textKey}`)}
+              />
+            </li>
+          ))}
+        </ul>
       </Flex>
     </SettingsPageShell>
   );

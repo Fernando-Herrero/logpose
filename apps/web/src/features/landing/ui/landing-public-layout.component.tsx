@@ -2,6 +2,7 @@ import { Flex } from '@radix-ui/themes';
 import Head from 'next/head';
 import type { ReactNode } from 'react';
 
+import { SkipLink } from '@/components/skip-link/skip-link.component';
 import { useSmoothScroll } from '@/features/landing/motion/use-smooth-scroll';
 import { LandingFooterComponent } from '@/features/landing/ui/landing-footer.component';
 import { LandingHeaderComponent } from '@/features/landing/ui/landing-header.component';
@@ -29,8 +30,11 @@ export function LandingPublicLayout({
         <title>{title}</title>
         {description ? <meta name="description" content={description} /> : null}
       </Head>
+      <SkipLink />
       <LandingHeaderComponent />
       <main
+        id="main"
+        tabIndex={-1}
         className={`mx-auto flex w-full flex-1 flex-col px-6 pt-24 pb-8 ${wide ? 'max-w-6xl' : 'max-w-3xl'} ${centered ? 'justify-center' : ''}`}
       >
         {children}

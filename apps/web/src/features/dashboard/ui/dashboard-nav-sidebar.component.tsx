@@ -23,7 +23,7 @@ export function DashboardNavSidebar({
   const navItems = getDashboardNavItems(isAdmin);
 
   return (
-    <aside className="border-highlight/15 bg-deep text-foreground flex h-full w-55 shrink-0 flex-col border-r">
+    <div className="border-highlight/15 bg-deep text-foreground flex h-full w-55 shrink-0 flex-col border-r">
       <Flex
         align="center"
         px="4"
@@ -37,14 +37,14 @@ export function DashboardNavSidebar({
         </Link>
       </Flex>
 
-      <nav className="flex flex-1 flex-col gap-2 px-3 py-4">
-        {navItems.map(item => (
-          <NavSidebarLink
-            key={item.id}
-            item={item}
-            active={activeTab === item.id}
-          />
-        ))}
+      <nav aria-label={t('dashboard.nav.label')} className="flex-1">
+        <ul className="m-0 flex list-none flex-col gap-2 px-3 py-4">
+          {navItems.map(item => (
+            <li key={item.id}>
+              <NavSidebarLink item={item} active={activeTab === item.id} />
+            </li>
+          ))}
+        </ul>
       </nav>
 
       <Flex
@@ -68,7 +68,7 @@ export function DashboardNavSidebar({
           </IconButton>
         </Flex>
       </Flex>
-    </aside>
+    </div>
   );
 }
 
@@ -90,8 +90,8 @@ function NavSidebarLink({
       highContrast={active}
       className="box-border h-auto w-full justify-start gap-3 px-3 py-2"
     >
-      <Link href={item.href}>
-        <NavIcon aria-hidden />
+      <Link href={item.href} aria-current={active ? 'page' : undefined}>
+        <NavIcon />
         <Text as="span" size="2" weight="medium">
           {t(item.labelKey)}
         </Text>

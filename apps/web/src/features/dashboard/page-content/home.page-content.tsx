@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   Flex,
@@ -9,10 +10,11 @@ import {
 } from '@radix-ui/themes';
 import { useSuspenseQueries, useSuspenseQuery } from '@tanstack/react-query';
 import { useTranslation } from 'next-i18next/pages';
-import { Suspense } from 'react';
+import { Suspense, useId } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
 import { QueryErrorFallback } from '@/components/error-boundary/query-error-fallback';
+import { MapHeader } from '@/components/map-header/map-header.component';
 import { useAuthSession } from '@/features/auth/api/use-auth';
 import {
   useSerieTotalEpisodes,
@@ -55,7 +57,7 @@ function NextEpisode({
         {t('serie.episode_number', { number })} ·{' '}
         {t('serie.episode_xp', { xp: episode.experience })}
       </Text>
-      <Heading as="h2" size="5" mt="1">
+      <Heading as="h3" size="5" mt="1">
         {texts.episodes[number]?.name}
       </Heading>
       <Text as="p" size="2" mt="2" className="text-foreground/75">
@@ -165,25 +167,32 @@ function HomeNextEpisode({
 export default function HomePageContent() {
   const { t } = useTranslation();
   const { user } = useAuthSession();
+  const headingId = useId();
 
   return (
-    <Card className="card mx-auto max-w-xl p-6">
-      <Heading
-        as="h1"
-        size="6"
-        mb="4"
-        className="font-one-piece text-highlight"
-      >
-        {t('serie.next_title')}
-      </Heading>
-      <ErrorBoundary FallbackComponent={QueryErrorFallback}>
-        <Suspense fallback={<Skeleton height="140px" />}>
-          <HomeNextEpisode
-            lastWatchedEpisode={user?.lastWatchedEpisode ?? 0}
-            skipFiller={user?.preferences.serie.skipFiller ?? false}
-          />
-        </Suspense>
-      </ErrorBoundary>
-    </Card>
+    <Box className="mx-auto max-w-3xl lg:max-w-4xl">
+      <MapHeader title={t('dashboard.pages.home.title')} />
+      <Card asChild className="card p-6">
+        <section aria-labelledby={headingId}>
+          <Heading
+            id={headingId}
+            as="h2"
+            size="6"
+            mb="4"
+            className="font-one-piece text-highlight"
+          >
+            {t('serie.next_title')}
+          </Heading>
+          <ErrorBoundary FallbackComponent={QueryErrorFallback}>
+            <Suspense fallback={<Skeleton height="140px" />}>
+              <HomeNextEpisode
+                lastWatchedEpisode={user?.lastWatchedEpisode ?? 0}
+                skipFiller={user?.preferences.serie.skipFiller ?? false}
+              />
+            </Suspense>
+          </ErrorBoundary>
+        </section>
+      </Card>
+    </Box>
   );
 }

@@ -150,6 +150,9 @@
       "admin": {
         "title": "Admin",
         "body": "Coming soon: moderation panel."
+      },
+      "home": {
+        "title": "Your journey"
       }
     }
   },

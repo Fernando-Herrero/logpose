@@ -1,20 +1,10 @@
-import {
-  Box,
-  Card,
-  Flex,
-  Heading,
-  Skeleton,
-  Spinner,
-  Switch,
-  Text,
-} from '@radix-ui/themes';
-import { gsap } from 'gsap';
-import Image from 'next/image';
+import { Box, Flex, Skeleton, Spinner, Switch, Text } from '@radix-ui/themes';
 import { useTranslation } from 'next-i18next/pages';
-import { Suspense, useRef, useState } from 'react';
+import { Suspense, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
 import { QueryErrorFallback } from '@/components/error-boundary/query-error-fallback';
+import { MapHeader } from '@/components/map-header/map-header.component';
 import { useAuthSession } from '@/features/auth/api/use-auth';
 import { useSuspenseSerieSagas } from '@/features/serie/api/use-serie';
 import { SerieArrival } from '@/features/serie/ui/serie-arrival.component';
@@ -22,7 +12,6 @@ import { SerieCatchUp } from '@/features/serie/ui/serie-catch-up.component';
 import { SerieSagaBlock } from '@/features/serie/ui/serie-saga-block.component';
 import { SerieXpProgress } from '@/features/serie/ui/serie-xp-progress.component';
 import { useSettingsPreferences } from '@/features/settings/use-settings-preferences';
-import { useGsapMotion } from '@/integrations/gsap/motion';
 
 type SerieSagaListProps = {
   openSagaSlugs: Record<string, boolean>;
@@ -81,7 +70,6 @@ export default function SeriePageContent() {
   const { t } = useTranslation();
   const { user } = useAuthSession();
   const { preferences, savePreference, isSaving } = useSettingsPreferences();
-  const heroRef = useRef<HTMLDivElement>(null);
   const [openSagaSlugs, setOpenSagaSlugs] = useState<Record<string, boolean>>(
     {},
   );
@@ -89,14 +77,6 @@ export default function SeriePageContent() {
 
   const lastWatchedEpisode = user?.lastWatchedEpisode ?? 0;
   const skipFiller = preferences?.serie.skipFiller ?? false;
-
-  useGsapMotion(() => {
-    gsap.fromTo(
-      heroRef.current,
-      { autoAlpha: 0, y: 28 },
-      { autoAlpha: 1, y: 0, duration: 0.85, ease: 'power3.out' },
-    );
-  }, heroRef);
 
   const toggleSaga = (sagaSlug: string) => {
     setOpenSagaSlugs(current => ({
@@ -114,77 +94,42 @@ export default function SeriePageContent() {
 
   return (
     <Box className="mx-auto max-w-3xl pb-24 lg:max-w-4xl">
-      <Card
-        ref={heroRef}
-        className="border-highlight/15 relative mb-8 overflow-hidden rounded-3xl border bg-transparent p-0 shadow-none"
-      >
-        <Box className="absolute inset-0 -z-20">
-          <Image
-            src="/landing/map/map-1024.webp"
-            alt=""
-            aria-hidden="true"
-            fill
-            sizes="(max-width: 768px) 100vw, 896px"
-            className="object-cover opacity-35"
-            priority
-          />
-        </Box>
-        <Box
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-[radial-gradient(90%_80%_at_50%_20%,--alpha(var(--color-highlight)/12%)_0%,--alpha(var(--color-deep)/55%)_45%,--alpha(var(--color-deep)/95%)_100%)]"
-        />
-        <Box className="landing-grain -z-10" aria-hidden="true" />
+      <MapHeader eyebrow={t('serie.hero_eyebrow')} title={t('serie.title')}>
+        <Text
+          as="p"
+          size="2"
+          className="text-foreground/80 mt-4 max-w-xl leading-relaxed"
+        >
+          {t('serie.subtitle')}
+        </Text>
 
-        <Box className="relative px-6 py-10 md:px-10 md:py-12">
-          <Text
-            as="p"
-            size="1"
-            className="font-road-captain text-highlight/70 mb-3 tracking-[0.35em] uppercase"
-          >
-            {t('serie.hero_eyebrow')}
-          </Text>
-          <Heading
-            as="h1"
-            className="font-one-piece text-highlight title-glow text-[clamp(2rem,6vw,3.5rem)] leading-[0.95] tracking-wide"
-          >
-            {t('serie.title')}
-          </Heading>
-          <Text
-            as="p"
-            size="2"
-            className="text-foreground/80 mt-4 max-w-xl leading-relaxed"
-          >
-            {t('serie.subtitle')}
-          </Text>
-
-          <Box className="mt-8 max-w-md">
-            <ErrorBoundary FallbackComponent={QueryErrorFallback}>
-              <Suspense fallback={<Skeleton height="32px" />}>
-                <SerieXpProgress experience={user?.experience ?? 0} />
-                <SerieCatchUp lastWatchedEpisode={lastWatchedEpisode} />
-                <SerieArrival
-                  lastWatchedEpisode={lastWatchedEpisode}
-                  skipFiller={skipFiller}
-                />
-              </Suspense>
-            </ErrorBoundary>
-            <Text
-              as="label"
-              size="1"
-              className="text-foreground/70 mt-4 flex items-center gap-2"
-            >
-              <Switch
-                checked={skipFiller}
-                disabled={isSaving}
-                onCheckedChange={checked =>
-                  savePreference('serie', { skipFiller: checked })
-                }
+        <Box className="mt-8 max-w-md">
+          <ErrorBoundary FallbackComponent={QueryErrorFallback}>
+            <Suspense fallback={<Skeleton height="32px" />}>
+              <SerieXpProgress experience={user?.experience ?? 0} />
+              <SerieCatchUp lastWatchedEpisode={lastWatchedEpisode} />
+              <SerieArrival
+                lastWatchedEpisode={lastWatchedEpisode}
+                skipFiller={skipFiller}
               />
-              {t('serie.skip_filler')}
-            </Text>
-          </Box>
+            </Suspense>
+          </ErrorBoundary>
+          <Text
+            as="label"
+            size="1"
+            className="text-foreground/70 mt-4 flex items-center gap-2"
+          >
+            <Switch
+              checked={skipFiller}
+              disabled={isSaving}
+              onCheckedChange={checked =>
+                savePreference('serie', { skipFiller: checked })
+              }
+            />
+            {t('serie.skip_filler')}
+          </Text>
         </Box>
-      </Card>
+      </MapHeader>
 
       <ErrorBoundary FallbackComponent={QueryErrorFallback}>
         <Suspense fallback={<SerieSagaListSkeleton />}>

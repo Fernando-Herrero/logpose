@@ -150,6 +150,9 @@
       "admin": {
         "title": "Administración",
         "body": "Próximamente: panel de moderación."
+      },
+      "home": {
+        "title": "Tu travesía"
       }
     }
   },

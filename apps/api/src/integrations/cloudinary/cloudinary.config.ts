@@ -3,7 +3,8 @@ import {
   POST_MAX_IMAGES,
 } from '@logpose/contracts/common/post.schemas';
 import { v2 as cloudinary } from 'cloudinary';
-import multer, { type FileFilterCallback } from 'multer';
+import type multer from 'multer';
+import type { FileFilterCallback } from 'multer';
 import { CloudinaryStorage } from 'multer-storage-cloudinary';
 
 import type { ServerEnv } from '../env/server.js';

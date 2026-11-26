@@ -4,7 +4,7 @@
  * y lo rehidrata aquí para evitar un fetch extra al montar.
  */
 import {
-  DehydratedState,
+  type DehydratedState,
   HydrationBoundary,
   QueryClient,
   QueryClientProvider,

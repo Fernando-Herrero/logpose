@@ -53,6 +53,10 @@ export default [
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-unsafe-function-type': 'warn',
       '@typescript-eslint/no-import-type-side-effects': 'error',
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        { fixStyle: 'inline-type-imports' },
+      ],
       'import/no-extraneous-dependencies': [
         'error',
         {

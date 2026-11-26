@@ -5,7 +5,7 @@
  */
 import { type InferClientErrorUnion, isDefinedError } from '@orpc/client';
 
-import { client } from '@/integrations/orpc/orpc.client';
+import type { client } from '@/integrations/orpc/orpc.client';
 
 type OrpcClientError = InferClientErrorUnion<typeof client>;
 

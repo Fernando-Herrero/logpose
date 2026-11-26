@@ -1,4 +1,4 @@
-import {
+import type {
   arcSchema,
   arcTextsSchema,
   episodeSchema,

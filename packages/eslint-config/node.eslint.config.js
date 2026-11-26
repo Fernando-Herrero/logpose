@@ -47,6 +47,10 @@ const config = defineConfig([
         },
       ],
       '@typescript-eslint/no-import-type-side-effects': 'error',
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        { fixStyle: 'inline-type-imports' },
+      ],
       '@typescript-eslint/no-unnecessary-condition': 'warn',
       'import/no-extraneous-dependencies': 'error',
       'no-restricted-imports': [

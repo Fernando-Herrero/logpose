@@ -154,7 +154,8 @@
       "home": {
         "title": "あなたの航海",
         "level": "レベル {{level}}",
-        "level_remaining": "レベル{{next}}まであと {{xp}} XP"
+        "level_remaining": "レベル{{next}}まであと {{xp}} XP",
+        "next_avatar_other": "あと{{count}}話で{{name}}が解放"
       }
     }
   },

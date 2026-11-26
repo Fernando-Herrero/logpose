@@ -1,3 +1,8 @@
+import {
+  AVATAR_PROGRESS_UNLOCK_CHARACTER_IDS,
+  AVATAR_PROGRESS_UNLOCK_RULES,
+} from '@logpose/contracts/common/avatar';
+
 import type { SerieArc } from '@/features/serie/serie.types';
 
 export function getSerieXpPercent(experience: number, totalExperience: number) {
@@ -71,5 +76,22 @@ export function getNextStop(input: PendingEpisodesInput) {
       arcSlug: nextArc.slug,
       remaining: pending.filter(number => number < nextArc.firstEpisode).length,
     },
+  };
+}
+
+export function getNextAvatar(input: PendingEpisodesInput) {
+  const id = AVATAR_PROGRESS_UNLOCK_CHARACTER_IDS.filter(
+    candidate =>
+      AVATAR_PROGRESS_UNLOCK_RULES[candidate] > input.lastWatchedEpisode,
+  ).toSorted(
+    (a, b) => AVATAR_PROGRESS_UNLOCK_RULES[a] - AVATAR_PROGRESS_UNLOCK_RULES[b],
+  )[0];
+  if (id === undefined) return undefined;
+
+  const episode = AVATAR_PROGRESS_UNLOCK_RULES[id];
+  return {
+    id,
+    remaining: getPendingEpisodes(input).filter(number => number <= episode)
+      .length,
   };
 }

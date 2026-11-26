@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 
 import {
   getArcArrivalDate,
+  getNextAvatar,
   getNextStop,
   getPendingEpisodes,
 } from '@/features/serie/serie.selectors';
@@ -300,5 +301,54 @@ describe('getPendingEpisodes', () => {
         skipFiller: false,
       }),
     ).toEqual([]);
+  });
+});
+
+describe('getNextAvatar', () => {
+  it.each([
+    // [descripción, último visto, skipFiller, total, avatar, faltan]
+    // Robin (67): del 54 al 67 son 14.
+    ['apagado, tras el 53', 53, false, 91, 'robin', 14],
+    // Del 54 al 67 son 14; el 54-60 (7) se salta: 14 - 7 = 7.
+    ['encendido, tras el 53', 53, true, 91, 'robin', 7],
+    // Del 46 al 67 son 22.
+    ['apagado, tras el 45', 45, false, 91, 'robin', 22],
+    // Del 46 al 67 son 22; el 50 y el 54-60 (8) se saltan: 22 - 8 = 14.
+    ['encendido, tras el 45', 45, true, 91, 'robin', 14],
+    // Solo queda el 67.
+    ['apagado, a un episodio de Robin', 66, false, 91, 'robin', 1],
+    ['encendido, a un episodio de Robin', 66, true, 91, 'robin', 1],
+    // Robin ya está (67 >= 67); Chopper (81): del 68 al 81 son 14.
+    ['justo al desbloquear a Robin', 67, false, 91, 'chopper', 14],
+    // Chopper ya está; Brook (337): del 82 al 337 son 256, nada saltable.
+    ['apagado, tras el 81', 81, false, 1155, 'brook', 256],
+    ['encendido, tras el 81', 81, true, 1155, 'brook', 256],
+    // Brook ya está; Jimbe (416): del 338 al 416 son 79.
+    ['justo al desbloquear a Brook', 337, false, 1155, 'jimbe', 79],
+    // Usuario nuevo: del 1 al 67 son 67.
+    ['apagado, sin nada visto', 0, false, 91, 'robin', 67],
+    // Del 1 al 67 son 67; el 50 y el 54-60 (8) se saltan: 67 - 8 = 59.
+    ['encendido, sin nada visto', 0, true, 91, 'robin', 59],
+  ])(
+    '%s',
+    (_, lastWatchedEpisode, skipFiller, totalEpisodes, id, remaining) => {
+      expect(
+        getNextAvatar({ arcs, lastWatchedEpisode, totalEpisodes, skipFiller }),
+      ).toEqual({ id, remaining });
+    },
+  );
+
+  it.each([
+    ['justo al desbloquear a Jimbe', 416],
+    ['pasado Jimbe', 500],
+  ])('no da avatar %s', (_, lastWatchedEpisode) => {
+    expect(
+      getNextAvatar({
+        arcs,
+        lastWatchedEpisode,
+        totalEpisodes: 1155,
+        skipFiller: false,
+      }),
+    ).toBeUndefined();
   });
 });

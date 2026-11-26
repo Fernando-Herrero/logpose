@@ -17,6 +17,7 @@ import { QueryErrorFallback } from '@/components/error-boundary/query-error-fall
 import { MapHeader } from '@/components/map-header/map-header.component';
 import { useAuthSession } from '@/features/auth/api/use-auth';
 import { DashboardLevelProgress } from '@/features/dashboard/ui/dashboard-level-progress.component';
+import { DashboardNextAvatar } from '@/features/dashboard/ui/dashboard-next-avatar.component';
 import {
   useSerieTotalEpisodes,
   useSetProgressMutation,
@@ -169,11 +170,21 @@ export default function HomePageContent() {
   const { t } = useTranslation();
   const { user } = useAuthSession();
   const headingId = useId();
+  const lastWatchedEpisode = user?.lastWatchedEpisode ?? 0;
+  const skipFiller = user?.preferences.serie.skipFiller ?? false;
 
   return (
     <Box className="mx-auto max-w-3xl lg:max-w-4xl">
       <MapHeader title={t('dashboard.pages.home.title')}>
         <DashboardLevelProgress experience={user?.experience ?? 0} />
+        <ErrorBoundary FallbackComponent={QueryErrorFallback}>
+          <Suspense fallback={<Skeleton height="48px" mt="4" />}>
+            <DashboardNextAvatar
+              lastWatchedEpisode={lastWatchedEpisode}
+              skipFiller={skipFiller}
+            />
+          </Suspense>
+        </ErrorBoundary>
       </MapHeader>
       <Card asChild className="card p-6">
         <section aria-labelledby={headingId}>
@@ -189,8 +200,8 @@ export default function HomePageContent() {
           <ErrorBoundary FallbackComponent={QueryErrorFallback}>
             <Suspense fallback={<Skeleton height="140px" />}>
               <HomeNextEpisode
-                lastWatchedEpisode={user?.lastWatchedEpisode ?? 0}
-                skipFiller={user?.preferences.serie.skipFiller ?? false}
+                lastWatchedEpisode={lastWatchedEpisode}
+                skipFiller={skipFiller}
               />
             </Suspense>
           </ErrorBoundary>

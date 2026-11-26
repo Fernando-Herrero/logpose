@@ -154,7 +154,9 @@
       "home": {
         "title": "Tu travesía",
         "level": "Nivel {{level}}",
-        "level_remaining": "{{xp}} XP para el nivel {{next}}"
+        "level_remaining": "{{xp}} XP para el nivel {{next}}",
+        "next_avatar_one": "{{name}} se desbloquea en {{count}} episodio",
+        "next_avatar_other": "{{name}} se desbloquea en {{count}} episodios"
       }
     }
   },

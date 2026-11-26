@@ -47,7 +47,7 @@ function avatarPath(id: AvatarCharacterId): string {
   return `${AVATAR_BASE}/${id}/${id}-happy-400.webp`;
 }
 
-function avatarPreviewPath(id: AvatarCharacterId): string {
+export function avatarPreviewPath(id: AvatarCharacterId): string {
   return `${AVATAR_BASE}/${id}/${id}-serious-400.webp`;
 }
 

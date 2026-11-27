@@ -156,7 +156,9 @@
         "level": "Nivel {{level}}",
         "level_remaining": "{{xp}} XP para el nivel {{next}}",
         "next_avatar_one": "{{name}} se desbloquea en {{count}} episodio",
-        "next_avatar_other": "{{name}} se desbloquea en {{count}} episodios"
+        "next_avatar_other": "{{name}} se desbloquea en {{count}} episodios",
+        "following_title": "Siguiendo",
+        "following_more": "Ver más en Comunidad"
       }
     }
   },

@@ -156,7 +156,9 @@
         "level": "Level {{level}}",
         "level_remaining": "{{xp}} XP to level {{next}}",
         "next_avatar_one": "{{name}} unlocks in {{count}} episode",
-        "next_avatar_other": "{{name}} unlocks in {{count}} episodes"
+        "next_avatar_other": "{{name}} unlocks in {{count}} episodes",
+        "following_title": "Following",
+        "following_more": "See more in Community"
       }
     }
   },

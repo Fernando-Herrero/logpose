@@ -16,6 +16,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { QueryErrorFallback } from '@/components/error-boundary/query-error-fallback';
 import { MapHeader } from '@/components/map-header/map-header.component';
 import { useAuthSession } from '@/features/auth/api/use-auth';
+import { DashboardFollowingPosts } from '@/features/dashboard/ui/dashboard-following-posts.component';
 import { DashboardLevelProgress } from '@/features/dashboard/ui/dashboard-level-progress.component';
 import { DashboardNextAvatar } from '@/features/dashboard/ui/dashboard-next-avatar.component';
 import {
@@ -207,6 +208,7 @@ export default function HomePageContent() {
           </ErrorBoundary>
         </section>
       </Card>
+      <DashboardFollowingPosts />
     </Box>
   );
 }

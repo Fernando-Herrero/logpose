@@ -7,7 +7,6 @@ import {
   SegmentedControl,
   Text,
 } from '@radix-ui/themes';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next/pages';
 import { Suspense, useState } from 'react';
@@ -23,6 +22,7 @@ import { CreatePostFab } from '@/features/posts/ui/create-post-fab.component';
 import { CreatePostModal } from '@/features/posts/ui/create-post-modal.component';
 import { PostCard } from '@/features/posts/ui/post-card.component';
 import { PostFeedSkeleton } from '@/features/posts/ui/post-card-skeleton.component';
+import { PostFeedEmpty } from '@/features/posts/ui/post-feed-empty.component';
 
 function CommunityFeed({
   feed,
@@ -38,28 +38,7 @@ function CommunityFeed({
     usePostsFeedInfinite(feed);
   const posts = data.pages.flatMap(page => page.posts);
 
-  if (posts.length === 0) {
-    return (
-      <Flex direction="column" align="center" gap="2" className="py-12">
-        <Text
-          as="p"
-          size="2"
-          align="center"
-          className="text-foreground/50 italic"
-        >
-          {t(feed === 'all' ? 'community.empty' : 'community.empty_following')}
-        </Text>
-        {feed === 'following' ? (
-          <Link
-            href="/dashboard/search"
-            className="text-highlight/80 hover:text-highlight text-sm underline-offset-2 hover:underline"
-          >
-            {t('community.empty_following_link')}
-          </Link>
-        ) : null}
-      </Flex>
-    );
-  }
+  if (posts.length === 0) return <PostFeedEmpty feed={feed} />;
 
   return (
     <Flex direction="column" gap="3">
